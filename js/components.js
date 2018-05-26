@@ -1676,16 +1676,21 @@ Vue.component( 'team', {
         [].push.apply( result.skills, rst.info.team.filter( function( s ) { return !s.leader || sn == 'slot1'; } ) );
       } );
       result.skills = result.skills
-        .reduce( function( i, s ) {
-          var idx = i.findIndex( function( si ) { return si.name == s.name; } );
-          if ( idx < 0 ) {
-            i.push( s );
+        .reduce( function( ss, s ) {
+          var idx = ss[s.type];
+          if ( !idx ) {
+            ss[s.type] = s;
           } else {
-            i[idx].value += s.value;
+            idx.value += s.value;
           }
-          return i;
-        }, [] )
-        .sort( function( s1, s2 ) { return s1.priority - s2.priority; } );
+          return ss;
+        }, {} )
+        .map( function( s ) {
+          return s;
+        } )
+        .sort( function( s1, s2 ) { 
+          return s1.priority - s2.priority; 
+        } );
       $.map( vm.roster, function( rst, sn ) {
         result.roster[sn] = {
           power: rst.power,
@@ -1698,24 +1703,26 @@ Vue.component( 'team', {
         var v_max = 0;
         var m_s = 0.1;
         result.skills
-          .filter( function( s ) { return vm.applyFilter( rst.hero, s.filter ); } )
+          .filter( function( s ) { 
+            return vm.applyFilter( rst.hero, s.filter ); 
+          } )
           .map( function( s ) {
-            if ( s.type == 'Survival' ) {
+            if ( s.base == 'Survival' ) {
               m_s += s.value;
-            } else if ( s.type == 'Equipment' ) {
+            } else if ( s.base == 'Equipment' ) {
               result.roster[sn].power.m.i += s.value;
-            } else if ( s.type == 'Strength' ) {
+            } else if ( s.base == 'Strength' ) {
               result.roster[sn].power.m.h += s.value;
-            } else if ( s.type == 'Break Chance' ) {
+            } else if ( s.base == 'Break Chance' ) {
               result.roster[sn].chance = Math.min( result.roster[sn].chance + s.value, s.cap );
             }
-            if ( s.name == 'Healer' ) {
+            if ( s.base == 'Healer' ) {
               m_h = Math.min( m_h + s.value, s.cap );
-            } else if ( s.name == 'Revive' ) {
+            } else if ( s.base == 'Revive' ) {
               m_r = Math.min( m_r + s.value, s.cap );
-            } else if ( s.name == 'Detect Secrets' ) {
+            } else if ( s.base == 'Minimum' ) {
               v_min += s.value;
-            } else if ( s.name == 'Magic Find' ) {
+            } else if ( s.base == 'Minimum' ) {
               v_max += s.value;
             }
           } );
