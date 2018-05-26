@@ -1,0 +1,221 @@
+﻿.tabs {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 24px;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tabs:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.tabs a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+  color: #4a4a4a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: -1px;
+  padding: 6px 12px;
+  vertical-align: top;
+  text-decoration: none;
+  font-variant: small-caps;
+}
+
+.tabs a:hover {
+  border-bottom-color: #363636;
+  color: #363636;
+}
+
+.tabs li {
+  display: block;
+}
+
+.tabs li.is-active a {
+  border-bottom-color: #00d1b2;
+  color: #00d1b2;
+}
+
+.tabs ul {
+  padding: 0;
+  margin: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.tabs ul.is-left {
+  padding-right: 10px;
+}
+
+.tabs ul.is-center {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tabs ul.is-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-left: 10px;
+}
+
+.tabs .icon:first-child {
+  margin-right: 8px;
+}
+
+.tabs .icon:last-child {
+  margin-left: 8px;
+}
+
+.tabs.is-centered ul {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tabs.is-right ul {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.tabs.is-boxed a {
+  border: 1px solid transparent;
+  border-radius: 3px 3px 0 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.tabs.is-boxed a:hover {
+  background-color: whitesmoke;
+  border-bottom-color: #dbdbdb;
+}
+
+.tabs.is-boxed li.is-active a {
+  background-color: white;
+  border-color: #dbdbdb;
+  border-bottom-color: transparent !important;
+}
+
+.tabs.is-fullwidth li {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.tabs.is-toggle a {
+  border: 1px solid #dbdbdb;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  position: relative;
+}
+
+.tabs.is-toggle a:hover {
+  background-color: whitesmoke;
+  border-color: #b5b5b5;
+  z-index: 2;
+}
+
+.tabs.is-toggle li + li {
+  margin-left: -1px;
+}
+
+.tabs.is-toggle li:first-child a {
+  border-radius: 3px 0 0 3px;
+}
+
+.tabs.is-toggle li:last-child a {
+  border-radius: 0 3px 3px 0;
+}
+
+.tabs.is-toggle li.is-active a {
+  background-color: #00d1b2;
+  border-color: #00d1b2;
+  color: white;
+  z-index: 1;
+}
+
+.tabs.is-toggle ul {
+  border-bottom: none;
+}
+
+.tabs.is-small {
+  font-size: 11px;
+}
+
+.tabs.is-small a {
+  padding: 2px 8px;
+}
+
+.tabs.is-small.is-boxed a, .tabs.is-small.is-toggle a {
+  padding-bottom: 1px;
+  padding-top: 1px;
+}
+
+.tabs.is-medium {
+  font-size: 18px;
+}
+
+.tabs.is-medium a {
+  padding: 10px 16px;
+}
+
+.tabs.is-medium.is-boxed a, .tabs.is-medium.is-toggle a {
+  padding-bottom: 9px;
+  padding-top: 9px;
+}
+
+.tabs.is-large {
+  font-size: 28px;
+}
+
+.tabs.is-large a {
+  padding: 14px 20px;
+}
+
+.tabs.is-large.is-boxed a, .tabs.is-large.is-toggle a {
+  padding-bottom: 13px;
+  padding-top: 13px;
+}

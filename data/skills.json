@@ -1,0 +1,620 @@
+{
+  "effects": {
+    "Resourceful": { 
+      "type": "Break Count",
+      "text": "Prevents {0} pieces of equipment from breaking",
+      "priority": 1,
+      "cap": false,
+      "sign": "",
+      "applies": "hero",
+      "leader": false
+    },
+    "Support": { 
+      "type": "Break Count",
+      "text": "Prevents {0} pieces of companions equipment from breaking",
+      "priority": 1,
+      "cap": false,
+      "sign": "",
+      "applies": "team",
+      "leader": false
+    },
+    "Healer": { 
+      "type": "Resting",
+      "text": "Resting time of companions is reduced by {0}",
+      "priority": 2,
+      "cap": 0.9,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Energetic": { 
+      "type": "Resting",
+      "text": "Resting time is reduced by {0}",
+      "priority": 2,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Revive": { 
+      "type": "Revive",
+      "text": "{0} chance to revive injuried companions",
+      "priority": 3,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Speed Runner": { 
+      "type": "Speed",
+      "text": "Quest duration is reduced by {0}",
+      "priority": 4,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "team",
+      "leader": true
+    },
+    "Amazon": { 
+      "type": "Survival",
+      "text": "Survival rate of Female party members is increased by {0}",
+      "priority": 5,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true,
+      "filter": {
+        "sex": "Female"
+      }
+    },
+    "Bros-in-arms": { 
+      "type": "Survival",
+      "text": "Survival rate of Male party members is increased by {0}",
+      "priority": 5,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true,
+      "filter": {
+        "sex": "Male"
+      }
+    },
+    "Protector": { 
+      "type": "Survival",
+      "text": "Survival rate of each party member is increased by {0}",
+      "priority": 6,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Minimum": { 
+      "type": "Minimum",
+      "text": "Minimum number of artifacts found is increased by {0}",
+      "priority": 7,
+      "cap": false,
+      "sign": "",
+      "applies": "hero",
+      "leader": false
+    },
+    "Maximum": { 
+      "type": "Maximum",
+      "text": "Maximum number of artifacts found is increased by {0}",
+      "cap": false,
+      "priority": 8,
+      "sign": "",
+      "applies": "hero",
+      "leader": false
+    },
+    "Leader": { 
+      "type": "Leader",
+      "priority": 9,
+      "text": "Number of companions is increased by {0}",
+      "cap": false,
+      "sign": "",
+      "applies": "hero",
+      "leader": true
+    },
+    "Commander": {
+      "type": "Strength",
+      "text": "Strength of each party member is increased by {0}",
+      "priority": 10,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true
+    },
+    "Arch Wizard": {
+      "type": "Strength",
+      "text": "Strength of Spellcasters in party is increased by {0}",
+      "priority": 10,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": false,
+      "filter": {
+        "type": "Spellcaster"
+      }
+    },
+    "Gangster": {
+      "type": "Equipment",
+      "text": "Equipment strength of Rogues in party is increased by {0}",
+      "priority": 10,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true,
+      "filter": {
+        "type": "Rogue"
+      }
+    },
+    "Equipment": {
+      "type": "Equipment",
+      "priority": 11,
+      "text": "Equipment strength is increased by {0}",
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Strength": { 
+      "type": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 11,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Fastidious": { 
+      "type": "Break Chance",
+      "text": "Chance of breaking equipment is decreased by {0}",
+      "priority": 12,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Supplier": { 
+      "type": "Break Chance",
+      "text": "Chance of breaking companions equipment is decreased by {0}",
+      "priority": 12,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Escape": { 
+      "type": "Escape",
+      "text": "Chance of getting injury is decreased by {0}",
+      "priority": 20,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Wise": { 
+      "type": "Wise",
+      "text": "Amount of experience for successfully completing quests is increased by {0}",
+      "priority": 21,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Resilient": { 
+      "type": "Resilient",
+      "text": "Amount of experience for completing quests with injury is {0}",
+      "priority": 22,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Gold": { 
+      "type": "Gold",
+      "text": "Amount of gold found is increased by {0}",
+      "priority": 23,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    }
+  },
+  "skills": {
+    "Lucky I": {
+      "name": "Lucky I",
+      "base": "Escape",
+      "value": 0.10
+    },
+    "Lucky II": {
+      "name": "Lucky II",
+      "base": "Escape",
+      "value": 0.20
+    },
+    "Lucky III": {
+      "name": "Lucky III",
+      "base": "Escape",
+      "value": 0.30
+    },
+    "Shadowstep": {
+      "name": "Shadowstep",
+      "base": "Escape",
+      "value": 0.15
+    },
+    "Wise I": {
+      "name": "Wise I",
+      "base": "Wise",
+      "value": 0.25
+    },
+    "Wise II": {
+      "name": "Wise II",
+      "base": "Wise",
+      "value": 0.50
+    },
+    "Wise III": {
+      "name": "Wise III",
+      "base": "Wise",
+      "value": 1.00
+    },
+    "Resilient I": {
+      "name": "Resilient I",
+      "base": "Resilient",
+      "value": 0.25
+    },
+    "Resilient II": {
+      "name": "Resilient II",
+      "base": "Resilient",
+      "value": 0.50
+    },
+    "Resilient III": {
+      "name": "Resilient III",
+      "base": "Resilient",
+      "value": 1.00
+    },
+    "Gold Digger I": {
+      "name": "Gold Digger I",
+      "base": "Gold",
+      "value": 0.50
+    },
+    "Gold Digger II": {
+      "name": "Gold Digger II",
+      "base": "Gold",
+      "value": 1.00
+    },
+    "Gold Digger III": {
+      "name": "Gold Digger III",
+      "base": "Gold",
+      "value": 2.00
+    },
+    "Leader I": {
+      "name": "Leader I",
+      "base": "Leader",
+      "value": 1
+    },
+    "Leader II": {
+      "name": "Leader II",
+      "base": "Leader",
+      "value": 2
+    },
+    "Leader III": {
+      "name": "Leader III",
+      "base": "Leader",
+      "value": 3
+    },
+    "Gangster I": {
+      "name": "Gangster I",
+      "base": "Gangster",
+      "value": 0.10
+    },
+    "Gangster II": {
+      "name": "Gangster II",
+      "base": "Gangster",
+      "value": 0.15
+    },
+    "Gangster III": {
+      "name": "Gangster III",
+      "base": "Gangster",
+      "value": 0.25
+    },
+    "Parry": {
+      "name": "Parry",
+      "base": "Equipment",
+      "value": 0.10
+    },
+    "Riposte": {
+      "name": "Riposte",
+      "base": "Equipment",
+      "value": 0.20
+    },
+    "Mage Armor": {
+      "name": "Mage Armor",
+      "base": "Equipment",
+      "value": 0.25
+    },
+    "Backstab": {
+      "name": "Backstab",
+      "base": "Strength",
+      "value": 0.25
+    },
+    "Cleave": {
+      "name": "Cleave",
+      "base": "Strength",
+      "value": 0.25
+    },
+    "Crush": {
+      "name": "Crush",
+      "base": "Strength",
+      "value": 0.25
+    },
+    "Fireball": {
+      "name": "Fireball",
+      "base": "Strength",
+      "value": 0.25
+    },
+    "Stoneskin": {
+      "name": "Stoneskin",
+      "base": "Strength",
+      "value": 0.30
+    },
+    "Berserker": {
+      "name": "Berserker",
+      "base": "Strength",
+      "value": 0.35
+    },
+    "Cone-of-cold": {
+      "name": "Cone-of-cold",
+      "base": "Strength",
+      "value": 0.40
+    },
+    "Thunderbolt": {
+      "name": "Thunderbolt",
+      "base": "Strength",
+      "value": 0.50
+    },
+    "Detect Secrets": {
+      "name": "Detect Secrets",
+      "text": "Minimum number of artifacts found by each party member is increased by {0}",
+      "base": "Minimum",
+      "applies": "team",
+      "value": 1
+    },
+    "Magic Find": {
+      "name": "Magic Find",
+      "text": "Maximum number of artifacts found by each party member is increased by {0}",
+      "base": "Maximum",
+      "applies": "team",
+      "value": 2
+    },
+    "Treasure Hunter I": {
+      "name": "Treasure Hunter I",
+      "base": "Maximum",
+      "value": 2
+    },
+    "Treasure Hunter II": {
+      "name": "Treasure Hunter II",
+      "base": "Maximum",
+      "value": 4
+    },
+    "Treasure Hunter III": {
+      "name": "Treasure Hunter III",
+      "base": "Maximum",
+      "value": 6
+    },
+    "Scavenger I": {
+      "name": "Scavenger I",
+      "base": "Minimum",
+      "value": 1
+    },
+    "Scavenger II": {
+      "name": "Scavenger II",
+      "base": "Minimum",
+      "value": 2
+    },
+    "Scavenger III": {
+      "name": "Scavenger III",
+      "base": "Minimum",
+      "value": 3
+    },
+    "Protector I": {
+      "name": "Protector I",
+      "base": "Protector",
+      "value": 0.025
+    },
+    "Protector II": {
+      "name": "Protector II",
+      "base": "Protector",
+      "value": 0.05
+    },
+    "Protector III": {
+      "name": "Protector III",
+      "base": "Protector",
+      "value": 0.10
+    },
+    "Commander I": {
+      "name": "Commander I",
+      "base": "Commander",
+      "value": 0.15
+    },
+    "Commander II": {
+      "name": "Commander II",
+      "base": "Commander",
+      "value": 0.25
+    },
+    "Commander III": {
+      "name": "Commander III",
+      "base": "Commander",
+      "value": 0.50
+    },
+    "Arch Wizard I": {
+      "name": "Arch Wizard I",
+      "base": "Arch Wizard",
+      "value": 0.10
+    },
+    "Arch Wizard II": {
+      "name": "Arch Wizard II",
+      "base": "Arch Wizard",
+      "value": 0.20
+    },
+    "Arch Wizard III": {
+      "name": "Arch Wizard III",
+      "base": "Arch Wizard",
+      "value": 0.30
+    },
+    "Aura of Protection": {
+      "name": "Aura of Protection",
+      "base": "Protector",
+      "applies": "team",
+      "value": 0.075
+    },
+    "Amazon I": {
+      "name": "Amazon I",
+      "base": "Amazon",
+      "value": 0.05
+    },
+    "Amazon II": {
+      "name": "Amazon II",
+      "base": "Amazon",
+      "value": 0.10
+    },
+    "Amazon III": {
+      "name": "Amazon III",
+      "base": "Amazon",
+      "value": 0.25
+    },
+    "Bros-in-arms I": {
+      "name": "Bros-in-arms I",
+      "base": "Bros-in-arms",
+      "value": 0.05
+    },
+    "Bros-in-arms II": {
+      "name": "Bros-in-arms II",
+      "base": "Bros-in-arms",
+      "value": 0.10
+    },
+    "Bros-in-arms III": {
+      "name": "Bros-in-arms III",
+      "base": "Bros-in-arms",
+      "value": 0.25
+    },
+    "Fastidious I": {
+      "name": "Fastidious I",
+      "base": "Fastidious",
+      "value": 0.15
+    },
+    "Fastidious II": {
+      "name": "Fastidious II",
+      "base": "Fastidious",
+      "value": 0.30
+    },
+    "Fastidious III": {
+      "name": "Fastidious III",
+      "base": "Fastidious",
+      "value": 0.50
+    },
+    "Supplier I": {
+      "name": "Supplier I",
+      "base": "Supplier",
+      "value": 0.05
+    },
+    "Supplier II": {
+      "name": "Supplier II",
+      "base": "Supplier",
+      "value": 0.10
+    },
+    "Supplier III": {
+      "name": "Supplier III",
+      "base": "Supplier",
+      "value": 0.15
+    },
+    "Resourceful I": {
+      "name": "Resourceful I",
+      "base": "Resourceful",
+      "value": 1
+    },
+    "Resourceful II": {
+      "name": "Resourceful II",
+      "base": "Resourceful",
+      "value": 2
+    },
+    "Resourceful III": {
+      "name": "Resourceful III",
+      "base": "Resourceful",
+      "value": 3
+    },
+    "Support I": {
+      "name": "Support I",
+      "base": "Support",
+      "value": 1
+    },
+    "Support II": {
+      "name": "Support II",
+      "base": "Support",
+      "value": 2
+    },
+    "Support III": {
+      "name": "Support III",
+      "base": "Support",
+      "value": 3
+    },
+    "Healer I": {
+      "name": "Healer I",
+      "base": "Healer",
+      "value": 0.10
+    },
+    "Healer II": {
+      "name": "Healer II",
+      "base": "Healer",
+      "value": 0.25
+    },
+    "Healer III": {
+      "name": "Healer III",
+      "base": "Healer",
+      "value": 0.50
+    },
+    "Energetic I": {
+      "name": "Energetic I",
+      "base": "Energetic",
+      "value": 0.50
+    },
+    "Energetic II": {
+      "name": "Energetic II",
+      "base": "Energetic",
+      "value": 0.75
+    },
+    "Energetic III": {
+      "name": "Energetic III",
+      "base": "Energetic",
+      "value": 1.00
+    },
+    "Revive I": {
+      "name": "Revive I",
+      "base": "Revive",
+      "value": 0.05
+    },
+    "Revive II": {
+      "name": "Revive II",
+      "base": "Revive",
+      "value": 0.10
+    },
+    "Revive III": {
+      "name": "Revive III",
+      "base": "Revive",
+      "value": 0.15
+    },
+    "Speed Runner I": {
+      "name": "Speed Runner I",
+      "base": "Speed Runner",
+      "value": 0.10
+    },
+    "Speed Runner II": {
+      "name": "Speed Runner II",
+      "base": "Speed Runner",
+      "value": 0.25
+    },
+    "Speed Runner III": {
+      "name": "Speed Runner III",
+      "base": "Speed Runner",
+      "value": 0.50
+    }
+  }
+}

@@ -1,0 +1,244 @@
+html * {
+  box-sizing: border-box;
+  font-family: Garamond, Verdana, serif;
+}
+body {
+  margin: 0;
+  padding: 10px;
+}
+
+h2 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-variant: small-caps;
+}
+
+a {
+  border-bottom: 1px solid #dbdbdb;
+  color: #000000;
+  margin-bottom: -1px;
+  text-decoration: none;
+  font-variant: small-caps;
+}
+
+a:hover {
+  border-bottom-color: #363636;
+  color: #363636;
+}
+
+#tabs-data div {
+  padding: 2px 5px;
+}
+#tabs-data-type {
+  min-width: 150px;
+}
+#tabs-data-json {
+  width: 100%;
+  min-height: 200px;
+}
+
+table.shopheroes {
+  font-size: 1em;
+  width: flex;
+}
+table.shopheroes tr {
+  height: 24px;
+  line-height: 24px;
+}
+table.shopheroes th,
+table.shopheroes td {
+  padding: 1px 2px;
+  text-align: center;
+}
+table.shopheroes th {
+  background-color: #E9E9E9;
+}
+table.shopheroes td {
+  background-color: #F6F6F6;
+}
+table.shopheroes tr.split {
+  line-height: 3px;
+  height: 3px;
+  max-height: 3px;
+  min-height: 3px;
+}
+table.shopheroes tr.split th {
+  background-color: #A9A9A9;
+}
+table.shopheroes tr.data-info {
+  vertical-align: middle;
+}
+table.shopheroes tr..data-info th,
+table.shopheroes tr..data-info td {
+}
+table.shopheroes tr.data-info td {
+  font-size: 0.85em;
+}
+table.shopheroes tr.data-info th {
+  font-size: 0.9em;
+}
+
+table.shopheroes th span.head {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+table.shopheroes th.name {
+  min-width: 14em;
+  width: 14em;
+}
+table.shopheroes th.item {
+  min-width: 10em;
+  width: 10em;
+}
+table.shopheroes th.type {
+  min-width: 8em;
+  width: 8em;
+}
+table.shopheroes th.power {
+  min-width: 7em;
+  width: 7em;
+}
+table.shopheroes th.level {
+  min-width: 10em;
+  width: 10em;
+}
+table.shopheroes th.team-icon {
+  min-width: 32px;
+  width: 32px;
+}
+table.shopheroes th.team-slot {
+  min-width: 16%;
+  width: 16%;
+}
+table.shopheroes th.hero-icon {
+  min-width: 48px;
+  width: 48px;
+}
+table.shopheroes th.hero-slot {
+  min-width: 14%;
+  width: 14%;
+}
+
+table.shopheroes input {
+  vertical-align: middle;
+  padding: 0.3em 0.2em;
+  font-size: 1em;
+}
+table.shopheroes input.name {
+  width: 100%;
+}
+table.shopheroes input.lv {
+  max-width: 3em;
+  text-align: center;
+}
+
+table.shopheroes .collapse {
+  display: inline;
+  text-align: left;
+  margin-left: 0.2em;
+  float: left;
+  width: auto !important; 
+}
+
+table.shopheroes .inactive {
+  text-decoration: line-through;
+}
+
+table.shopheroes .hidden {
+  visibility: hidden;
+}
+
+table.shopheroes span.button {
+  vertical-align: middle;
+  display: inline-block;
+  min-width: 16px;
+  max-width: 16px;
+  min-height: 16px;
+  max-height: 16px;
+  cursor: pointer;
+  background-image: url( "../jquery/images/ui-icons_444444_256x240.png" );
+}
+
+table.shopheroes span.button:hover {
+  background-color: #00d1b2;
+}
+
+table.shopheroes span.button.undo {
+  background-position:-64px -64px;
+}
+table.shopheroes span.button.redo {
+  background-position:-96px -64px;
+}
+table.shopheroes span.button.add {
+  background-position:-16px -128px;
+}
+table.shopheroes span.button.remove {
+  background-position: -176px -96px;
+}
+table.shopheroes span.button.edit {
+  background-position: -64px -112px;
+}
+table.shopheroes span.button.apply {
+  background-position: -64px -144px;
+}
+table.shopheroes span.button.expand {
+  background-position: -224px -32px;
+}
+table.shopheroes span.button.collapse {
+  background-position: -192px -32px;
+}
+
+
+.float-~ {
+  display: inline-block; !important
+  vertical-align: middle;
+}
+.float-left {
+  float: left !important;
+}
+.float-right {
+  float: right !important;
+}
+.left {
+  text-align: left !important;
+}
+
+.icon-sortable {
+  margin-top: 0.2em;
+  display: inline-block;
+  font-size: 0.50em;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.icon-sortable.asc span.bot {
+  visibility: hidden;
+}
+.icon-sortable.desc span.top {
+  visibility: hidden;
+}
+.icon-sortable span.top {
+  display: block;
+  position: relative;
+  vertical-align: top;
+  line-height: 0.6em;
+  height: 0.6em;
+}
+.icon-sortable span.bot {
+  display: block;
+  position: relative;
+  vertical-align: bottom;
+  line-height: 0.6em;
+  height: 0.6em;
+}
+
+.select2-data-row span {
+  vertical-align: middle;
+  padding: 0.1em 0.2em;
+},
+.select2-data-sel span {
+  vertical-align: middle;
+  padding: 0 0.2em;
+}
+.select2-data-row {
+  font-size: 0.85em;
+}

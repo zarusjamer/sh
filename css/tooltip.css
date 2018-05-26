@@ -1,0 +1,24 @@
+.htooltip span.htooltip-text {
+	background-color: #F6F6F6;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	margin-right: -50%;
+	margin-top: 1.5rem;
+	opacity: 0;
+	padding: 2px 4px;
+	position: absolute;
+	text-decoration: none;
+  white-space: pre;
+	visibility: hidden;
+	z-index: 10;
+  text-align: justify;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+.htooltip:hover span.htooltip-text {
+	opacity: 1;
+	visibility: visible;
+}
+.htooltip {
+  vertical-align: middle;
+  display: inline-block;
+}

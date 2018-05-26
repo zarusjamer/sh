@@ -1,0 +1,182 @@
+{
+  "origins": {
+    "Temple": {
+      "name": "Temple",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Training Hall": {
+      "name": "Training Hall",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Thief's Hideout": {
+      "name": "Thief's Hideout",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Fountain": {
+      "name": "Fountain",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Fighter's Guild": {
+      "name": "Fighter's Guild",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "School of Magic": {
+      "name": "School of Magic",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Hunter's Lodge": {
+      "name": "Hunter's Lodge",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Port": {
+      "name": "Port",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Theater": {
+      "name": "Theater",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Cathedral": {
+      "name": "Cathedral",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "War College": {
+      "name": "War College",
+      "type": "Questing",
+      "b": true,
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Heroic Package #1": {
+      "name": "Heroic Package #1",
+      "type": "Package",
+      "m": false
+    },
+    "Heroic Package #2": {
+      "name": "Heroic Package #2",
+      "type": "Package",
+      "m": false
+    },
+    "Inn": {
+      "name": "Inn",
+      "type": "City",
+      "m": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      },
+      "boost": {
+        "55": { "c": 0.25, "i": 0.5 }
+      }
+    },
+    "Castle": {
+      "name": "Castle",
+      "type": "City",
+      "m": false,
+      "lv": 1,
+      "cap": 50,
+      "boost": {
+        "50": { "c": 0.25, "i": 0.5 }
+      }
+    }
+  }
+}
