@@ -1558,11 +1558,15 @@ Vue.component( 'team', {
       } );
       return result;
     },
-    slots: function() {
+    companions: function() {
       var vm = this;
-      var result = [];
-      for ( var i = 1; i <= vm.roster.slot1.companions; i++ ) {
-        result.push( 'slot' + i );
+      var result = {};
+      var max = 1;
+      if ( vm.roster.slot1 ) {
+        max = vm.roster.slot1.companions;
+      }
+      for ( var i = 1; i <= max; i++ ) {
+        result['slot' + i] = true;
       }
       return result;
     },
@@ -1622,8 +1626,8 @@ Vue.component( 'team', {
         var names = vm.quest.choice.split( ' ' );
         var tname = names.pop();
         var qname = names.join( ' ' );
-        var q = data.quests[qname];
-        var b = data.origins[q.origin];
+        var q = vm.data.quests[qname];
+        var b = vm.data.origins[q.origin];
         if ( b.cj ) {
           result.quest.c += b.cj.value * b.cj.lv;
         }
@@ -1662,11 +1666,7 @@ Vue.component( 'team', {
           return i;
         }, [] )
         .sort( function( s1, s2 ) { return s1.priority - s2.priority; } );
-      vm.slots.map( function( sn ) {
-        var rst = vm.roster[sn];
-        if ( !rst ) {
-          return;
-        }
+      $.map( vm.roster, function( rst, sn ) {
         result.roster[sn] = {
           power: rst.power,
           chance: rst.chance
