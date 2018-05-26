@@ -1828,8 +1828,47 @@ Vue.component( 'team', {
         $.map( vm.edits.roster.slot1.slots, function( slot, islot ) {
           vm.edits.roster.slot1.slots[islot] = value;
         } );
-      },
-      deep: true
+      }
+    },
+    'edits.roster.slot2.allSlots': {
+      handler: function( value ) {
+        var vm = this;
+        $.map( vm.edits.roster.slot2.slots, function( slot, islot ) {
+          vm.edits.roster.slot2.slots[islot] = value;
+        } );
+      }
+    },
+    'edits.roster.slot3.allSlots': {
+      handler: function( value ) {
+        var vm = this;
+        $.map( vm.edits.roster.slot3.slots, function( slot, islot ) {
+          vm.edits.roster.slot3.slots[islot] = value;
+        } );
+      }
+    },
+    'edits.roster.slot4.allSlots': {
+      handler: function( value ) {
+        var vm = this;
+        $.map( vm.edits.roster.slot4.slots, function( slot, islot ) {
+          vm.edits.roster.slot4.slots[islot] = value;
+        } );
+      }
+    },
+    'edits.roster.slot5.allSlots': {
+      handler: function( value ) {
+        var vm = this;
+        $.map( vm.edits.roster.slot5.slots, function( slot, islot ) {
+          vm.edits.roster.slot5.slots[islot] = value;
+        } );
+      }
+    },
+    'edits.roster.slot6.allSlots': {
+      handler: function( value ) {
+        var vm = this;
+        $.map( vm.edits.roster.slot6.slots, function( slot, islot ) {
+          vm.edits.roster.slot6.slots[islot] = value;
+        } );
+      }
     }
   }
 } );
