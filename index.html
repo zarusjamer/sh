@@ -878,7 +878,7 @@
         </th>
         <template v-for="( rst, sn ) in object.roster">
           <td>
-            <template v-show="slots[sn]"
+            <template v-show="slots[sn]">
               <span
                 class="button"
                 :class="[ edits.roster[sn].hero ? 'apply' : 'edit' ]"
@@ -886,7 +886,7 @@
             </template>
           </td>
           <td>
-            <template v-show="slots[sn]"
+            <template v-show="slots[sn]">
               <select2
                 v-if="edits.roster[sn].hero && slots[sn]"
                 v-model="rst.name"
