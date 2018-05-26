@@ -282,8 +282,8 @@
       "applies": "team",
       "leader": false
     },
-    "Escape": { 
-      "base": "Escape",
+    "Lucky": { 
+      "base": "Lucky",
       "text": "Chance of getting injury is decreased by {0}",
       "priority": 20,
       "cap": 1.0,
