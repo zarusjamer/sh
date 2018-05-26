@@ -1549,12 +1549,11 @@ Vue.component( 'team', {
       var vm = this;
       var result = {};
       $.map( this.object.roster, function( rst, sn ) {
-        var hero = null;
         if ( rst.name ) {
-          hero = vm.getClone( vm.data.heroes[rst.name] );
+          var hero = vm.getClone( vm.data.heroes[rst.name] );
           $.extend( true, hero.slots, rst.slots );
+          result[sn] = vm.getHero( hero );
         }
-        result[sn] = vm.getHero( hero );
       } );
       return result;
     },
