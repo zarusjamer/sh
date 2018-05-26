@@ -961,6 +961,7 @@
         </td>
         <td colspan="2"/>
         <td colspan="2"/>
+        <td colspan="2"/>
       </tr>
       <template v-if="summary.skills">
         <tr v-for="k in get_k( summary.skills.length, 7 )" class="data-info">
@@ -988,19 +989,38 @@
           <th>
             <span class="head">{{rst.hero.name}}</span>
           </th>
+          <template v-for="j in 6">
+            <template v-for="skill in [ rst.hero.skills[0+j-1] ]">
+              <td>
+                <skillValue :skill="skill" />
+              </td>
+              <td>
+                <skill :skill="skill" />
+              </td>
+            </template>
+          </template>
+        </tr>
+        <tr class="data-info">
           <td>
-            <span class="htooltip">
-              <span class="htooltip-text">{{'Set {0} boost {1}'.format( rst.hero.origin, ( object.roster[sn].b ? 'disabled' : 'enabled' ) )}}</span>
-              <input type="checkbox"
-                v-model="object.roster[sn].b"
-                @input="setBoost( rst.hero.origin, object.roster[sn].b )"/>
+            <span
+              class="button"
+              :class="[ edits.roster[sn].expanded ? 'collapse' : 'expand' ]"
+              @click="edits.roster[sn].expanded = !edits.roster[sn].expanded"/>
             </span>
           </td>
           <td>
             <power :power="rst.power" class="float-left"/>
           </td>
-        </tr>
-        <tr class="data-info">
+          <template v-for="j in 6">
+            <template v-for="skill in [ rst.hero.skills[6+j-1] ]">
+              <td>
+                <skillValue :skill="skill" />
+              </td>
+              <td>
+                <skill :skill="skill" />
+              </td>
+            </template>
+          </template>
         </tr>
         <tr class="data-info">
           <th>

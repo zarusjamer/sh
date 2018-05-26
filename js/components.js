@@ -1456,6 +1456,7 @@ Vue.component( 'team', {
         roster: {
           slot1: {
             hero: false,
+            expanded: false,
             allSlots: false,
             slots: {
               'Weapon': false,
@@ -1469,6 +1470,7 @@ Vue.component( 'team', {
           },
           slot2: {
             hero: false,
+            expanded: false,
             allSlots: false,
             slots: {
               'Weapon': false,
@@ -1482,6 +1484,7 @@ Vue.component( 'team', {
           },
           slot3: {
             hero: false,
+            expanded: false,
             allSlots: false,
             slots: {
               'Weapon': false,
@@ -1495,6 +1498,7 @@ Vue.component( 'team', {
           },
           slot4: {
             hero: false,
+            expanded: false,
             allSlots: false,
             slots: {
               'Weapon': false,
@@ -1508,6 +1512,7 @@ Vue.component( 'team', {
           },
           slot5: {
             hero: false,
+            expanded: false,
             allSlots: false,
             slots: {
               'Weapon': false,
@@ -1521,6 +1526,7 @@ Vue.component( 'team', {
           },
           slot6: {
             hero: false,
+            expanded: false,
             allSlots: false,
             slots: {
               'Weapon': false,
