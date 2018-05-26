@@ -534,7 +534,7 @@ Vue.mixin( {
     icon: function( str ) {
       return ( str || '' ).icon();
     },
-    apply_filter: function( h, f ) {
+    applyFilter: function( h, f ) {
       if ( !f || !h ) {
         return true;
       }
@@ -698,7 +698,7 @@ Vue.mixin( {
           }
         } );
       result.info.hero
-        .filter( function( s ) { return vm.apply_filter( h, s.filter ); } )
+        .filter( function( s ) { return vm.applyFilter( h, s.filter ); } )
         .map( function( s ) {
           if ( 'Leader' == s.type ) {
             result.companions += s.value;
@@ -1678,7 +1678,7 @@ Vue.component( 'team', {
         var v_max = 0;
         var m_s = 0.1;
         result.skills
-          .filter( function( s ) { return vm.apply_filter( rst, s.filter ); } )
+          .filter( function( s ) { return vm.applyFilter( rst.hero, s.filter ); } )
           .map( function( s ) {
             if ( s.type == 'Survival' ) {
               m_s += s.value;
