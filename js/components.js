@@ -1671,11 +1671,12 @@ Vue.component( 'team', {
           hero: !!qt.boss && vm.quest.boss ? qt.boss.power : qt.base.power
         };
       }
+      var skills = [];
       $.map( vm.roster, function( rst, sn ) {
         result.assigned += 1;
-        [].push.apply( result.skills, rst.info.team.filter( function( s ) { return !s.leader || sn == 'slot1'; } ) );
+        [].push.apply( skills, rst.info.team.filter( function( s ) { return !s.leader || sn == 'slot1'; } ) );
       } );
-      result.skills = result.skills
+      var info = skills
         .reduce( function( ss, s ) {
           var idx = ss[s.name];
           if ( !idx ) {
@@ -1684,8 +1685,8 @@ Vue.component( 'team', {
             idx.value += s.value;
           }
           return ss;
-        }, {} )
-        .map( function( s ) {
+        }, {} );
+      result.skills = $.map( info, function( s ) {
           return s;
         } )
         .sort( function( s1, s2 ) { 
