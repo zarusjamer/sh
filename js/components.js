@@ -1551,6 +1551,7 @@ Vue.component( 'team', {
       $.map( this.object.roster, function( rst, sn ) {
         if ( rst.name ) {
           var hero = vm.getClone( vm.data.heroes[rst.name] );
+          hero.b = rst.b
           $.extend( true, hero.slots, rst.slots );
           result[sn] = vm.getHero( hero );
         }
@@ -1795,9 +1796,9 @@ Vue.component( 'team', {
     },
     setBoost: function( origin, b ) {
       var vm = this;
-      $.map( vm.object.roster, function( rst, sn ) {
-        if ( rst.origin == origin ) {
-          rst.b = b;
+      $.map( vm.roster, function( rst, sn ) {
+        if ( rst.hero.origin == origin ) {
+          vm.object.roster[sn].b = b;
         }
       } );
     },
