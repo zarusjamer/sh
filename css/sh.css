@@ -78,7 +78,7 @@ table.shopheroes tr.data-info th {
   font-size: 0.9em;
 }
 
-table.shopheroes th span.head {
+table.shopheroes span.head {
   font-variant: small-caps;
   font-weight: bold;
 }
