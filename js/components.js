@@ -1677,9 +1677,9 @@ Vue.component( 'team', {
       } );
       result.skills = result.skills
         .reduce( function( ss, s ) {
-          var idx = ss[s.type];
+          var idx = ss[s.name];
           if ( !idx ) {
-            ss[s.type] = s;
+            ss[s.name] = s;
           } else {
             idx.value += s.value;
           }
