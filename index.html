@@ -955,110 +955,105 @@
           </template>
         </tr>
       </template>
-      <template v-for="sn in slots">
+      <template v-for="( rst, sn ) in roster">
         <tr class="data-info">
           <th rowspan="2">
-            <span v-if="roster[sn].hero" class="icon medium hero" :class="icon( roster[sn].hero.name )"/>
+            <span class="icon medium hero" :class="icon( rst.hero.name )"/>
           </th>
+          <th/>
           <th>
-            <span class="button" :class="[ edits.roster[sn].hero ? 'apply' : 'edit' ]" @click="edits.roster[sn].hero = !edits.roster[sn].hero"/>
-          </th>
-          <th>
-            <select2
-              v-if="edits.roster[sn].hero"
-              v-model="object.roster[sn].name"
-              :options="getHeroes( object.roster[sn].name )"
-              placeholder="Choose hero"/>
-            <template v-else>
-              <span v-if="roster[sn].hero" class="head">{{roster[sn].hero.name}}</span>
-            </template>
+            <span class="head">{{rst.hero.name}}</span>
           </th>
           <td>
-            <span v-if="roster[sn].hero">{{roster[sn].hero.lv}}</span>
+            <span>{{rst.hero.lv}}</span>
           </td>
           <td>
-            <power :power="roster[sn].power" class="float-left"/>
+            <power :power="rst.power" class="float-left"/>
           </td>
         </tr>
         <tr class="data-info">
         </tr>
-        <template v-if="roster[sn].hero">
-          <tr class="data-info">
-            <th>
-              <span class="button" :class="[ edits.roster[sn].allSlots ? 'apply' : 'edit' ]" @click="edits.roster[sn].allSlots = !edits.roster[sn].allSlots"/>
+        <tr class="data-info">
+          <th>
+            <span
+              class="button"
+              :class="[ edits.roster[sn].allSlots ? 'apply' : 'edit' ]"
+              @click="edits.roster[sn].allSlots = !edits.roster[sn].allSlots"/>
+          </th>
+          <template v-for="( slot, islot ) in rst.slots">
+            <th colspan="2">
+              <itemSlot
+                v-for="( itemAffinity, itemType ) in rst.hero.slots[islot].types"
+                :type="itemType"
+                :a="itemAffinity"
+                :key="itemType"/>
             </th>
-            <template v-for="( slot, islot ) in roster[sn].slots">
-              <th colspan="2">
-                <itemSlot
-                  v-for="( itemAffinity, itemType ) in roster[sn].hero.slots[islot].types"
-                  :type="itemType"
-                  :a="itemAffinity"
-                  :key="itemType"/>
-              </th>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <th rowspan="4"/>
-            <template v-for="( slot, islot ) in roster[sn].slots">
-              <td>
-                <span class="button" :class="[ edits.roster[sn].slots[islot] ? 'apply' : 'edit' ]" @click="edits.roster[sn].slots[islot] = !edits.roster[sn].slots[islot]"/>
-              </td>
-              <td>
-                <power :power="slot.power" class="float-left"/>
-                <chance :chance="slot.chance" class="float-right"/>
-              </td>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <template v-for="( slot, islot ) in roster[sn].slots">
-              <td class="hero-icon">
-                <span class="icon break" :class="{ optimal: slot.optimal }"/>
-              </td>
-              <td>
-                <template v-if="edits.roster[sn].slots[islot]">
-                  <select2 v-model="object.roster[sn].slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
-                </template>
-                <template v-else>
-                  <span class="float-left">
-                    <span class="icon quality" :class="icon( object.roster[sn].slots[islot].q )"/>
-                  </span>
-                  <span>{{object.roster[sn].slots[islot].q}}</span>
-                </template>
-              </td>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <template v-for="( slot, islot ) in roster[sn].slots">
-              <td class="hero-icon">
-                <span v-if="slot.item">{{slot.item.lv}}</span>
-              </td>
-              <td>
-                <template v-if="edits.roster[sn].slots[islot]">
-                  <select2 v-model="object.roster[sn].slots[islot].item" :options="slot.list" placeholder="Choose item"/>
-                </template>
-                <template v-else>
-                  <span class="float-left">
-                    <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
-                  </span>
-                  <span>{{object.roster[sn].slots[islot].item}}</span>
-                </template>
-              </td>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <template v-for="( slot, islot ) in roster[sn].slots">
-              <td>
-                <skillValue :skill="slot.skill"/>
-              </td>
-              <td>
-                <skill :skill="slot.skill"/>
-                <span v-if="edits.roster[sn].slots[islot]" class="float-right">
-                  <input v-if="slot.item && slot.item.skill" type="checkbox" v-model="slot.item.skill.m"/>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <th rowspan="4"/>
+          <template v-for="( slot, islot ) in rst.slots">
+            <td>
+              <span
+                class="button"
+                :class="[ edits.roster[sn].slots[islot] ? 'apply' : 'edit' ]"
+                @click="edits.roster[sn].slots[islot] = !edits.roster[sn].slots[islot]"/>
+            </td>
+            <td>
+              <power :power="slot.power" class="float-left"/>
+              <chance :chance="slot.chance" class="float-right"/>
+            </td>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in rst.slots">
+            <td class="hero-icon">
+              <span class="icon break" :class="{ optimal: slot.optimal }"/>
+            </td>
+            <td>
+              <template v-if="edits.roster[sn].slots[islot]">
+                <select2 v-model="object.roster[sn].slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
+              </template>
+              <template v-else>
+                <span class="float-left">
+                  <span class="icon quality" :class="icon( object.roster[sn].slots[islot].q )"/>
                 </span>
-              </td>
-            </template>
-          </tr>
-        </template>
+                <span>{{object.roster[sn].slots[islot].q}}</span>
+              </template>
+            </td>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in rst.slots">
+            <td class="hero-icon">
+              <span v-if="slot.item">{{slot.item.lv}}</span>
+            </td>
+            <td>
+              <template v-if="edits.roster[sn].slots[islot]">
+                <select2 v-model="object.roster[sn].slots[islot].item" :options="slot.list" placeholder="Choose item"/>
+              </template>
+              <template v-else>
+                <span class="float-left">
+                  <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
+                </span>
+                <span>{{object.roster[sn].slots[islot].item}}</span>
+              </template>
+            </td>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in rst.slots">
+            <td>
+              <skillValue :skill="slot.skill"/>
+            </td>
+            <td>
+              <skill :skill="slot.skill"/>
+              <span v-if="edits.roster[sn].slots[islot]" class="float-right">
+                <input v-if="slot.item && slot.item.skill" type="checkbox" v-model="slot.item.skill.m"/>
+              </span>
+            </td>
+          </template>
+        </tr>
       </template>
       <!-- Begin Heroes power row -->
       <!--
