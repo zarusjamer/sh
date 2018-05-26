@@ -309,7 +309,7 @@
       "applies": "hero",
       "leader": false
     },
-    "Gold": { 
+    "Gold Digger": { 
       "base": "Gold",
       "text": "Amount of gold found is increased by {0}",
       "priority": 23,
@@ -372,17 +372,17 @@
     },
     "Gold Digger I": {
       "name": "Gold Digger I",
-      "type": "Gold",
+      "type": "Gold Digger",
       "value": 0.50
     },
     "Gold Digger II": {
       "name": "Gold Digger II",
-      "type": "Gold",
+      "type": "Gold Digger",
       "value": 1.00
     },
     "Gold Digger III": {
       "name": "Gold Digger III",
-      "type": "Gold",
+      "type": "Gold Digger",
       "value": 2.00
     },
     "Leader I": {
