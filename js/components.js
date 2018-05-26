@@ -583,8 +583,8 @@ Vue.mixin( {
           items: []
         },
         info: { 
-          hero: [],
-          team: []
+          hero: {},
+          team: {}
         }
       } );
       if ( !h ) {
@@ -675,12 +675,13 @@ Vue.mixin( {
         $.extend( true, result.slots[name], i );
       } );
 
-      [].concat( result.skills.hero, result.skills.items )
+      var info = []
+        .concat( result.skills.hero, result.skills.items )
         .filter( function( s ) { return s && s.active; } )
-        .map( function( s ) {
-          var idx = result.info[s.applies][s.type];
+        .reduce( function( s, ss ) {
+          var idx = ss[s.applies][s.type];
           if ( !idx ) {
-            result.info[s.applies][s.type] = {
+            ss[s.applies][s.type] = {
               name: s.type,
               base: s.base,
               text: s.text,
@@ -691,26 +692,40 @@ Vue.mixin( {
               value: s.value,
               filter: s.filter,
               active: s.active
-            } );
+            };
           } else {
-            idx.value += s.value;
+            ss[s.applies][s.type].value += s.value;
           }
+          return ss;
+        }, {
+          team: {},
+          hero: {} 
         } );
-      result.info.hero
-        .filter( function( s ) { return vm.applyFilter( h, s.filter ); } )
-        .map( function( s ) {
-          if ( 'Leader' == s.type ) {
-            result.companions += s.value;
-          } else if ( 'Equipment' == s.type ) {
-            result.power.m.i += s.value;
-          } else if ( 'Strength' == s.type ) {
-            result.power.m.h += s.value;
-          } else if ( 'Break Chance' == s.type ) {
-            result.chance = Math.min( result.chance + s.value, s.cap );
+      result.info.hero = $
+        .map( info.hero, function( s ) {
+          if ( vm.applyFilter( h, s.filter ) ) {
+            if ( 'Leader' == s.base ) {
+              result.companions += s.value;
+            } else if ( 'Equipment' == s.base ) {
+              result.power.m.i += s.value;
+            } else if ( 'Strength' == s.base ) {
+              result.power.m.h += s.value;
+            } else if ( 'Break Chance' == s.base ) {
+              result.chance = Math.min( result.chance + s.value, s.cap );
+            }
           }
+          return s;
+        } )
+        .sort( function( s1, s2 ) { 
+          return s1.priority - s2.priority; 
         } );
-      result.info.hero.sort( function( s1, s2 ) { return s1.priority - s2.priority; } );
-      result.info.team.sort( function( s1, s2 ) { return s1.priority - s2.priority; } );
+      result.info.team = $
+        .map( info.team, function( s ) {
+          return s;
+        } )
+        .sort( function( s1, s2 ) { 
+          return s1.priority - s2.priority; 
+        } );
 
       if ( result.origin.cj ) {
         result.power.m.b += ( result.origin.cj.value * result.origin.cj.lv || 0 );
