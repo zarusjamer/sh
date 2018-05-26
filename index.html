@@ -1105,6 +1105,7 @@
             </template>
           </tr>
         </template>
+        <template v-else>
           <tr class="data-info">
             <th/>
             <template v-for="( slot, islot ) in rst.slots">
@@ -1118,7 +1119,7 @@
                 <span>{{object.roster[sn].slots[islot].item}}</span>
               </td>
             </template>
-        <template v-else>
+          </tr>
         </template>
       </template>
       <!-- Begin Heroes quest info row -->
