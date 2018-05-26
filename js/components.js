@@ -1146,7 +1146,7 @@ Vue.component( 'chance', {
   template: `
   <span v-if="chance" class="htooltip">
     <span class="htooltip-text">{{info}}</span>
-    <span>{{chance.value.pptString(2)}}</span>  
+    <span>{{chance.value.pptString(1)}}</span>  
     <span class="icon break" :class="icon"/>
   </span>
   `,
