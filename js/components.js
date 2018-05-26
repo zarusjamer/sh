@@ -551,14 +551,13 @@ Vue.mixin( {
       return JSON.parse( JSON.stringify( o ) );
     },
     getSkill: function( name ) {
-      var data = this.$root.data;
-      var ss = data.skills[name];
-      var sb = data.effects[ss.base];
+      //var data = this.data;
+      var ss = this.data.skills[name];
+      var sb = this.data.effects[ss.type];
       return $.extend( true, {}, sb, ss );
     },
     getHero: function( h ) {
       var vm = this;
-      var data = this.$root.data;
       var result = $.extend( true, vm.getEmptyHero(), {
         hero: h,
         companions: 1,
@@ -596,7 +595,7 @@ Vue.mixin( {
         result.power.m.b += 0.25;
       }
       result.power.base = result.hero.power.base;
-      result.power.level = data.powers.lv[result.hero.lv];
+      result.power.level = vm.data.powers.lv[result.hero.lv];
       result.power.m.l = result.hero.power.m;
       
       result.companions = 4 + ( result.hero.lv >= 30 ? 1 : 0 );
@@ -607,7 +606,7 @@ Vue.mixin( {
         result.slots[name] = {};
         result.slots[name].list = $.map( slot.types, function( a, type ) {
           var items = $
-            .map( data.items, function( i ) {
+            .map( vm.data.items, function( i ) {
               if ( i.type == type ) {
                 return {
                   id: i.name,
@@ -641,12 +640,12 @@ Vue.mixin( {
           }
         };
         if ( slot.item ) {
-          var found = data.items[slot.item];
+          var found = vm.data.items[slot.item];
           if ( found ) {
             result.slots[name].item = found;
             var lv_difference = Math.abs( found.lv - h.lv );
             i.optimal = ( lv_difference <= 6 );
-            var m_q = data.powers.q[slot.q] || 1.0;
+            var m_q = vm.data.powers.q[slot.q] || 1.0;
             var p_v = found.power * m_q;
             i.power.value = p_v;
             i.power.info = 'IP = IBP * IQM\r\n{0} = {1} * {2}'
@@ -657,15 +656,15 @@ Vue.mixin( {
                 );
             i.a = slot.types[found.type];
             i.q = slot.q || 'Common';
-            i.chance.base = Math.max( 0.03, 1 - Math.pow( Math.max( 0, 1 - 0.03 * lv_difference - data.breaks.a[i.a] ), 0.85 ) ) * data.breaks.q[i.q]
+            i.chance.base = Math.max( 0.03, 1 - Math.pow( Math.max( 0, 1 - 0.03 * lv_difference - vm.data.breaks.a[i.a] ), 0.85 ) ) * vm.data.breaks.q[i.q]
             if ( !i.chance.base ) {
               i.chance.base = 0.0;
             } else if ( i.chance.base < 0.005 ) {
               i.chance.base = 0.0;
             }
             if ( found.skill ) {
-              var q1 = data.qualities[slot.q];
-              var q2 = data.qualities[found.skill.q];
+              var q1 = vm.data.qualities[slot.q];
+              var q2 = vm.data.qualities[found.skill.q];
               i.skill = $.extend( true, {}, found.skill, { active: found.skill.m && ( q1 && q2 && q1.i >= q2.i ) } );
               result.skills.items.push( i.skill );
             }
@@ -679,11 +678,11 @@ Vue.mixin( {
       [].concat( result.skills.hero, result.skills.items )
         .filter( function( s ) { return s && s.active; } )
         .map( function( s ) {
-          var idx = result.info[s.applies].findIndex( function( si ) { return si.name == s.base; } );
-          if ( idx < 0 ) {
-            result.info[s.applies].push( {
-              type: s.type,
-              name: s.base,
+          var idx = result.info[s.applies][s.type];
+          if ( !idx ) {
+            result.info[s.applies][s.type] = {
+              name: s.type,
+              base: s.base,
               text: s.text,
               sign: s.sign,
               priority: s.priority,
@@ -694,7 +693,7 @@ Vue.mixin( {
               active: s.active
             } );
           } else {
-            result.info[s.applies][idx].value += s.value;
+            idx.value += s.value;
           }
         } );
       result.info.hero
