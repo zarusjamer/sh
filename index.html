@@ -876,6 +876,32 @@
           <input v-if="edits.name" v-model="object.name"/>
           <span v-else class="head">{{object.name}}</span>
         </th>
+        <template v-for="( rst, sn ) in object.roster">
+          <td>
+            <template v-show="slots[sn]"
+              <span
+                class="button"
+                :class="[ edits.roster[sn].hero ? 'apply' : 'edit' ]"
+                @click="edits.roster[sn].hero = !edits.roster[sn].hero"/>
+            </template>
+          </td>
+          <td>
+            <template v-show="slots[sn]"
+              <select2
+                v-if="edits.roster[sn].hero && slots[sn]"
+                v-model="rst.name"
+                :options="getHeroes( rst.name )"
+                placeholder="Choose hero"/>
+              <template v-else>
+                <span v-if="rst.name" class="head">{{rst.name}}</span>
+              </template>
+            </template>
+          </td>
+        </template>
+      </tr>
+      <tr class="data-info">
+        <th/>
+        <td colspan="2"/>
         <td>
           <span>{{summary.assigned}}</span>
         </td>
