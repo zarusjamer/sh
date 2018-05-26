@@ -1795,7 +1795,7 @@ Vue.component( 'team', {
     },
     setBoost: function( origin, b ) {
       var vm = this;
-      $.map( vm.roster, function( rst, i ) {
+      $.map( vm.object.roster, function( rst, sn ) {
         if ( rst.origin == origin ) {
           rst.b = b;
         }

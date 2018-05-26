@@ -960,12 +960,19 @@
           <th rowspan="2">
             <span class="icon medium hero" :class="icon( rst.hero.name )"/>
           </th>
-          <th/>
+          <th>
+            <span>{{rst.hero.lv}}</span>
+          </th>
           <th>
             <span class="head">{{rst.hero.name}}</span>
           </th>
           <td>
-            <span>{{rst.hero.lv}}</span>
+            <span class="htooltip">
+              <span class="htooltip-text">{{'Set {0} boost {1}'.format( rst.hero.origin, ( object.roster[sn].b ? 'disabled' : 'enabled' ) )}}</span>
+              <input type="checkbox"
+                :value="object.roster[sn].b"
+                @input="setBoost( rst.hero.origin, !object.roster[sn].b )"/>
+            </span>
           </td>
           <td>
             <power :power="rst.power" class="float-left"/>
