@@ -899,15 +899,37 @@
       </tr>
       <tr class="data-info">
         <th/>
-        <td colspan="2"/>
         <td>
           <span>{{summary.assigned}}</span>
         </td>
         <td>
           <power :power="summary.power" class="float-left"/>
         </td>
+        <template v-for="( rst, sn ) in object.roster">
+          <td>
+            <template v-if="roster[sn]">
+              <span class="htooltip">
+                <span class="htooltip-text">{{'Set {0} boost {1}'.format( roster[sn].hero.origin, ( rst.b ? 'disabled' : 'enabled' ) )}}</span>
+                <input type="checkbox"
+                  v-model="rst.b"
+                  @input="setBoost( roster[sn].hero.origin, rst.b )"/>
+              </span>
+            </template>
+          </td>
+          <td>
+            <template v-if="roster[sn]">
+              <power :power="roster[sn].power" class="float-left"/>
+            </template>
+          </td>
+        </template>
+      </tr>
+      <tr class="data-info">
+        <th/>
         <td colspan="2">
-          <select2 v-model="quest.choice" :options="$parent.lists.quest" placeholder="Choose quest" />
+          <select2
+            v-model="quest.choice"
+            :options="$parent.lists.quest"
+            placeholder="Choose quest"/>
         </td>
         <td>
           <span v-show="quest.choice && summary.quest.boss">
