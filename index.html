@@ -988,7 +988,13 @@
               @click="edits.roster[sn].allSlots = !edits.roster[sn].allSlots"/>
           </th>
           <template v-for="( slot, islot ) in rst.slots">
-            <th colspan="2">
+            <th>
+              <span
+                class="button"
+                :class="[ edits.roster[sn].slots[islot] ? 'apply' : 'edit' ]"
+                @click="edits.roster[sn].slots[islot] = !edits.roster[sn].slots[islot]"/>
+            </th>
+            <th>
               <itemSlot
                 v-for="( itemAffinity, itemType ) in rst.hero.slots[islot].types"
                 :type="itemType"
@@ -1000,13 +1006,7 @@
         <tr class="data-info">
           <th rowspan="4"/>
           <template v-for="( slot, islot ) in rst.slots">
-            <td>
-              <span
-                class="button"
-                :class="[ edits.roster[sn].slots[islot] ? 'apply' : 'edit' ]"
-                @click="edits.roster[sn].slots[islot] = !edits.roster[sn].slots[islot]"/>
-            </td>
-            <td>
+            <td colspan="2">
               <power :power="slot.power" class="float-left"/>
               <chance :chance="slot.chance" class="float-right"/>
             </td>
