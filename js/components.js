@@ -1646,7 +1646,7 @@ Vue.component( 'team', {
           hero: !!qt.boss && vm.quest.boss ? qt.boss.power : qt.base.power
         };
       }
-      vm.roster.map( function( rst, sn ) {
+      $.map( vm.roster, function( rst, sn ) {
         result.assigned += 1;
         [].push.apply( result.skills, rst.info.team.filter( function( s ) { return !s.leader || sn == 'slot1'; } ) );
       } );
