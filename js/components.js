@@ -678,7 +678,7 @@ Vue.mixin( {
       var info = []
         .concat( result.skills.hero, result.skills.items )
         .filter( function( s ) { return s && s.active; } )
-        .reduce( function( s, ss ) {
+        .reduce( function( ss, s ) {
           var idx = ss[s.applies][s.type];
           if ( !idx ) {
             ss[s.applies][s.type] = {
