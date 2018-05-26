@@ -990,7 +990,7 @@
             <span class="head">{{rst.hero.name}}</span>
           </th>
           <template v-for="j in 6">
-            <template v-for="skill in [ rst.hero.skills[0+j-1] ]">
+            <template v-for="skill in [ rst.skills.hero[0+j-1] ]">
               <td>
                 <skillValue :skill="skill" />
               </td>
@@ -1012,7 +1012,7 @@
             <power :power="rst.power" class="float-left"/>
           </td>
           <template v-for="j in 6">
-            <template v-for="skill in [ rst.hero.skills[6+j-1] ]">
+            <template v-for="skill in [ rst.skills.hero[6+j-1] ]">
               <td>
                 <skillValue :skill="skill" />
               </td>
