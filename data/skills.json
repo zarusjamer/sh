@@ -87,20 +87,38 @@
       "applies": "team",
       "leader": false
     },
-    "Minimum": { 
-      "type": "Minimum",
-      "text": "Minimum number of artifacts found is increased by {0}",
+    "Detect Secrets": {
+      "type": "Detect Secrets",
+      "text": "Minimum number of artifacts found by each party member is increased by {0}",
       "priority": 7,
       "cap": false,
+      "sign": "",
+      "applies": "team",
+      "leader": false
+    },
+    "Magic Find": {
+      "type": "Magic Find",
+      "text": "Maximum number of artifacts found by each party member is increased by {0}",
+      "priority": 8,
+      "cap": false,
+      "sign": "",
+      "applies": "team",
+      "leader": false
+    },
+    "Scavenger": { 
+      "type": "Scavenger",
+      "text": "Minimum number of artifacts found is increased by {0}",
+      "cap": false,
+      "priority": 7,
       "sign": "",
       "applies": "hero",
       "leader": false
     },
-    "Maximum": { 
-      "type": "Maximum",
+    "Treasure Hunter": { 
+      "type": "Treasure Hunter",
       "text": "Maximum number of artifacts found is increased by {0}",
-      "cap": false,
       "priority": 8,
+      "cap": false,
       "sign": "",
       "applies": "hero",
       "leader": false
@@ -373,47 +391,45 @@
     },
     "Detect Secrets": {
       "name": "Detect Secrets",
-      "text": "Minimum number of artifacts found by each party member is increased by {0}",
-      "base": "Minimum",
+      "base": "Detect Secrets",
       "applies": "team",
       "value": 1
     },
     "Magic Find": {
       "name": "Magic Find",
-      "text": "Maximum number of artifacts found by each party member is increased by {0}",
-      "base": "Maximum",
+      "base": "Magic Find",
       "applies": "team",
       "value": 2
     },
-    "Treasure Hunter I": {
-      "name": "Treasure Hunter I",
-      "base": "Maximum",
-      "value": 2
-    },
-    "Treasure Hunter II": {
-      "name": "Treasure Hunter II",
-      "base": "Maximum",
-      "value": 4
-    },
-    "Treasure Hunter III": {
-      "name": "Treasure Hunter III",
-      "base": "Maximum",
-      "value": 6
-    },
     "Scavenger I": {
       "name": "Scavenger I",
-      "base": "Minimum",
+      "base": "Scavenger",
       "value": 1
     },
     "Scavenger II": {
       "name": "Scavenger II",
-      "base": "Minimum",
+      "base": "Scavenger",
       "value": 2
     },
     "Scavenger III": {
       "name": "Scavenger III",
-      "base": "Minimum",
+      "base": "Scavenger",
       "value": 3
+    },
+    "Treasure Hunter I": {
+      "name": "Treasure Hunter I",
+      "base": "Treasure Hunter",
+      "value": 2
+    },
+    "Treasure Hunter II": {
+      "name": "Treasure Hunter II",
+      "base": "Treasure Hunter",
+      "value": 4
+    },
+    "Treasure Hunter III": {
+      "name": "Treasure Hunter III",
+      "base": "Treasure Hunter",
+      "value": 6
     },
     "Protector I": {
       "name": "Protector I",
