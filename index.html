@@ -971,7 +971,7 @@
               <span class="htooltip-text">{{'Set {0} boost {1}'.format( rst.hero.origin, ( object.roster[sn].b ? 'disabled' : 'enabled' ) )}}</span>
               <input type="checkbox"
                 v-model="object.roster[sn].b"
-                @input="setBoost( rst.hero.origin, !object.roster[sn].b )"/>
+                @input="setBoost( rst.hero.origin, object.roster[sn].b )"/>
             </span>
           </td>
           <td>
