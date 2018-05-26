@@ -944,7 +944,6 @@
               v-if="edits.roster[sn].hero"
               v-model="object.roster[sn].name"
               :options="getHeroes( object.roster[sn].name )"
-              @input="updateRoster( object.roster[sn], sn )"
               placeholder="Choose hero"/>
             <template v-else>
               <span v-if="roster[sn].hero" class="head">{{roster[sn].hero.name}}</span>
