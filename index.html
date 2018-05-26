@@ -888,13 +888,11 @@
           <td>
             <template v-show="slots[sn]">
               <select2
-                v-if="edits.roster[sn].hero && slots[sn]"
+                v-if="edits.roster[sn].hero"
                 v-model="rst.name"
                 :options="getHeroes( rst.name )"
                 placeholder="Choose hero"/>
-              <template v-else>
-                <span v-if="rst.name" class="head">{{rst.name}}</span>
-              </template>
+              <span v-else class="head">{{rst.name}}</span>
             </template>
           </td>
         </template>
