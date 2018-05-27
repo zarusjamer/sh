@@ -1674,9 +1674,20 @@ Vue.component( 'team', {
         .reduce( function( ss, s ) {
           var idx = ss[s.name];
           if ( !idx ) {
-            ss[s.name] = s;
+            ss[s.name] = {
+              name: s.type,
+              base: s.base,
+              text: s.text,
+              sign: s.sign,
+              priority: s.priority,
+              cap: s.cap,
+              leader: s.leader,
+              value: s.value,
+              filter: s.filter,
+              active: s.active
+            };
           } else {
-            idx.value += s.value;
+            ss[s.name].value += s.value;
           }
           return ss;
         }, {} );
