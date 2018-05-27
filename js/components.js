@@ -1686,18 +1686,21 @@ Vue.component( 'team', {
         var m_e = 0.0;
         var v_min = 0;
         var v_max = 0;
-        var m_s = 0.1;
+        var m_op = result.roster[sn].power.m.o;
+        var m_eq = result.roster[sn].power.m.i;
+        var m_st = result.roster[sn].power.m.h;
+        var m_sr = 0.1;
         result.skills
           .filter( function( s ) { 
             return vm.applyFilter( rst.hero, s.filter ); 
           } )
           .map( function( s ) {
             if ( s.base == 'Survival' ) {
-              m_s += s.value;
+              m_sr += s.value;
             } else if ( s.base == 'Equipment' ) {
-              result.roster[sn].power.m.i += s.value;
+              m_eq += s.value;
             } else if ( s.base == 'Strength' ) {
-              result.roster[sn].power.m.h += s.value;
+              m_st += s.value;
             } else if ( s.base == 'Break Chance' ) {
               result.roster[sn].chance = Math.min( result.roster[sn].chance + s.value, s.cap );
             }
@@ -1711,30 +1714,6 @@ Vue.component( 'team', {
               v_max += s.value;
             }
           } );
-          
-        $.map( rst.slots, function( s ) {
-          if ( s.chance ) {
-            s.chance.value = s.chance.base * ( 1 - result.roster[sn].chance );
-          }
-        } );
-        
-        result.power.hero += result.roster[sn].power.value;
-        result.roster[sn].power.m.s = m_s * ( result.assigned - 1 );
-        result.roster[sn].power.value = ( result.roster[sn].power.hero * result.roster[sn].power.m.h + result.roster[sn].power.items * result.roster[sn].power.m.o * result.roster[sn].power.m.i ) * result.roster[sn].power.m.b * result.roster[sn].power.m.s;
-        result.roster[sn].power.info = 
-          'TP = ( HP * HPM + IP * IOM * IPM ) * BM * SRM\r\n{0} = ( {1} * {3}  + {2} * {4} * {5} ) * {6} * {7}'
-            .format( 
-              result.roster[sn].power.value.intString(), 
-              result.roster[sn].power.hero.intString(),
-              result.roster[sn].power.items.intString(),
-              result.roster[sn].power.m.h.fixString(2),
-              result.roster[sn].power.m.o.fixString(2),
-              result.roster[sn].power.m.i.fixString(2),
-              result.roster[sn].power.m.b.fixString(2),
-              result.roster[sn].power.m.s.fixString(2)
-            );
-        result.power.value += result.roster[sn].power.value;
-
         rst.info.hero.map( function( s ) {
           if ( s.base == 'Energetic' ) {
             m_e = Math.min( m_e + s.value, s.cap );
@@ -1744,6 +1723,30 @@ Vue.component( 'team', {
             v_max += s.value;
           }
         } );
+          
+        $.map( rst.slots, function( s ) {
+          if ( s.chance ) {
+            s.chance.value = s.chance.base * ( 1 - result.roster[sn].chance );
+          }
+        } );
+        
+        result.power.hero += result.roster[sn].power.value;
+        result.roster[sn].power.m.s = m_s * ( result.assigned - 1 );
+        result.roster[sn].power.value = ( result.roster[sn].power.hero * m_st + result.roster[sn].power.items * m_op * m_eq ) * result.roster[sn].power.m.b * m_sr;
+        result.roster[sn].power.info = 
+          'TP = ( HP * HPM + IP * IOM * IPM ) * BM * SRM\r\n{0} = ( {1} * {3}  + {2} * {4} * {5} ) * {6} * {7}'
+            .format( 
+              result.roster[sn].power.value.intString(), 
+              result.roster[sn].power.hero.intString(),
+              result.roster[sn].power.items.intString(),
+              m_st.fixString(2),
+              m_op.fixString(2),
+              m_eq.fixString(2),
+              result.roster[sn].power.m.b.fixString(2),
+              m_sr.fixString(2)
+            );
+        result.power.value += result.roster[sn].power.value;
+
         result.roster[sn].quest = {
           face: null,
           chance: 0.00,

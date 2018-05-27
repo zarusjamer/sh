@@ -19,7 +19,7 @@
       "leader": false
     },
     "Healer": { 
-      "base": "Resting",
+      "base": "Healer",
       "text": "Resting time of companions is reduced by {0}",
       "priority": 2,
       "cap": 0.9,
@@ -28,7 +28,7 @@
       "leader": false
     },
     "Energetic": { 
-      "base": "Resting",
+      "base": "Energetic",
       "text": "Resting time is reduced by {0}",
       "priority": 2,
       "cap": 1.0,
