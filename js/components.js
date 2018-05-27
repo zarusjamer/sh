@@ -27,13 +27,10 @@ Vue.mixin( {
           name: null
         },
         quest: {
-          choice: {
-            name: null,
-            b: false,
-            c: false,
-            i: false
-          },
-          data: {}
+          name: null,
+          b: false,
+          c: false,
+          i: false
         }
       },
       heroes: {
@@ -520,13 +517,13 @@ Vue.mixin( {
       },
       deep: true
     },
-    'teams.quest.choice.name': {
+    'teams.quest.name': {
       handler: function( name ) {
         var vm = this;
         if ( !name ) {
-          vm.teams.quest.choice.b = false;
-          vm.teams.quest.choice.c = false;
-          vm.teams.quest.choice.i = false;
+          vm.teams.quest.b = false;
+          vm.teams.quest.c = false;
+          vm.teams.quest.i = false;
         }
       }
     }
@@ -1617,7 +1614,7 @@ Vue.component( 'team', {
     },
     quest: function() {
       var vm = this;
-      if ( !vm.teams.quest.choice.name ) {
+      if ( !vm.teams.quest.name ) {
         return false;
       }
       var result = {
@@ -1658,8 +1655,8 @@ Vue.component( 'team', {
       if ( b.boost ) {
         var bs = b.boost[b.lv];
         if ( bs ) {
-          result.time.c += vm.teams.quest.choice.c ? bs.c : 0.0;
-          result.time.i  = vm.teams.quest.choice.i ? 0.85 : 0.0;
+          result.time.c += vm.teams.quest.c ? bs.c : 0.0;
+          result.time.i  = vm.teams.quest.i ? 0.85 : 0.0;
         }
       }
       var qt = q.tiers[tname];
@@ -1676,7 +1673,7 @@ Vue.component( 'team', {
         result.boss = true;
         result.power.boss = qt.boss.power;
       }
-      var pw_hero = vm.teams.quest.choice.b ? result.power.hero : result.power.boss;
+      var pw_hero = vm.teams.quest.b ? result.power.hero : result.power.boss;
       vm.summary.skills
         .map( function( s ) {
           if ( s.base == 'Healer' ) {
