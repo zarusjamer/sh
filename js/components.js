@@ -524,10 +524,10 @@ Vue.mixin( {
       handler: function( name ) {
         var vm = this;
         if ( !name ) {
-          vm.teams.quest.data = null;
           vm.teams.quest.choice.b = false;
           vm.teams.quest.choice.c = false;
           vm.teams.quest.choice.i = false;
+          Vue.set( vm.teams.quest, 'data', null );
           return;
         }
         var result = {
@@ -582,7 +582,7 @@ Vue.mixin( {
         }
         result.power.value = qt.power || q.power;
         result.power.hero = vm.teams.quest.choice.b ? qt.boss.power : qt.base.power;
-        vm.teams.quest.data = result;
+        Vue.set( vm.teams.quest, 'data', result );
       }
     }
   },
