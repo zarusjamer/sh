@@ -33,7 +33,7 @@ Vue.mixin( {
             c: false,
             i: false
           },
-          data: null
+          data: {}
         }
       },
       heroes: {
@@ -527,7 +527,7 @@ Vue.mixin( {
           vm.teams.quest.choice.b = false;
           vm.teams.quest.choice.c = false;
           vm.teams.quest.choice.i = false;
-          Vue.set( vm.teams.quest, 'data', null );
+          Vue.set( vm.teams.quest, 'data', {} );
           return;
         }
         var result = {
