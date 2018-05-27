@@ -638,12 +638,12 @@ Vue.mixin( {
           optimal: false,
           a: 0,
           power: {
-            value: 0.0,
+            value: NaN,
             info: ''
           },
           chance: {
-            base: 0.0,
-            value: 0.0
+            base: NaN,
+            value: NaN
           }
         };
         if ( slot.item ) {
@@ -1327,7 +1327,7 @@ Vue.component( 'origin', {
       var custom = {};
       $.map( this.data.origins, function( o, name ) {
         custom[name] = {
-          m: o.m
+          b: o.b
         };
         if ( o.lv ) {
           custom[name].lv = o.lv;
@@ -1342,6 +1342,13 @@ Vue.component( 'origin', {
     }
   },
   watch: {
+    'object.b': { 
+      handler: function( b, bOld ) {
+        if ( this.object.b != bOld ) {
+          this.commit();
+        }
+      }
+    },
     'object.lv': { 
       handler: function( lv, lvOld ) {
         this.object.lv = Math.min( Math.max( 1, lv ), this.object.cap || lv );

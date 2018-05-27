@@ -631,7 +631,9 @@
   <script type="text/x-template" id="templates-origin">
     <tr class="data-info">
       <th>
-        <input type="checkbox" v-model="object.m"/>
+        <template v-if="object.boostable">
+          <input type="checkbox" v-model="object.b"/>
+        </template>
       </th>
       <th>
         <span class="head">{{object.name}}</span>

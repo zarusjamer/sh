@@ -3,8 +3,8 @@
     "Temple": {
       "name": "Temple",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -16,8 +16,8 @@
     "Training Hall": {
       "name": "Training Hall",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -29,8 +29,8 @@
     "Thief's Hideout": {
       "name": "Thief's Hideout",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -42,8 +42,8 @@
     "Fountain": {
       "name": "Fountain",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -55,8 +55,8 @@
     "Fighter's Guild": {
       "name": "Fighter's Guild",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -68,8 +68,8 @@
     "School of Magic": {
       "name": "School of Magic",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -81,8 +81,8 @@
     "Hunter's Lodge": {
       "name": "Hunter's Lodge",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -94,8 +94,8 @@
     "Port": {
       "name": "Port",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -107,8 +107,8 @@
     "Theater": {
       "name": "Theater",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -120,8 +120,8 @@
     "Cathedral": {
       "name": "Cathedral",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -133,8 +133,8 @@
     "War College": {
       "name": "War College",
       "type": "Questing",
-      "b": true,
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -146,17 +146,18 @@
     "Heroic Package #1": {
       "name": "Heroic Package #1",
       "type": "Package",
-      "m": false
+      "boostable": false
     },
     "Heroic Package #2": {
       "name": "Heroic Package #2",
       "type": "Package",
-      "m": false
+      "boostable": false
     },
     "Inn": {
       "name": "Inn",
       "type": "City",
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 55,
       "cj": {
@@ -225,7 +226,8 @@
     "Castle": {
       "name": "Castle",
       "type": "City",
-      "m": false,
+      "boostable": true,
+      "b": false,
       "lv": 1,
       "cap": 50,
       "boost": {
