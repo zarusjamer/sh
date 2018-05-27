@@ -527,65 +527,11 @@ Vue.mixin( {
           vm.teams.quest.choice.b = false;
           vm.teams.quest.choice.c = false;
           vm.teams.quest.choice.i = false;
-          Vue.set( vm.teams.quest, 'data', {} );
-          return;
+        } else {
+          vm.teams.quest.choice.b = vm.teams.quest.choice.b && qt.boss;
+          vm.teams.quest.choice.c = vm.teams.quest.choice.c && b.boostable;
+          vm.teams.quest.choice.i = vm.teams.quest.choice.i && b.boostable;
         }
-        var result = {
-          origin: null,
-          boss: false,
-          time: {
-            value: 0,
-            base: 0,
-            m: 0.0,
-            c: 0.0,
-            i: 0.0
-          },
-          loot: {
-            item: null,
-            min: 0,
-            max: 0
-          },
-          power: {
-            value: NaN,
-            hero: NaN,
-            boss: NaN,
-            text: null
-          }
-        }
-        var names = name.split( ' ' );
-        var tname = names.pop();
-        var qname = names.join( ' ' );
-        var q = vm.data.quests[qname];
-        var b = vm.data.origins[q.origin];
-        if ( b.cj ) {
-          result.time.c += b.cj.value * b.cj.lv;
-        }
-        if ( b.boost ) {
-          var bs = b.boost[b.lv];
-          if ( bs ) {
-            result.time.c += vm.teams.quest.choice.c ? bs.c : 0.0;
-            result.time.i  = vm.teams.quest.choice.i ? 0.85 : 0.0;
-          }
-        }
-        var qt = q.tiers[tname];
-        result.origin = b;
-        result.time.base = q.time;
-        result.loot.item = q.item;
-        if ( qt.loot ) {
-          result.loot.min = qt.loot.min;
-          result.loot.max = qt.loot.max;
-        }
-        result.power.value = qt.power || q.psower;
-        result.power.base = qt.base.power
-        if ( qt.boss ) {
-          result.boss = true;
-          result.power.boss = qt.boss.power;
-        }
-
-        vm.teams.quest.choice.b = vm.teams.quest.choice.b && qt.boss;
-        vm.teams.quest.choice.c = vm.teams.quest.choice.c && b.boostable;
-        vm.teams.quest.choice.i = vm.teams.quest.choice.i && b.boostable;
-        Vue.set( vm.teams.quest, 'data', result );
       }
     }
   },
@@ -1675,17 +1621,65 @@ Vue.component( 'team', {
     },
     quest: function() {
       var vm = this;
-      if ( !vm.teams.quest.data ) {
+      if ( !vm.teams.quest.choice.name ) {
         return false;
       }
-      var result = $.extend( true, { 
-        roster: {
+      var result = {
+        origin: null,
+        boss: false,
+        time: {
+          value: 0,
+          base: 0,
+          m: 0.0,
+          c: 0.0,
+          i: 0.0
         },
+        loot: {
+          item: null,
+          min: 0,
+          max: 0
+        },
+        power: {
+          value: NaN,
+          hero: NaN,
+          boss: NaN,
+          text: null
+        },
+        roster: {},
         m: {
           rv: 0.0,
           hh: 0.0
         }
-      }, vm.teams.quest.data );
+      }
+      var names = name.split( ' ' );
+      var tname = names.pop();
+      var qname = names.join( ' ' );
+      var q = vm.data.quests[qname];
+      var b = vm.data.origins[q.origin];
+      if ( b.cj ) {
+        result.time.c += b.cj.value * b.cj.lv;
+      }
+      if ( b.boost ) {
+        var bs = b.boost[b.lv];
+        if ( bs ) {
+          result.time.c += vm.teams.quest.choice.c ? bs.c : 0.0;
+          result.time.i  = vm.teams.quest.choice.i ? 0.85 : 0.0;
+        }
+      }
+      var qt = q.tiers[tname];
+      result.origin = b;
+      result.time.base = q.time;
+      result.loot.item = q.item;
+      if ( qt.loot ) {
+        result.loot.min = qt.loot.min;
+        result.loot.max = qt.loot.max;
+      }
+      result.power.value = qt.power || q.psower;
+      result.power.base = qt.base.power
+      if ( qt.boss ) {
+        result.boss = true;
+        result.power.boss = qt.boss.power;
+      }
       var pw_hero = vm.teams.quest.choice.b ? result.power.hero : result.power.boss;
       vm.summary.skills
         .map( function( s ) {
