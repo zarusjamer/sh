@@ -1,4 +1,4 @@
-.htooltip span.htooltip-text {
+.htooltip .htooltip-text {
 	background-color: #F6F6F6;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	margin-right: -50%;
@@ -8,15 +8,17 @@
 	position: absolute;
 	text-decoration: none;
   white-space: pre;
-	visibility: hidden;
+	/*visibility: hidden;*/
+  display: none;
 	z-index: 10;
   text-align: justify;
   font-weight: normal;
   font-size: 0.9rem;
 }
-.htooltip:hover span.htooltip-text {
+.htooltip:hover .htooltip-text {
 	opacity: 1;
-	visibility: visible;
+	/*visibility: visible;*/
+  display: block;
 }
 .htooltip {
   vertical-align: middle;
