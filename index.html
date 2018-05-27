@@ -129,7 +129,7 @@
                     <template v-if="teams.quest.choice.name">
                       <span class="htooltip">
                         <span class="htooltip-text">{{'Set boss fight {0}'.format( teams.quest.choice.b ? 'disabled' : 'enabled' )}}</span>
-                        <input v-model="teams.quest.choice.b" type="checkbox" :enabled="teams.quest.data.boss"/>
+                        <input v-model="teams.quest.choice.b" type="checkbox" :disabled="!teams.quest.data.boss"/>
                       </span>
                       <span class="htooltip">
                         <span class="htooltip-text">{{'Set {1} collective boost {0}'.format( teams.quest.choice.c ? 'disabled' : 'enabled', teams.quest.data.origin.name )}}</span>

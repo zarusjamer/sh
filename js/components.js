@@ -533,7 +533,6 @@ Vue.mixin( {
         var result = {
           origin: null,
           boss: false,
-          item: null,
           time: {
             value: 0,
             base: 0,
@@ -542,12 +541,14 @@ Vue.mixin( {
             i: 0.0
           },
           loot: {
+            item: null,
             min: 0,
             max: 0
           },
           power: {
-            value: 0,
-            hero: 0,
+            value: NaN,
+            hero: NaN,
+            boss: NaN,
             text: null
           }
         }
@@ -567,21 +568,23 @@ Vue.mixin( {
           }
         }
         var qt = q.tiers[tname];
-
-        vm.teams.quest.choice.b = vm.teams.quest.choice.b && qt.boss;
-        vm.teams.quest.choice.c = vm.teams.quest.choice.c && b.boostable;
-        vm.teams.quest.choice.i = vm.teams.quest.choice.i && b.boostable;
-
         result.origin = b;
         result.time.base = q.time;
-        result.item = q.item;
-        result.boss = !!qt.boss;
+        result.loot.item = q.item;
         if ( qt.loot ) {
           result.loot.min = qt.loot.min;
           result.loot.max = qt.loot.max;
         }
-        result.power.value = qt.power || q.power;
-        result.power.hero = vm.teams.quest.choice.b ? qt.boss.power : qt.base.power;
+        result.power.value = qt.power || q.psower;
+        result.power.base = qt.base.power
+        if ( qt.boss ) {
+          result.boss = true;
+          result.power.boss = qt.boss.power;
+        }
+
+        vm.teams.quest.choice.b = vm.teams.quest.choice.b && qt.boss;
+        vm.teams.quest.choice.c = vm.teams.quest.choice.c && b.boostable;
+        vm.teams.quest.choice.i = vm.teams.quest.choice.i && b.boostable;
         Vue.set( vm.teams.quest, 'data', result );
       }
     }
@@ -1683,6 +1686,7 @@ Vue.component( 'team', {
           hh: 0.0
         }
       }, vm.teams.quest.data );
+      var pw_hero = vm.teams.quest.choice.b ?: result.power.hero : result.power.boss
       vm.summary.skills
         .map( function( s ) {
           if ( s.base == 'Healer' ) {
@@ -1726,12 +1730,12 @@ Vue.component( 'team', {
             max: mx
           },
           power: {
-            value: result.power.hero,
+            value: vm.summary.roster[sn].power.value,
             info: null
           }
         };
-        var m_face = vm.summary.roster[sn].power.value / result.power.hero;
-        var p_face = result.power.hero - result.roster[sn].power.value;
+        var m_face = vm.summary.roster[sn].power.value / pw_hero;
+        var p_face = pw_hero - result.roster[sn].power.value;
         if ( p_face > 0 ) {
           result.roster[sn].power.info = 'Required {0} more power'.format( p_face.intString() );
         }
