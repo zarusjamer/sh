@@ -557,7 +557,7 @@ Vue.mixin( {
     },
     getHero: function( h ) {
       var vm = this;
-      var result = $.extend( true, vm.getEmptyHero(), {
+      var result = {
         hero: h,
         companions: 1,
         optimals: 0,
@@ -585,13 +585,10 @@ Vue.mixin( {
           hero: {},
           team: {}
         }
-      } );
-      if ( !h ) {
-        return result;
-      }
+      };
       result.origin = vm.data.origins[result.hero.origin];
       if ( result.hero.b ) {
-        result.power.m.b += 0.25;
+        result.power.m.b = 0.25;
       }
       result.power.base = result.hero.power.base;
       result.power.level = vm.data.powers.lv[result.hero.lv];
