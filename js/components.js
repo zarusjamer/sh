@@ -1642,7 +1642,9 @@ Vue.component( 'team', {
         roster: {},
         m: {
           rv: 0.0,
-          hh: 0.0
+          hh: 0.0,
+          mn: 0,
+          mx: 0
         }
       }
       var names = vm.data.quest.name.split( ' ' );
@@ -1665,8 +1667,8 @@ Vue.component( 'team', {
       result.time.base = q.time;
       result.loot.item = q.item;
       if ( qt.loot ) {
-        result.loot.min = qt.loot.min;
-        result.loot.max = qt.loot.max;
+        result.m.mn = qt.loot.min;
+        result.m.mx = qt.loot.max;
       }
       result.power.value = qt.power || q.power;
       result.power.base = qt.base.power
@@ -1683,9 +1685,9 @@ Vue.component( 'team', {
           } else if ( s.base == 'Revive' ) {
             result.m.rv = Math.min( result.m.rv + s.value, s.cap );
           } else if ( s.base == 'Minimum' ) {
-            result.loot.min += s.value;
+            result.m.mn += s.value;
           } else if ( s.base == 'Maximum' ) {
-            result.loot.min += s.value;
+            result.m.max += s.value;
           } else if ( s.base == 'Speed' ) {
             result.time.m += s.value;
           }
@@ -1694,8 +1696,8 @@ Vue.component( 'team', {
         var rv = result.m.rv;
         var hh = result.m.hh;
         var en = 0.0;
-        var mn = result.loot.min;
-        var mx = result.loot.max;
+        var mn = result.m.mn;
+        var mx = result.m.mx;
         rst.info.hero.map( function( s ) {
           if ( s.base == 'Energetic' ) {
             en = Math.min( en + s.value, s.cap );
@@ -1707,6 +1709,9 @@ Vue.component( 'team', {
             mx += s.value;
           }
         } );
+        mn = Math.min( mn, mx );
+        result.loot.min += mn;
+        result.loot.max += max;
         var rstInfo = {
           injury: {
             face: null,
@@ -1718,7 +1723,7 @@ Vue.component( 'team', {
             heal: result.time.base * 2 * ( 1.0 - hh )
           },
           loot: {
-            min: Math.min( mn, mx ),
+            min: mn,
             max: mx
           }
         };
@@ -1742,7 +1747,6 @@ Vue.component( 'team', {
           rstInfo.injury.chance = 0.65;
         }
         rstInfo.injury.chance *= ( 1.0 - rv );
-        
         result.roster[sn] = rstInfo;
       } );
       var p_team = result.power.value - vm.summary.power.value;
