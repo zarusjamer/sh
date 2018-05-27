@@ -65,6 +65,12 @@ table.shopheroes tr.split {
 table.shopheroes tr.split th {
   background-color: #A9A9A9;
 }
+table.shopheroes tr.outline.top th {
+  border-top-color: #A9A9A9;
+}
+table.shopheroes tr.outline.bottom th {
+  border-bottom-color: #A9A9A9;
+}
 table.shopheroes tr.data-info {
   vertical-align: middle;
 }

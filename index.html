@@ -930,7 +930,7 @@
           </template>
         </template>
       </tr>
-      <tr class="data-info">
+      <tr class="data-info outline bottom">
         <th>
           <span
             class="button"
@@ -965,7 +965,7 @@
         </template>
       </tr>
       <template v-if="quest">
-        <tr class="data-info">
+        <tr class="data-info outline top">
           <th rowspan="3">
             <span class="head">Quest</span>
           </th>
@@ -978,12 +978,13 @@
           <template v-for="( rst, sn ) in object.roster">
             <template v-if="companions[sn]">
               <td>
+                <span class="icon hero face" :class="quest.roster[sn].injury.face"/>
               </td>
               <td>
                 <span class="float-left">
-                  <span class="icon hero face" :class="quest.roster[sn].injury.face"/>
+                  <span class="icon timers injury"/>
                 </span>
-                <span>{{quest.roster[sn].injury.chance.pptString(1)}}</span>
+                <span>{{quest.roster[sn].time.heal.dateString()}}</span>
               </td>
             </template>
             <template v-else>
@@ -1005,12 +1006,8 @@
               <td>
                 <span class="float-left">
                   <span class="icon timers resting"/>
-                  <span>{{quest.roster[sn].time.rest.dateString()}}</span>
                 </span>
-                <span class="float-right">
-                  <span>{{quest.roster[sn].time.heal.dateString()}}</span>
-                  <span class="icon timers injury"/>
-                </span>
+                <span>{{quest.roster[sn].time.rest.dateString()}}</span>
               </td>
             </template>
             <template v-else>
@@ -1021,9 +1018,11 @@
         </tr>
         <tr class="data-info">
           <td>
-            <span class="icon artifact" :class="quest.loot.item.icon()"/>
           </td>
           <td>
+            <span class="float-left">
+              <span class="icon artifact" :class="quest.loot.item.icon()"/>
+            </span>
             <span>{{quest.loot.min}}&nbsp;-&nbsp;{{quest.loot.max}}</span> 
           </td>
           <template v-for="( rst, sn ) in object.roster">
@@ -1031,6 +1030,9 @@
               <td>
               </td>
               <td>
+                <span class="float-left">
+                  <span class="icon artifact" :class="quest.loot.item.icon()"/>
+                </span>
                 <span>{{quest.roster[sn].loot.min}}&nbsp;-&nbsp;{{quest.roster[sn].loot.max}}</span> 
               </td>
             </template>
