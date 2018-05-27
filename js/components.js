@@ -599,7 +599,7 @@ Vue.mixin( {
       }
       result.origin = vm.data.origins[result.hero.origin];
       if ( result.hero.b ) {
-        result.power.m.b = 0.25;
+        result.power.m.b = 1.25;
       }
       result.power.base = result.hero.power.base;
       result.power.level = vm.data.powers.lv[result.hero.lv];
