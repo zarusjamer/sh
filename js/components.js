@@ -1643,7 +1643,7 @@ Vue.component( 'team', {
           hh: 0.0
         }
       }
-      var names = name.split( ' ' );
+      var names = vm.data.quest.name.split( ' ' );
       var tname = names.pop();
       var qname = names.join( ' ' );
       var q = vm.data.quests[qname];
