@@ -1711,7 +1711,7 @@ Vue.component( 'team', {
         } );
         mn = Math.min( mn, mx );
         result.loot.min += mn;
-        result.loot.max += max;
+        result.loot.max += mx;
         var rstInfo = {
           injury: {
             face: null,
