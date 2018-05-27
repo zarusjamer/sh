@@ -582,8 +582,7 @@ Vue.mixin( {
             h: 1.0,
             i: 1.0,
             o: 1.0,
-            b: 1.0,
-            s: 1.1
+            b: 1.0
           }
         },
         skills: {
@@ -1698,7 +1697,7 @@ Vue.component( 'team', {
         var m_op = result.roster[sn].power.m.o;
         var m_eq = result.roster[sn].power.m.i;
         var m_st = result.roster[sn].power.m.h;
-        var m_sr = 1.1;
+        var m_sr = 0.1;
         result.skills
           .filter( function( s ) { 
             return vm.applyFilter( rst.hero, s.filter ); 
@@ -1738,7 +1737,7 @@ Vue.component( 'team', {
             s.chance.value = s.chance.base * ( 1 - result.roster[sn].chance );
           }
         } );
-        m_sr = m_sr * ( result.assigned - 1 );
+        m_sr = 1.0 + m_sr * ( result.assigned - 1 );
         
         result.power.hero += result.roster[sn].power.value;
         result.roster[sn].power.value = ( result.roster[sn].power.hero * m_st + result.roster[sn].power.items * m_op * m_eq ) * result.roster[sn].power.m.b * m_sr;
