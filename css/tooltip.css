@@ -8,7 +8,6 @@
 	position: absolute;
 	text-decoration: none;
   white-space: pre;
-	/*visibility: hidden;*/
   display: none;
 	z-index: 10;
   text-align: justify;
@@ -17,7 +16,6 @@
 }
 .htooltip:hover .htooltip-text {
 	opacity: 1;
-	/*visibility: visible;*/
   display: block;
 }
 .htooltip {
