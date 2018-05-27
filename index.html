@@ -967,7 +967,7 @@
       <template v-if="quest">
         <tr class="data-info">
           <th rowspan="3">
-            <span class="head vertical">Quest</span>
+            <span class="head">Quest</span>
           </th>
           <td>
             <span class="icon hero face" :class="quest.power.face"/>
@@ -993,21 +993,52 @@
           </template>
         </tr>
         <tr class="data-info">
-          <th>
-            <span class="head">Speed</span>
-          </th>
           <td>
           </td>
           <td>
             <timer :time="quest.time.value"/>
           </td>
+          <template v-for="( rst, sn ) in object.roster">
+            <template v-if="companions[sn]">
+              <td>
+              </td>
+              <td>
+                <span class="float-left">
+                  <span class="icon timers resting"/>
+                  <span>{{quest.roster[sn].time.rest.dateString()}}</span>
+                </span>
+                <span class="float-right">
+                  <span>{{quest.roster[sn].time.heal.dateString()}}</span>
+                  <span class="icon timers injury"/>
+                </span>
+              </td>
+            </template>
+            <template v-else>
+              <td/>
+              <td/>
+            </template>
+          </template>
         </tr>
         <tr class="data-info">
-          <th>
-            <span class="head">Loot</span>
-          </th>
           <td>
+            <span "class icon item" :class="quest.loot.item.icon()"/>
           </td>
+          <td>
+            <span>{{quest.loot.min}}&nbsp;-&nbsp;{{quest.loot.max}}</span> 
+          </td>
+          <template v-for="( rst, sn ) in object.roster">
+            <template v-if="companions[sn]">
+              <td>
+              </td>
+              <td>
+                <span>{{quest.roster[sn].loot.min}}&nbsp;-&nbsp;{{quest.roster[sn].loot.max}}</span> 
+              </td>
+            </template>
+            <template v-else>
+              <td/>
+              <td/>
+            </template>
+          </template>
         </tr>
       </template>
       <template v-if="summary.skills">
@@ -1181,6 +1212,8 @@
                 <span class="float-left">
                   <span class="icon timers resting"/>
                   <span v-if="sh.quest.rest.value >= 0">{{sh.quest.rest.value.dateString()}}</span>
+                  <span class="icon timers injury"/>
+                  <span v-if="sh.quest.heal.value >= 0">{{sh.quest.heal.value.dateString()}}</span>
                 </span>
               </div>
             </td>
