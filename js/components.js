@@ -1729,9 +1729,9 @@ Vue.component( 'team', {
             s.chance.value = s.chance.base * ( 1 - result.roster[sn].chance );
           }
         } );
+        m_sr = m_sr * ( result.assigned - 1 );
         
         result.power.hero += result.roster[sn].power.value;
-        result.roster[sn].power.m.s = m_s * ( result.assigned - 1 );
         result.roster[sn].power.value = ( result.roster[sn].power.hero * m_st + result.roster[sn].power.items * m_op * m_eq ) * result.roster[sn].power.m.b * m_sr;
         result.roster[sn].power.info = 
           'TP = ( HP * HPM + IP * IOM * IPM ) * BM * SRM\r\n{0} = ( {1} * {3}  + {2} * {4} * {5} ) * {6} * {7}'
