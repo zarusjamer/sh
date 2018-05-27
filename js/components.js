@@ -598,7 +598,7 @@ Vue.mixin( {
         return result;
       }
       result.origin = vm.data.origins[h.origin];
-      if ( h.b ) {
+      if ( result.origin.b ) {
         result.power.m.b = 1.25;
       }
       result.power.base = h.power.base;
