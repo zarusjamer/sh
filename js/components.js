@@ -527,10 +527,6 @@ Vue.mixin( {
           vm.teams.quest.choice.b = false;
           vm.teams.quest.choice.c = false;
           vm.teams.quest.choice.i = false;
-        } else {
-          vm.teams.quest.choice.b = vm.teams.quest.choice.b && qt.boss;
-          vm.teams.quest.choice.c = vm.teams.quest.choice.c && b.boostable;
-          vm.teams.quest.choice.i = vm.teams.quest.choice.i && b.boostable;
         }
       }
     }
