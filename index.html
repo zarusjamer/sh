@@ -923,12 +923,12 @@
         <template v-for="( rst, sn ) in object.roster">
           <td>
             <template v-if="roster[sn]">
-              <span class="htooltip">
-                <span class="htooltip-text">{{'Set {0} boost {1}'.format( roster[sn].hero.origin, ( rst.b ? 'disabled' : 'enabled' ) )}}</span>
-                <input type="checkbox"
-                  v-model="rst.b"
-                  @input="setBoost( roster[sn].hero.origin, rst.b )"/>
-              </span>
+              <template v-if="rst.origin.boostable">
+                <span class="htooltip">
+                  <span class="htooltip-text">{{'Set {0} boost {1}'.format( rst.hero.origin, ( rst.origin.b ? 'disabled' : 'enabled' ) )}}</span>
+                  <input type="checkbox" v-model="rst.origin.b"/>
+                </span>
+              </template>
             </template>
           </td>
           <td>
