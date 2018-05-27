@@ -194,7 +194,10 @@ table.shopheroes span.button.collapse {
 .left {
   text-align: left !important;
 }
-
+.vertical {
+	transform: rotate(-90deg);
+	transform-origin: left top 0;
+}
 .icon-sortable {
   margin-top: 0.2em;
   display: inline-block;
