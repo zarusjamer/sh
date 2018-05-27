@@ -1589,6 +1589,59 @@ Vue.component( 'team', {
       }
       return result;
     },
+    questInfo: function() {
+      var vm = this;
+      var result = {
+        origin: null,
+        boss: false,
+        item: null,
+        time: {
+          value: 0,
+          base: 0,
+          m: 0.0,
+          c: 0.0,
+          i: 0.0
+        },
+        loot: {
+          min: 0,
+          max: 0
+        },
+        power: {
+          value: 0,
+          hero: 0,
+          text: null
+        }
+      }
+      if ( vm.quest.choice ) {
+        var names = vm.quest.choice.split( ' ' );
+        var tname = names.pop();
+        var qname = names.join( ' ' );
+        var q = vm.data.quests[qname];
+        var b = vm.data.origins[q.origin];
+        if ( b.cj ) {
+          result.time.c += b.cj.value * b.cj.lv;
+        }
+        if ( b.boost ) {
+          var bs = b.boost[b.lv];
+          if ( bs ) {
+            result.time.c += vm.quest.boost.c ? bs.c : 0.0;
+            result.time.i = vm.quest.boost.i ? 0.85 : 0.0;
+          }
+        }
+        var qt = q.tiers[tname];
+        result.origin = q.origin;
+        result.time.base = q.time;
+        result.item = q.item;
+        result.boss = !!qt.boss;
+        if ( qt.loot ) {
+          result.loot.min = qt.loot.min;
+          result.loot.max = qt.loot.max;
+        }
+        result.power.value = qt.power || q.power;
+        result.power.hero: !!qt.boss && vm.quest.boss ? qt.boss.power : qt.base.power;
+      }
+      return result;
+    },
     summary: function() {
       var vm = this;
       var result = {
@@ -1599,59 +1652,9 @@ Vue.component( 'team', {
         },
         roster: {},
         skills: [],
-        quest: {
-          origin: null,
-          boss: false,
-          item: null,
-          time: {
-            value: 0,
-            base: 0,
-            m: 0.0,
-            c: 0.0,
-            i: 0.0
-          },
-          loot: {
-            min: 0,
-            max: 0
-          },
-          power: {
-            value: 0,
-            hero: 0,
-            text: null
-          }
-        }
+        quest: vm.questInfo
       };
 
-      if ( vm.quest.choice ) {
-        var names = vm.quest.choice.split( ' ' );
-        var tname = names.pop();
-        var qname = names.join( ' ' );
-        var q = vm.data.quests[qname];
-        var b = vm.data.origins[q.origin];
-        if ( b.cj ) {
-          result.quest.time.c += b.cj.value * b.cj.lv;
-        }
-        if ( b.boost ) {
-          var bs = b.boost[b.lv];
-          if ( bs ) {
-            result.quest.time.c += vm.quest.boost.c ? bs.c : 0.0;
-            result.quest.time.i = vm.quest.boost.i ? 0.85 : 0.0;
-          }
-        }
-        var qt = q.tiers[tname];
-        result.quest.origin = q.origin;
-        result.quest.time.base = q.time;
-        result.quest.item = q.item;
-        result.quest.boss = !!qt.boss;
-        if ( qt.loot ) {
-          result.quest.loot.min = qt.loot.min;
-          result.quest.loot.max = qt.loot.max;
-        }
-        result.quest.power = { 
-          value: qt.power || q.power,
-          hero: !!qt.boss && vm.quest.boss ? qt.boss.power : qt.base.power
-        };
-      }
       var skills = [];
       $.map( vm.roster, function( rst, sn ) {
         result.assigned += 1;
