@@ -129,14 +129,14 @@
                     <template v-if="teams.quest.choice">
                       <span class="htooltip">
                         <span class="htooltip-text">{{'Set boss fight {0}'.format( teams.quest.boss ? 'disabled' : 'enabled' )}}</span>
-                        <input v-model="teams.quest.boss" type="checkbox"/>
+                        <input v-model="teams.quest.boss" type="checkbox" :enabled="teams.quest.origin.boss"/>
                       </span>
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set {1} collective boost {0}'.format( teams.quest.boost.c ? 'disabled' : 'enabled', summary.quest.origin )}}</span>
+                        <span class="htooltip-text">{{'Set {1} collective boost {0}'.format( teams.quest.boost.c ? 'disabled' : 'enabled', teams.quest.origin.name )}}</span>
                         <input v-model="teams.quest.boost.c" type="checkbox"/>
                       </span>
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set {1} instant x3 boost {0}'.format( teams.quest.boost.i ? 'disabled' : 'enabled', summary.quest.origin )}}</span>
+                        <span class="htooltip-text">{{'Set {1} max instant boost {0}'.format( teams.quest.boost.i ? 'disabled' : 'enabled', teams.quest.origin.name )}}</span>
                         <input v-model="teams.quest.boost.i" type="checkbox"/>
                       </span>
                     </template>

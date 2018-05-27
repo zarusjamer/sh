@@ -27,12 +27,13 @@ Vue.mixin( {
           name: null
         },
         quest: {
-          choice: null,
-          boss: false,
-          boost: {
+          choice: {
+            name: null,
+            b: false,
             c: false,
             i: false
-          }
+          },
+          data: null
         }
       },
       heroes: {
@@ -518,6 +519,71 @@ Vue.mixin( {
         }
       },
       deep: true
+    },
+    'teams.quest.choice.name': {
+      handler: function( name ) {
+        var vm = this;
+        if ( !name ) {
+          vm.teams.quest.data = null;
+          vm.teams.quest.choice.b = false;
+          vm.teams.quest.choice.c = false;
+          vm.teams.quest.choice.i = false;
+          return;
+        }
+        var result = {
+          origin: null,
+          boss: false,
+          item: null,
+          time: {
+            value: 0,
+            base: 0,
+            m: 0.0,
+            c: 0.0,
+            i: 0.0
+          },
+          loot: {
+            min: 0,
+            max: 0
+          },
+          power: {
+            value: 0,
+            hero: 0,
+            text: null
+          }
+        }
+        var names = name.split( ' ' );
+        var tname = names.pop();
+        var qname = names.join( ' ' );
+        var q = vm.data.quests[qname];
+        var b = vm.data.origins[q.origin];
+        if ( b.cj ) {
+          result.time.c += b.cj.value * b.cj.lv;
+        }
+        if ( b.boost ) {
+          var bs = b.boost[b.lv];
+          if ( bs ) {
+            result.time.c += vm.teams.quest.choice.c ? bs.c : 0.0;
+            result.time.i  = vm.teams.quest.choice.i ? 0.85 : 0.0;
+          }
+        }
+        var qt = q.tiers[tname];
+
+        vm.teams.quest.choice.b = vm.teams.quest.choice.b && qt.boss;
+        vm.teams.quest.choice.c = vm.teams.quest.choice.c && b.boostable;
+        vm.teams.quest.choice.i = vm.teams.quest.choice.i && b.boostable;
+
+        result.origin = b;
+        result.time.base = q.time;
+        result.item = q.item;
+        result.boss = !!qt.boss;
+        if ( qt.loot ) {
+          result.loot.min = qt.loot.min;
+          result.loot.max = qt.loot.max;
+        }
+        result.power.value = qt.power || q.power;
+        result.power.hero = vm.teams.quest.choice.b ? qt.boss.power : qt.base.power;
+        vm.teams.quest.data = result;
+      }
     }
   },
   methods: {
@@ -1601,59 +1667,6 @@ Vue.component( 'team', {
       }
       for ( var i = 1; i <= max; i++ ) {
         result['slot' + i] = true;
-      }
-      return result;
-    },
-    questInfo: function() {
-      var vm = this;
-      var result = {
-        origin: null,
-        boss: false,
-        item: null,
-        time: {
-          value: 0,
-          base: 0,
-          m: 0.0,
-          c: 0.0,
-          i: 0.0
-        },
-        loot: {
-          min: 0,
-          max: 0
-        },
-        power: {
-          value: 0,
-          hero: 0,
-          text: null
-        }
-      }
-      if ( vm.teams.quest.choice ) {
-        var names = vm.teams.quest.choice.split( ' ' );
-        var tname = names.pop();
-        var qname = names.join( ' ' );
-        var q = vm.data.quests[qname];
-        var b = vm.data.origins[q.origin];
-        if ( b.cj ) {
-          result.time.c += b.cj.value * b.cj.lv;
-        }
-        if ( b.boost ) {
-          var bs = b.boost[b.lv];
-          if ( bs ) {
-            result.time.c += vm.quest.boost.c ? bs.c : 0.0;
-            result.time.i = vm.quest.boost.i ? 0.85 : 0.0;
-          }
-        }
-        var qt = q.tiers[tname];
-        result.origin = q.origin;
-        result.time.base = q.time;
-        result.item = q.item;
-        result.boss = !!qt.boss;
-        if ( qt.loot ) {
-          result.loot.min = qt.loot.min;
-          result.loot.max = qt.loot.max;
-        }
-        result.power.value = qt.power || q.power;
-        result.power.hero = result.boss && vm.teams.quest.boss ? qt.boss.power : qt.base.power;
       }
       return result;
     },
