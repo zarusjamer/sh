@@ -1591,33 +1591,13 @@ Vue.component( 'team', {
     },
     summary: function() {
       var vm = this;
-      var data = vm.data || vm.$parent.data;
       var result = {
         assigned: 0,
         power: {
           hero: 0,
           value: 0
         },
-        roster: {
-          slot1: {
-            
-          },
-          slot2: {
-            
-          },
-          slot3: {
-            
-          },
-          slot4: {
-            
-          },
-          slot5: {
-            
-          },
-          slot6: {
-            
-          }
-        },
+        roster: {},
         skills: [],
         quest: {
           origin: null,
@@ -1735,7 +1715,7 @@ Vue.component( 'team', {
           }
         } );
         
-        result.roster[sn].power.m.s += m_s * ( result.assigned - 1 );
+        result.roster[sn].power.m.s = m_s * ( result.assigned - 1 );
         result.power.hero += ( result.roster[sn].power.value || 0 );
         result.roster[sn].power.value = ( result.roster[sn].power.hero * result.roster[sn].power.m.h + result.roster[sn].power.items * result.roster[sn].power.m.o * result.roster[sn].power.m.i ) * result.roster[sn].power.m.b * result.roster[sn].power.m.s;
         result.roster[sn].power.info = 
