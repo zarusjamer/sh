@@ -1666,13 +1666,14 @@ Vue.component( 'team', {
         result.loot.min = qt.loot.min;
         result.loot.max = qt.loot.max;
       }
-      result.power.value = qt.power || q.psower;
+      result.power.value = qt.power || q.power;
       result.power.base = qt.base.power
       if ( qt.boss ) {
         result.boss = true;
-        result.power.boss = qt.boss.power;
+        if ( vm.data.quest.b ) {
+          result.power.base = qt.boss.power;
+        }
       }
-      var pw_hero = vm.data.quest.b ? result.power.hero : result.power.boss;
       vm.summary.skills
         .map( function( s ) {
           if ( s.base == 'Healer' ) {
@@ -1720,8 +1721,8 @@ Vue.component( 'team', {
             info: null
           }
         };
-        var m_face = vm.summary.roster[sn].power.value / pw_hero;
-        var p_face = pw_hero - result.roster[sn].power.value;
+        var m_face = vm.summary.roster[sn].power.value / result.power.base;
+        var p_face = result.power.base - result.roster[sn].power.value;
         if ( p_face > 0 ) {
           result.roster[sn].power.info = 'Required {0} more power'.format( p_face.intString() );
         }
@@ -1843,6 +1844,8 @@ Vue.component( 'team', {
             );
         pw_value += result.roster[sn].power.value;
       } );
+      result.power.value = pw_value;
+      result.power.hero = pw_hero;
       result.power.info = 'Group Bonus: +{0}%'.format( Math.round( 100 * ( pw_value / pw_hero - 1 ) ) );
       return result;
     }
