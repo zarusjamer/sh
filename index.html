@@ -771,10 +771,12 @@
       </tr>
       <tr class="data-info">
         <td>
-          <span class="htooltip">
-            <span class="htooltip-text">{{'Set {0} boost {1}'.format( object.origin, ( object.b ? 'disabled' : 'enabled' ) )}}</span>
-            <input type="checkbox" v-model="object.b"/>
-          </span>
+          <template v-if="summary.origin.boostable">
+            <span class="htooltip">
+              <span class="htooltip-text">{{'Set {0} boost {1}'.format( object.origin, ( summary.origin.b ? 'disabled' : 'enabled' ) )}}</span>
+              <input type="checkbox" v-model="summary.origin.b"/>
+            </span>
+          </template>
         </td>
         <td>
           <power :power="summary.power" class="float-left"/>
