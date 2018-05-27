@@ -126,7 +126,7 @@
                       placeholder="Choose quest"/>
                   </td>
                   <td colspan="2">
-                    <template v-if="teams.quest.data">
+                    <template v-if="teams.quest.choice.name">
                       <span class="htooltip">
                         <span class="htooltip-text">{{'Set boss fight {0}'.format( teams.quest.choice.b ? 'disabled' : 'enabled' )}}</span>
                         <input v-model="teams.quest.choice.b" type="checkbox" :enabled="teams.quest.data.boss"/>
