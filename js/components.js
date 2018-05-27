@@ -1715,8 +1715,8 @@ Vue.component( 'team', {
           }
         } );
         
+        result.power.hero += result.roster[sn].power.value;
         result.roster[sn].power.m.s = m_s * ( result.assigned - 1 );
-        result.power.hero += ( result.roster[sn].power.value || 0 );
         result.roster[sn].power.value = ( result.roster[sn].power.hero * result.roster[sn].power.m.h + result.roster[sn].power.items * result.roster[sn].power.m.o * result.roster[sn].power.m.i ) * result.roster[sn].power.m.b * result.roster[sn].power.m.s;
         result.roster[sn].power.info = 
           'TP = ( HP * HPM + IP * IOM * IPM ) * BM * SRM\r\n{0} = ( {1} * {3}  + {2} * {4} * {5} ) * {6} * {7}'
@@ -1730,7 +1730,7 @@ Vue.component( 'team', {
               result.roster[sn].power.m.b.fixString(2),
               result.roster[sn].power.m.s.fixString(2)
             );
-        result.power.value += ( result.roster[sn].power.value || 0 );
+        result.power.value += result.roster[sn].power.value;
 
         rst.info.hero.map( function( s ) {
           if ( s.base == 'Energetic' ) {
