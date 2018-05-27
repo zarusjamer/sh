@@ -1638,7 +1638,7 @@ Vue.component( 'team', {
           result.loot.max = qt.loot.max;
         }
         result.power.value = qt.power || q.power;
-        result.power.hero: !!qt.boss && vm.quest.boss ? qt.boss.power : qt.base.power;
+        result.power.hero = result.boss && vm.quest.boss ? qt.boss.power : qt.base.power;
       }
       return result;
     },
