@@ -1670,6 +1670,104 @@ Vue.component( 'team', {
       }
       return result;
     },
+    quest: function() {
+      var vm = this;
+      if ( !vm.teams.quest.data ) {
+        return false;
+      }
+      var result = $.extend( true, { 
+        roster: {
+        },
+        m: {
+          rv: 0.0,
+          hh: 0.0
+        }
+      }, vm.teams.quest.data );
+      vm.summary.skills
+        .map( function( s ) {
+          if ( s.base == 'Healer' ) {
+            result.m.hh = Math.min( result.m.hh + s.value, s.cap );
+          } else if ( s.base == 'Revive' ) {
+            result.m.rv = Math.min( result.m.rv + s.value, s.cap );
+          } else if ( s.base == 'Minimum' ) {
+            result.loot.min += s.value;
+          } else if ( s.base == 'Maximum' ) {
+            result.loot.min += s.value;
+          }
+        } );
+      $.map( vm.roster, function( rst, sn ) {
+        rst.info.hero.map( function( s ) {
+          var rv = result.m.rv;
+          var hh = result.m.hh;
+          var en = 0.0;
+          var mn = result.loot.min;
+          var mx = result.loot.max;
+          if ( s.base == 'Energetic' ) {
+            en = Math.min( en + s.value, s.cap );
+          } else if ( s.base == 'Revive' ) {
+            rv = Math.min( rv + s.value, s.cap );
+          } else if ( s.base == 'Minimum' ) {
+            mn += s.value;
+          } else if ( s.base == 'Maximum' ) {
+            mx += s.value;
+          }
+        } );
+        result.roster[sn] = {
+          face: null,
+          chance: 0.00,
+          rest: {
+            value: result.time.base / 2,
+            m: ( 1.0 - hh ) * ( 1.0 - en )
+          },
+          heal: {
+            value: result.time.base * 2,
+            m: ( 1.0 - hh )
+          },
+          loot: {
+            min: mn,
+            max: mx
+          },
+          power: {
+            value: result.power.hero,
+            info: null
+          }
+        };
+        var m_face = vm.summary.roster[sn].power.value / result.power.hero;
+        var p_face = result.power.hero - result.roster[sn].power.value;
+        if ( p_face > 0 ) {
+          result.roster[sn].power.info = 'Required {0} more power'.format( p_face.intString() );
+        }
+        if ( m_face >= 1 ) {
+          result.roster[sn].face = 'happy';
+          result.roster[sn].chance = 0.05;
+        } else if ( m_face >= 0.91 ) {
+          result.roster[sn].face = 'normal';
+          result.roster[sn].chance = 0.25;
+        } else if ( m_face >= 0.75 ) {
+          result.roster[sn].face = 'content';
+          result.roster[sn].chance = 0.45;
+        } else if ( m_face >  0.00 ) {
+          result.roster[sn].face = 'unhappy';
+          result.roster[sn].chance = 0.65;
+        }
+        result.roster[sn].loot.min += v_min;
+        result.roster[sn].loot.max += v_max;
+        result.roster[sn].loot.min = Math.min( result.roster[sn].loot.min, result.roster[sn].loot.max );
+        result.roster[sn].chance *= ( 1.0 - m_r );
+        result.roster[sn].heal.value *= result.roster[sn].heal.m;
+        result.roster[sn].rest.value *= result.roster[sn].rest.m;
+      } );
+      var p_team = result.power.value - vm.summary.power.value;
+      if ( p_team > 0 ) {
+        result.power.info = 'Required {0} more power'.format( p_team.intString() );
+      }
+      var s = vm.summary.skills.find( function( s ) { return s.base == 'Speed'; } );
+      if ( s ) {
+        result.time.m += s.value;
+      }
+      result.time.value = result.time.base * ( 1 - result.time.m ) * ( 1 - result.time.c ) * ( 1 - result.time.i );
+      return result;
+    },
     summary: function() {
       var vm = this;
       var result = {
@@ -1679,8 +1777,7 @@ Vue.component( 'team', {
           value: 0
         },
         roster: {},
-        skills: [],
-        quest: vm.questInfo
+        skills: []
       };
 
       var pw_hero = 0.0;
@@ -1724,11 +1821,6 @@ Vue.component( 'team', {
           power: rst.power,
           chance: rst.chance
         };
-        var m_r = 0.0;
-        var m_h = 0.0;
-        var m_e = 0.0;
-        var v_min = 0;
-        var v_max = 0;
         var m_op = result.roster[sn].power.m.o;
         var m_eq = result.roster[sn].power.m.i;
         var m_st = result.roster[sn].power.m.h;
@@ -1747,25 +1839,7 @@ Vue.component( 'team', {
             } else if ( s.base == 'Break Chance' ) {
               result.roster[sn].chance = Math.min( result.roster[sn].chance + s.value, s.cap );
             }
-            if ( s.base == 'Healer' ) {
-              m_h = Math.min( m_h + s.value, s.cap );
-            } else if ( s.base == 'Revive' ) {
-              m_r = Math.min( m_r + s.value, s.cap );
-            } else if ( s.base == 'Minimum' ) {
-              v_min += s.value;
-            } else if ( s.base == 'Minimum' ) {
-              v_max += s.value;
-            }
           } );
-        rst.info.hero.map( function( s ) {
-          if ( s.base == 'Energetic' ) {
-            m_e = Math.min( m_e + s.value, s.cap );
-          } else if ( s.base == 'Minimum' ) {
-            v_min += s.value;
-          } else if ( s.base == 'Maximum' ) {
-            v_max += s.value;
-          }
-        } );
           
         $.map( rst.slots, function( s ) {
           if ( s.chance ) {
@@ -1790,62 +1864,6 @@ Vue.component( 'team', {
             );
         pw_value += result.roster[sn].power.value;
 
-        result.roster[sn].quest = {
-          face: null,
-          chance: 0.00,
-          rest: {
-            value: result.quest.time.base / 2,
-            m: ( 1.0 - m_h ) * ( 1.0 - m_e )
-          },
-          heal: {
-            value: result.quest.time.base * 2,
-            m: ( 1.0 - m_h )
-          },
-          loot: {
-            min: result.quest.loot.min,
-            max: result.quest.loot.max
-          },
-          power: {
-            value: result.quest.power.hero || 0,
-            info: null
-          }
-        };
-        var m_face = result.roster[sn].power.value / result.quest.power.hero;
-        var p_face = result.quest.power.hero - result.roster[sn].power.value;
-        if ( p_face > 0 ) {
-          result.roster[sn].quest.power.info = 'Required {0} more power'.format( vm.intString( p_face ) );
-        }
-        if ( m_face >= 1 ) {
-          result.roster[sn].quest.face = 'happy';
-          result.roster[sn].quest.chance = 0.05;
-        } else if ( m_face >= 0.91 ) {
-          result.roster[sn].quest.face = 'normal';
-          result.roster[sn].quest.chance = 0.25;
-        } else if ( m_face >= 0.75 ) {
-          result.roster[sn].quest.face = 'content';
-          result.roster[sn].quest.chance = 0.45;
-        } else if ( m_face >  0.00 ) {
-          result.roster[sn].quest.face = 'unhappy';
-          result.roster[sn].quest.chance = 0.65;
-        }
-        result.roster[sn].quest.loot.min += v_min;
-        result.roster[sn].quest.loot.max += v_max;
-        result.roster[sn].quest.loot.min = Math.min( result.roster[sn].quest.loot.min, result.roster[sn].quest.loot.max );
-        result.roster[sn].quest.chance *= ( 1.0 - m_r );
-        result.roster[sn].quest.heal.value *= result.roster[sn].quest.heal.m;
-        result.roster[sn].quest.rest.value *= result.roster[sn].quest.rest.m;
-      } );
-      result.power.value = pw_value;
-      result.power.info = 'Group Bonus: +{0}%'.format( ( pw_value / pw_hero - 1 ).pptString(0) );
-      var p_team = result.quest.power.value - pw_value;
-      if ( p_team > 0 ) {
-        result.quest.power.info = 'Required {0} more power'.format( p_team.intString() );
-      }
-      var s = result.skills.find( function( s ) { return s.base == 'Speed'; } );
-      if ( s ) {
-        result.quest.time.m += s.value;
-      }
-      result.quest.time.value = result.quest.time.base * ( 1 - result.quest.time.m ) * ( 1 - result.quest.time.c ) * ( 1 - result.quest.time.i );
       return result;
     }
   },

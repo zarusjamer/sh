@@ -283,7 +283,16 @@
       "leader": false
     },
     "Lucky": { 
-      "base": "Lucky",
+      "base": "Revive",
+      "text": "Chance of getting injury is decreased by {0}",
+      "priority": 20,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Shadowstep": { 
+      "base": "Revive",
       "text": "Chance of getting injury is decreased by {0}",
       "priority": 20,
       "cap": 1.0,
