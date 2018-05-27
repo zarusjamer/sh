@@ -881,16 +881,14 @@
           <span v-else class="head">{{object.name}}</span>
         </th>
         <template v-for="( rst, sn ) in object.roster">
-          <td>
-            <template v-if="companions[sn]">
+          <template v-if="companions[sn]">
+            <td>
               <span
                 class="button"
                 :class="[ edits.roster[sn].hero ? 'apply' : 'edit' ]"
                 @click="edits.roster[sn].hero = !edits.roster[sn].hero"/>
-            </template>
-          </td>
-          <td>
-            <template v-if="companions[sn]">
+            </td>
+            <td>
               <select2
                 v-if="edits.roster[sn].hero"
                 v-model="rst.name"
@@ -902,8 +900,12 @@
                 </span>
                 <span class="head">{{rst.name}}</span> 
               </template>
-            </template>
-          </td>
+            </td>
+          </template>
+          <template v-else>
+            <td/>
+            <td/>
+          </template>
         </template>
       </tr>
       <tr class="data-info">
@@ -921,21 +923,22 @@
           <power :power="summary.power" class="float-left"/>
         </td>
         <template v-for="( rst, sn ) in object.roster">
-          <td>
-            <template v-if="roster[sn]">
-              <template v-if="rst.origin.boostable">
+          <template v-if="roster[sn]">
+            <td>
+              <template v-if="roster[sn].origin.boostable">
                 <span class="htooltip">
-                  <span class="htooltip-text">{{'Set {0} boost {1}'.format( rst.hero.origin, ( rst.origin.b ? 'disabled' : 'enabled' ) )}}</span>
-                  <input type="checkbox" v-model="rst.origin.b"/>
+                  <span class="htooltip-text">{{'Set {0} boost {1}'.format( roster[sn].hero.origin, ( roster[sn].origin.b ? 'disabled' : 'enabled' ) )}}</span>
+                  <input type="checkbox" v-model="roster[sn].origin.b"/>
                 </span>
               </template>
-            </template>
-          </td>
-          <td>
-            <template v-if="roster[sn]">
+            </td>
+            <td>
               <power :power="roster[sn].power" class="float-left"/>
-            </template>
-          </td>
+            </td>
+        </template>
+        <template v-else>
+          <td/>
+          <td/>
         </template>
       </tr>
       <tr class="data-info">
