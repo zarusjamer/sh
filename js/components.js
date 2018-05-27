@@ -1852,7 +1852,8 @@ Vue.component( 'team', {
               m_sr.fixString(2)
             );
         pw_value += result.roster[sn].power.value;
-
+      } );
+      result.power.info = 'Group Bonus: +{0}%'.format( Math.round( 100 * ( pw_value / pw_hero - 1 ) ) );
       return result;
     }
   },
