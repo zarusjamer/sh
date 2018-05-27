@@ -1663,6 +1663,8 @@ Vue.component( 'team', {
         quest: vm.questInfo
       };
 
+      var pw_hero = 0.0;
+      var pw_value = 0.0;
       var skills = [];
       $.map( vm.roster, function( rst, sn ) {
         result.assigned += 1;
@@ -1739,7 +1741,7 @@ Vue.component( 'team', {
         } );
         m_sr = 1.0 + m_sr * ( result.assigned - 1 );
         
-        result.power.hero += result.roster[sn].power.value;
+        pw_hero += result.roster[sn].power.value;
         result.roster[sn].power.value = ( result.roster[sn].power.hero * m_st + result.roster[sn].power.items * m_op * m_eq ) * result.roster[sn].power.m.b * m_sr;
         result.roster[sn].power.info = 
           'TP = ( HP * HPM + IP * IOM * IPM ) * BM * SRM\r\n{0} = ( {1} * {3}  + {2} * {4} * {5} ) * {6} * {7}'
@@ -1753,7 +1755,7 @@ Vue.component( 'team', {
               result.roster[sn].power.m.b.fixString(2),
               m_sr.fixString(2)
             );
-        result.power.value += result.roster[sn].power.value;
+        pw_value += result.roster[sn].power.value;
 
         result.roster[sn].quest = {
           face: null,
@@ -1800,8 +1802,9 @@ Vue.component( 'team', {
         result.roster[sn].quest.heal.value *= result.roster[sn].quest.heal.m;
         result.roster[sn].quest.rest.value *= result.roster[sn].quest.rest.m;
       } );
-      result.power.info = 'Group Bonus: +{0}%'.format( Math.round( 100 * ( result.power.value / result.power.hero - 1 ) ) );
-      var p_team = result.quest.power.value - result.power.value;
+      result.power.value = pw_value;
+      result.power.info = 'Group Bonus: +{0}%'.format( ( pw_value / pw_hero - 1 ).pptString(0) );
+      var p_team = result.quest.power.value - pw_value;
       if ( p_team > 0 ) {
         result.quest.power.info = 'Required {0} more power'.format( p_team.intString() );
       }
