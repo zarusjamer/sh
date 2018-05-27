@@ -597,19 +597,19 @@ Vue.mixin( {
       if ( !h ) {
         return result;
       }
-      result.origin = vm.data.origins[result.hero.origin];
-      if ( result.hero.b ) {
+      result.origin = vm.data.origins[h.origin];
+      if ( h.b ) {
         result.power.m.b = 1.25;
       }
-      result.power.base = result.hero.power.base;
-      result.power.level = vm.data.powers.lv[result.hero.lv];
-      result.power.m.l = result.hero.power.m;
+      result.power.base = h.power.base;
+      result.power.level = vm.data.powers.lv[h.lv];
+      result.power.m.l = h.power.m;
       
-      result.companions = 4 + ( result.hero.lv >= 30 ? 1 : 0 );
-      result.skills.hero = $.map( result.hero.skills, function( lv, name ) {
-        return $.extend( true, vm.getSkill( name ), { lv: lv, active: ( result.hero.lv >= lv ) } );
+      result.companions = 4 + ( h.lv >= 30 ? 1 : 0 );
+      result.skills.hero = $.map( h.skills, function( lv, name ) {
+        return $.extend( true, vm.getSkill( name ), { lv: lv, active: ( h.lv >= lv ) } );
       } );
-      $.map( result.hero.slots, function( slot, name ) {
+      $.map( h.slots, function( slot, name ) {
         result.slots[name] = {};
         result.slots[name].list = $.map( slot.types, function( a, type ) {
           var items = $
@@ -638,12 +638,12 @@ Vue.mixin( {
           optimal: false,
           a: 0,
           power: {
-            value: NaN,
+            value: 0.0,
             info: ''
           },
           chance: {
-            base: NaN,
-            value: NaN
+            base: 0.0,
+            value: 0.0
           }
         };
         if ( slot.item ) {
