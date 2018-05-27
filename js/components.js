@@ -1705,9 +1705,12 @@ Vue.component( 'team', {
             mx += s.value;
           }
         } );
-        result.roster[sn] = {
-          face: null,
-          chance: 0.00,
+        var rstInfo = {
+          injury: {
+            face: null,
+            info: null,
+            chance: 0.00
+          },
           time: {
             rest: result.time.base / 2 * ( 1.0 - hh ) * ( 1.0 - en ),
             heal: result.time.base * 2 * ( 1.0 - hh )
@@ -1715,35 +1718,37 @@ Vue.component( 'team', {
           loot: {
             min: Math.min( mn, mx ),
             max: mx
-          },
-          power: {
-            value: vm.summary.roster[sn].power.value,
-            info: null
           }
         };
-        var m_face = vm.summary.roster[sn].power.value / result.power.base;
-        var p_face = result.power.base - result.roster[sn].power.value;
+        var pw_hero = vm.summary.roster[sn].power.value;
+        var m_face = pw_hero / result.power.base;
+        var p_face = result.power.base - pw_hero;
         if ( p_face > 0 ) {
-          result.roster[sn].power.info = 'Required {0} more power'.format( p_face.intString() );
+          rstInfo.injury.info = 'Required {0} more power'.format( p_face.intString() );
         }
         if ( m_face >= 1 ) {
-          result.roster[sn].face = 'happy';
-          result.roster[sn].chance = 0.05;
+          rstInfo.injury.face = 'happy';
+          rstInfo.injury.chance = 0.05;
         } else if ( m_face >= 0.91 ) {
-          result.roster[sn].face = 'normal';
-          result.roster[sn].chance = 0.25;
+          rstInfo.injury.face = 'normal';
+          rstInfo.injury.chance = 0.25;
         } else if ( m_face >= 0.75 ) {
-          result.roster[sn].face = 'content';
-          result.roster[sn].chance = 0.45;
+          rstInfo.injury.face = 'content';
+          rstInfo.injury.chance = 0.45;
         } else if ( m_face >  0.00 ) {
-          result.roster[sn].face = 'unhappy';
-          result.roster[sn].chance = 0.65;
+          rstInfo.injury.face = 'unhappy';
+          rstInfo.injury.chance = 0.65;
         }
-        result.roster[sn].chance *= ( 1.0 - rv );
+        rstInfo.injury.chance *= ( 1.0 - rv );
+        
+        result.roster[sn] = rstInfo;
       } );
       var p_team = result.power.value - vm.summary.power.value;
       if ( p_team > 0 ) {
         result.power.info = 'Required {0} more power'.format( p_team.intString() );
+        result.power.face = 'unhappy';
+      } else {
+        result.power.face = 'normal';
       }
       result.time.value = result.time.base * ( 1 - result.time.m ) * ( 1 - result.time.c ) * ( 1 - result.time.i );
       return result;

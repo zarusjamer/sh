@@ -966,24 +966,41 @@
       </tr>
       <template v-if="quest">
         <tr class="data-info">
-          <th>
-            <span class="head">Power</span>
+          <th rowspan="3">
+            <span class="head">Quest</span>
           </th>
           <td>
-          </td>
-          <td>
+            <span class="icon hero face" :class="quest.power.face"/>
           </td>
           <td>
             <power :power="quest.power" class="float-left"/>
           </td>
+          <template v-for="( rst, sn ) in object.roster">
+            <template v-if="companions[sn]">
+              <td>
+                <span class="icon hero face" :class="quest.roster[sn].injury.face"/>
+              </td>
+              <td>
+                <span class="float-left">
+                <span class="head">{{quest.roster[sn].injury.chance.pptString(1)}}</span> 
+              </td>
+            </template>
+            <template v-else>
+              <td/>
+              <td/>
+            </template>
+          </template>
+        </tr>
+        <tr class="data-info">
           <td>
           </td>
           <td>
             <timer :time="quest.time.value"/>
           </td>
-          <td colspan="2"/>
-          <td colspan="2"/>
-          <td colspan="2"/>
+        </tr>
+        <tr class="data-info">
+          <td>
+          </td>
         </tr>
       </template>
       <template v-if="summary.skills">
