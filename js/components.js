@@ -1465,7 +1465,7 @@ Vue.component( 'team', {
       editAll: false,
       edits: {
         name: false,
-        allHeroes: false,
+        expanded: false,
         roster: {
           slot1: {
             hero: false,

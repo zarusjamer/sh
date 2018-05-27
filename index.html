@@ -898,7 +898,13 @@
         </template>
       </tr>
       <tr class="data-info">
-        <th/>
+        <th>
+          <span
+            class="button"
+            :class="[ edits.expanded ? 'collapse' : 'expand' ]"
+            @click="edits.expanded = !edits.expanded"/>
+          </span>
+        </th>
         <td>
           <span>{{summary.assigned}}</span>
         </td>
@@ -978,7 +984,7 @@
           </template>
         </tr>
       </template>
-      <template v-for="( rst, sn ) in roster">
+      <template v-if="edits.expanded" v-for="( rst, sn ) in roster">
         <tr class="data-info">
           <th rowspan="2">
             <span class="icon medium hero" :class="icon( rst.hero.name )"/>
