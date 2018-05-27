@@ -551,7 +551,6 @@ Vue.mixin( {
       return JSON.parse( JSON.stringify( o ) );
     },
     getSkill: function( name ) {
-      //var data = this.data;
       var ss = this.data.skills[name];
       var sb = this.data.effects[ss.type];
       return $.extend( true, {}, sb, ss );
@@ -831,19 +830,19 @@ Vue.mixin( {
       return v.dateString();
     },
     intString: function( v ) {
-      if ( !v ) {
+      if ( !v || isNaN( v ) ) {
         return '';
       }
       return v.intString();
     },
     fixString: function( v, pos ) {
-      if ( !v ) {
+      if ( !v || isNaN( v ) ) {
         return '';
       }
       return v.fixString( pos );
     },
     pptString: function( v, pos ) {
-      if ( !v ) {
+      if ( !v || isNaN( v ) ) {
         return '';
       }
       return v.pptString( pos );
@@ -1085,7 +1084,7 @@ Vue.component( 'select2', {
         },
         language: {
           noResults: function() {
-            return $( '<div class="select2-data-row"><span class="select2-data-item">Список пуст</span></div>' );
+            return $( '<div class="select2-data-row"><span class="select2-data-item">Empty list</span></div>' );
           }
         }
       }
@@ -1626,9 +1625,10 @@ Vue.component( 'team', {
           item: null,
           time: {
             value: 0,
+            base: 0,
             m: 0.0,
             c: 0.0,
-            i: 1.0
+            i: 0.0
           },
           loot: {
             min: 0,
@@ -1649,18 +1649,19 @@ Vue.component( 'team', {
         var q = vm.data.quests[qname];
         var b = vm.data.origins[q.origin];
         if ( b.cj ) {
-          result.quest.c += b.cj.value * b.cj.lv;
+          result.quest.time.c += b.cj.value * b.cj.lv;
         }
         if ( b.boost ) {
           var bs = b.boost[b.lv];
-          result.quest.time.c += vm.quest.boost.c && bs ? bs.c : 0.0;
-          result.quest.time.i *= vm.quest.boost.i && bs ? Math.pow( bs.i, 3 ) : 1.0;
+          if ( bs ) {
+            result.quest.time.c += vm.quest.boost.c ? bs.c : 0.0;
+            result.quest.time.i = Math.min( 0.85, vm.quest.boost.i ? Math.pow( 1.0 - bs.i, 3 ) : 0.0 );
+          }
         }
         var qt = q.tiers[tname];
         result.quest.origin = q.origin;
-        result.quest.time.value = q.time;
+        result.quest.time.base = q.time;
         result.quest.item = q.item;
-        result.quest.power.value = q.power;
         result.quest.boss = !!qt.boss;
         if ( qt.loot ) {
           result.quest.loot.min = qt.loot.min;
@@ -1752,11 +1753,11 @@ Vue.component( 'team', {
         result.power.value += ( result.roster[sn].power.value || 0 );
 
         rst.info.hero.map( function( s ) {
-          if ( s.name == 'Energetic' ) {
+          if ( s.base == 'Energetic' ) {
             m_e = Math.min( m_e + s.value, s.cap );
-          } else if ( s.name == 'Minimum' ) {
+          } else if ( s.base == 'Minimum' ) {
             v_min += s.value;
-          } else if ( s.name == 'Maximum' ) {
+          } else if ( s.base == 'Maximum' ) {
             v_max += s.value;
           }
         } );
@@ -1764,11 +1765,11 @@ Vue.component( 'team', {
           face: null,
           chance: 0.00,
           rest: {
-            value: result.quest.time.value / 2,
+            value: result.quest.time.base / 2,
             m: ( 1.0 - m_h ) * ( 1.0 - m_e )
           },
           heal: {
-            value: result.quest.time.value * 2,
+            value: result.quest.time.base * 2,
             m: ( 1.0 - m_h )
           },
           loot: {
@@ -1783,7 +1784,7 @@ Vue.component( 'team', {
         var m_face = result.roster[sn].power.value / result.quest.power.hero;
         var p_face = result.quest.power.hero - result.roster[sn].power.value;
         if ( p_face > 0 ) {
-          result.roster[sn].quest.power.info = 'Required {0} more power'.format( p_face.intString() );
+          result.roster[sn].quest.power.info = 'Required {0} more power'.format( vm.intString( p_face ) );
         }
         if ( m_face >= 1 ) {
           result.roster[sn].quest.face = 'happy';
@@ -1810,11 +1811,11 @@ Vue.component( 'team', {
       if ( p_team > 0 ) {
         result.quest.power.info = 'Required {0} more power'.format( p_team.intString() );
       }
-      var s = result.skills.find( function( s ) { return s.type == 'Speed'; } );
+      var s = result.skills.find( function( s ) { return s.base == 'Speed'; } );
       if ( s ) {
         result.quest.time.m += s.value;
       }
-      result.quest.time.value *= ( 1 - result.quest.time.m ) * ( 1 - result.quest.time.c ) * result.quest.time.i;
+      result.quest.time.value = result.quest.time.base * ( 1 - result.quest.time.m ) * ( 1 - result.quest.time.c ) * ( 1 - result.quest.time.i );
       return result;
     }
   },
