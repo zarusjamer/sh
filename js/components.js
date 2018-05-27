@@ -9,6 +9,12 @@
   quests: {},
   items: {},
   heroes: {},
+  quest: {
+    name: null,
+    b: false,
+    c: false,
+    i: false
+  },
   teams: []
 };
 
@@ -25,12 +31,6 @@ Vue.mixin( {
         visible: function( o ) { return o; },
         filters: {
           name: null
-        },
-        quest: {
-          name: null,
-          b: false,
-          c: false,
-          i: false
         }
       },
       heroes: {
@@ -517,13 +517,12 @@ Vue.mixin( {
       },
       deep: true
     },
-    'teams.quest.name': {
+    'data.quest.name': {
       handler: function( name ) {
-        var vm = this;
         if ( !name ) {
-          vm.teams.quest.b = false;
-          vm.teams.quest.c = false;
-          vm.teams.quest.i = false;
+          this.data.quest.b = false;
+          this.data.quest.c = false;
+          this.data.quest.i = false;
         }
       }
     }
@@ -1614,7 +1613,7 @@ Vue.component( 'team', {
     },
     quest: function() {
       var vm = this;
-      if ( !vm.teams.quest.name ) {
+      if ( !vm.data.quest.name ) {
         return false;
       }
       var result = {
@@ -1655,8 +1654,8 @@ Vue.component( 'team', {
       if ( b.boost ) {
         var bs = b.boost[b.lv];
         if ( bs ) {
-          result.time.c += vm.teams.quest.c ? bs.c : 0.0;
-          result.time.i  = vm.teams.quest.i ? 0.85 : 0.0;
+          result.time.c += vm.data.quest.c ? bs.c : 0.0;
+          result.time.i  = vm.data.quest.i ? 0.85 : 0.0;
         }
       }
       var qt = q.tiers[tname];
@@ -1673,7 +1672,7 @@ Vue.component( 'team', {
         result.boss = true;
         result.power.boss = qt.boss.power;
       }
-      var pw_hero = vm.teams.quest.b ? result.power.hero : result.power.boss;
+      var pw_hero = vm.data.quest.b ? result.power.hero : result.power.boss;
       vm.summary.skills
         .map( function( s ) {
           if ( s.base == 'Healer' ) {

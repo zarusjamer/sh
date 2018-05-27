@@ -121,23 +121,23 @@
                   </td>
                   <td colspan="2">
                     <select2
-                      v-model="teams.quest.name"
+                      v-model="data.quest.name"
                       :options="lists.quest"
                       placeholder="Choose quest"/>
                   </td>
                   <td colspan="2">
-                    <template v-if="teams.quest.name">
+                    <template v-if="data.quest.name">
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set boss fight {0}'.format( teams.quest.b ? 'disabled' : 'enabled' )}}</span>
-                        <input v-model="teams.quest.b" type="checkbox"/>
+                        <span class="htooltip-text">{{'Set boss fight {0}'.format( data.quest.b ? 'disabled' : 'enabled' )}}</span>
+                        <input v-model="data.quest.b" type="checkbox"/>
                       </span>
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set collective boost {0}'.format( teams.quest.c ? 'disabled' : 'enabled' )}}</span>
-                        <input v-model="teams.quest.c" type="checkbox"/>
+                        <span class="htooltip-text">{{'Set collective boost {0}'.format( data.quest.c ? 'disabled' : 'enabled' )}}</span>
+                        <input v-model="data.quest.c" type="checkbox"/>
                       </span>
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set max instant boost {0}'.format( teams.quest.i ? 'disabled' : 'enabled' )}}</span>
-                        <input v-model="teams.quest.i" type="checkbox"/>
+                        <span class="htooltip-text">{{'Set max instant boost {0}'.format( data.quest.i ? 'disabled' : 'enabled' )}}</span>
+                        <input v-model="data.quest.i" type="checkbox"/>
                       </span>
                     </template>
                   </td>
@@ -964,7 +964,7 @@
           </template>
         </template>
       </tr>
-      <template v-if="teams.quest.name">
+      <template v-if="data.quest.name">
         <tr class="data-info">
           <th/>
           <td>
