@@ -942,7 +942,7 @@
           <span>{{summary.assigned}}</span>
         </td>
         <td>
-          <power :power="summary.power" class="float-left"/>
+          <power :power="summary.power"/>
         </td>
         <template v-for="( rst, sn ) in object.roster">
           <template v-if="roster[sn]">
@@ -955,7 +955,7 @@
               </template>
             </td>
             <td>
-              <power :power="roster[sn].power" class="float-left"/>
+              <power :power="roster[sn].power"/>
             </td>
           </template>
           <template v-else>
@@ -973,7 +973,7 @@
             <span class="icon hero face" :class="quest.power.face"/>
           </td>
           <td>
-            <power :power="quest.power" class="float-left"/>
+            <power :power="quest.power"/>
           </td>
           <template v-for="( rst, sn ) in object.roster">
             <template v-if="companions[sn]">
@@ -981,7 +981,7 @@
                 <span class="icon hero face" :class="quest.roster[sn].injury.face"/>
               </td>
               <td>
-                <span class="head">{{quest.roster[sn].injury.chance.pptString(1)}}</span>
+                <span>{{quest.roster[sn].injury.chance.pptString(1)}}</span>
               </td>
             </template>
             <template v-else>

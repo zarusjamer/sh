@@ -1214,8 +1214,10 @@ Vue.component( 'chance', {
 Vue.component( 'power', {
   template: `
   <span v-if="power.value" class="htooltip">
+    <span class="float-left">
+      <span class="icon power"/>
+    </span>
     <span class="htooltip-text" v-if="!!power.info">{{power.info}}</span>
-    <span class="icon power"/>
     <span>{{power.value.intString()}}</span>  
   </span>
   `,
@@ -1748,7 +1750,7 @@ Vue.component( 'team', {
         result.power.info = 'Required {0} more power'.format( p_team.intString() );
         result.power.face = 'unhappy';
       } else {
-        result.power.face = 'normal';
+        result.power.face = '';
       }
       result.time.value = result.time.base * ( 1 - result.time.m ) * ( 1 - result.time.c ) * ( 1 - result.time.i );
       return result;
