@@ -1686,7 +1686,7 @@ Vue.component( 'team', {
           hh: 0.0
         }
       }, vm.teams.quest.data );
-      var pw_hero = vm.teams.quest.choice.b ?: result.power.hero : result.power.boss
+      var pw_hero = vm.teams.quest.choice.b ? result.power.hero : result.power.boss;
       vm.summary.skills
         .map( function( s ) {
           if ( s.base == 'Healer' ) {
