@@ -132,14 +132,6 @@ table.shopheroes input.lv {
   text-align: center;
 }
 
-table.shopheroes .collapse {
-  display: inline;
-  text-align: left;
-  margin-left: 0.2em;
-  float: left;
-  width: auto !important; 
-}
-
 table.shopheroes .inactive {
   text-decoration: line-through;
 }
