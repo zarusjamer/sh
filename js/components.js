@@ -25,6 +25,14 @@ Vue.mixin( {
         visible: function( o ) { return o; },
         filters: {
           name: null
+        },
+        quest: {
+          choice: null,
+          boss: false,
+          boost: {
+            c: false,
+            i: false
+          }
         }
       },
       heroes: {
@@ -1567,14 +1575,6 @@ Vue.component( 'team', {
             }
           }
         }
-      },
-      quest: {
-        choice: null,
-        boss: false,
-        boost: {
-          c: false,
-          i: false
-        }
       }
     };
   },
@@ -1704,6 +1704,8 @@ Vue.component( 'team', {
         .sort( function( s1, s2 ) { 
           return s1.priority - s2.priority; 
         } );
+      result.skillsRows = vm.get_k( result.skills.length, 7 );
+      
       $.map( vm.roster, function( rst, sn ) {
         result.roster[sn] = {
           power: rst.power,
