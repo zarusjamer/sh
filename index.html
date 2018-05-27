@@ -973,12 +973,12 @@
           <td>
           </td>
           <td>
-            <power v-if="quest.choice" :power="summary.quest.power" class="float-left"/>
+            <power :power="teams.quest.data.power" class="float-left"/>
           </td>
           <td>
           </td>
           <td>
-            <timer v-if="quest.choice" :time="summary.quest.time.value"/>
+            <timer :time="teams.quest.data.time.value"/>
           </td>
           <td colspan="2"/>
           <td colspan="2"/>
