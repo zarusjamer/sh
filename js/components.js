@@ -1693,15 +1693,17 @@ Vue.component( 'team', {
             result.loot.min += s.value;
           } else if ( s.base == 'Maximum' ) {
             result.loot.min += s.value;
+          } else if ( s.base == 'Speed' ) {
+            result.time.m += s.value;
           }
         } );
       $.map( vm.roster, function( rst, sn ) {
+        var rv = result.m.rv;
+        var hh = result.m.hh;
+        var en = 0.0;
+        var mn = result.loot.min;
+        var mx = result.loot.max;
         rst.info.hero.map( function( s ) {
-          var rv = result.m.rv;
-          var hh = result.m.hh;
-          var en = 0.0;
-          var mn = result.loot.min;
-          var mx = result.loot.max;
           if ( s.base == 'Energetic' ) {
             en = Math.min( en + s.value, s.cap );
           } else if ( s.base == 'Revive' ) {
@@ -1715,16 +1717,12 @@ Vue.component( 'team', {
         result.roster[sn] = {
           face: null,
           chance: 0.00,
-          rest: {
-            value: result.time.base / 2,
-            m: ( 1.0 - hh ) * ( 1.0 - en )
-          },
-          heal: {
-            value: result.time.base * 2,
-            m: ( 1.0 - hh )
+          time: {
+            rest: result.time.base / 2 * ( 1.0 - hh ) * ( 1.0 - en ),
+            heal: result.time.base * 2 * ( 1.0 - hh )
           },
           loot: {
-            min: mn,
+            min: Math.min( mn, mx ),
             max: mx
           },
           power: {
@@ -1750,20 +1748,11 @@ Vue.component( 'team', {
           result.roster[sn].face = 'unhappy';
           result.roster[sn].chance = 0.65;
         }
-        result.roster[sn].loot.min += v_min;
-        result.roster[sn].loot.max += v_max;
-        result.roster[sn].loot.min = Math.min( result.roster[sn].loot.min, result.roster[sn].loot.max );
-        result.roster[sn].chance *= ( 1.0 - m_r );
-        result.roster[sn].heal.value *= result.roster[sn].heal.m;
-        result.roster[sn].rest.value *= result.roster[sn].rest.m;
+        result.roster[sn].chance *= ( 1.0 - rv );
       } );
       var p_team = result.power.value - vm.summary.power.value;
       if ( p_team > 0 ) {
         result.power.info = 'Required {0} more power'.format( p_team.intString() );
-      }
-      var s = vm.summary.skills.find( function( s ) { return s.base == 'Speed'; } );
-      if ( s ) {
-        result.time.m += s.value;
       }
       result.time.value = result.time.base * ( 1 - result.time.m ) * ( 1 - result.time.c ) * ( 1 - result.time.i );
       return result;
