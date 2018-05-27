@@ -562,6 +562,15 @@ Vue.mixin( {
         companions: 1,
         optimals: 0,
         chance: 0.0,
+        slots: {
+          'Weapon': {},
+          'Armor': {},
+          'Head': {},
+          'Hands': {},
+          'Feet': {},
+          'Aux1': {},
+          'Aux2': {}
+        },
         power: { 
           info: '',
           base: 0,
@@ -586,6 +595,9 @@ Vue.mixin( {
           team: {}
         }
       };
+      if ( !h ) {
+        return result;
+      }
       result.origin = vm.data.origins[result.hero.origin];
       if ( result.hero.b ) {
         result.power.m.b = 0.25;
