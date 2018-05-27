@@ -1675,7 +1675,7 @@ Vue.component( 'team', {
           var idx = ss[s.name];
           if ( !idx ) {
             ss[s.name] = {
-              name: s.type,
+              name: s.name,
               base: s.base,
               text: s.text,
               sign: s.sign,
