@@ -1655,7 +1655,7 @@ Vue.component( 'team', {
           var bs = b.boost[b.lv];
           if ( bs ) {
             result.quest.time.c += vm.quest.boost.c ? bs.c : 0.0;
-            result.quest.time.i = Math.min( 0.85, vm.quest.boost.i ? Math.pow( 1.0 - bs.i, 3 ) : 0.0 );
+            result.quest.time.i = vm.quest.boost.i ? 0.85 : 0.0;
           }
         }
         var qt = q.tiers[tname];
