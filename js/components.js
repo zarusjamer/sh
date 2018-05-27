@@ -1689,7 +1689,7 @@ Vue.component( 'team', {
         var m_op = result.roster[sn].power.m.o;
         var m_eq = result.roster[sn].power.m.i;
         var m_st = result.roster[sn].power.m.h;
-        var m_sr = 0.1;
+        var m_sr = 1.1;
         result.skills
           .filter( function( s ) { 
             return vm.applyFilter( rst.hero, s.filter ); 

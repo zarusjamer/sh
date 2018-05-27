@@ -887,15 +887,17 @@
           </td>
           <td>
             <template v-if="companions[sn]">
-              <span class="float-left">
-                <span class="icon hero" :class="icon( rst.name )"/>
-              </span>
               <select2
                 v-if="edits.roster[sn].hero"
                 v-model="rst.name"
                 :options="getHeroes( rst.name )"
                 placeholder="Choose hero"/>
-              <span v-else class="head">{{rst.name}}</span>
+              <template v-else>
+                <span class="float-left">
+                  <span class="icon hero" :class="icon( rst.name )"/>
+                </span>
+                <span class="head">{{rst.name}}</span> 
+              </template>
             </template>
           </td>
         </template>
