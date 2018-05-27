@@ -1627,8 +1627,8 @@ Vue.component( 'team', {
           text: null
         }
       }
-      if ( vm.quest.choice ) {
-        var names = vm.quest.choice.split( ' ' );
+      if ( vm.teams.quest.choice ) {
+        var names = vm.teams.quest.choice.split( ' ' );
         var tname = names.pop();
         var qname = names.join( ' ' );
         var q = vm.data.quests[qname];
@@ -1653,7 +1653,7 @@ Vue.component( 'team', {
           result.loot.max = qt.loot.max;
         }
         result.power.value = qt.power || q.power;
-        result.power.hero = result.boss && vm.quest.boss ? qt.boss.power : qt.base.power;
+        result.power.hero = result.boss && vm.teams.quest.boss ? qt.boss.power : qt.base.power;
       }
       return result;
     },
