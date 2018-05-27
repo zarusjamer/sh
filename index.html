@@ -121,23 +121,23 @@
                   </td>
                   <td colspan="2">
                     <select2
-                      v-model="teams.quest.choice"
+                      v-model="teams.quest.choice.name"
                       :options="lists.quest"
                       placeholder="Choose quest"/>
                   </td>
                   <td colspan="2">
-                    <template v-if="teams.quest.choice">
+                    <template v-if="teams.quest.data">
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set boss fight {0}'.format( teams.quest.boss ? 'disabled' : 'enabled' )}}</span>
-                        <input v-model="teams.quest.boss" type="checkbox" :enabled="teams.quest.origin.boss"/>
+                        <span class="htooltip-text">{{'Set boss fight {0}'.format( teams.quest.choice.b ? 'disabled' : 'enabled' )}}</span>
+                        <input v-model="teams.quest.choice.b" type="checkbox" :enabled="teams.quest.data.boss"/>
                       </span>
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set {1} collective boost {0}'.format( teams.quest.boost.c ? 'disabled' : 'enabled', teams.quest.origin.name )}}</span>
-                        <input v-model="teams.quest.boost.c" type="checkbox"/>
+                        <span class="htooltip-text">{{'Set {1} collective boost {0}'.format( teams.quest.choice.c ? 'disabled' : 'enabled', teams.quest.data.origin.name )}}</span>
+                        <input v-model="teams.quest.choice.c" type="checkbox"/>
                       </span>
                       <span class="htooltip">
-                        <span class="htooltip-text">{{'Set {1} max instant boost {0}'.format( teams.quest.boost.i ? 'disabled' : 'enabled', teams.quest.origin.name )}}</span>
-                        <input v-model="teams.quest.boost.i" type="checkbox"/>
+                        <span class="htooltip-text">{{'Set {1} max instant boost {0}'.format( teams.quest.choice.i ? 'disabled' : 'enabled', teams.quest.data.origin.name )}}</span>
+                        <input v-model="teams.quest.choice.i" type="checkbox"/>
                       </span>
                     </template>
                   </td>
