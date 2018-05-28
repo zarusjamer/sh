@@ -1106,8 +1106,8 @@
       </template>
       <template v-if="summary.skills">
         <tr v-for="k in summary.skillsRows" class="data-info">
-          <th class="hero-icon" v-if="k == 1">
-            <span class="head" :rowspan="summary.skillsRows">Team</span>
+          <th class="hero-icon" v-if="k == 1" :rowspan="summary.skillsRows">
+            <span class="head">Team</span>
           </th>
           <template v-for="j in 7">
             <template v-for="skill in [ summary.skills[7*(k-1)+j-1] ]">
