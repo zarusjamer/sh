@@ -3136,3 +3136,8 @@ span.icon.item.i-maplestaff {
 span.icon.item.i-maplepotion {
   background-image: url( "../images/items/potions/maplepotion.png" );
 }
+
+span.icon.break {
+  color: #FFFFFF;
+  font-weight: bold;
+}

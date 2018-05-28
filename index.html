@@ -66,8 +66,8 @@
 
             <h2><a href="#teams">Teams</a></h2>
             <p>Now you can proceed to <a href="#teams">Teams</a> tab and start your party assembling</p>
-            <p>First add new team by clicking <i>plus</i> button.</p>
-            <p>Now you can start edit it by clicking <i>pencil</i> button on the left of team name. Set the team name and add heroes to it's roster. Checkbox near hero power emulates bulding boost bonus.</p>
+            <p>First add new team by clicking <span class="ui-icon ui-icon-plus"/>.</p>
+            <p>Now you can start edit it by clicking <span class="ui-icon ui-icon-pencil"/> on the left of team name. Set the team name and add heroes to it's roster. Checkbox near hero power emulates bulding boost bonus.</p>
             
             <h2><a href="#data">Data</a></h2>
             <p>You can export and import custom data (ie changes info).</p>
@@ -101,7 +101,9 @@
                 </tr>
                 <tr class="data-info">
                   <th rowspan="2">
-                    <span class="button add" @click="addTeam"/>
+                    <span
+                      class="clickable ui-icon ui-icon-plus"
+                      @click="addTeam"/>
                   </th>
                   <th colspan="2">
                     <span class="head">Name</span>
@@ -195,6 +197,9 @@
                     <span class="head">Name</span>
                   </th>
                   <th colspan="2">
+                    <span class="head">Skill</span>
+                  </th>
+                  <th colspan="2">
                     <span class="head">Level</span>
                   </th>
                   <th colspan="2">
@@ -209,13 +214,13 @@
                   <th colspan="2">
                     <span class="head">Origin</span>
                   </th>
-                  <th colspan="2">
-                    <span class="head">Skill</span>
-                  </th>
                 </tr>
                 <tr class="data-info">
                   <td colspan="2">
                     <input v-model="heroes.filters.name" type="search" placeholder="Type in name" class="name"/>
+                  </td>
+                  <td colspan="2">
+                    <select2 v-model="heroes.filters.skill" :options="lists.skill" placeholder="Choose skill"/>
                   </td>
                   <td colspan="2">
                     <input v-model.number="heroes.filters.lv.min" type="number" class="lv"/>
@@ -233,9 +238,6 @@
                   </td>
                   <td colspan="2">
                     <select2 v-model="heroes.filters.origin" :options="lists.origin" placeholder="Choose origin"/>
-                  </td>
-                  <td colspan="2">
-                    <select2 v-model="heroes.filters.skill" :options="lists.skill" placeholder="Choose skill"/>
                   </td>
                 </tr>
               </thead>
@@ -666,13 +668,16 @@
       <td>
         <template v-if="object.lv">
           <div class="float-left">
-            <span class="button" :class="[ editLv ? 'apply' : 'edit' ]" @click="editLv = !editLv"/>
+            <span
+              class="clickable ui-icon"
+              :class="[ editLv ? 'ui-icon-check' : 'ui-icon-pencil' ]"
+              @click="editLv = !editLv"/>
           </div>
           <span @dblclick="editLv = !editLv">
             <template v-if="editLv">
-              <span class="button ui-icon-arrowstop-1-s" @click="object.lv = 1"/>
+              <span class="clickable ui-icon ui-icon-arrowstop-1-s" @click="object.lv = 1"/>
               <input type="number" class="lv" v-model.number.lazy="object.lv"/>
-              <span class="button ui-icon-arrowstop-1-n" @click="object.lv = object.cap"/>
+              <span class="clickable ui-icon ui-icon-arrowstop-1-n" @click="object.lv = object.cap"/>
               <span class="float-right" @click="object.lv = object.cap">/&nbsp;{{object.cap}}</span>
             </template>
             <span v-else>{{object.lv}}</span>
@@ -682,13 +687,16 @@
       <td>
         <template v-if="object.cj">
           <div class="float-left">
-            <span class="button" :class="[ editCj ? 'apply' : 'edit' ]" @click="editCj = !editCj"/>
+            <span
+              class="clickable ui-icon"
+              :class="[ editCj ? 'ui-icon-check' : 'ui-icon-pencil' ]"
+              @click="editCj = !editCj"/>
           </div>
           <span @dblclick="editCj = !editCj">
             <template v-if="editCj">
-              <span class="button ui-icon-arrowstop-1-s" @click="object.cj.lv = 0"/>
+              <span class="clickable ui-icon ui-icon-arrowstop-1-s" @click="object.cj.lv = 0"/>
               <input type="number" class="lv" v-model.number.lazy="object.cj.lv"/>
-              <span class="button ui-icon-arrowstop-1-n" @click="object.cj.lv = object.cj.cap"/>
+              <span class="clickable ui-icon ui-icon-arrowstop-1-n" @click="object.cj.lv = object.cj.cap"/>
               <span class="float-right" @click="object.cj.lv = object.cj.cap">/&nbsp;{{object.cj.cap}}</span>
             </template>
             <span v-else>{{object.cj.lv}}</span>
@@ -757,21 +765,42 @@
   <script type="text/x-template" id="templates-hero">
     <tbody>
       <tr class="data-info">
-        <th rowspan="2">
-          <span class="icon medium hero" :class="icon( object.name )" @dblclick="editAll = !editAll"></span>
+        <th class="hero-icon" rowspan="2">
+          <span class="icon medium hero" :class="icon( object.name )"/>
         </th>
-        <th colspan="2">
+        <th class="hero-icon">
+          <span
+            class="clickable ui-icon"
+            :class="[ edits.expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
+            @click="edits.expanded = !edits.expanded"/>
+          </span>
+        </th>
+        <th>
           <span class="head">{{object.name}}</span>
         </th>
+        <td class="hero-icon">
+          <template v-if="summary.origin.boostable">
+            <span class="htooltip">
+              <span class="htooltip-text">{{'Set {0} boost {1}'.format( object.origin, ( summary.origin.b ? 'disabled' : 'enabled' ) )}}</span>
+              <input type="checkbox" v-model="summary.origin.b"/>
+            </span>
+          </template>
+        </td>
         <td>
-          <span class="button" :class="[ edits.lv ? 'apply' : 'edit' ]" @click="edits.lv = !edits.lv"/>
+          <power :power="summary.power"/>
+        </td>
+        <td class="hero-icon">
+          <span
+            class="clickable ui-icon"
+            :class="[ edits.lv ? 'ui-icon-check' : 'ui-icon-pencil' ]"
+            @click="edits.lv = !edits.lv"/>
         </td>
         <td>
           <span @dblclick="edits.lv = !edits.lv">
             <template v-if="edits.lv">
-              <span class="button ui-icon-arrowstop-1-s" @click="object.lv = 1"/>
+              <span class="clickable ui-icon ui-icon-arrowstop-1-s" @click="object.lv = 1"/>
               <input type="number" class="lv" v-model.number.lazy="object.lv"/>
-              <span class="button ui-icon-arrowstop-1-n" @click="object.lv = object.cap"/>
+              <span class="clickable ui-icon ui-icon-arrowstop-1-n" @click="object.lv = object.cap"/>
               <span class="float-right">/&nbsp;{{object.cap}}</span>
             </template>
             <span v-else>{{object.lv}}</span>
@@ -789,114 +818,146 @@
         <td colspan="2">
           <span>{{object.origin}}</span>
         </td>
-        <td colspan="2"/>
       </tr>
       <tr class="data-info">
-        <td>
-          <template v-if="summary.origin.boostable">
-            <span class="htooltip">
-              <span class="htooltip-text">{{'Set {0} boost {1}'.format( object.origin, ( summary.origin.b ? 'disabled' : 'enabled' ) )}}</span>
-              <input type="checkbox" v-model="summary.origin.b"/>
-            </span>
+        <template v-for="j in 7">
+          <template v-if="edits.expanded">
+            <td class="hero-icon">
+              <skillValue :skill="summary.skills.hero[j-1]"/>
+            </td>
+            <td>
+              <skill :skill="summary.skills.hero[j-1]"/>
+            </td>
           </template>
-        </td>
-        <td>
-          <power :power="summary.power" class="float-left"/>
-        </td>
-        <template v-for="skill in summary.skills.hero">
-          <td>
-            <skillValue :skill="skill"/>
-          </td>
-          <td>
-            <skill :skill="skill"/>
-          </td>
+          <template v-else>
+            <td class="hero-icon">
+              <skillValue :skill="summary.info.hero[j-1]"/>
+            </td>
+            <td>
+              <skill :skill="summary.info.hero[j-1]"/>
+            </td>
+          </template>
         </template>
-        <td colspan="2"/>
-        <td colspan="2"/>
-        <td colspan="2"/>
       </tr>
-      <tr class="data-info">
-        <th>
-          <span class="button" :class="[ editAll ? 'apply' : 'edit' ]" @click="editAll = !editAll"/>
-        </th>
-        <template v-for="( slot, type ) in object.slots">
-          <th colspan="2">
-            <itemSlot v-for="( a, type ) in slot.types" :type="type" :a="a" :key="type"/>
+      <template v-if="edits.expanded">
+        <tr class="data-info">
+          <th class="hero-icon">
+            <span
+              class="clickable ui-icon"
+              :class="[ edits.slotsAll ? 'ui-icon-check' : 'ui-icon-pencil' ]"
+              @click="edits.slotsAll = !edits.slotsAll"/>
           </th>
-        </template>
-      </tr>
-      <tr class="data-info">
-        <th rowspan="4"/>
-        <template v-for="( slot, type ) in summary.slots">
-          <td>
-            <span class="button" :class="[ edits[type] ? 'apply' : 'edit' ]" @click="edits[type] = !edits[type]"/>
-          </td>
-          <td>
-            <power :power="slot.power" class="float-left"/>
-            <chance :chance="slot.chance" class="float-right"/>
-          </td>
-        </template>
-      </tr>
-      <tr class="data-info">
-        <template v-for="( slot, type ) in summary.slots">
-          <td class="hero-icon">
-            <span class="icon break" :class="{ optimal: slot.optimal }"/>
-          </td>
-          <td>
-            <template v-if="edits[type]">
-              <select2 v-model="object.slots[type].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
-            </template>
-            <template v-else>
+          <template v-for="( slot, islot ) in object.slots">
+            <th class="hero-icon">
+              <span
+                class="clickable ui-icon"
+                :class="[ edits.slots[islot] ? 'ui-icon-check' : 'ui-icon-pencil' ]"
+                @click="edits.slots[islot] = !edits.slots[islot]"/>
+            </th>
+            <th>
               <span class="float-left">
-                <span class="icon quality" :class="icon( object.slots[type].q )"/>
+                <span
+                  class="clickable ui-icon ui-icon-arrow-1-n"/>
               </span>
-              <span>{{object.slots[type].q}}</span>
-            </template>
-          </td>
-        </template>
-      </tr>
-      <tr class="data-info">
-        <template v-for="( slot, type ) in summary.slots">
-          <td class="hero-icon">
-            <span v-if="slot.item">{{slot.item.lv}}</span>
-          </td>
-          <td>
-            <template v-if="edits[type]">
-              <select2 v-model="object.slots[type].item" :options="slot.list" placeholder="Choose item"/>
-            </template>
-            <template v-else>
+              <itemSlot v-for="( a, type ) in slot.types" :type="type" :a="a" :key="type"/>
+              <span class="float-right">
+                <span
+                  class="clickable ui-icon ui-icon-arrow-1-s hidden"/>
+              </span>
+            </th>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <th class="hero-icon" rowspan="4"/>
+          <template v-for="( slot, islot ) in summary.slots">
+            <td colspan="2">
+              <power :power="slot.power" class="float-left"/>
+              <chance :chance="slot.chance" class="float-right"/>
+            </td>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in summary.slots">
+            <td class="hero-icon">
+              <span class="icon break" :class="{ optimal: slot.optimal }"/>
+            </td>
+            <td>
+              <template v-if="edits.slots[islot]">
+                <select2 v-model="object.slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
+              </template>
+              <template v-else>
+                <span class="float-left">
+                  <span class="icon quality" :class="icon( object.slots[islot].q )"/>
+                </span>
+                <span>{{object.slots[islot].q}}</span>
+              </template>
+            </td>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in summary.slots">
+            <td class="hero-icon">
+              <span v-if="slot.item">{{slot.item.lv}}</span>
+            </td>
+            <td>
+              <template v-if="edits.slots[islot]">
+                <select2 v-model="object.slots[islot].item" :options="slot.list" placeholder="Choose item"/>
+              </template>
+              <template v-else>
+                <span class="float-left">
+                  <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
+                </span>
+                <span>{{object.slots[islot].item}}</span>
+              </template>
+            </td>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in summary.slots">
+            <td>
+              <skillValue :skill="slot.skill"/>
+            </td>
+            <td>
+              <skill :skill="slot.skill"/>
+              <span v-if="edits.slots[islot]" class="float-right">
+                <input v-if="slot.item && slot.item.skill" type="checkbox" v-model="slot.item.skill.m"/>
+              </span>
+            </td>
+          </template>
+        </tr>
+      </template>
+      <template v-else>
+        <tr class="data-info">
+          <th class="hero-icon"/>
+          <template v-for="( slot, islot ) in summary.slots">
+            <td>
+              <span class="icon quality" :class="icon( object.slots[islot].q )"/>
+            </td>
+            <td>
               <span class="float-left">
                 <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
               </span>
-              <span>{{object.slots[type].item}}</span>
-            </template>
-          </td>
-        </template>
-      </tr>
-      <tr class="data-info">
-        <template v-for="( slot, type ) in summary.slots">
-          <td>
-            <skillValue :skill="slot.skill"/>
-          </td>
-          <td>
-            <skill :skill="slot.skill"/>
-            <span v-if="edits[type]" class="float-right">
-              <input v-if="slot.item && slot.item.skill" type="checkbox" v-model="slot.item.skill.m"/>
-            </span>
-          </td>
-        </template>
-      </tr>
+              <span>{{object.slots[islot].item}}</span>
+            </td>
+          </template>
+        </tr>
+      </template>
     </tbody>  
   </script>
   
   <script type="text/x-template" id="templates-team">
     <tbody>
       <tr class="data-info">
-        <th>
-          <span class="button remove" @click="remove( object )"/>
+        <th class="hero-icon">
+          <span
+            class="clickable ui-icon ui-icon-trash"
+            @click="remove( object )"/>
         </th>
-        <th>
-          <span class="button" :class="[ edits.name ? 'apply' : 'edit' ]" @click="edits.name = !edits.name"/>
+        <th class="hero-icon">
+          <span
+            class="clickable ui-icon"
+            :class="[ edits.name ? 'ui-icon-check' : 'ui-icon-pencil' ]"
+            @click="edits.name = !edits.name"/>
         </th>
         <th>
           <input v-if="edits.name" v-model="object.name"/>
@@ -904,10 +965,10 @@
         </th>
         <template v-for="( rst, sn ) in object.roster">
           <template v-if="companions[sn]">
-            <td>
+            <td class="hero-icon">
               <span
-                class="button"
-                :class="[ edits.roster[sn].hero ? 'apply' : 'edit' ]"
+                class="clickable ui-icon"
+                :class="[ edits.roster[sn].hero ? 'ui-icon-check' : 'ui-icon-pencil' ]"
                 @click="edits.roster[sn].hero = !edits.roster[sn].hero"/>
             </td>
             <td>
@@ -931,14 +992,13 @@
         </template>
       </tr>
       <tr class="data-info outline bottom">
-        <th>
+        <th class="hero-icon">
           <span
-            class="button"
-            :class="[ edits.expanded ? 'collapse' : 'expand' ]"
+            class="clickable ui-icon"
+            :class="[ edits.expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
             @click="edits.expanded = !edits.expanded"/>
-          </span>
         </th>
-        <td>
+        <td class="hero-icon">
           <span>{{summary.assigned}}</span>
         </td>
         <td>
@@ -946,7 +1006,7 @@
         </td>
         <template v-for="( rst, sn ) in object.roster">
           <template v-if="roster[sn]">
-            <td>
+            <td class="hero-icon">
               <template v-if="roster[sn].origin.boostable">
                 <span class="htooltip">
                   <span class="htooltip-text">{{'Set {0} boost {1}'.format( roster[sn].hero.origin, ( roster[sn].origin.b ? 'disabled' : 'enabled' ) )}}</span>
@@ -959,25 +1019,26 @@
             </td>
           </template>
           <template v-else>
-            <td/>
+            <td class="hero-icon"/>
             <td/>
           </template>
         </template>
       </tr>
       <template v-if="quest">
         <tr class="data-info outline top">
-          <th rowspan="3">
+          <th class="hero-icon" rowspan="3">
             <span class="head">Quest</span>
           </th>
-          <td>
-            <span class="icon hero face" :class="quest.power.face"/>
+          <td class="hero-icon">
+            <!--<progress :max="quest.power.value" :value="summary.power.value"/>-->
+            <!--<span class="icon hero face" :class="quest.power.face"/>-->
           </td>
           <td>
             <power :power="quest.power"/>
           </td>
           <template v-for="( rst, sn ) in object.roster">
-            <template v-if="companions[sn]">
-              <td>
+            <template v-if="roster[sn]">
+              <td class="hero-icon">
                 <span class="icon hero face" :class="quest.roster[sn].injury.face"/>
               </td>
               <td>
@@ -988,20 +1049,20 @@
               </td>
             </template>
             <template v-else>
-              <td/>
+              <td class="hero-icon"/>
               <td/>
             </template>
           </template>
         </tr>
         <tr class="data-info">
-          <td>
+          <td class="hero-icon">
           </td>
           <td>
             <timer :time="quest.time.value"/>
           </td>
           <template v-for="( rst, sn ) in object.roster">
-            <template v-if="companions[sn]">
-              <td>
+            <template v-if="roster[sn]">
+              <td class="hero-icon">
               </td>
               <td>
                 <span class="float-left">
@@ -1011,13 +1072,13 @@
               </td>
             </template>
             <template v-else>
-              <td/>
+              <td class="hero-icon"/>
               <td/>
             </template>
           </template>
         </tr>
         <tr class="data-info">
-          <td>
+          <td class="hero-icon">
           </td>
           <td>
             <span class="float-left">
@@ -1026,8 +1087,8 @@
             <span>{{quest.loot.min}}&nbsp;-&nbsp;{{quest.loot.max}}</span> 
           </td>
           <template v-for="( rst, sn ) in object.roster">
-            <template v-if="companions[sn]">
-              <td>
+            <template v-if="roster[sn]">
+              <td class="hero-icon">
               </td>
               <td>
                 <span class="float-left">
@@ -1037,7 +1098,7 @@
               </td>
             </template>
             <template v-else>
-              <td/>
+              <td class="hero-icon"/>
               <td/>
             </template>
           </template>
@@ -1045,12 +1106,12 @@
       </template>
       <template v-if="summary.skills">
         <tr v-for="k in summary.skillsRows" class="data-info">
-          <th>
+          <th class="hero-icon" v-if="k == 1">
             <span class="head" :rowspan="summary.skillsRows">Team</span>
           </th>
           <template v-for="j in 7">
             <template v-for="skill in [ summary.skills[7*(k-1)+j-1] ]">
-              <td>
+              <td class="hero-icon">
                 <skillValue :skill="skill" />
               </td>
               <td>
@@ -1085,10 +1146,9 @@
         <tr class="data-info">
           <td>
             <span
-              class="button"
-              :class="[ edits.roster[sn].expanded ? 'collapse' : 'expand' ]"
+              class="clickable ui-icon"
+              :class="[ edits.roster[sn].expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
               @click="edits.roster[sn].expanded = !edits.roster[sn].expanded"/>
-            </span>
           </td>
           <td>
             <power :power="rst.power" class="float-left"/>
@@ -1108,28 +1168,36 @@
           <tr class="data-info">
             <th>
               <span
-                class="button"
-                :class="[ edits.roster[sn].allSlots ? 'apply' : 'edit' ]"
+                class="clickable ui-icon"
+                :class="[ edits.roster[sn].allSlots ? 'ui-icon-check' : 'ui-icon-pencil' ]"
                 @click="edits.roster[sn].allSlots = !edits.roster[sn].allSlots"/>
             </th>
             <template v-for="( slot, islot ) in rst.slots">
               <th>
                 <span
-                  class="button"
-                  :class="[ edits.roster[sn].slots[islot] ? 'apply' : 'edit' ]"
+                  class="clickable ui-icon"
+                  :class="[ edits.roster[sn].slots[islot] ? 'ui-icon-check' : 'ui-icon-pencil' ]"
                   @click="edits.roster[sn].slots[islot] = !edits.roster[sn].slots[islot]"/>
               </th>
               <th>
+                <span class="float-left">
+                  <span
+                    class="clickable ui-icon ui-icon-arrow-1-n"/>
+                </span>
                 <itemSlot
                   v-for="( itemAffinity, itemType ) in rst.hero.slots[islot].types"
                   :type="itemType"
                   :a="itemAffinity"
                   :key="itemType"/>
+                <span class="float-right">
+                  <span
+                    class="clickable ui-icon ui-icon-arrow-1-s"/>
+                </span>
               </th>
             </template>
           </tr>
           <tr class="data-info">
-            <th rowspan="4"/>
+            <th class="hero-icon" rowspan="4"/>
             <template v-for="( slot, islot ) in rst.slots">
               <td colspan="2">
                 <power :power="slot.power" class="float-left"/>
@@ -1204,74 +1272,6 @@
           </tr>
         </template>
       </template>
-      <!-- Begin Heroes quest info row -->
-      <!--
-      <template v-if="quest.choice">
-        <tr class="data-info">
-          <template v-for="( sh, j ) in summary.roster">
-            <td colspan="3">
-              <div v-if="sh.hero.name">
-                <span class="float-left">
-                  <span class="icon timers resting"/>
-                  <span v-if="sh.quest.rest.value >= 0">{{sh.quest.rest.value.dateString()}}</span>
-                  <span class="icon timers injury"/>
-                  <span v-if="sh.quest.heal.value >= 0">{{sh.quest.heal.value.dateString()}}</span>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div v-if="sh.hero.name">
-                <power :power="sh.quest.power"/>
-              </div>
-            </td>
-          </template>
-        </tr>
-        <tr class="data-info">
-          <template v-for="( sh, j ) in summary.roster">
-            <td colspan="3">
-              <div v-if="sh.hero.name">
-                <span class="float-left">
-                  <span class="icon timers injury"/>
-                  <span v-if="sh.quest.heal.value >= 0">{{sh.quest.heal.value.dateString()}}</span>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div v-if="sh.hero.name">
-                <span class="float-left">
-                  <span class="icon hero face" :class="sh.quest.face"/>
-                  <span v-if="sh.quest.chance">{{sh.quest.chance.pptString(1)}}</span>
-                </span>
-              </div>
-            </td>
-          </template>
-        </tr>
-        <tr class="data-info">
-          <template v-for="( sh, j ) in summary.roster">
-            <td>
-              <div v-if="sh.hero.name">
-                <span class="icon artifact" :class="icon( summary.quest.item )"></span>
-              </div>
-            </td>
-            <td colspan="2">
-              <div v-if="sh.hero.name">
-                <span>
-                  <span>{{sh.quest.loot.min}}</span>
-                  <span>&nbsp;-&nbsp;</span>
-                  <span>{{sh.quest.loot.max}}</span>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div v-if="sh.hero.name">
-                <span>{{summary.quest.item}}</span>
-              </div>
-            </td>
-          </template>
-        </tr>
-      </template>
-      -->
-      <!-- End Heroes quest info row -->
     </tbody>
   </script>
 </html>

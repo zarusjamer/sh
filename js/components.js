@@ -549,6 +549,20 @@ Vue.mixin( {
     icon: function( str ) {
       return ( str || '' ).icon();
     },
+    iconChance: function( chance ) {
+      if ( isNaN( chance ) ) {
+        return 'none';
+      } else if ( chance == 0.0 ) {
+        return 'unbreakable';
+      } else if ( chance <= 0.03 ) {
+        return 'green';
+      } else if ( chance <= 0.10 ) {
+        return 'yellow';
+      } else if ( chance <= 0.20 ) {
+        return 'orange';
+      }
+      return 'red';
+    },
     applyFilter: function( h, f ) {
       if ( !f || !h ) {
         return true;
@@ -1181,43 +1195,23 @@ Vue.component( 'select2', {
 Vue.component( 'chance', {
   template: `
   <span v-if="chance" class="htooltip">
-    <span class="htooltip-text">{{info}}</span>
+    <span class="htooltip-text">Base chance: {{chance.base.pptString(2)}}\r\nEffective chance: {{chance.value.pptString(2)}}</span>
+    <span class="float-right">
+      <span class="icon break" :class="iconChance(chance.value)"/>
+    </span>
     <span>{{chance.value.pptString(1)}}</span>  
-    <span class="icon break" :class="icon"/>
   </span>
   `,
-  props:[ 'chance' ],
-  computed: {
-    info: function() {
-      if ( isNaN( this.chance.value ) ) {
-        return '';
-      }
-      return 'Base chance: {0}\r\nEffective chance: {1}'.format( this.chance.base.pptString(2), this.chance.value.pptString(2) );
-    },
-    icon: function() {
-      if ( isNaN( this.chance.value ) ) {
-        return 'none';
-      } else if ( this.chance.value == 0.0 ) {
-        return 'unbreakable';
-      } else if ( this.chance.value <= 0.03 ) {
-        return 'green';
-      } else if ( this.chance.value <= 0.10 ) {
-        return 'yellow';
-      } else if ( this.chance.value <= 0.20 ) {
-        return 'orange';
-      }
-      return 'red';
-    }
-  }
+  props:[ 'chance' ]
 } );
 
 Vue.component( 'power', {
   template: `
   <span v-if="power.value" class="htooltip">
+    <span class="htooltip-text" v-if="power.info">{{power.info}}</span>
     <span class="float-left">
       <span class="icon power"/>
     </span>
-    <span class="htooltip-text" v-if="!!power.info">{{power.info}}</span>
     <span>{{power.value.intString()}}</span>  
   </span>
   `,
@@ -1420,16 +1414,19 @@ Vue.component( 'hero', {
   props: [ 'object' ],
   data: function() {
     return {
-      editAll: false,
       edits: {
-        'lv':     false,
-        'Weapon': false,
-        'Armor':  false,
-        'Head':   false,
-        'Hands':  false,
-        'Feet':   false,
-        'Aux1':   false,
-        'Aux2':   false
+        lv:       false,
+        expanded: false,
+        slotsAll: false,
+        slots: {
+          'Weapon': false,
+          'Armor':  false,
+          'Head':   false,
+          'Hands':  false,
+          'Feet':   false,
+          'Aux1':   false,
+          'Aux2':   false
+        }
       }
     };
   },
@@ -1458,17 +1455,16 @@ Vue.component( 'hero', {
     }
   },
   watch: {
-    'editAll': {
-      handler: function( editAll ) {
-        $.extend( this.edits, {
-          'lv':     editAll,
-          'Weapon': editAll,
-          'Armor':  editAll,
-          'Head':   editAll,
-          'Hands':  editAll,
-          'Feet':   editAll,
-          'Aux1':   editAll,
-          'Aux2':   editAll
+    'edits.slotsAll': {
+      handler: function( b ) {
+        $.extend( this.edits.slots, {
+          'Weapon': b,
+          'Armor':  b,
+          'Head':   b,
+          'Hands':  b,
+          'Feet':   b,
+          'Aux1':   b,
+          'Aux2':   b
         } );
       }
     },

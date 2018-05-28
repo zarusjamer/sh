@@ -39,7 +39,7 @@ a:hover {
 
 table.shopheroes {
   font-size: 1em;
-  width: flex;
+  table-layout: fixed;
 }
 table.shopheroes tr {
   height: 24px;
@@ -74,9 +74,6 @@ table.shopheroes tr.outline.bottom th {
 table.shopheroes tr.data-info {
   vertical-align: middle;
 }
-table.shopheroes tr..data-info th,
-table.shopheroes tr..data-info td {
-}
 table.shopheroes tr.data-info td {
   font-size: 0.85em;
 }
@@ -108,19 +105,20 @@ table.shopheroes th.level {
   min-width: 10em;
   width: 10em;
 }
-table.shopheroes th.team-icon {
+table.shopheroes .team-icon {
   min-width: 32px;
+  max-width: 32px;
   width: 32px;
 }
-table.shopheroes th.team-slot {
+table.shopheroes .team-slot {
   min-width: 16%;
   width: 16%;
 }
-table.shopheroes th.hero-icon {
+table.shopheroes .hero-icon {
   min-width: 48px;
   width: 48px;
 }
-table.shopheroes th.hero-slot {
+table.shopheroes .hero-slot {
   min-width: 14%;
   width: 14%;
 }
@@ -145,59 +143,26 @@ table.shopheroes .inactive {
 table.shopheroes .hidden {
   visibility: hidden;
 }
-
-table.shopheroes span.button {
+table.shopheroes span.clickable {
   vertical-align: middle;
   display: inline-block;
-  min-width: 16px;
-  max-width: 16px;
-  min-height: 16px;
-  max-height: 16px;
   cursor: pointer;
-  background-image: url( "../jquery/images/ui-icons_444444_256x240.png" );
 }
 
-table.shopheroes span.button:hover {
+table.shopheroes span.clickable:hover {
   background-color: #00d1b2;
 }
-
-table.shopheroes span.button.undo {
-  background-position:-64px -64px;
-}
-table.shopheroes span.button.redo {
-  background-position:-96px -64px;
-}
-table.shopheroes span.button.add {
-  background-position:-16px -128px;
-}
-table.shopheroes span.button.remove {
-  background-position: -176px -96px;
-}
-table.shopheroes span.button.edit {
-  background-position: -64px -112px;
-}
-table.shopheroes span.button.apply {
-  background-position: -64px -144px;
-}
-table.shopheroes span.button.expand {
-  background-position: -224px -32px;
-}
-table.shopheroes span.button.collapse {
-  background-position: -192px -32px;
-}
-
-
-.float-~ {
+table.shopheroes .float-~ {
   display: inline-block; !important
   vertical-align: middle;
 }
-.float-left {
+table.shopheroes .float-left {
   float: left !important;
 }
-.float-right {
+table.shopheroes .float-right {
   float: right !important;
 }
-.left {
+table.shopheroes .left {
   text-align: left !important;
 }
 .vertical {
