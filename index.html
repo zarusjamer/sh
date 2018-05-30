@@ -897,7 +897,7 @@
               </template>
               <template v-else>
                 <span class="float-left">
-                  <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
+                  <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
                 </span>
                 <span>{{object.slots[islot].item}}</span>
               </template>
@@ -928,15 +928,21 @@
             </span>
           </th>
           <template v-for="( slot, islot ) in summary.slots">
-            <td>
-              <span class="icon quality" :class="icon( object.slots[islot].q )"/>
-            </td>
-            <td>
-              <span class="float-left">
-                <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
-              </span>
-              <span>{{object.slots[islot].item}}</span>
-            </td>
+            <template v-if="slot.item">
+              <td>
+                <span class="icon quality" :class="icon( slot.q )"/>
+              </td>
+              <td>
+                <span class="float-left">
+                  <span class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
+                </span>
+                <span>{{slot.item.name}}</span>
+              </td>
+            </template>
+            <template v-else>
+              <td/>
+              <td/>
+            </template>
           </template>
         </tr>
       </template>
@@ -1228,7 +1234,7 @@
                   <template v-else>
                     <template v-if="slot.item">
                       <span class="float-left">
-                        <span class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
+                        <span class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
                       </span>
                       <span>{{slot.item.name}}</span>
                     </template>
@@ -1271,7 +1277,7 @@
                   </td>
                   <td>
                     <span class="float-left">
-                      <span class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
+                      <span class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
                     </span>
                     <span>{{slot.item.name}}</span>
                   </td>
