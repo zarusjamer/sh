@@ -549,9 +549,6 @@ Vue.mixin( {
     icon: function( str ) {
       return ( str || '' ).icon();
     },
-    iconItem: function( name ) {
-      return 'i-' + name.icon();
-    },
     iconChance: function( chance ) {
       if ( isNaN( chance ) ) {
         return 'none';
@@ -667,7 +664,7 @@ Vue.mixin( {
                   id: item.name,
                   text: item.name,
                   iconType: 'item',
-                  icon: [ vm.icon( type ), vm.iconItem( item.name ) ].join( ' ' ),
+                  icon: [ type.icon(), item.name.icon() ].join( ' ' ),
                   data: {
                     lv: item.lv
                   }
@@ -678,7 +675,7 @@ Vue.mixin( {
             id: type,
             text: type,
             iconType: 'item',
-            icon: [ vm.icon( type ), vm.iconAffinity( a ) ].join( ' ' ),
+            icon: [ type.icon(), vm.iconAffinity( a ) ].join( ' ' ),
             children: items
           };
         } );

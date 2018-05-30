@@ -862,59 +862,83 @@
         <tr class="data-info">
           <th class="hero-icon" rowspan="4"/>
           <template v-for="( slot, islot ) in summary.slots">
+            <template v-if="slot.item">
             <td colspan="2">
               <power :power="slot.power" class="float-left"/>
               <chance :chance="slot.chance" class="float-right"/>
             </td>
+            </template>
+            <template v-else>
+              <td colspan="2"/>
+            </template>
+          </template>
           </template>
         </tr>
         <tr class="data-info">
           <template v-for="( slot, islot ) in summary.slots">
-            <td class="hero-icon">
-              <span class="icon break" :class="{ optimal: slot.optimal }"/>
-            </td>
-            <td>
-              <template v-if="edits.slots[islot]">
-                <select2 v-model="object.slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
-              </template>
-              <template v-else>
-                <span class="float-left">
-                  <span class="icon quality" :class="icon( object.slots[islot].q )"/>
+            <template v-if="slot.item">
+              <td class="hero-icon">
+                <span class="icon break" :class="{ optimal: slot.optimal }"/>
+              </td>
+              <td>
+                <template v-if="edits.slots[islot]">
+                  <select2 v-model="object.slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
+                </template>
+                <template v-else>
+                  <span class="float-left">
+                    <span class="icon quality" :class="icon( slot.q )"/>
+                  </span>
+                  <span>{{slot.q}}</span>
+                </template>
+              </td>
+            </template>
+            <template v-else>
+              <td class="hero-icon"/>
+              <td/>
+            </template>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in summary.slots">
+            <template v-if="slot.item">
+              <td class="hero-icon">
+                <span>{{slot.item.lv}}</span>
+              </td>
+              <td>
+                <template v-if="edits.slots[islot]">
+                  <select2 v-model="object.slots[islot].item" :options="slot.list" placeholder="Choose item"/>
+                </template>
+                <template v-else>
+                  <span class="float-left">
+                    <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
+                  </span>
+                  <span>{{slot.item.name}}</span>
+                </template>
+              </td>
+            </template>
+            <template v-else>
+              <td class="hero-icon"/>
+              <td/>
+            </template>
+          </template>
+        </tr>
+        <tr class="data-info">
+          <template v-for="( slot, islot ) in summary.slots">
+            <template v-if="slot.item && slot.skill">
+              <td class="hero-icon"/>
+                <skillValue :skill="slot.skill"/>
+              </td>
+              <td>
+                <skill :skill="slot.skill"/>
+                <span v-if="edits.slots[islot]" class="float-right">
+                  <input type="checkbox" v-model="slot.item.skill.m"/>
                 </span>
-                <span>{{object.slots[islot].q}}</span>
-              </template>
-            </td>
-          </template>
-        </tr>
-        <tr class="data-info">
-          <template v-for="( slot, islot ) in summary.slots">
-            <td class="hero-icon">
-              <span v-if="slot.item">{{slot.item.lv}}</span>
-            </td>
-            <td>
-              <template v-if="edits.slots[islot]">
-                <select2 v-model="object.slots[islot].item" :options="slot.list" placeholder="Choose item"/>
-              </template>
-              <template v-else>
-                <span class="float-left">
-                  <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
-                </span>
-                <span>{{object.slots[islot].item}}</span>
-              </template>
-            </td>
-          </template>
-        </tr>
-        <tr class="data-info">
-          <template v-for="( slot, islot ) in summary.slots">
-            <td>
-              <skillValue :skill="slot.skill"/>
-            </td>
-            <td>
-              <skill :skill="slot.skill"/>
-              <span v-if="edits.slots[islot]" class="float-right">
-                <input v-if="slot.item && slot.item.skill" type="checkbox" v-model="slot.item.skill.m"/>
-              </span>
-            </td>
+              </td>
+            </template>
+            <template v-else>
+              <td class="hero-icon"/>
+              <td/>
+            </template>
           </template>
         </tr>
       </template>
@@ -934,7 +958,7 @@
               </td>
               <td>
                 <span class="float-left">
-                  <span class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
+                  <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
                 </span>
                 <span>{{slot.item.name}}</span>
               </td>
@@ -1196,50 +1220,63 @@
             <tr class="data-info">
               <th class="hero-icon" rowspan="4"/>
               <template v-for="( slot, islot ) in rst.slots">
-                <td colspan="2">
-                  <power :power="slot.power" class="float-left"/>
-                  <chance :chance="slot.chance" class="float-right"/>
-                </td>
+                <template v-if="slot.item">
+                  <td colspan="2">
+                    <power :power="slot.power" class="float-left"/>
+                    <chance :chance="slot.chance" class="float-right"/>
+                  </td>
+                </template>
+                <template v-else>
+                  <td colspan="2"/>
+                </template>
               </template>
             </tr>
             <tr class="data-info">
               <template v-for="( slot, islot ) in rst.slots">
-                <td class="hero-icon">
-                  <span class="icon break" :class="{ optimal: slot.optimal }"/>
-                </td>
-                <td>
-                  <template v-if="edits.roster[sn].slots[islot]">
-                    <select2 v-model="object.roster[sn].slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
-                  </template>
-                  <template v-else>
-                    <template v-if="slot.item">
+                <template v-if="slot.item">
+                  <td class="hero-icon">
+                    <span class="icon break" :class="{ optimal: slot.optimal }"/>
+                  </td>
+                  <td>
+                    <template v-if="edits.roster[sn].slots[islot]">
+                      <select2 v-model="object.roster[sn].slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
+                    </template>
+                    <template v-else>
                       <span class="float-left">
                         <span class="icon quality" :class="icon( slot.q )"/>
                       </span>
                       <span>{{slot.q}}</span>
                     </template>
-                  </template>
-                </td>
+                  </td>
+                </template>
+                <template v-else>
+                  <td/>
+                  <td/>
+                </template>
               </template>
             </tr>
             <tr class="data-info">
               <template v-for="( slot, islot ) in rst.slots">
-                <td class="hero-icon">
-                  <span v-if="slot.item">{{slot.item.lv}}</span>
-                </td>
-                <td>
-                  <template v-if="edits.roster[sn].slots[islot]">
-                    <select2 v-model="object.roster[sn].slots[islot].item" :options="slot.list" placeholder="Choose item"/>
-                  </template>
-                  <template v-else>
-                    <template v-if="slot.item">
+                <template v-if="slot.item">
+                  <td class="hero-icon">
+                    <span>{{slot.item.lv}}</span>
+                  </td>
+                  <td>
+                    <template v-if="edits.roster[sn].slots[islot]">
+                      <select2 v-model="object.roster[sn].slots[islot].item" :options="slot.list" placeholder="Choose item"/>
+                    </template>
+                    <template v-else>
                       <span class="float-left">
-                        <span class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
+                        <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
                       </span>
                       <span>{{slot.item.name}}</span>
                     </template>
-                  </template>
-                </td>
+                  </td>
+                </template>
+                <template v-else>
+                  <td class="hero-icon"/>
+                  <td/>
+                </template>
               </template>
             </tr>
             <tr class="data-info">
@@ -1277,7 +1314,7 @@
                   </td>
                   <td>
                     <span class="float-left">
-                      <span class="icon item" :class="[ icon( slot.item.type ), iconItem( slot.item.name ) ]"/>
+                      <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
                     </span>
                     <span>{{slot.item.name}}</span>
                   </td>
