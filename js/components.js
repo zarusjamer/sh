@@ -564,7 +564,7 @@ Vue.mixin( {
       return 'red';
     },
     iconAffinity: function( affinity ) {
-      return 'i-affinity' + affinity;
+      return 'affinity' + affinity;
     },
     applyFilter: function( h, f ) {
       if ( !f || !h ) {

@@ -769,8 +769,7 @@
           <span class="icon medium hero"
             :class="icon( object.name )"/>
         </th>
-        <th class="hero-icon">
-        </th>
+        <th class="hero-icon"/>
         <th>
           <span class="head" :id="'heroes-' + object.name">{{object.name}}</span>
         </th>
@@ -863,15 +862,14 @@
           <th class="hero-icon" rowspan="4"/>
           <template v-for="( slot, islot ) in summary.slots">
             <template v-if="slot.item">
-            <td colspan="2">
-              <power :power="slot.power" class="float-left"/>
-              <chance :chance="slot.chance" class="float-right"/>
-            </td>
+              <td colspan="2">
+                <power :power="slot.power" class="float-left"/>
+                <chance :chance="slot.chance" class="float-right"/>
+              </td>
             </template>
             <template v-else>
               <td colspan="2"/>
             </template>
-          </template>
           </template>
         </tr>
         <tr class="data-info">
@@ -1239,7 +1237,9 @@
                   </td>
                   <td>
                     <template v-if="edits.roster[sn].slots[islot]">
-                      <select2 v-model="object.roster[sn].slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
+                      <select2 placeholder="Choose quality"
+                        v-model="object.roster[sn].slots[islot].q"
+                        :options="$parent.lists.quality"/>
                     </template>
                     <template v-else>
                       <span class="float-left">
@@ -1263,7 +1263,9 @@
                   </td>
                   <td>
                     <template v-if="edits.roster[sn].slots[islot]">
-                      <select2 v-model="object.roster[sn].slots[islot].item" :options="slot.list" placeholder="Choose item"/>
+                      <select2 placeholder="Choose item"
+                        v-model="object.roster[sn].slots[islot].item"
+                        :options="slot.list"/>
                     </template>
                     <template v-else>
                       <span class="float-left">
