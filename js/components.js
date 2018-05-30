@@ -206,7 +206,7 @@ Vue.mixin( {
             vm.items.lists.type.push( { 
               id: o.type,
               text: o.type,
-              iconType: 'item',
+              iconType: 'type',
               icon: o.type.icon(),
             } );
           }
