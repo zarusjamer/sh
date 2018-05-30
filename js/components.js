@@ -1244,7 +1244,7 @@ Vue.component( 'itemSlot', {
   template: `
   <span class="htooltip">
     <span class="htooltip-text">{{summary}}</span>
-    <span class="icon item" :class="[ icon( type ), 'i-affinity' + a ]"/>
+    <span class="icon item" :class="[ type.icon(), a.iconAffinity() ]"/>
   </span>
   `,
   props:[ 'type', 'a' ],
