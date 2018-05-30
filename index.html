@@ -705,7 +705,7 @@
         <th rowspan="2">
           <div>
             <span class="icon medium item"
-              :class="[ icon( object.type ), icon( 'i-' + object.name ) ]"/>
+              :class="[ object.type.icon(), object.name.icon() ]"/>
           </div>
         </th>
         <th>
@@ -717,7 +717,7 @@
         </th>
         <td>
           <span class="float-left icon item"
-            :class="[ icon( object.type ) ]"/>
+            :class="[ object.type.icon() ]"/>
           <span>{{object.type}}</span>
         </td>
         <td>
@@ -752,9 +752,9 @@
             v-for="pi in object.pre"
             v-if="object.pre">
             <span class="icon quality"
-              :class="[ icon( pi.q ) ]" />
+              :class="[ pi.q.icon() ]" />
             <span class="icon item"
-              :class="[ icon( 'i-' + pi.item ) ]" />
+              :class="[ pi.item.icon() ]" />
             <span>{{pi.q}} {{pi.item}}</span>
           </template>
         </td>
