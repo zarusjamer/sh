@@ -72,79 +72,79 @@ span.icon.quality.legendary {
 span.icon.quality.mythical {
   background-image: url( "../images/qualities/mythical.png" );
 }
-span.icon.item.swords {
+span.icon.type.swords {
   background-image: url( "../images/types/items/swords.png" );
 }
-span.icon.item.daggers {
+span.icon.type.daggers {
   background-image: url( "../images/types/items/daggers.png" );
 }
-span.icon.item.spears {
+span.icon.type.spears {
   background-image: url( "../images/types/items/spears.png" );
 }
-span.icon.item.axes {
+span.icon.type.axes {
   background-image: url( "../images/types/items/axes.png" );
 }
-span.icon.item.maces {
+span.icon.type.maces {
   background-image: url( "../images/types/items/maces.png" );
 }
-span.icon.item.staves {
+span.icon.type.staves {
   background-image: url( "../images/types/items/staves.png" );
 }
-span.icon.item.guns {
+span.icon.type.guns {
   background-image: url( "../images/types/items/guns.png" );
 }
-span.icon.item.bows {
+span.icon.type.bows {
   background-image: url( "../images/types/items/bows.png" );
 }
-span.icon.item.armor {
+span.icon.type.armor {
   background-image: url( "../images/types/items/armor.png" );
 }
-span.icon.item.vests {
+span.icon.type.vests {
   background-image: url( "../images/types/items/vests.png" );
 }
-span.icon.item.clothes {
+span.icon.type.clothes {
   background-image: url( "../images/types/items/clothes.png" );
 }
-span.icon.item.helmets {
+span.icon.type.helmets {
   background-image: url( "../images/types/items/helmets.png" );
 }
-span.icon.item.hats {
+span.icon.type.hats {
   background-image: url( "../images/types/items/hats.png" );
 }
-span.icon.item.gauntlets {
+span.icon.type.gauntlets {
   background-image: url( "../images/types/items/gauntlets.png" );
 }
-span.icon.item.bracers {
+span.icon.type.bracers {
   background-image: url( "../images/types/items/bracers.png" );
 }
-span.icon.item.boots {
+span.icon.type.boots {
   background-image: url( "../images/types/items/boots.png" );
 }
-span.icon.item.footwear {
+span.icon.type.footwear {
   background-image: url( "../images/types/items/footwear.png" );
 }
-span.icon.item.shields {
+span.icon.type.shields {
   background-image: url( "../images/types/items/shields.png" );
 }
-span.icon.item.projectiles {
+span.icon.type.projectiles {
   background-image: url( "../images/types/items/projectiles.png" );
 }
-span.icon.item.remedies {
+span.icon.type.remedies {
   background-image: url( "../images/types/items/remedies.png" );
 }
-span.icon.item.potions {
+span.icon.type.potions {
   background-image: url( "../images/types/items/potions.png" );
 }
-span.icon.item.spells {
+span.icon.type.spells {
   background-image: url( "../images/types/items/spells.png" );
 }
-span.icon.item.rings {
+span.icon.type.rings {
   background-image: url( "../images/types/items/rings.png" );
 }
-span.icon.item.pendants {
+span.icon.type.pendants {
   background-image: url( "../images/types/items/pendants.png" );
 }
-span.icon.item.instruments {
+span.icon.type.instruments {
   background-image: url( "../images/types/items/instruments.png" );
 }
 span.icon.skill.speedrunner {
@@ -465,229 +465,229 @@ span.icon.artifact.hellfireruby {
 span.icon.artifact.aragonite {
   background-image: url( "../images/items/artifacts/aragonite.png" );
 }
-span.icon.item.swords.affinity1 {
+span.icon.type.swords.affinity1 {
   background-image: url( "../images/types/affinity1/swords.png" );
 }
-span.icon.item.daggers.affinity1 {
+span.icon.type.daggers.affinity1 {
   background-image: url( "../images/types/affinity1/daggers.png" );
 }
-span.icon.item.spears.affinity1 {
+span.icon.type.spears.affinity1 {
   background-image: url( "../images/types/affinity1/spears.png" );
 }
-span.icon.item.axes.affinity1 {
+span.icon.type.axes.affinity1 {
   background-image: url( "../images/types/affinity1/axes.png" );
 }
-span.icon.item.maces.affinity1 {
+span.icon.type.maces.affinity1 {
   background-image: url( "../images/types/affinity1/maces.png" );
 }
-span.icon.item.staves.affinity1 {
+span.icon.type.staves.affinity1 {
   background-image: url( "../images/types/affinity1/staves.png" );
 }
-span.icon.item.guns.affinity1 {
+span.icon.type.guns.affinity1 {
   background-image: url( "../images/types/affinity1/guns.png" );
 }
-span.icon.item.bows.affinity1 {
+span.icon.type.bows.affinity1 {
   background-image: url( "../images/types/affinity1/bows.png" );
 }
-span.icon.item.armor.affinity1 {
+span.icon.type.armor.affinity1 {
   background-image: url( "../images/types/affinity1/armor.png" );
 }
-span.icon.item.vests.affinity1 {
+span.icon.type.vests.affinity1 {
   background-image: url( "../images/types/affinity1/vests.png" );
 }
-span.icon.item.clothes.affinity1 {
+span.icon.type.clothes.affinity1 {
   background-image: url( "../images/types/affinity1/clothes.png" );
 }
-span.icon.item.helmets.affinity1 {
+span.icon.type.helmets.affinity1 {
   background-image: url( "../images/types/affinity1/helmets.png" );
 }
-span.icon.item.hats.affinity1 {
+span.icon.type.hats.affinity1 {
   background-image: url( "../images/types/affinity1/hats.png" );
 }
-span.icon.item.gauntlets.affinity1 {
+span.icon.type.gauntlets.affinity1 {
   background-image: url( "../images/types/affinity1/gauntlets.png" );
 }
-span.icon.item.bracers.affinity1 {
+span.icon.type.bracers.affinity1 {
   background-image: url( "../images/types/affinity1/bracers.png" );
 }
-span.icon.item.boots.affinity1 {
+span.icon.type.boots.affinity1 {
   background-image: url( "../images/types/affinity1/boots.png" );
 }
-span.icon.item.footwear.affinity1 {
+span.icon.type.footwear.affinity1 {
   background-image: url( "../images/types/affinity1/footwear.png" );
 }
-span.icon.item.shields.affinity1 {
+span.icon.type.shields.affinity1 {
   background-image: url( "../images/types/affinity1/shields.png" );
 }
-span.icon.item.projectiles.affinity1 {
+span.icon.type.projectiles.affinity1 {
   background-image: url( "../images/types/affinity1/projectiles.png" );
 }
-span.icon.item.remedies.affinity1 {
+span.icon.type.remedies.affinity1 {
   background-image: url( "../images/types/affinity1/remedies.png" );
 }
-span.icon.item.potions.affinity1 {
+span.icon.type.potions.affinity1 {
   background-image: url( "../images/types/affinity1/potions.png" );
 }
-span.icon.item.spells.affinity1 {
+span.icon.type.spells.affinity1 {
   background-image: url( "../images/types/affinity1/spells.png" );
 }
-span.icon.item.rings.affinity1 {
+span.icon.type.rings.affinity1 {
   background-image: url( "../images/types/affinity1/rings.png" );
 }
-span.icon.item.pendants.affinity1 {
+span.icon.type.pendants.affinity1 {
   background-image: url( "../images/types/affinity1/pendants.png" );
 }
-span.icon.item.instruments.affinity1 {
+span.icon.type.instruments.affinity1 {
   background-image: url( "../images/types/affinity1/instruments.png" );
 }
-span.icon.item.swords.affinity-1 {
+span.icon.type.swords.affinity-1 {
   background-image: url( "../images/types/affinity-1/swords.png" );
 }
-span.icon.item.daggers.affinity-1 {
+span.icon.type.daggers.affinity-1 {
   background-image: url( "../images/types/affinity-1/daggers.png" );
 }
-span.icon.item.spears.affinity-1 {
+span.icon.type.spears.affinity-1 {
   background-image: url( "../images/types/affinity-1/spears.png" );
 }
-span.icon.item.axes.affinity-1 {
+span.icon.type.axes.affinity-1 {
   background-image: url( "../images/types/affinity-1/axes.png" );
 }
-span.icon.item.maces.affinity-1 {
+span.icon.type.maces.affinity-1 {
   background-image: url( "../images/types/affinity-1/maces.png" );
 }
-span.icon.item.staves.affinity-1 {
+span.icon.type.staves.affinity-1 {
   background-image: url( "../images/types/affinity-1/staves.png" );
 }
-span.icon.item.guns.affinity-1 {
+span.icon.type.guns.affinity-1 {
   background-image: url( "../images/types/affinity-1/guns.png" );
 }
-span.icon.item.bows.affinity-1 {
+span.icon.type.bows.affinity-1 {
   background-image: url( "../images/types/affinity-1/bows.png" );
 }
-span.icon.item.armor.affinity-1 {
+span.icon.type.armor.affinity-1 {
   background-image: url( "../images/types/affinity-1/armor.png" );
 }
-span.icon.item.vests.affinity-1 {
+span.icon.type.vests.affinity-1 {
   background-image: url( "../images/types/affinity-1/vests.png" );
 }
-span.icon.item.clothes.affinity-1 {
+span.icon.type.clothes.affinity-1 {
   background-image: url( "../images/types/affinity-1/clothes.png" );
 }
-span.icon.item.helmets.affinity-1 {
+span.icon.type.helmets.affinity-1 {
   background-image: url( "../images/types/affinity-1/helmets.png" );
 }
-span.icon.item.hats.affinity-1 {
+span.icon.type.hats.affinity-1 {
   background-image: url( "../images/types/affinity-1/hats.png" );
 }
-span.icon.item.gauntlets.affinity-1 {
+span.icon.type.gauntlets.affinity-1 {
   background-image: url( "../images/types/affinity-1/gauntlets.png" );
 }
-span.icon.item.bracers.affinity-1 {
+span.icon.type.bracers.affinity-1 {
   background-image: url( "../images/types/affinity-1/bracers.png" );
 }
-span.icon.item.boots.affinity-1 {
+span.icon.type.boots.affinity-1 {
   background-image: url( "../images/types/affinity-1/boots.png" );
 }
-span.icon.item.footwear.affinity-1 {
+span.icon.type.footwear.affinity-1 {
   background-image: url( "../images/types/affinity-1/footwear.png" );
 }
-span.icon.item.shields.affinity-1 {
+span.icon.type.shields.affinity-1 {
   background-image: url( "../images/types/affinity-1/shields.png" );
 }
-span.icon.item.projectiles.affinity-1 {
+span.icon.type.projectiles.affinity-1 {
   background-image: url( "../images/types/affinity-1/projectiles.png" );
 }
-span.icon.item.remedies.affinity-1 {
+span.icon.type.remedies.affinity-1 {
   background-image: url( "../images/types/affinity-1/remedies.png" );
 }
-span.icon.item.potions.affinity-1 {
+span.icon.type.potions.affinity-1 {
   background-image: url( "../images/types/affinity-1/potions.png" );
 }
-span.icon.item.spells.affinity-1 {
+span.icon.type.spells.affinity-1 {
   background-image: url( "../images/types/affinity-1/spells.png" );
 }
-span.icon.item.rings.affinity-1 {
+span.icon.type.rings.affinity-1 {
   background-image: url( "../images/types/affinity-1/rings.png" );
 }
-span.icon.item.pendants.affinity-1 {
+span.icon.type.pendants.affinity-1 {
   background-image: url( "../images/types/affinity-1/pendants.png" );
 }
-span.icon.item.instruments.affinity-1 {
+span.icon.type.instruments.affinity-1 {
   background-image: url( "../images/types/affinity-1/instruments.png" );
 }
-span.icon.item.swords.affinity-2 {
+span.icon.type.swords.affinity-2 {
   background-image: url( "../images/types/affinity-2/swords.png" );
 }
-span.icon.item.daggers.affinity-2 {
+span.icon.type.daggers.affinity-2 {
   background-image: url( "../images/types/affinity-2/daggers.png" );
 }
-span.icon.item.spears.affinity-2 {
+span.icon.type.spears.affinity-2 {
   background-image: url( "../images/types/affinity-2/spears.png" );
 }
-span.icon.item.axes.affinity-2 {
+span.icon.type.axes.affinity-2 {
   background-image: url( "../images/types/affinity-2/axes.png" );
 }
-span.icon.item.maces.affinity-2 {
+span.icon.type.maces.affinity-2 {
   background-image: url( "../images/types/affinity-2/maces.png" );
 }
-span.icon.item.staves.affinity-2 {
+span.icon.type.staves.affinity-2 {
   background-image: url( "../images/types/affinity-2/staves.png" );
 }
-span.icon.item.guns.affinity-2 {
+span.icon.type.guns.affinity-2 {
   background-image: url( "../images/types/affinity-2/guns.png" );
 }
-span.icon.item.bows.affinity-2 {
+span.icon.type.bows.affinity-2 {
   background-image: url( "../images/types/affinity-2/bows.png" );
 }
-span.icon.item.armor.affinity-2 {
+span.icon.type.armor.affinity-2 {
   background-image: url( "../images/types/affinity-2/armor.png" );
 }
-span.icon.item.vests.affinity-2 {
+span.icon.type.vests.affinity-2 {
   background-image: url( "../images/types/affinity-2/vests.png" );
 }
-span.icon.item.clothes.affinity-2 {
+span.icon.type.clothes.affinity-2 {
   background-image: url( "../images/types/affinity-2/clothes.png" );
 }
-span.icon.item.helmets.affinity-2 {
+span.icon.type.helmets.affinity-2 {
   background-image: url( "../images/types/affinity-2/helmets.png" );
 }
-span.icon.item.hats.affinity-2 {
+span.icon.type.hats.affinity-2 {
   background-image: url( "../images/types/affinity-2/hats.png" );
 }
-span.icon.item.gauntlets.affinity-2 {
+span.icon.type.gauntlets.affinity-2 {
   background-image: url( "../images/types/affinity-2/gauntlets.png" );
 }
-span.icon.item.bracers.affinity-2 {
+span.icon.type.bracers.affinity-2 {
   background-image: url( "../images/types/affinity-2/bracers.png" );
 }
-span.icon.item.boots.affinity-2 {
+span.icon.type.boots.affinity-2 {
   background-image: url( "../images/types/affinity-2/boots.png" );
 }
-span.icon.item.footwear.affinity-2 {
+span.icon.type.footwear.affinity-2 {
   background-image: url( "../images/types/affinity-2/footwear.png" );
 }
-span.icon.item.shields.affinity-2 {
+span.icon.type.shields.affinity-2 {
   background-image: url( "../images/types/affinity-2/shields.png" );
 }
-span.icon.item.projectiles.affinity-2 {
+span.icon.type.projectiles.affinity-2 {
   background-image: url( "../images/types/affinity-2/projectiles.png" );
 }
-span.icon.item.remedies.affinity-2 {
+span.icon.type.remedies.affinity-2 {
   background-image: url( "../images/types/affinity-2/remedies.png" );
 }
-span.icon.item.potions.affinity-2 {
+span.icon.type.potions.affinity-2 {
   background-image: url( "../images/types/affinity-2/potions.png" );
 }
-span.icon.item.spells.affinity-2 {
+span.icon.type.spells.affinity-2 {
   background-image: url( "../images/types/affinity-2/spells.png" );
 }
-span.icon.item.rings.affinity-2 {
+span.icon.type.rings.affinity-2 {
   background-image: url( "../images/types/affinity-2/rings.png" );
 }
-span.icon.item.pendants.affinity-2 {
+span.icon.type.pendants.affinity-2 {
   background-image: url( "../images/types/affinity-2/pendants.png" );
 }
-span.icon.item.instruments.affinity-2 {
+span.icon.type.instruments.affinity-2 {
   background-image: url( "../images/types/affinity-2/instruments.png" );
 }
 
