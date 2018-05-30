@@ -705,7 +705,7 @@
         <th rowspan="2">
           <div>
             <span class="icon medium item"
-              :class="[ object.type.icon(), object.name.icon() ]"/>
+              :class="object.name.icon()"/>
           </div>
         </th>
         <th>
@@ -716,8 +716,10 @@
           <span class="head">{{object.name}}</span>
         </th>
         <td>
-          <span class="float-left icon item"
-            :class="[ object.type.icon() ]"/>
+          <span class="float-left">
+            <span class="icon type"
+              :class="object.type.icon()"/>
+          </span>
           <span>{{object.type}}</span>
         </td>
         <td>
@@ -908,7 +910,7 @@
                 </template>
                 <template v-else>
                   <span class="float-left">
-                    <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
+                    <span class="icon item" :class="slot.item.name.icon()"/>
                   </span>
                   <span>{{slot.item.name}}</span>
                 </template>
@@ -956,7 +958,7 @@
               </td>
               <td>
                 <span class="float-left">
-                  <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
+                  <span class="icon item" :class="slot.item.name.icon()"/>
                 </span>
                 <span>{{slot.item.name}}</span>
               </td>
@@ -1269,7 +1271,7 @@
                     </template>
                     <template v-else>
                       <span class="float-left">
-                        <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
+                        <span class="icon item" :class="slot.item.name.icon()"/>
                       </span>
                       <span>{{slot.item.name}}</span>
                     </template>
@@ -1316,7 +1318,7 @@
                   </td>
                   <td>
                     <span class="float-left">
-                      <span class="icon item" :class="[ slot.item.type.icon(), slot.item.name.icon() ]"/>
+                      <span class="icon item" :class="slot.item.name.icon()"/>
                     </span>
                     <span>{{slot.item.name}}</span>
                   </td>
