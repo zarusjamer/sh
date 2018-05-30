@@ -286,21 +286,9 @@
                   </th>
                   <th>
                     <span class="head">Type</span>
-                    <!--
-                    <span class="icon-sortable float-right" :class="[ sorts.type ]" @click="add_sort( $event, 'type' )">
-                      <span class="top">&#9650;</span>
-                      <span class="bot">&#9660;</span>
-                    </span>
-                    -->
                   </th>
                   <th>
                     <span class="head">Level</span>
-                    <!--
-                    <span class="icon-sortable float-right" :class="[ sorts.lv ]" @click="add_sort( $event, 'lv' )">
-                      <span class="top">&#9650;</span>
-                      <span class="bot">&#9660;</span>
-                    </span>
-                    -->
                   </th>
                   <th>
                     <span class="head">Power</span>
@@ -522,7 +510,8 @@
                 </tr>
                 <tr class="data-info">
                   <th rowspan="2">
-                    <span class="icon medium quest" :class="[ icon( object.name ) ]"/>
+                    <span class="icon medium quest"
+                      :class="[ icon( object.name ) ]"/>
                   </th>
                   <th>
                     <div>
@@ -554,7 +543,9 @@
                 </tr>
                 <tr class="data-info">
                   <th>
-                    <span v-if="object.chest" class="icon item chest" :class="icon( object.chest )"/>
+                    <span class="icon item chest"
+                      :class="icon( object.chest )"
+                      v-if="object.chest"/>
                   </th>
                   <td>
                     <span v-if="object.chest">{{object.chest}}</span>
@@ -575,7 +566,9 @@
                 </tr>
                 <tr class="data-info">
                   <th>
-                    <span v-if="object.bag" class="icon item bag" :class="icon( object.bag )"/>
+                    <span class="icon item bag"
+                      :class="icon( object.bag )"
+                      v-if="object.bag"/>
                   </th>
                   <td>
                     <span v-if="object.bag">{{object.bag}}</span>
@@ -596,7 +589,9 @@
                 </tr>
                 <tr class="data-info">
                   <th>
-                    <span v-if="object.item" class="icon artifact" :class="icon( object.item )"/>
+                    <span class="icon artifact"
+                      :class="icon( object.item )"
+                      v-if="object.item"/>
                   </th>
                   <td>
                     <span v-if="object.item">{{object.item}}</span>
@@ -668,8 +663,7 @@
       <td>
         <template v-if="object.lv">
           <div class="float-left">
-            <span
-              class="clickable ui-icon"
+            <span class="clickable ui-icon"
               :class="[ editLv ? 'ui-icon-check' : 'ui-icon-pencil' ]"
               @click="editLv = !editLv"/>
           </div>
@@ -687,8 +681,7 @@
       <td>
         <template v-if="object.cj">
           <div class="float-left">
-            <span
-              class="clickable ui-icon"
+            <span class="clickable ui-icon"
               :class="[ editCj ? 'ui-icon-check' : 'ui-icon-pencil' ]"
               @click="editCj = !editCj"/>
           </div>
@@ -711,7 +704,8 @@
       <tr class="data-info">
         <th rowspan="2">
           <div>
-            <span class="icon medium item" :class="[ icon( object.type ), 'i-' + icon( object.name ) ]"/>
+            <span class="icon medium item"
+              :class="[ icon( object.type ), icon( 'i-' + object.name ) ]"/>
           </div>
         </th>
         <th>
@@ -722,7 +716,8 @@
           <span class="head">{{object.name}}</span>
         </th>
         <td>
-          <span class="float-left icon item" :class="[ icon( object.type ) ]"/>
+          <span class="float-left icon item"
+            :class="[ icon( object.type ) ]"/>
           <span>{{object.type}}</span>
         </td>
         <td>
@@ -733,7 +728,8 @@
         </td>
         <td>
           <template v-if="object.skill">
-            <span class="float-left icon quality" :class="icon( object.skill.q )" />
+            <span class="float-left icon quality"
+              :class="icon( object.skill.q )" />
             <skill :skill="object.skill" />
           </template>
         </td>
@@ -752,10 +748,14 @@
           <span>{{object.price.intString()}}</span>
         </td>
         <td class="left">
-          <template v-for="pi in object.pre" v-if="object.pre">
-            <span class="icon quality" :class="[ icon( pi.q ) ]" />
-            <span class="icon item" :class="[ 'i-' + icon( pi.item ) ]" />
-            <span>{{"{0} {1}".format( pi.q, pi.item )}}</span>
+          <template
+            v-for="pi in object.pre"
+            v-if="object.pre">
+            <span class="icon quality"
+              :class="[ icon( pi.q ) ]" />
+            <span class="icon item"
+              :class="[ icon( 'i-' + pi.item ) ]" />
+            <span>{{pi.q}} {{pi.item}}</span>
           </template>
         </td>
       </tr>
@@ -766,17 +766,13 @@
     <tbody>
       <tr class="data-info">
         <th class="hero-icon" rowspan="2">
-          <span class="icon medium hero" :class="icon( object.name )"/>
+          <span class="icon medium hero"
+            :class="icon( object.name )"/>
         </th>
         <th class="hero-icon">
-          <span
-            class="clickable ui-icon"
-            :class="[ edits.expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
-            @click="edits.expanded = !edits.expanded"/>
-          </span>
         </th>
         <th>
-          <span class="head">{{object.name}}</span>
+          <span class="head" :id="'heroes-' + object.name">{{object.name}}</span>
         </th>
         <td class="hero-icon">
           <template v-if="summary.origin.boostable">
@@ -844,26 +840,22 @@
           <th class="hero-icon">
             <span
               class="clickable ui-icon"
-              :class="[ edits.slotsAll ? 'ui-icon-check' : 'ui-icon-pencil' ]"
-              @click="edits.slotsAll = !edits.slotsAll"/>
+              :class="[ edits.expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
+              @click="edits.expanded = !edits.expanded"/>
+            </span>
           </th>
           <template v-for="( slot, islot ) in object.slots">
             <th class="hero-icon">
-              <span
-                class="clickable ui-icon"
-                :class="[ edits.slots[islot] ? 'ui-icon-check' : 'ui-icon-pencil' ]"
-                @click="edits.slots[islot] = !edits.slots[islot]"/>
+              <span class="htooltip">
+                <span class="htooltip-text">Change eqipment</span>
+                <span
+                  class="clickable ui-icon"
+                  :class="[ edits.slots[islot] ? 'ui-icon-check' : 'ui-icon-pencil' ]"
+                  @click="edits.slots[islot] = !edits.slots[islot]"/>
+              </span>
             </th>
             <th>
-              <span class="float-left">
-                <span
-                  class="clickable ui-icon ui-icon-arrow-1-n"/>
-              </span>
               <itemSlot v-for="( a, type ) in slot.types" :type="type" :a="a" :key="type"/>
-              <span class="float-right">
-                <span
-                  class="clickable ui-icon ui-icon-arrow-1-s hidden"/>
-              </span>
             </th>
           </template>
         </tr>
@@ -928,7 +920,13 @@
       </template>
       <template v-else>
         <tr class="data-info">
-          <th class="hero-icon"/>
+          <th class="hero-icon">
+            <span
+              class="clickable ui-icon"
+              :class="[ edits.expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
+              @click="edits.expanded = !edits.expanded"/>
+            </span>
+          </th>
           <template v-for="( slot, islot ) in summary.slots">
             <td>
               <span class="icon quality" :class="icon( object.slots[islot].q )"/>
@@ -981,7 +979,8 @@
                 <span class="float-left">
                   <span class="icon hero" :class="icon( rst.name )"/>
                 </span>
-                <span class="head">{{rst.name}}</span> 
+                <span class="head">{{rst.name}}</span>
+                <!--<span class="head"><a :href="'#heroes-' + rst.name">{{rst.name}}</a></span>-->
               </template>
             </td>
           </template>
@@ -1106,7 +1105,9 @@
       </template>
       <template v-if="summary.skills">
         <tr v-for="k in summary.skillsRows" class="data-info">
-          <th class="hero-icon" v-if="k == 1" :rowspan="summary.skillsRows">
+          <th class="hero-icon"
+            v-if="k == 1"
+            :rowspan="summary.skillsRows">
             <span class="head">Team</span>
           </th>
           <template v-for="j in 7">
@@ -1121,155 +1122,167 @@
           </template>
         </tr>
       </template>
-      <template v-if="edits.expanded" v-for="( rst, sn ) in roster">
-        <tr class="data-info">
-          <th rowspan="2">
-            <span class="icon medium hero" :class="icon( rst.hero.name )"/>
-          </th>
-          <th>
-            <span>{{rst.hero.lv}}</span>
-          </th>
-          <th>
-            <span class="head">{{rst.hero.name}}</span>
-          </th>
-          <template v-for="j in 6">
-            <template v-for="skill in [ rst.info.hero[0+j-1] ]">
-              <td>
-                <skillValue :skill="skill" />
-              </td>
-              <td>
-                <skill :skill="skill" />
-              </td>
-            </template>
-          </template>
-        </tr>
-        <tr class="data-info">
-          <td>
-            <span
-              class="clickable ui-icon"
-              :class="[ edits.roster[sn].expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
-              @click="edits.roster[sn].expanded = !edits.roster[sn].expanded"/>
-          </td>
-          <td>
-            <power :power="rst.power" class="float-left"/>
-          </td>
-          <template v-for="j in 6">
-            <template v-for="skill in [ rst.info.hero[6+j-1] ]">
-              <td>
-                <skillValue :skill="skill" />
-              </td>
-              <td>
-                <skill :skill="skill" />
-              </td>
-            </template>
-          </template>
-        </tr>
-        <template v-if="edits.roster[sn].expanded">
+      <template v-if="edits.expanded">
+        <template v-for="( rst, sn ) in roster">
           <tr class="data-info">
-            <th>
-              <span
-                class="clickable ui-icon"
-                :class="[ edits.roster[sn].allSlots ? 'ui-icon-check' : 'ui-icon-pencil' ]"
-                @click="edits.roster[sn].allSlots = !edits.roster[sn].allSlots"/>
+            <th rowspan="2">
+              <span class="icon medium hero" :class="icon( rst.hero.name )"/>
             </th>
-            <template v-for="( slot, islot ) in rst.slots">
+            <th>
+              <span>{{rst.hero.lv}}</span>
+            </th>
+            <th>
+              <span class="head">{{rst.hero.name}}</span>
+            </th>
+            <template v-for="j in 6">
+              <template v-for="skill in [ rst.info.hero[0+j-1] ]">
+                <td>
+                  <skillValue :skill="skill" />
+                </td>
+                <td>
+                  <skill :skill="skill" />
+                </td>
+              </template>
+            </template>
+          </tr>
+          <tr class="data-info">
+            <td>
+            </td>
+            <td>
+              <power :power="rst.power"/>
+            </td>
+            <template v-for="j in 6">
+              <template v-for="skill in [ rst.info.hero[6+j-1] ]">
+                <td>
+                  <skillValue :skill="skill" />
+                </td>
+                <td>
+                  <skill :skill="skill" />
+                </td>
+              </template>
+            </template>
+          </tr>
+          <template v-if="edits.roster[sn].expanded">
+            <tr class="data-info">
               <th>
+                <span class="clickable ui-icon"
+                  :class="[ edits.roster[sn].expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
+                  @click="edits.roster[sn].expanded = !edits.roster[sn].expanded"/>
+              </th>
+              <template v-for="( slot, islot ) in rst.slots">
+                <th>
+                  <span class="clickable ui-icon"
+                    :class="edits.roster[sn].slots[islot] ? 'ui-icon-check' : 'ui-icon-pencil'"
+                    @click="edits.roster[sn].slots[islot] = !edits.roster[sn].slots[islot]"/>
+                  <span class="clickable ui-icon ui-icon-copy"
+                    :class="slot.cloned ? 'hidden' : ''"
+                    @click="cloneSlot( sn, islot )"/>
+                </th>
+                <th>
+                  <itemSlot
+                    v-for="( itemAffinity, itemType ) in rst.hero.slots[islot].types"
+                    :type="itemType"
+                    :a="itemAffinity"
+                    :key="itemType"/>
+                </th>
+              </template>
+            </tr>
+            <tr class="data-info">
+              <th class="hero-icon" rowspan="4"/>
+              <template v-for="( slot, islot ) in rst.slots">
+                <td colspan="2">
+                  <power :power="slot.power" class="float-left"/>
+                  <chance :chance="slot.chance" class="float-right"/>
+                </td>
+              </template>
+            </tr>
+            <tr class="data-info">
+              <template v-for="( slot, islot ) in rst.slots">
+                <td class="hero-icon">
+                  <span class="icon break" :class="{ optimal: slot.optimal }"/>
+                </td>
+                <td>
+                  <template v-if="edits.roster[sn].slots[islot]">
+                    <select2 v-model="object.roster[sn].slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
+                  </template>
+                  <template v-else>
+                    <template v-if="slot.item">
+                      <span class="float-left">
+                        <span class="icon quality" :class="icon( slot.q )"/>
+                      </span>
+                      <span>{{slot.q}}</span>
+                    </template>
+                  </template>
+                </td>
+              </template>
+            </tr>
+            <tr class="data-info">
+              <template v-for="( slot, islot ) in rst.slots">
+                <td class="hero-icon">
+                  <span v-if="slot.item">{{slot.item.lv}}</span>
+                </td>
+                <td>
+                  <template v-if="edits.roster[sn].slots[islot]">
+                    <select2 v-model="object.roster[sn].slots[islot].item" :options="slot.list" placeholder="Choose item"/>
+                  </template>
+                  <template v-else>
+                    <template v-if="slot.item">
+                      <span class="float-left">
+                        <span class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
+                      </span>
+                      <span>{{slot.item.name}}</span>
+                    </template>
+                  </template>
+                </td>
+              </template>
+            </tr>
+            <tr class="data-info">
+              <template v-for="( slot, islot ) in rst.slots">
+                <template v-if="slot.item && slot.item.skill">
+                  <td>
+                    <skillValue :skill="slot.skill"/>
+                  </td>
+                  <td>
+                    <skill :skill="slot.skill"/>
+                    <span v-if="edits.roster[sn].slots[islot]" class="float-right">
+                      <input type="checkbox" v-model="slot.item.skill.m"/>
+                    </span>
+                  </td>
+                </template>
+                <template v-else>
+                  <td/>
+                  <td/>
+                </template>
+              </template>
+            </tr>
+          </template>
+          <template v-else>
+            <tr class="data-info">
+              <th class="hero-icon">
                 <span
                   class="clickable ui-icon"
-                  :class="[ edits.roster[sn].slots[islot] ? 'ui-icon-check' : 'ui-icon-pencil' ]"
-                  @click="edits.roster[sn].slots[islot] = !edits.roster[sn].slots[islot]"/>
+                  :class="[ edits.roster[sn].expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
+                  @click="edits.roster[sn].expanded = !edits.roster[sn].expanded"/>
               </th>
-              <th>
-                <span class="float-left">
-                  <span
-                    class="clickable ui-icon ui-icon-arrow-1-n"/>
-                </span>
-                <itemSlot
-                  v-for="( itemAffinity, itemType ) in rst.hero.slots[islot].types"
-                  :type="itemType"
-                  :a="itemAffinity"
-                  :key="itemType"/>
-                <span class="float-right">
-                  <span
-                    class="clickable ui-icon ui-icon-arrow-1-s"/>
-                </span>
-              </th>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <th class="hero-icon" rowspan="4"/>
-            <template v-for="( slot, islot ) in rst.slots">
-              <td colspan="2">
-                <power :power="slot.power" class="float-left"/>
-                <chance :chance="slot.chance" class="float-right"/>
-              </td>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <template v-for="( slot, islot ) in rst.slots">
-              <td class="hero-icon">
-                <span class="icon break" :class="{ optimal: slot.optimal }"/>
-              </td>
-              <td>
-                <template v-if="edits.roster[sn].slots[islot]">
-                  <select2 v-model="object.roster[sn].slots[islot].q" :options="$parent.lists.quality" placeholder="Choose quality"/>
+              <template v-for="( slot, islot ) in rst.slots">
+                <template v-if="slot.item">
+                  <td>
+                    <span class="icon quality" :class="icon( slot.q )"/>
+                  </td>
+                  <td>
+                    <span class="float-left">
+                      <span class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
+                    </span>
+                    <span>{{slot.item.name}}</span>
+                  </td>
                 </template>
                 <template v-else>
-                  <span class="float-left">
-                    <span class="icon quality" :class="icon( object.roster[sn].slots[islot].q )"/>
-                  </span>
-                  <span>{{object.roster[sn].slots[islot].q}}</span>
+                  <td/>
+                  <td/>
                 </template>
-              </td>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <template v-for="( slot, islot ) in rst.slots">
-              <td class="hero-icon">
-                <span v-if="slot.item">{{slot.item.lv}}</span>
-              </td>
-              <td>
-                <template v-if="edits.roster[sn].slots[islot]">
-                  <select2 v-model="object.roster[sn].slots[islot].item" :options="slot.list" placeholder="Choose item"/>
-                </template>
-                <template v-else>
-                  <span class="float-left">
-                    <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
-                  </span>
-                  <span>{{object.roster[sn].slots[islot].item}}</span>
-                </template>
-              </td>
-            </template>
-          </tr>
-          <tr class="data-info">
-            <template v-for="( slot, islot ) in rst.slots">
-              <td>
-                <skillValue :skill="slot.skill"/>
-              </td>
-              <td>
-                <skill :skill="slot.skill"/>
-                <span v-if="edits.roster[sn].slots[islot]" class="float-right">
-                  <input v-if="slot.item && slot.item.skill" type="checkbox" v-model="slot.item.skill.m"/>
-                </span>
-              </td>
-            </template>
-          </tr>
-        </template>
-        <template v-else>
-          <tr class="data-info">
-            <th/>
-            <template v-for="( slot, islot ) in rst.slots">
-              <td>
-                <span class="icon quality" :class="icon( object.roster[sn].slots[islot].q )"/>
-              </td>
-              <td>
-                <span class="float-left">
-                  <span v-if="slot.item" class="icon item" :class="[ icon( slot.item.type ), 'i-' + icon( slot.item.name ) ]"/>
-                </span>
-                <span>{{object.roster[sn].slots[islot].item}}</span>
-              </td>
-            </template>
-          </tr>
+              </template>
+            </tr>
+          </template>
         </template>
       </template>
     </tbody>

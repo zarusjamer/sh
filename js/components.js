@@ -532,12 +532,12 @@ Vue.mixin( {
       this.data.teams.push( {
         name: 'Team ' + ( this.data.teams.length + 1 ),
         roster: {
-          slot1: this.getEmptyHero(),
-          slot2: this.getEmptyHero(),
-          slot3: this.getEmptyHero(),
-          slot4: this.getEmptyHero(),
-          slot5: this.getEmptyHero(),
-          slot6: this.getEmptyHero()
+          slot1: this.getEmptyRoster(),
+          slot2: this.getEmptyRoster(),
+          slot3: this.getEmptyRoster(),
+          slot4: this.getEmptyRoster(),
+          slot5: this.getEmptyRoster(),
+          slot6: this.getEmptyRoster()
         }
       } );
       saveStore( 'teams', this.data.teams );
@@ -548,6 +548,9 @@ Vue.mixin( {
     },
     icon: function( str ) {
       return ( str || '' ).icon();
+    },
+    iconItem: function( name ) {
+      return 'i-' + name.icon();
     },
     iconChance: function( chance ) {
       if ( isNaN( chance ) ) {
@@ -562,6 +565,9 @@ Vue.mixin( {
         return 'orange';
       }
       return 'red';
+    },
+    iconAffinity: function( affinity ) {
+      return 'i-affinity' + affinity;
     },
     applyFilter: function( h, f ) {
       if ( !f || !h ) {
@@ -638,32 +644,9 @@ Vue.mixin( {
       result.skills.hero = $.map( h.skills, function( lv, name ) {
         return $.extend( true, vm.getSkill( name ), { lv: lv, active: ( h.lv >= lv ) } );
       } );
-      $.map( h.slots, function( slot, name ) {
-        result.slots[name] = {};
-        result.slots[name].list = $.map( slot.types, function( a, type ) {
-          var items = $
-            .map( vm.data.items, function( i ) {
-              if ( i.type == type ) {
-                return {
-                  id: i.name,
-                  text: i.name,
-                  iconType: 'item',
-                  icon: [ type.icon(), 'i-' + i.name.icon() ].join( ' ' ),
-                  data: {
-                    lv: i.lv
-                  }
-                };
-              }
-            } )
-          return {
-            id: type,
-            text: type,
-            iconType: 'item',
-            icon: type.icon(),
-            children: items
-          };
-        } );
+      $.map( h.slots, function( slot, islot ) {
         var i = {
+          cloned: slot.cloned,
           optimal: false,
           a: 0,
           power: {
@@ -673,12 +656,36 @@ Vue.mixin( {
           chance: {
             base: NaN,
             value: NaN
-          }
+          },
+          list: []
         };
+        i.list = $.map( slot.types, function( a, type ) {
+          var items = $
+            .map( vm.data.items, function( item ) {
+              if ( item.type == type ) {
+                return {
+                  id: item.name,
+                  text: item.name,
+                  iconType: 'item',
+                  icon: [ vm.icon( type ), vm.iconItem( item.name ) ].join( ' ' ),
+                  data: {
+                    lv: item.lv
+                  }
+                };
+              }
+            } )
+          return {
+            id: type,
+            text: type,
+            iconType: 'item',
+            icon: [ vm.icon( type ), vm.iconAffinity( a ) ].join( ' ' ),
+            children: items
+          };
+        } );
         if ( slot.item ) {
           var found = vm.data.items[slot.item];
           if ( found ) {
-            result.slots[name].item = found;
+            i.item = found;
             var lv_difference = Math.abs( found.lv - h.lv );
             i.optimal = ( lv_difference <= 6 );
             var m_q = vm.data.powers.q[slot.q] || 1.0;
@@ -708,7 +715,7 @@ Vue.mixin( {
             result.optimals += i.optimal;
           }
         }
-        $.extend( true, result.slots[name], i );
+        result.slots[islot] = i;
       } );
 
       var info = []
@@ -791,38 +798,44 @@ Vue.mixin( {
           );
       return result;
     },
-    getEmptyHero: function() {
+    getEmptyRoster: function() {
       return {
         name: null,
-        b: false,
         slots: {
-          'Weapon': { 
-            item: null, 
-            q: null 
+          'Weapon': {
+            cloned: false,
+            item: null,
+            q: null
           },
-          'Armor': { 
-            item: null, 
-            q: null 
+          'Armor': {
+            cloned: false,
+            item: null,
+            q: null
           },
-          'Head': { 
-            item: null, 
-            q: null 
+          'Head': {
+            cloned: false,
+            item: null,
+            q: null
           },
-          'Hands': { 
-            item: null, 
-            q: null 
+          'Hands': {
+            cloned: false,
+            item: null,
+            q: null
           },
-          'Feet': { 
-            item: null, 
-            q: null 
+          'Feet': {
+            cloned: false,
+            item: null,
+            q: null
           },
           'Aux1': { 
-            item: null, 
-            q: null 
+            cloned: false,
+            item: null,
+            q: null
           },
           'Aux2': { 
-            item: null, 
-            q: null 
+            cloned: false,
+            item: null,
+            q: null
           }
         }
       };
@@ -1590,8 +1603,17 @@ Vue.component( 'team', {
       $.map( this.object.roster, function( rst, sn ) {
         if ( rst.name ) {
           var hero = vm.getClone( vm.data.heroes[rst.name] );
-          hero.b = rst.b
-          $.extend( true, hero.slots, rst.slots );
+          $.map( rst.slots, function( slot, islot ) {
+            hero.slots[islot].cloned = true;
+            if ( hero.slots[islot].item != slot.item ) {
+              hero.slots[islot].item = slot.item;
+              hero.slots[islot].cloned = false;
+            }
+            if ( hero.slots[islot].q != slot.q ) {
+              hero.slots[islot].q = slot.q;
+              hero.slots[islot].cloned = false;
+            }
+          } );
           result[sn] = vm.getHero( hero );
         }
       } );
@@ -1860,6 +1882,16 @@ Vue.component( 'team', {
   methods: {
     remove: function( object ) {
       this.removeTeam( object );
+    },
+    cloneSlot: function( sn, islot ) {
+      var vm = this;
+      var hero = vm.data.heroes[vm.object.roster[sn].name];
+      if ( vm.object.roster[sn].slots[islot].item != hero.slots[islot].item ) {
+        vm.object.roster[sn].slots[islot].item = hero.slots[islot].item;
+      }
+      if ( vm.object.roster[sn].slots[islot].q != hero.slots[islot].q ) {
+        vm.object.roster[sn].slots[islot].q = hero.slots[islot].q;
+      }
     },
     setBoost: function( origin, b ) {
       var vm = this;
