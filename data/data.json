@@ -1,4 +1,2314 @@
-{
+﻿{
+  "rarities": {
+    "Common": { 
+      "i": 0
+    },
+    "Uncommon": { 
+      "i": 1
+    },
+    "Rare": { 
+      "i": 2
+    },
+    "Exclusive": { 
+      "i": 3
+    }
+  },
+  "qualities": {
+    "Common": { 
+      "sh": "C",
+      "i": 0
+    },
+    "Good": {
+      "sh": "GD",
+      "i": 1
+    },
+    "Great": {
+      "sh": "GT",
+      "i": 2
+    },
+    "Flawless": {
+      "sh": "F",
+      "i": 3
+    },
+    "Epic": {
+      "sh": "E",
+      "i": 4
+    },
+    "Legendary": {
+      "sh": "L",
+      "i": 5
+    },
+    "Mythical": {
+      "sh": "M",
+      "i": 6
+    }
+  },
+  "breaks": {
+    "q": { 
+      "Common": 1.0,
+      "Good": 0.75,
+      "Great": 0.5,
+      "Flawless": 0.3,
+      "Epic": 0.15,
+      "Legendary": 0.05,
+      "Mythical": 0.04
+    },
+    "a": { 
+       "1": -0.025, 
+       "0": 0, 
+      "-1": 0.0125, 
+      "-2": 0.025 
+    }
+  },
+  "powers": {
+    "q": { 
+      "Common": 1.0,
+      "Good": 1.1,
+      "Great": 1.2,
+      "Flawless": 1.3,
+      "Epic": 1.5,
+      "Legendary": 2.0,
+      "Mythical": 5.0
+    },
+    "lv": {
+       "1": 0,
+       "2": 5,
+       "3": 15,
+       "4": 25,
+       "5": 40,
+       "6": 55,
+       "7": 75,
+       "8": 100,
+       "9": 125,
+      "10": 155,
+      "11": 190,
+      "12": 225,
+      "13": 265,
+      "14": 305,
+      "15": 350,
+      "16": 400,
+      "17": 450,
+      "18": 505,
+      "19": 565,
+      "20": 625,
+      "21": 690,
+      "22": 755,
+      "23": 825,
+      "24": 900,
+      "25": 975,
+      "26": 1055,
+      "27": 1140,
+      "28": 1225,
+      "29": 1315,
+      "30": 1405,
+      "31": 1500,
+      "32": 1600,
+      "33": 1700,
+      "34": 1805,
+      "35": 1915,
+      "36": 2025,
+      "37": 2140,
+      "38": 2255,
+      "39": 2375,
+      "40": 2500,
+      "41": 2625,
+      "42": 2755,
+      "43": 2890,
+      "44": 3025,
+      "45": 3165,
+      "46": 3305,
+      "47": 3450,
+      "48": 3600,
+      "49": 3750,
+      "50": 3905,
+      "51": 4065,
+      "52": 4225,
+      "53": 4390,
+      "54": 4555,
+      "55": 4725
+    }
+  },
+  "quests": {
+    "City Sewers": {
+      "name": "City Sewers",
+      "time": 300,
+      "power": 100,
+      "chest": "Wooden",
+      "bag": "Treasure",
+      "item": "Shiny Gem",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 100, "xp": 16 },
+          "boss": { "power": 125, "xp": 20 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 110, "xp": 16 },
+          "boss": { "power": 150, "xp": 24 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 120, "xp": 18 },
+          "boss": { "power": 175, "xp": 26 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 130, "xp": 20 },
+          "boss": { "power": 200, "xp": 30 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 140, "xp": 22 },
+          "boss": { "power": 300, "xp": 46 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 4, "max": 8 },
+          "base": { "power": 150, "xp": 24 }
+        }
+      }
+    },
+    "Forbidden Meadow": {
+      "name": "Forbidden Meadow",
+      "time": 600,
+      "power": 300,
+      "chest": "Wooden",
+      "bag": "Treasure",
+      "item": "Elven Dew",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 220, "xp": 36 },
+          "boss": { "power": 275, "xp": 44 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 245, "xp": 38 },
+          "boss": { "power": 335, "xp": 55 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 265, "xp": 42 },
+          "boss": { "power": 390, "xp": 60 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 290, "xp": 46 },
+          "boss": { "power": 445, "xp": 70 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 310, "xp": 50 },
+          "boss": { "power": 665, "xp": 105 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 4, "max": 8 },
+          "base": { "power": 335, "xp": 55 }
+        }
+      }
+    },
+    "Gloomy Manor": {
+      "name": "Gloomy Manor",
+      "time": 1200,
+      "power": 700,
+      "chest": "Wooden",
+      "bag": "Treasure",
+      "item": "Viper Essence",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 635, "xp": 75 },
+          "boss": { "power": 795, "xp": 90 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 700, "xp": 80 },
+          "boss": { "power": 955, "xp": 110 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 765, "xp": 90 },
+          "boss": { "power": 1100, "xp": 130 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 825, "xp": 95 },
+          "boss": { "power": 1250, "xp": 145 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 890, "xp": 105 },
+          "boss": { "power": 1900, "xp": 220 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 4, "max": 8 },
+          "base": { "power": 925, "xp": 110 }
+        }
+      }
+    },
+    "Haunted Forest": {
+      "name": "Haunted Forest",
+      "time": 1800,
+      "power": 1200,
+      "chest": "Wooden",
+      "bag": "Treasure",
+      "item": "Iron Wood",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 1100, "xp": 455 },
+          "boss": { "power": 1350, "xp": 570 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 1200, "xp": 505 },
+          "boss": { "power": 1650, "xp": 685 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 1300, "xp": 550 },
+          "boss": { "power": 1900, "xp": 800 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 1400, "xp": 595 },
+          "boss": { "power": 2200, "xp": 915 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 1550, "xp": 640 },
+          "boss": { "power": 3300, "xp": 1350 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 4, "max": 8 },
+          "base": { "power": 1650, "xp": 685 }
+        }
+      }
+    },
+    "Catacombs": {
+      "name": "Catacombs",
+      "time": 1800,
+      "power": 2800,
+      "chest": "Leather",
+      "bag": "Treasure",
+      "item": "Burning Ember",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 1750, "xp": 1100 },
+          "boss": { "power": 2200, "xp": 1350 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 1900, "xp": 1200 },
+          "boss": { "power": 2600, "xp": 1600 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 2100, "xp": 1300 },
+          "boss": { "power": 3050, "xp": 1900 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 2250, "xp": 1400 },
+          "boss": { "power": 3500, "xp": 2150 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 2450, "xp": 1500 },
+          "boss": { "power": 5250, "xp": 3250 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 2600, "xp": 1600 }
+        }
+      }
+    },
+    "Mountain Hideout": {
+      "name": "Mountain Hideout",
+      "time": 2400,
+      "power": 3600,
+      "chest": "Leather",
+      "bag": "Treasure",
+      "item": "Rainbow Dust",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 2250, "xp": 2100 },
+          "boss": { "power": 2800, "xp": 2650 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 2500, "xp": 2300 },
+          "boss": { "power": 3400, "xp": 3150 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 2700, "xp": 2500 },
+          "boss": { "power": 3950, "xp": 3700 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 2950, "xp": 2750 },
+          "boss": { "power": 4500, "xp": 4200 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 3150, "xp": 2950 },
+          "boss": { "power": 6750, "xp": 6300 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 3400, "xp": 3150 }
+        }
+      }
+    },
+    "Ancient Ruins": {
+      "name": "Ancient Ruins",
+      "time": 3000,
+      "power": 4800,
+      "chest": "Leather",
+      "bag": "Treasure",
+      "item": "Moon Shard",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 2800, "xp": 4300 },
+          "boss": { "power": 3450, "xp": 5350 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 3050, "xp": 4700 },
+          "boss": { "power": 4150, "xp": 6400 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 3350, "xp": 5150 },
+          "boss": { "power": 4850, "xp": 7500 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 3600, "xp": 5550 },
+          "boss": { "power": 5550, "xp": 8550 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 3900, "xp": 6000 },
+          "boss": { "power": 8350, "xp": 13000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 4150, "xp": 6400 }
+        }
+      }
+    },
+    "Pirate's Cove": {
+      "name": "Pirate's Cove",
+      "time": 3600,
+      "power": 5600,
+      "chest": "Leather",
+      "bag": "Treasure",
+      "item": "Iron Carapace",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 3500, "xp": 7500 },
+          "boss": { "power": 4350, "xp": 9400 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 2, "max": 4 },
+          "base": { "power": 3850, "xp": 8250 },
+          "boss": { "power": 5250, "xp": 11500 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 4200, "xp": 9000 },
+          "boss": { "power": 6100, "xp": 13000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 4550, "xp": 9750 },
+          "boss": { "power": 7000, "xp": 15000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 3, "max": 6 },
+          "base": { "power": 4900, "xp": 10500 },
+          "boss": { "power": 10500, "xp": 22500 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 3, "max": 7 },
+          "base": { "power": 5250, "xp": 11500 }
+        }
+      }
+    },
+    "Desert of Doom": {
+      "name": "Desert of Doom",
+      "time": 4500,
+      "power": 10000,
+      "chest": "Iron",
+      "bag": "Mysterious",
+      "item": "Wyvern Wing",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 4250, "xp": 12500 },
+          "boss": { "power": 5300, "xp": 15500 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 4650, "xp": 14000 },
+          "boss": { "power": 6350, "xp": 19000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 5100, "xp": 15000 },
+          "boss": { "power": 7400, "xp": 22000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 5500, "xp": 16500 },
+          "boss": { "power": 8500, "xp": 25000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 5950, "xp": 17500 },
+          "boss": { "power": 12500, "xp": 37500 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 6350, "xp": 19000 }
+        }
+      }
+    },
+    "Plague Lake": {
+      "name": "Plague Lake",
+      "time": 5400,
+      "power": 12000,
+      "chest": "Iron",
+      "bag": "Mysterious",
+      "item": "Frozen Core",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 5000, "xp": 20000 },
+          "boss": { "power": 6250, "xp": 25000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 5500, "xp": 22000 },
+          "boss": { "power": 7500, "xp": 30500 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 6000, "xp": 24000 },
+          "boss": { "power": 8750, "xp": 35500 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 6500, "xp": 26000 },
+          "boss": { "power": 10000, "xp": 40500 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 7000, "xp": 28000 },
+          "boss": { "power": 15000, "xp": 60500 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 7500, "xp": 30500 }
+        }
+      }
+    },
+    "Dead River": {
+      "name": "Dead River",
+      "time": 6000,
+      "power": 14500,
+      "chest": "Iron",
+      "bag": "Mysterious",
+      "item": "Royal Bone",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 6150, "xp": 33000 },
+          "boss": { "power": 7700, "xp": 41500 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 6800, "xp": 36500 },
+          "boss": { "power": 9250, "xp": 49500 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 7400, "xp": 40000 },
+          "boss": { "power": 11000, "xp": 58000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 8000, "xp": 43000 },
+          "boss": { "power": 12500, "xp": 66500 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 8650, "xp": 46500 },
+          "boss": { "power": 18500, "xp": 99500 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 9250, "xp": 49500 }
+        }
+      }
+    },
+    "Unholy Land": {
+      "name": "Unholy Land",
+      "time": 6600,
+      "power": 17000,
+      "chest": "Iron",
+      "bag": "Mysterious",
+      "item": "Liquid Fire",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 7150, "xp": 56500 },
+          "boss": { "power": 8950, "xp": 70500 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 7850, "xp": 62000 },
+          "boss": { "power": 10500, "xp": 84500 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 8600, "xp": 68000 },
+          "boss": { "power": 12500, "xp": 99000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 9300, "xp": 73500 },
+          "boss": { "power": 14500, "xp": 115000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 10000, "xp": 79000 },
+          "boss": { "power": 21500, "xp": 170000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 10500, "xp": 84500 }
+        }
+      }
+    },
+    "Orcish Valley": {
+      "name": "Orcish Valley",
+      "time": 7200,
+      "power": 29000,
+      "chest": "Gold",
+      "bag": "Mysterious",
+      "item": "Yggdrasil Leaf",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 8800, "xp": 90000 },
+          "boss": { "power": 11000, "xp": 110000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 9650, "xp": 99000 },
+          "boss": { "power": 13000, "xp": 135000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 10500, "xp": 110000 },
+          "boss": { "power": 15500, "xp": 155000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 11500, "xp": 115000 },
+          "boss": { "power": 17500, "xp": 180000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 12500, "xp": 125000 },
+          "boss": { "power": 26500, "xp": 270000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 13000, "xp": 135000 }
+        }
+      }
+    },
+    "Old Tower": {
+      "name": "Old Tower",
+      "time": 8100,
+      "power": 32000,
+      "chest": "Gold",
+      "bag": "Mysterious",
+      "item": "Silver Steel",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 10000, "xp": 140000 },
+          "boss": { "power": 12500, "xp": 175000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 11000, "xp": 150000 },
+          "boss": { "power": 15000, "xp": 210000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 12000, "xp": 165000 },
+          "boss": { "power": 17500, "xp": 240000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 13000, "xp": 180000 },
+          "boss": { "power": 20000, "xp": 275000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 14000, "xp": 195000 },
+          "boss": { "power": 30000, "xp": 415000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 15000, "xp": 210000 }
+        }
+      }
+    },
+    "Lost Labyrinth": {
+      "name": "Lost Labyrinth",
+      "time": 9000,
+      "power": 38500,
+      "chest": "Gold",
+      "bag": "Mysterious",
+      "item": "Phoenix Feather",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 12000, "xp": 215000 },
+          "boss": { "power": 15000, "xp": 270000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 13000, "xp": 235000 },
+          "boss": { "power": 18000, "xp": 325000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 14500, "xp": 265000 },
+          "boss": { "power": 21000, "xp": 380000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 15500, "xp": 280000 },
+          "boss": { "power": 24000, "xp": 430000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 16500, "xp": 300000 },
+          "boss": { "power": 36000, "xp": 645000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 18000, "xp": 325000 }
+        }
+      }
+    },
+    "Heretic Temple": {
+      "name": "Heretic Temple",
+      "time": 9900,
+      "power": 45000,
+      "chest": "Gold",
+      "bag": "Mysterious",
+      "item": "Golden Thread",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 14000, "xp": 330000 },
+          "boss": { "power": 17500, "xp": 410000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 15500, "xp": 360000 },
+          "boss": { "power": 21000, "xp": 495000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 16500, "xp": 395000 },
+          "boss": { "power": 24500, "xp": 575000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 18000, "xp": 430000 },
+          "boss": { "power": 28000, "xp": 660000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 19500, "xp": 460000 },
+          "boss": { "power": 41500, "xp": 985000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 6 },
+          "base": { "power": 21000, "xp": 495000 }
+        }
+      }
+    },
+    "Hellish Abyss": {
+      "name": "Hellish Abyss",
+      "time": 10800,
+      "power": 70000,
+      "chest": "Magic",
+      "bag": "Wondrous",
+      "item": "Demon Heart",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 17500, "xp": 625000 },
+          "boss": { "power": 22000, "xp": 780000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 19000, "xp": 690000 },
+          "boss": { "power": 26000, "xp": 940000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 21000, "xp": 750000 },
+          "boss": { "power": 30500, "xp": 1100000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 22500, "xp": 815000 },
+          "boss": { "power": 35000, "xp": 1250000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 24500, "xp": 875000 },
+          "boss": { "power": 52500, "xp": 1900000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 26000, "xp": 940000 }
+        }
+      }
+    },
+    "Pyramid": {
+      "name": "Pyramid",
+      "time": 12600,
+      "power": 84000,
+      "chest": "Magic",
+      "bag": "Wondrous",
+      "item": "Dark Energy",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 21000, "xp": 1000000 },
+          "boss": { "power": 26000, "xp": 1250000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 23000, "xp": 1100000 },
+          "boss": { "power": 31500, "xp": 1500000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 25000, "xp": 1200000 },
+          "boss": { "power": 36500, "xp": 1750000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 27000, "xp": 1300000 },
+          "boss": { "power": 41500, "xp": 2000000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 29000, "xp": 1400000 },
+          "boss": { "power": 62500, "xp": 3000000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 31500, "xp": 1500000 }
+        }
+      }
+    },
+    "Floating Island": {
+      "name": "Floating Island",
+      "time": 14400,
+      "power": 100000,
+      "chest": "Magic",
+      "bag": "Wondrous",
+      "item": "Sun Tear",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 25000, "xp": 1550000 },
+          "boss": { "power": 31000, "xp": 1950000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 27500, "xp": 1700000 },
+          "boss": { "power": 37500, "xp": 2300000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 30000, "xp": 1850000 },
+          "boss": { "power": 43500, "xp": 2700000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 32500, "xp": 2000000 },
+          "boss": { "power": 49500, "xp": 3100000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 35000, "xp": 2150000 },
+          "boss": { "power": 74500, "xp": 4650000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 37500, "xp": 2300000 }
+        }
+      }
+    },
+    "Dragon's Nest": {
+      "name": "Dragon's Nest",
+      "time": 16200,
+      "power": 120000,
+      "chest": "Magic",
+      "bag": "Wondrous",
+      "item": "Dragon Scale",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 30000, "xp": 2450000 },
+          "boss": { "power": 37500, "xp": 3050000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 33000, "xp": 2650000 },
+          "boss": { "power": 45000, "xp": 3650000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 36000, "xp": 2900000 },
+          "boss": { "power": 52500, "xp": 4250000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 39000, "xp": 3150000 },
+          "boss": { "power": 59500, "xp": 4850000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 42000, "xp": 3400000 },
+          "boss": { "power": 89500, "xp": 7300000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 45000, "xp": 3650000 }
+        }
+      }
+    },
+    "Chaos Gate": {
+      "name": "Chaos Gate",
+      "time": 18000,
+      "power": 160000,
+      "chest": "Magic",
+      "bag": "Wondrous",
+      "item": "Adamantium",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 40000, "xp": 4250000 },
+          "boss": { "power": 50500, "xp": 5300000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 44500, "xp": 4700000 },
+          "boss": { "power": 60500, "xp": 6400000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 48500, "xp": 5100000 },
+          "boss": { "power": 70500, "xp": 7450000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 52500, "xp": 5550000 },
+          "boss": { "power": 80500, "xp": 8500000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 56500, "xp": 5950000 },
+          "boss": { "power": 120000, "xp": 12750000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 60500, "xp": 6400000 }
+        }
+      }
+    },
+    "Uncharted Jungle": {
+      "name": "Uncharted Jungle",
+      "time": 32400,
+      "power": 200000,
+      "chest": "Dwarvish",
+      "bag": "Wondrous",
+      "item": "Ancient Essence",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 42000, "xp": 6050000 },
+          "boss": { "power": 53000, "xp": 7550000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 46500, "xp": 6650000 },
+          "boss": { "power": 63500, "xp": 9050000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 50500, "xp": 7250000 },
+          "boss": { "power": 74000, "xp": 10550000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 55000, "xp": 7850000 },
+          "boss": { "power": 84500, "xp": 12050000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 59000, "xp": 8450000 },
+          "boss": { "power": 125000, "xp": 18100000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 63500, "xp": 9050000 }
+        }
+      }
+    },
+    "Ice Palace": {
+      "name": "Ice Palace",
+      "time": 36000,
+      "power": 250000,
+      "chest": "Dwarvish",
+      "bag": "Wondrous",
+      "item": "Frostfire Crystal",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 52500, "xp": 7950000 },
+          "boss": { "power": 65500, "xp": 9950000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 58000, "xp": 8750000 },
+          "boss": { "power": 79000, "xp": 11900000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 63000, "xp": 9550000 },
+          "boss": { "power": 92000, "xp": 13900000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 68500, "xp": 10350000 },
+          "boss": { "power": 105000, "xp": 15900000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 73500, "xp": 11150000 },
+          "boss": { "power": 160000, "xp": 23850000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 79000, "xp": 11900000 }
+        }
+      }
+    },
+    "Ring of Fire": {
+      "name": "Ring of Fire",
+      "time": 43200,
+      "power": 300000,
+      "chest": "Dwarvish",
+      "bag": "Wondrous",
+      "item": "Obsidian Coral",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 62500, "xp": 10100000 },
+          "boss": { "power": 78000, "xp": 12600000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 69000, "xp": 11100000 },
+          "boss": { "power": 94000, "xp": 15100000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 75000, "xp": 12100000 },
+          "boss": { "power": 110000, "xp": 17650000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 81500, "xp": 13100000 },
+          "boss": { "power": 125000, "xp": 20150000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 87500, "xp": 14100000 },
+          "boss": { "power": 190000, "xp": 30250000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 94000, "xp": 15100000 }
+        }
+      }
+    },
+    "Tainted Grove": {
+      "name": "Tainted Grove",
+      "time": 259200,
+      "power": 500000,
+      "chest": "Dwarvish",
+      "bag": "Wondrous",
+      "item": "Shard Of Gaia",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 70000, "xp": 12200000 },
+          "boss": { "power": 85000, "xp": 15250000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 77500, "xp": 13400000 },
+          "boss": { "power": 105000, "xp": 18200000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 84500, "xp": 14600000 },
+          "boss": { "power": 125000, "xp": 21350000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 91000, "xp": 15800000 },
+          "boss": { "power": 145000, "xp": 24400000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 98000, "xp": 17000000 },
+          "boss": { "power": 165000, "xp": 36600000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 105000, "xp": 18200000 }
+        }
+      }
+    },
+    "Primal Lair": {
+      "name": "Primal Lair",
+      "time": 604800,
+      "power": 750000,
+      "chest": "Dwarvish",
+      "bag": "Wondrous",
+      "item": "Primal Horn",
+      "origin": "Inn",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "loot": { "min": 1, "max": 1 },
+          "base": { "power": 100000, "xp": 18200000 },
+          "boss": { "power": 125000, "xp": 22800000 }
+        },
+        "II": {
+          "name": "II",
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 110000, "xp": 20050000 },
+          "boss": { "power": 150000, "xp": 27360000 }
+        },
+        "III": {
+          "name": "III",
+          "loot": { "min": 1, "max": 3 },
+          "base": { "power": 120000, "xp": 22350000 },
+          "boss": { "power": 175000, "xp": 31920000 }
+        },
+        "IV": {
+          "name": "IV",
+          "loot": { "min": 1, "max": 4 },
+          "base": { "power": 130000, "xp": 24650000 },
+          "boss": { "power": 200000, "xp": 36480000 }
+        },
+        "V": {
+          "name": "V",
+          "loot": { "min": 1, "max": 5 },
+          "base": { "power": 140000, "xp": 26950000 },
+          "boss": { "power": 225000, "xp": 54720000 }
+        },
+        "C": {
+          "name": "C",
+          "loot": { "min": 2, "max": 5 },
+          "base": { "power": 150000, "xp": 29250000 }
+        }
+      }
+    },
+    "City Raid": {
+      "name": "City Raid",
+      "time": 7200,
+      "origin": "Castle",
+      "item": "Raid Item",
+      "tiers": {
+        "I": {
+          "name": "I",
+          "power": 750,
+          "loot": { "min": 1, "max": 2 },
+          "base": { "power": 250, "xp": 100 }
+        },
+        "II": {
+          "name": "II",
+          "power": 35000,
+          "loot": { "min": 3, "max": 5 },
+          "base": { "power": 10000, "xp": 100000 }
+        },
+        "III": {
+          "name": "III",
+          "power": 250000,
+          "loot": { "min": 6, "max": 10 },
+          "base": { "power": 45000, "xp": 2500000 }
+        }
+      }
+    }
+  },
+  "effects": {
+    "Resourceful": { 
+      "base": "Break Count",
+      "text": "Prevents {0} pieces of equipment from breaking",
+      "priority": 1,
+      "cap": false,
+      "sign": "",
+      "applies": "hero",
+      "leader": false
+    },
+    "Support": { 
+      "base": "Break Count",
+      "text": "Prevents {0} pieces of companions equipment from breaking",
+      "priority": 1,
+      "cap": false,
+      "sign": "",
+      "applies": "team",
+      "leader": false
+    },
+    "Healer": { 
+      "base": "Healer",
+      "text": "Resting time of companions is reduced by {0}",
+      "priority": 2,
+      "cap": 0.9,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Energetic": { 
+      "base": "Energetic",
+      "text": "Resting time is reduced by {0}",
+      "priority": 2,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Revive": { 
+      "base": "Revive",
+      "text": "{0} chance to revive injuried companions",
+      "priority": 3,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Speed Runner": { 
+      "base": "Speed",
+      "text": "Quest duration is reduced by {0}",
+      "priority": 4,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "team",
+      "leader": true
+    },
+    "Amazon": { 
+      "base": "Survival",
+      "text": "Survival rate of Female party members is increased by {0}",
+      "priority": 5,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true,
+      "filter": {
+        "sex": "Female"
+      }
+    },
+    "Bros-in-arms": { 
+      "base": "Survival",
+      "text": "Survival rate of Male party members is increased by {0}",
+      "priority": 5,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true,
+      "filter": {
+        "sex": "Male"
+      }
+    },
+    "Protector": { 
+      "base": "Survival",
+      "text": "Survival rate of each party member is increased by {0}",
+      "priority": 6,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Detect Secrets": {
+      "base": "Minimum",
+      "text": "Minimum number of artifacts found by each party member is increased by {0}",
+      "priority": 7,
+      "cap": false,
+      "sign": "",
+      "applies": "team",
+      "leader": false
+    },
+    "Magic Find": {
+      "base": "Maximum",
+      "text": "Maximum number of artifacts found by each party member is increased by {0}",
+      "priority": 8,
+      "cap": false,
+      "sign": "",
+      "applies": "team",
+      "leader": false
+    },
+    "Scavenger": { 
+      "base": "Minimum",
+      "text": "Minimum number of artifacts found is increased by {0}",
+      "cap": false,
+      "priority": 7,
+      "sign": "",
+      "applies": "hero",
+      "leader": false
+    },
+    "Treasure Hunter": { 
+      "base": "Maximum",
+      "text": "Maximum number of artifacts found is increased by {0}",
+      "priority": 8,
+      "cap": false,
+      "sign": "",
+      "applies": "hero",
+      "leader": false
+    },
+    "Leader": { 
+      "base": "Leader",
+      "priority": 9,
+      "text": "Number of companions is increased by {0}",
+      "cap": false,
+      "sign": "",
+      "applies": "hero",
+      "leader": true
+    },
+    "Commander": {
+      "base": "Strength",
+      "text": "Strength of each party member is increased by {0}",
+      "priority": 10,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true
+    },
+    "Arch Wizard": {
+      "base": "Strength",
+      "text": "Strength of Spellcasters in party is increased by {0}",
+      "priority": 10,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": false,
+      "filter": {
+        "type": "Spellcaster"
+      }
+    },
+    "Gangster": {
+      "base": "Equipment",
+      "text": "Equipment strength of Rogues in party is increased by {0}",
+      "priority": 10,
+      "cap": false,
+      "sign": "%",
+      "applies": "team",
+      "leader": true,
+      "filter": {
+        "type": "Rogue"
+      }
+    },
+    "Parry": {
+      "base": "Equipment",
+      "priority": 11,
+      "text": "Equipment strength is increased by {0}",
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Riposte": {
+      "base": "Equipment",
+      "priority": 11,
+      "text": "Equipment strength is increased by {0}",
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Mage Armor": {
+      "base": "Equipment",
+      "priority": 11,
+      "text": "Equipment strength is increased by {0}",
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Backstab": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Cleave": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Crush": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Fireball": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Stoneskin": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Berserker": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Cone-of-cold": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Thunderbolt": {
+      "base": "Strength",
+      "text": "Strength is increased by {0}",
+      "priority": 12,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Fastidious": { 
+      "base": "Break Chance",
+      "text": "Chance of breaking equipment is decreased by {0}",
+      "priority": 13,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Supplier": { 
+      "base": "Break Chance",
+      "text": "Chance of breaking companions equipment is decreased by {0}",
+      "priority": 13,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "team",
+      "leader": false
+    },
+    "Lucky": { 
+      "base": "Revive",
+      "text": "Chance of getting injury is decreased by {0}",
+      "priority": 20,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Shadowstep": { 
+      "base": "Revive",
+      "text": "Chance of getting injury is decreased by {0}",
+      "priority": 20,
+      "cap": 1.0,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Wise": { 
+      "base": "Wise",
+      "text": "Amount of experience for successfully completing quests is increased by {0}",
+      "priority": 21,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Resilient": { 
+      "base": "Resilient",
+      "text": "Amount of experience for completing quests with injury is {0}",
+      "priority": 22,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
+    "Gold Digger": { 
+      "base": "Gold",
+      "text": "Amount of gold found is increased by {0}",
+      "priority": 23,
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    }
+  },
+  "skills": {
+    "Lucky I": {
+      "name": "Lucky I",
+      "type": "Lucky",
+      "value": 0.10
+    },
+    "Lucky II": {
+      "name": "Lucky II",
+      "type": "Lucky",
+      "value": 0.20
+    },
+    "Lucky III": {
+      "name": "Lucky III",
+      "type": "Lucky",
+      "value": 0.30
+    },
+    "Shadowstep": {
+      "name": "Shadowstep",
+      "type": "Shadowstep",
+      "value": 0.15
+    },
+    "Wise I": {
+      "name": "Wise I",
+      "type": "Wise",
+      "value": 0.25
+    },
+    "Wise II": {
+      "name": "Wise II",
+      "type": "Wise",
+      "value": 0.50
+    },
+    "Wise III": {
+      "name": "Wise III",
+      "type": "Wise",
+      "value": 1.00
+    },
+    "Resilient I": {
+      "name": "Resilient I",
+      "type": "Resilient",
+      "value": 0.25
+    },
+    "Resilient II": {
+      "name": "Resilient II",
+      "type": "Resilient",
+      "value": 0.50
+    },
+    "Resilient III": {
+      "name": "Resilient III",
+      "type": "Resilient",
+      "value": 1.00
+    },
+    "Gold Digger I": {
+      "name": "Gold Digger I",
+      "type": "Gold Digger",
+      "value": 0.50
+    },
+    "Gold Digger II": {
+      "name": "Gold Digger II",
+      "type": "Gold Digger",
+      "value": 1.00
+    },
+    "Gold Digger III": {
+      "name": "Gold Digger III",
+      "type": "Gold Digger",
+      "value": 2.00
+    },
+    "Leader I": {
+      "name": "Leader I",
+      "type": "Leader",
+      "value": 1
+    },
+    "Leader II": {
+      "name": "Leader II",
+      "type": "Leader",
+      "value": 2
+    },
+    "Leader III": {
+      "name": "Leader III",
+      "type": "Leader",
+      "value": 3
+    },
+    "Gangster I": {
+      "name": "Gangster I",
+      "type": "Gangster",
+      "value": 0.10
+    },
+    "Gangster II": {
+      "name": "Gangster II",
+      "type": "Gangster",
+      "value": 0.15
+    },
+    "Gangster III": {
+      "name": "Gangster III",
+      "type": "Gangster",
+      "value": 0.25
+    },
+    "Parry": {
+      "name": "Parry",
+      "type": "Parry",
+      "value": 0.10
+    },
+    "Riposte": {
+      "name": "Riposte",
+      "type": "Riposte",
+      "value": 0.20
+    },
+    "Mage Armor": {
+      "name": "Mage Armor",
+      "type": "Mage Armor",
+      "value": 0.25
+    },
+    "Backstab": {
+      "name": "Backstab",
+      "type": "Backstab",
+      "value": 0.25
+    },
+    "Cleave": {
+      "name": "Cleave",
+      "type": "Cleave",
+      "value": 0.25
+    },
+    "Crush": {
+      "name": "Crush",
+      "type": "Crush",
+      "value": 0.25
+    },
+    "Fireball": {
+      "name": "Fireball",
+      "type": "Fireball",
+      "value": 0.25
+    },
+    "Stoneskin": {
+      "name": "Stoneskin",
+      "type": "Stoneskin",
+      "value": 0.30
+    },
+    "Berserker": {
+      "name": "Berserker",
+      "type": "Berserker",
+      "value": 0.35
+    },
+    "Cone-of-cold": {
+      "name": "Cone-of-cold",
+      "type": "Cone-of-cold",
+      "value": 0.40
+    },
+    "Thunderbolt": {
+      "name": "Thunderbolt",
+      "type": "Thunderbolt",
+      "value": 0.50
+    },
+    "Detect Secrets": {
+      "name": "Detect Secrets",
+      "type": "Detect Secrets",
+      "value": 1
+    },
+    "Magic Find": {
+      "name": "Magic Find",
+      "type": "Magic Find",
+      "value": 2
+    },
+    "Scavenger I": {
+      "name": "Scavenger I",
+      "type": "Scavenger",
+      "value": 1
+    },
+    "Scavenger II": {
+      "name": "Scavenger II",
+      "type": "Scavenger",
+      "value": 2
+    },
+    "Scavenger III": {
+      "name": "Scavenger III",
+      "type": "Scavenger",
+      "value": 3
+    },
+    "Treasure Hunter I": {
+      "name": "Treasure Hunter I",
+      "type": "Treasure Hunter",
+      "value": 2
+    },
+    "Treasure Hunter II": {
+      "name": "Treasure Hunter II",
+      "type": "Treasure Hunter",
+      "value": 4
+    },
+    "Treasure Hunter III": {
+      "name": "Treasure Hunter III",
+      "type": "Treasure Hunter",
+      "value": 6
+    },
+    "Protector I": {
+      "name": "Protector I",
+      "type": "Protector",
+      "value": 0.025
+    },
+    "Protector II": {
+      "name": "Protector II",
+      "type": "Protector",
+      "value": 0.05
+    },
+    "Protector III": {
+      "name": "Protector III",
+      "type": "Protector",
+      "value": 0.10
+    },
+    "Commander I": {
+      "name": "Commander I",
+      "type": "Commander",
+      "value": 0.15
+    },
+    "Commander II": {
+      "name": "Commander II",
+      "type": "Commander",
+      "value": 0.25
+    },
+    "Commander III": {
+      "name": "Commander III",
+      "type": "Commander",
+      "value": 0.50
+    },
+    "Arch Wizard I": {
+      "name": "Arch Wizard I",
+      "type": "Arch Wizard",
+      "value": 0.10
+    },
+    "Arch Wizard II": {
+      "name": "Arch Wizard II",
+      "type": "Arch Wizard",
+      "value": 0.20
+    },
+    "Arch Wizard III": {
+      "name": "Arch Wizard III",
+      "type": "Arch Wizard",
+      "value": 0.30
+    },
+    "Aura of Protection": {
+      "name": "Aura of Protection",
+      "type": "Protector",
+      "value": 0.075
+    },
+    "Amazon I": {
+      "name": "Amazon I",
+      "type": "Amazon",
+      "value": 0.05
+    },
+    "Amazon II": {
+      "name": "Amazon II",
+      "type": "Amazon",
+      "value": 0.10
+    },
+    "Amazon III": {
+      "name": "Amazon III",
+      "type": "Amazon",
+      "value": 0.25
+    },
+    "Bros-in-arms I": {
+      "name": "Bros-in-arms I",
+      "type": "Bros-in-arms",
+      "value": 0.05
+    },
+    "Bros-in-arms II": {
+      "name": "Bros-in-arms II",
+      "type": "Bros-in-arms",
+      "value": 0.10
+    },
+    "Bros-in-arms III": {
+      "name": "Bros-in-arms III",
+      "type": "Bros-in-arms",
+      "value": 0.25
+    },
+    "Fastidious I": {
+      "name": "Fastidious I",
+      "type": "Fastidious",
+      "value": 0.15
+    },
+    "Fastidious II": {
+      "name": "Fastidious II",
+      "type": "Fastidious",
+      "value": 0.30
+    },
+    "Fastidious III": {
+      "name": "Fastidious III",
+      "type": "Fastidious",
+      "value": 0.50
+    },
+    "Supplier I": {
+      "name": "Supplier I",
+      "type": "Supplier",
+      "value": 0.05
+    },
+    "Supplier II": {
+      "name": "Supplier II",
+      "type": "Supplier",
+      "value": 0.10
+    },
+    "Supplier III": {
+      "name": "Supplier III",
+      "type": "Supplier",
+      "value": 0.15
+    },
+    "Resourceful I": {
+      "name": "Resourceful I",
+      "type": "Resourceful",
+      "value": 1
+    },
+    "Resourceful II": {
+      "name": "Resourceful II",
+      "type": "Resourceful",
+      "value": 2
+    },
+    "Resourceful III": {
+      "name": "Resourceful III",
+      "type": "Resourceful",
+      "value": 3
+    },
+    "Support I": {
+      "name": "Support I",
+      "type": "Support",
+      "value": 1
+    },
+    "Support II": {
+      "name": "Support II",
+      "type": "Support",
+      "value": 2
+    },
+    "Support III": {
+      "name": "Support III",
+      "type": "Support",
+      "value": 3
+    },
+    "Healer I": {
+      "name": "Healer I",
+      "type": "Healer",
+      "value": 0.10
+    },
+    "Healer II": {
+      "name": "Healer II",
+      "type": "Healer",
+      "value": 0.25
+    },
+    "Healer III": {
+      "name": "Healer III",
+      "type": "Healer",
+      "value": 0.50
+    },
+    "Energetic I": {
+      "name": "Energetic I",
+      "type": "Energetic",
+      "value": 0.50
+    },
+    "Energetic II": {
+      "name": "Energetic II",
+      "type": "Energetic",
+      "value": 0.75
+    },
+    "Energetic III": {
+      "name": "Energetic III",
+      "type": "Energetic",
+      "value": 1.00
+    },
+    "Revive I": {
+      "name": "Revive I",
+      "type": "Revive",
+      "value": 0.05
+    },
+    "Revive II": {
+      "name": "Revive II",
+      "type": "Revive",
+      "value": 0.10
+    },
+    "Revive III": {
+      "name": "Revive III",
+      "type": "Revive",
+      "value": 0.15
+    },
+    "Speed Runner I": {
+      "name": "Speed Runner I",
+      "type": "Speed Runner",
+      "value": 0.10
+    },
+    "Speed Runner II": {
+      "name": "Speed Runner II",
+      "type": "Speed Runner",
+      "value": 0.25
+    },
+    "Speed Runner III": {
+      "name": "Speed Runner III",
+      "type": "Speed Runner",
+      "value": 0.50
+    }
+  },
+  "origins": {
+    "Temple": {
+      "name": "Temple",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Training Hall": {
+      "name": "Training Hall",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Thief's Hideout": {
+      "name": "Thief's Hideout",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Fountain": {
+      "name": "Fountain",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Fighter's Guild": {
+      "name": "Fighter's Guild",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "School of Magic": {
+      "name": "School of Magic",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Hunter's Lodge": {
+      "name": "Hunter's Lodge",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Port": {
+      "name": "Port",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Theater": {
+      "name": "Theater",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Cathedral": {
+      "name": "Cathedral",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "War College": {
+      "name": "War College",
+      "type": "Questing",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      }
+    },
+    "Heroic Package #1": {
+      "name": "Heroic Package #1",
+      "type": "Package",
+      "boostable": false
+    },
+    "Heroic Package #2": {
+      "name": "Heroic Package #2",
+      "type": "Package",
+      "boostable": false
+    },
+    "Inn": {
+      "name": "Inn",
+      "type": "City",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 55,
+      "cj": {
+        "lv": 0,
+        "cap": 5,
+        "value": 0.05
+      },
+      "boost": {
+        "55": { "c": 0.250, "i": 0.50 },
+        "54": { "c": 0.250, "i": 0.50 },
+        "53": { "c": 0.250, "i": 0.50 },
+        "52": { "c": 0.250, "i": 0.50 },
+        "51": { "c": 0.250, "i": 0.50 },
+        "50": { "c": 0.250, "i": 0.50 },
+        "49": { "c": 0.250, "i": 0.45 },
+        "48": { "c": 0.250, "i": 0.45 },
+        "47": { "c": 0.250, "i": 0.45 },
+        "46": { "c": 0.250, "i": 0.45 },
+        "45": { "c": 0.250, "i": 0.45 },
+        "44": { "c": 0.250, "i": 0.45 },
+        "43": { "c": 0.250, "i": 0.45 },
+        "42": { "c": 0.250, "i": 0.45 },
+        "41": { "c": 0.250, "i": 0.45 },
+        "40": { "c": 0.245, "i": 0.45 },
+        "39": { "c": 0.240, "i": 0.40 },
+        "38": { "c": 0.235, "i": 0.40 },
+        "37": { "c": 0.230, "i": 0.40 },
+        "36": { "c": 0.225, "i": 0.40 },
+        "35": { "c": 0.220, "i": 0.40 },
+        "34": { "c": 0.215, "i": 0.40 },
+        "33": { "c": 0.210, "i": 0.40 },
+        "32": { "c": 0.205, "i": 0.40 },
+        "31": { "c": 0.200, "i": 0.40 },
+        "30": { "c": 0.195, "i": 0.40 },
+        "29": { "c": 0.190, "i": 0.35 },
+        "28": { "c": 0.185, "i": 0.35 },
+        "27": { "c": 0.180, "i": 0.35 },
+        "26": { "c": 0.175, "i": 0.35 },
+        "25": { "c": 0.170, "i": 0.35 },
+        "24": { "c": 0.165, "i": 0.35 },
+        "23": { "c": 0.160, "i": 0.35 },
+        "22": { "c": 0.155, "i": 0.35 },
+        "21": { "c": 0.150, "i": 0.35 },
+        "20": { "c": 0.145, "i": 0.35 },
+        "19": { "c": 0.140, "i": 0.30 },
+        "18": { "c": 0.135, "i": 0.30 },
+        "17": { "c": 0.130, "i": 0.30 },
+        "16": { "c": 0.125, "i": 0.30 },
+        "15": { "c": 0.120, "i": 0.30 },
+        "14": { "c": 0.115, "i": 0.30 },
+        "13": { "c": 0.110, "i": 0.30 },
+        "12": { "c": 0.105, "i": 0.30 },
+        "11": { "c": 0.100, "i": 0.30 },
+        "10": { "c": 0.095, "i": 0.30 },
+         "9": { "c": 0.090, "i": 0.25 },
+         "8": { "c": 0.085, "i": 0.25 },
+         "7": { "c": 0.080, "i": 0.25 },
+         "6": { "c": 0.075, "i": 0.25 },
+         "5": { "c": 0.070, "i": 0.25 },
+         "4": { "c": 0.065, "i": 0.25 },
+         "3": { "c": 0.060, "i": 0.25 },
+         "2": { "c": 0.055, "i": 0.25 },
+         "1": { "c": 0.050, "i": 0.25 }
+      }
+    },
+    "Castle": {
+      "name": "Castle",
+      "type": "City",
+      "boostable": true,
+      "b": false,
+      "lv": 1,
+      "cap": 50,
+      "boost": {
+        "50": { "c": 0.250, "i": 0.50 }
+      }
+    }
+  },
   "items": {
     "Cuirass": {
       "type": "Armor",
@@ -9010,6 +11320,1412 @@
       "origin": "Primal Chest",
       "skill": { "name": "Resourceful III", "q": "Mythical", "m": false },
       "pre": [ { "item": "Pirate Armor", "q": "Great", "c": 2 } ]
+    }
+  },
+  "heroes": {
+    "Karal": {
+      "name": "Karal",
+      "type": "Fighter",
+      "sex": "Female",
+      "origin": "Hunter's Lodge",
+      "tier": 1,
+      "lv": 1,
+      "cap": 25,
+      "b": false,
+      "power": {
+        "base": 100,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Axes": 1, "Maces": 0, "Spears": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Vests": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0, "Pendants": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Potions": 0, "Projectiles": -1 }
+        }
+      },
+      "skills": { "Amazon I": 1, "Resilient II": 18, "Crush": 21 }
+    },
+    "Theor": {
+      "name": "Theor",
+      "type": "Fighter",
+      "sex": "Male",
+      "origin": "Training Hall",
+      "tier": 1,
+      "lv": 1,
+      "cap": 30,
+      "b": false,
+      "power": {
+        "base": 50,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Swords": 1, "Axes": 0, "Maces": 0, "Spears": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Vests": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Remedies": 0 }
+        }
+      },
+      "skills": { "Energetic I": 5, "Cleave": 10, "Bros-in-arms I": 15 }
+    },
+    "Clovis": {
+      "name": "Clovis",
+      "type": "Fighter",
+      "sex": "Male",
+      "origin": "Temple",
+      "tier": 1,
+      "lv": 1,
+      "cap": 35,
+      "b": false,
+      "power": {
+        "base": 100,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Spears": 1, "Axes": 0, "Swords": -1, "Maces": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Remedies": 0, "Potions": -1 }
+        }
+      },
+      "skills": { "Parry": 5, "Protector I": 10, "Commander I": 15 }
+    },
+    "Gauvin": {
+      "name": "Gauvin",
+      "type": "Fighter",
+      "sex": "Male",
+      "origin": "Training Hall",
+      "tier": 2,
+      "lv": 1,
+      "cap": 40,
+      "b": false,
+      "power": {
+        "base": 500,
+        "m": 1.50
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Spears": 1, "Axes": 0, "Swords": -1, "Maces": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0, "Pendants": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Potions": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Leader I": 4, "Bros-in-arms I": 14, "Resilient II": 18 }
+    },
+    "Lancaster": {
+      "name": "Lancaster",
+      "type": "Fighter",
+      "sex": "Male",
+      "origin": "Fighter's Guild",
+      "tier": 3,
+      "lv": 1,
+      "cap": 45,
+      "b": false,
+      "power": {
+        "base": 1000,
+        "m": 2.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Axes": 1, "Swords": 0, "Spears": 0, "Maces": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Remedies": 0, "Potions": -1 }
+        }
+      },
+      "skills": { "Bros-in-arms II": 7, "Protector II": 12, "Resourceful II": 26 }
+    },
+    "Fiora": {
+      "name": "Fiora",
+      "type": "Fighter",
+      "sex": "Female",
+      "origin": "Cathedral",
+      "tier": 4,
+      "lv": 1,
+      "cap": 50,
+      "b": false,
+      "power": {
+        "base": 2500,
+        "m": 3.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Maces": 1, "Swords": 0, "Spears": -1, "Staves": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Clothes": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0, "Rings": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Potions": 0 }
+        }
+      },
+      "skills": { "Commander II": 8, "Gold Digger II": 15, "Revive II": 30 }
+    },
+    "Kurul": {
+      "name": "Kurul",
+      "type": "Fighter",
+      "sex": "Male",
+      "origin": "Hunter's Lodge",
+      "tier": 4,
+      "lv": 1,
+      "cap": 50,
+      "b": false,
+      "power": {
+        "base": 2500,
+        "m": 3.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Maces": 1, "Axes": 0, "Spears": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Vests": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Pendants": 0, "Shields": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Remedies": 0 }
+        }
+      },
+      "skills": { "Energetic II": 12, "Scavenger II": 20, "Leader II": 25 }
+    },
+    "Edward": {
+      "name": "Edward",
+      "type": "Fighter",
+      "sex": "Male",
+      "origin": "Cathedral",
+      "tier": 5,
+      "lv": 1,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 4.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Spears": 1, "Maces": 0, "Swords": -1, "Axes": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Clothes": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Potions": 0, "Spells": -1 }
+        }
+      },
+      "skills": { "Leader III": 12, "Revive III": 26, "Protector III": 34 }
+    },
+    "Alicia": {
+      "name": "Alicia",
+      "type": "Fighter",
+      "sex": "Female",
+      "origin": "War College",
+      "tier": 5,
+      "lv": 1,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 4.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Axes": 1, "Swords": 0, "Maces": -1, "Spears": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Shields": 0, "Instruments": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": 0, "Remedies": 0 }
+        }
+      },
+      "skills": { "Amazon III": 14, "Energetic III": 24, "Lucky III": 32 }
+    },
+    "Garreth": {
+      "name": "Garreth",
+      "type": "Rogue",
+      "sex": "Male",
+      "origin": "Thief's Hideout",
+      "tier": 1,
+      "lv": 1,
+      "cap": 30,
+      "b": false,
+      "power": {
+        "base": 50,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Daggers": 1, "Bows": -1, "Guns": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Pendants": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Lucky I": 5, "Treasure Hunter I": 14, "Scavenger I": 20 }
+    },
+    "Palash": {
+      "name": "Palash",
+      "type": "Rogue",
+      "sex": "Male",
+      "origin": "Hunter's Lodge",
+      "tier": 1,
+      "lv": 1,
+      "cap": 40,
+      "b": false,
+      "power": {
+        "base": 100,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Bows": 1, "Axes": 0, "Guns": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Instruments": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": -1, "Remedies": 0 }
+        }
+      },
+      "skills": { "Resilient I": 3, "Scavenger I": 16, "Supplier I": 22 }
+    },
+    "Mila": {
+      "name": "Mila",
+      "type": "Rogue",
+      "sex": "Female",
+      "origin": "Thief's Hideout",
+      "tier": 2,
+      "lv": 1,
+      "cap": 40,
+      "b": false,
+      "power": {
+        "base": 500,
+        "m": 1.50
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Daggers": 1, "Maces": -1, "Bows": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Pendants": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Gold Digger I": 7, "Treasure Hunter II": 14, "Lucky II": 22 }
+    },
+    "Irene": {
+      "name": "Irene",
+      "type": "Rogue",
+      "sex": "Female",
+      "origin": "Fountain",
+      "tier": 2,
+      "lv": 1,
+      "cap": 45,
+      "b": false,
+      "power": {
+        "base": 500,
+        "m": 1.50
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Swords": 1, "Guns": 0, "Daggers": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Shields": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Potions": 0, "Projectiles": -1 }
+        }
+      },
+      "skills": { "Gangster I": 9, "Resourceful I": 20, "Supplier II": 28 }
+    },
+    "Darthos": {
+      "name": "Darthos",
+      "type": "Rogue",
+      "sex": "Male",
+      "origin": "Theater",
+      "tier": 3,
+      "lv": 1,
+      "cap": 45,
+      "b": false,
+      "power": {
+        "base": 1000,
+        "m": 2.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Guns": 1, "Swords": 0, "Daggers": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0, "Helmets": -1 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Shields": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Wise II": 8, "Speed Runner II": 12, "Bros-in-arms III": 22 }
+    },
+    "Odette": {
+      "name": "Odette",
+      "type": "Rogue",
+      "sex": "Female",
+      "origin": "Thief's Hideout",
+      "tier": 3,
+      "lv": 1,
+      "cap": 45,
+      "b": false,
+      "power": {
+        "base": 1000,
+        "m": 2.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Bows": 1, "Swords": 0, "Daggers": 0, "Guns": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0, "Clothes": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Pendants": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": 0 }
+        }
+      },
+      "skills": { "Fastidious II": 8, "Amazon II": 18, "Support II": 24 }
+    },
+    "Louca": {
+      "name": "Louca",
+      "type": "Rogue",
+      "sex": "Female",
+      "origin": "Port",
+      "tier": 5,
+      "lv": 1,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 4.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Guns": 1, "Maces": 0 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0, "Boots": -1 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Shields": -1, "Pendants": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Remedies": 0, "Projectiles": -1 }
+        }
+      },
+      "skills": { "Scavenger III": 18, "Treasure Hunter III": 25, "Support III": 35 }
+    },
+    "Kuro Shobi": {
+      "name": "Kuro Shobi",
+      "type": "Rogue",
+      "sex": "Female",
+      "origin": "Port",
+      "tier": 5,
+      "lv": 1,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 4.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Swords": 1, "Daggers": 0, "Bows": 0, "Guns": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0, "Clothes": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0, "Instruments": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": 0 }
+        }
+      },
+      "skills": { "Gangster III": 14, "Resourceful III": 26, "Speed Runner III": 34 }
+    },
+    "Lorelei": {
+      "name": "Lorelei",
+      "type": "Rogue",
+      "sex": "Female",
+      "origin": "Heroic Package #2",
+      "tier": 6,
+      "lv": 1,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 5.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Daggers": 1, "Guns": 0 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Rings": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Projectiles": 0 }
+        }
+      },
+      "skills": { "Lucky III": 20, "Backstab": 25, "Scavenger III": 30 }
+    },
+    "Melina": {
+      "name": "Melina",
+      "type": "Spellcaster",
+      "sex": "Female",
+      "origin": "School of Magic",
+      "tier": 1,
+      "lv": 1,
+      "cap": 25,
+      "b": false,
+      "power": {
+        "base": 50,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Staves": 1, "Daggers": -1, "Bows": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Pendants": 0, "Rings": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Fireball": 6, "Wise I": 10, "Speed Runner I": 18 }
+    },
+    "Minh": {
+      "name": "Minh",
+      "type": "Spellcaster",
+      "sex": "Male",
+      "origin": "Temple",
+      "tier": 1,
+      "lv": 1,
+      "cap": 35,
+      "b": false,
+      "power": {
+        "base": 50,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Maces": 1, "Staves": 0, "Bows": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Pendants": 0, "Instruments": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Potions": 0, "Spells": -1 }
+        }
+      },
+      "skills": { "Wise I": 6, "Healer I": 15, "Revive I": 22 }
+    },
+    "Albert": {
+      "name": "Albert",
+      "type": "Spellcaster",
+      "sex": "Male",
+      "origin": "Fountain",
+      "tier": 1,
+      "lv": 1,
+      "cap": 40,
+      "b": false,
+      "power": {
+        "base": 100,
+        "m": 1.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Bows": 1, "Staves": 0, "Daggers": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Clothes": 0, "Vests": -1 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Instruments": 0, "Pendants": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Potions": -1 }
+        }
+      },
+      "skills": { "Fastidious I": 8, "Supplier I": 12, "Support I": 20 }
+    },
+    "Nya": {
+      "name": "Nya",
+      "type": "Spellcaster",
+      "sex": "Female",
+      "origin": "School of Magic",
+      "tier": 2,
+      "lv": 1,
+      "cap": 40,
+      "b": false,
+      "power": {
+        "base": 500,
+        "m": 1.50
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Staves": 1, "Daggers": -1, "Spears": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Instruments": 0, "Rings": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Revive I": 12, "Arch Wizard I": 17, "Cone-of-cold": 25 }
+    },
+    "Oneira": {
+      "name": "Oneira",
+      "type": "Spellcaster",
+      "sex": "Female",
+      "origin": "Theater",
+      "tier": 3,
+      "lv": 1,
+      "cap": 45,
+      "b": false,
+      "power": {
+        "base": 1000,
+        "m": 2.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Daggers": 1, "Staves": -1, "Bows": -2 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Instruments": 0, "Pendants": 0, "Rings": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Potions": -1 }
+        }
+      },
+      "skills": { "Gold Digger III": 6, "Healer II": 18, "Support II": 24 }
+    },
+    "Azula": {
+      "name": "Azula",
+      "type": "Spellcaster",
+      "sex": "Female",
+      "origin": "School of Magic",
+      "tier": 4,
+      "lv": 1,
+      "cap": 50,
+      "b": false,
+      "power": {
+        "base": 2500,
+        "m": 3.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Staves": 1, "Spears": 0, "Daggers": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Instruments": 0, "Pendants": -1, "Rings": -1 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Arch Wizard II": 8, "Healer III": 12, "Wise III": 20 }
+    },
+    "Francesca": {
+      "name": "Francesca",
+      "type": "Spellcaster",
+      "sex": "Female",
+      "origin": "Fighter's Guild",
+      "tier": 4,
+      "lv": 1,
+      "cap": 50,
+      "b": false,
+      "power": {
+        "base": 2500,
+        "m": 3.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Guns": 1, "Staves": 0, "Swords": -1, "Spears": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Instruments": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Potions": 0 }
+        }
+      },
+      "skills": { "Fastidious III": 13, "Resilient III": 20, "Supplier III": 28 }
+    },
+    "Mojian": {
+      "name": "Mojian",
+      "type": "Spellcaster",
+      "sex": "Male",
+      "origin": "War College",
+      "tier": 5,
+      "lv": 1,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 4.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Staves": 1, "Guns": 0, "Bows": -1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Pendants": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Potions": -1 }
+        }
+      },
+      "skills": { "Commander III": 15, "Arch Wizard III": 22, "Thunderbolt": 35 }
+    },
+    "Charles": {
+      "name": "Charles",
+      "type": "Spellcaster",
+      "sex": "Male",
+      "origin": "Heroic Package #1",
+      "tier": 6,
+      "lv": 1,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 5.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Bows": 1, "Staves": 0 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Vests": 0, "Clothes": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Hats": 0 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Bracers": 0 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Footwear": 0 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Instruments": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0 }
+        }
+      },
+      "skills": { "Mage Armor": 17, "Detect Secrets": 28, "Magic Find": 36 }
     }
   }
 }

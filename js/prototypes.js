@@ -1,14 +1,3 @@
-﻿function loadJSON( name ) {
-  return $.get( { url: 'data/' + name + '.json', dataType: 'json', cache: false } ).done();
-}
-function loadStore( name ) {
-  return localforage.getItem( name ).then( JSON.parse );
-}
-function saveStore( name, value ) {
-  var save = {};
-  save[name] = value;
-  localforage.setItem( name, JSON.stringify( save ) );
-}
 function cmp( a, b ) {
   var pa = a.split( '.' );
   var pb = b.split( '.' );
@@ -24,7 +13,6 @@ function cmp( a, b ) {
   if ( pb.length > pa.length ) return -1;
   return 0;
 };
-
 Number.prototype.dateString = function() {
   var s = Math.round( this );
   var dd = Math.floor( s / 86400 );

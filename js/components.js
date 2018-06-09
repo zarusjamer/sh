@@ -1,25 +1,14 @@
-﻿var c_data = {
-  qualities: {},
-  powers: {},
-  breaks: {},
-  rarities: {},
-  skills: {},
-  effects: {},
-  origins: {},
-  quests: {},
-  items: {},
-  heroes: {},
+const c_data = {
   quest: {
     name: null,
     b: false,
     c: false,
     i: false
-  },
-  teams: []
+  }
 };
 
 Vue.mixin( {
-  data: function() { 
+  data: function() {
     return {
       data: c_data,
       lists: {
@@ -106,448 +95,22 @@ Vue.mixin( {
           chest: null
         }
       }
-    };
-  },
-  computed: {
-    visible: function() {
-      return {
-        teams: $.map( this.data.teams, this.teams.visible ),
-        heroes: $.map( this.data.heroes, this.heroes.visible ),
-        items: $.map( this.data.items, this.items.visible ),
-        origins: $.map( this.data.origins, this.origins.visible ),
-        quests: $.map( this.data.quests, this.quests.visible )
-      };
-    }
-  },
-  watch: {
-    'data.rarities': { 
-      handler: function( list ) {
-        var n = $.map( list, function( o, name ) {
-          return { 
-            id: name,
-            text: name,
-            sort: o.i 
-          };
-        } );
-        Vue.set( this.lists, 'rarity', n );
-      }
-    },
-    'data.skills': { 
-      handler: function( list ) {
-        var n = $.map( list, function( o, name ) {
-          return { 
-            id: name,
-            text: name,
-            iconType: 'skill',
-            icon: name.replace( /\s+|\bI+$|-/g, '' ).icon()
-          };
-        } );
-        n.push( { id: 'blanks', text: 'Blanks', custom: true } );         
-        n.push( { id: 'nonblanks', text: 'Non-blanks', custom: true } );         
-        Vue.set( this.lists, 'skill', n )
-      }
-    },
-    'data.qualities': { 
-      handler: function( list ) {
-        var n = $.map( list, function( o, name ) {
-          return { 
-            id: name,
-            text: name,
-            iconType: 'quality',
-            icon: name.icon(),
-            sort: -o.i,
-            data: {}
-          };
-        } );
-        Vue.set( this.lists, 'quality', n )
-      }
-    },
-    'data.heroes': { 
-      handler: function( list ) {
-        var 
-          vm = this,
-          type = [],
-          tier = [],
-          sex = [];
-        vm.heroes.lists.type.splice(0);
-        vm.heroes.lists.tier.splice(0);
-        vm.heroes.lists.sex.splice(0);
-        $.map( list, function( o, name ) {
-          if ( type.indexOf( o.type ) < 0 ) {
-            type.push( o.type );
-            vm.heroes.lists.type.push( { id: o.type, text: o.type } );
-          }
-          if ( tier.indexOf( o.tier ) < 0 ) {
-            tier.push( o.tier );
-            vm.heroes.lists.tier.push( { id: o.tier, text: o.tier } );
-          }
-          if ( sex.indexOf( o.sex ) < 0 ) {
-            sex.push( o.sex );
-            vm.heroes.lists.sex.push( { id: o.sex, text: o.sex } );
-          }
-        } );
-      }
-    },
-    'data.items': { 
-      handler: function( list ) {
-        var
-          vm = this,
-          custom = {},
-          type = [],
-          origin = []
-        ;
-        vm.items.lists.type.splice(0);
-        vm.items.lists.origin.splice(0);
-        vm.items.lists.origin.push( { id: 'nonblanks', text: 'Non-blanks', custom: true } );
-        vm.items.lists.origin.push( { id: 'blanks', text: 'Blanks', custom: true } );
-        $.map( list, function( o, name ) {
-          if ( o.type && type.indexOf( o.type ) < 0 ) {
-            type.push( o.type );
-            vm.items.lists.type.push( { 
-              id: o.type,
-              text: o.type,
-              iconType: 'type',
-              icon: o.type.icon(),
-            } );
-          }
-          if ( o.origin && origin.indexOf( o.origin ) < 0 ) {
-            origin.push( o.origin );
-            vm.items.lists.origin.push( { id: o.origin, text: o.origin } );
-          }
-          if ( o.skill ) {
-            if ( !o.skill.init ) {
-              $.extend( true, o.skill, vm.getSkill( o.skill.name ), { init: true } );
-            }
-          }
-        } );
-      }
-    },
-    'data.origins': { 
-      handler: function( list ) {
-        var 
-          vm = this,
-          type = [];
-        vm.origins.lists.type.splice(0);
-        vm.lists.origin = $.map( list, function( o, name ) {
-          if ( type.indexOf( o.type ) < 0 ) {
-            type.push( o.type );
-            vm.origins.lists.type.push( { 
-              id: o.type,
-              text: o.type
-            } );
-          }
-          return {
-            id: name,
-            text: name
-          };
-        } );
-      }
-    },
-    'data.quests': { 
-      handler: function( list ) {
-        var 
-          vm = this,
-          custom = {},
-          loot = [],
-          origin = [],
-          bag = [],
-          chest = [];
-        vm.quests.lists.item.splice(0);
-        vm.quests.lists.origin.splice(0);
-        vm.quests.lists.bag.splice(0);
-        vm.quests.lists.chest.splice(0);
-        vm.lists.quest = $.map( list, function( o, name ) {
-          if ( o.item && loot.indexOf( o.item ) < 0 ) {
-            loot.push( o.item );
-            vm.quests.lists.item.push( { id: o.item, text: o.item } );
-          }
-          if ( o.origin && origin.indexOf( o.origin ) < 0 ) {
-            origin.push( o.origin );
-            vm.quests.lists.origin.push( { id: o.origin, text: o.origin } );
-          }
-          if ( o.bag && bag.indexOf( o.bag ) < 0 ) {
-            bag.push( o.bag );
-            vm.quests.lists.bag.push( { id: o.bag, text: o.bag } );
-          }
-          if ( o.chest && chest.indexOf( o.chest ) < 0 ) {
-            chest.push( o.chest );
-            vm.quests.lists.chest.push( { id: o.chest, text: o.chest } );
-          }
-          var children = $.map( o.tiers, function( tier, tname ) {
-            return { id: name + ' ' + tname, text: name + ' ' + tname };
-          } );
-          return { 
-            id: name,
-            text: name,
-            iconType: 'artifact',
-            icon: o.item.icon(),
-            children: children,
-            sort: o.power
-          };
-        } );
-      }
-    },
-    'items.filters': {
-      handler: function( filters ) {
-        var 
-          vm = this,
-          test = [];
-        if ( vm.items.filters.name ) {
-          test.push( function( o ) {
-            return o.name.toUpperCase().includes( vm.items.filters.name.toUpperCase() );
-          } );
-        }
-        if ( vm.items.filters.type ) {
-          test.push( function( o ) {
-            return o.type == vm.items.filters.type;
-          } );
-        }
-        if ( vm.items.filters.rarity ) {
-          test.push( function( o ) {
-            return o.rarity == vm.items.filters.rarity;
-          } );
-        }
-        if ( vm.items.filters.origin ) {
-          if ( vm.items.filters.origin == 'nonblanks' ) {
-            test.push( function( o ) {
-              return o.origin && o.origin.length > 0;
-            } );
-          } else if ( vm.items.filters.origin == 'blanks' ) {
-            test.push( function( o ) {
-              return !o.origin;
-            } );
-          } else {
-            test.push( function( o ) {
-              return o.origin == vm.items.filters.origin;
-            } );
-          }
-        }
-        if ( vm.items.filters.skill ) {
-          if ( vm.items.filters.skill == 'nonblanks' ) {
-            test.push( function( o ) { 
-              return o.skill;
-            } );
-          } else if ( vm.items.filters.skill == 'blanks' ) {
-            test.push( function( o ) { 
-              return !o.skill;
-            } );
-          } else {
-            test.push( function( o ) {
-              return o.skill && o.skill.name.toUpperCase() == vm.items.filters.skill.toUpperCase();
-            } );
-          }
-        }
-        if ( vm.items.filters.pre.name ) {
-          test.push( function( o ) { 
-            return o.pre && o.pre.some( function( p ) { return p.item.toUpperCase().includes( vm.items.filters.pre.name.toUpperCase() ); } );
-          } );
-        }
-        if ( vm.items.filters.pre.q ) {
-          test.push( function( o ) {
-            return o.pre && o.pre.some( function( p ) { return p.q == vm.items.filters.pre.q; } );
-          } );
-        }
-        if ( vm.items.filters.lv.min ) {
-          test.push( function( o ) {
-            return o.lv >= vm.items.filters.lv.min;
-          } );
-        }
-        if ( vm.items.filters.lv.max ) {
-          test.push( function( o ) { 
-            return o.lv <= vm.items.filters.lv.max;
-          } );
-        }
-        if ( test.length > 0 ) {
-          vm.items.visible = function( o ) { 
-            return test.every( function( t ) { return t( o ); } ) ? o : undefined;
-          };
-        } else {
-          vm.items.visible = function( o ) {
-            return o;
-          };
-        }
-      },
-      deep: true
-    },
-    'quests.filters': {
-      handler: function( filters ) {
-        var 
-          vm = this,
-          test = [];
-        if ( vm.quests.filters.name ) {
-          test.push( function( o ) {
-            return o.name.toUpperCase().includes( vm.quests.filters.name.toUpperCase() );
-          } );
-        }
-        if ( vm.quests.filters.item ) {
-          test.push( function( o ) {
-            return o.item == vm.quests.filters.item;
-          } );
-        }
-        if ( vm.quests.filters.origin ) {
-          test.push( function( o ) {
-            return o.origin == vm.quests.filters.origin;
-          } );
-        }
-        if ( vm.quests.filters.bag ) {
-          test.push( function( o ) {
-            return o.bag == vm.quests.filters.bag;
-          } );
-        }
-        if ( vm.quests.filters.chest ) {
-          test.push( function( o ) {
-            return o.chest == vm.quests.filters.chest;
-          } );
-        }
-        if ( test.length > 0 ) {
-          vm.quests.visible = function( o ) { 
-            return test.every( function( t ) { return t( o ); } ) ? o : undefined;
-          };
-        } else {
-          vm.quests.visible = function( o ) {
-            return o;
-          };
-        }
-      },
-      deep: true
-    },
-    'origins.filters': {
-      handler: function( filters ) {
-        var 
-          vm = this,
-          test = [];
-        if ( vm.origins.filters.name ) {
-          test.push( function( o ) { 
-            return o.name.toUpperCase().includes( vm.origins.filters.name.toUpperCase() ); 
-          } );
-        }
-        if ( vm.origins.filters.type ) {
-          test.push( function( o ) { 
-            return o.type == vm.origins.filters.type;
-          } );
-        }
-        if ( test.length > 0 ) {
-          vm.origins.visible = function( o ) { 
-            return test.every( function( t ) { return t( o ); } ) ? o : undefined;
-          };
-        } else {
-          vm.origins.visible = function( o ) {
-            return o;
-          };
-        }
-      },
-      deep: true
-    },
-    'heroes.filters': {
-      handler: function( filters ) {
-        var
-          vm = this,
-          test = [];
-        if ( vm.heroes.filters.name ) {
-          test.push( function( o ) { 
-            return o.name.toUpperCase().includes( vm.heroes.filters.name.toUpperCase() );
-          } );
-        }
-        if ( vm.heroes.filters.type ) {
-          test.push( function( o ) {
-            return o.type == vm.heroes.filters.type;
-          } );
-        }
-        if ( vm.heroes.filters.tier ) {
-          test.push( function( o ) {
-            return o.tier == vm.heroes.filters.tier;
-          } );
-        }
-        if ( vm.heroes.filters.sex ) {
-          test.push( function( o ) {
-            return o.sex == vm.heroes.filters.sex;
-          } );
-        }
-        if ( vm.heroes.filters.origin ) {
-          test.push( function( o ) {
-            return o.origin == vm.heroes.filters.origin;
-          } );
-        }
-        if ( vm.heroes.filters.skill ) {
-          test.push( function( o ) {
-            return o.skills.some( function( s ) { return s.name.toUpperCase() == vm.heroes.filters.skill.toUpperCase(); } );
-          } );
-        }
-        if ( vm.heroes.filters.lv.min ) {
-          test.push( function( o ) {
-            return o.lv >= vm.heroes.filters.lv.min;
-          } );
-        }
-        if ( vm.heroes.filters.lv.max ) {
-          test.push( function( o ) {
-            return o.lv <= vm.heroes.filters.lv.max;
-          } );
-        }
-        if ( test.length > 0 ) {
-          vm.heroes.visible = function( o ) { 
-            return test.every( function( t ) { return t( o ); } ) ? o : undefined;
-          };
-        } else {
-          vm.heroes.visible = function( o ) {
-            return o;
-          };
-        }
-      },
-      deep: true
-    },
-    'teams.filters': {
-      handler: function( filters ) {
-        var 
-          vm = this,
-          test = [];
-        if ( vm.teams.filters.name ) {
-          test.push( function( o ) { 
-            return o.name.toUpperCase().includes( vm.teams.filters.name.toUpperCase() ); 
-          } );
-        }
-        if ( test.length > 0 ) {
-          vm.teams.visible = function( o ) { 
-            return test.every( function( t ) { return t( o ); } ) ? o : undefined;
-          };
-        } else {
-          vm.teams.visible = function( o ) {
-            return o;
-          };
-        }
-      },
-      deep: true
-    },
-    'data.quest.name': {
-      handler: function( name ) {
-        if ( !name ) {
-          this.data.quest.b = false;
-          this.data.quest.c = false;
-          this.data.quest.i = false;
-        }
-      }
     }
   },
   methods: {
-    addTeam: function() {
-      this.data.teams.push( {
-        name: 'Team ' + ( this.data.teams.length + 1 ),
-        roster: {
-          slot1: this.getEmptyRoster(),
-          slot2: this.getEmptyRoster(),
-          slot3: this.getEmptyRoster(),
-          slot4: this.getEmptyRoster(),
-          slot5: this.getEmptyRoster(),
-          slot6: this.getEmptyRoster()
-        }
-      } );
-      saveStore( 'teams', this.data.teams );
-    },
-    removeTeam: function( object ) {
-      this.data.teams.splice( this.data.teams.indexOf( object ), 1 );
-      saveStore( 'teams', this.data.teams );
+    loadJSON: function( name ) {
+      return $
+        .get( {
+          url: 'data/' + name + '.json',
+          dataType: 'json',
+          cache: false
+        } );
     },
     icon: function( str ) {
-      return ( str || '' ).icon();
+      if ( !str ) {
+        return '';
+      }
+      return str.icon();
     },
     iconChance: function( chance ) {
       if ( isNaN( chance ) ) {
@@ -581,6 +144,184 @@ Vue.mixin( {
     },
     getClone: function( o ) {
       return JSON.parse( JSON.stringify( o ) );
+    },
+    updateRarities: function() {
+      let vm = this;
+      let n = $.map( vm.data.rarities, function( o, name ) {
+        return { 
+          id: name,
+          text: name,
+          sort: o.i 
+        };
+      } );
+      Vue.set( vm.lists, 'rarity', n );
+    },
+    updateQualities: function() {
+      let vm = this;
+      let n = $.map( vm.data.qualities, function( o, name ) {
+        return { 
+          id: name,
+          text: name,
+          iconType: 'quality',
+          icon: name.icon(),
+          sort: -o.i,
+          data: {}
+        };
+      } );
+      Vue.set( vm.lists, 'quality', n )
+    },
+    updateQuests: function() {
+      let vm = this;
+      let 
+        custom = {},
+        loot = [],
+        origin = [],
+        bag = [],
+        chest = []
+      ;
+      vm.quests.lists.item.splice(0);
+      vm.quests.lists.origin.splice(0);
+      vm.quests.lists.bag.splice(0);
+      vm.quests.lists.chest.splice(0);
+      let n = $.map( vm.data.quests, function( o, name ) {
+        if ( o.item && loot.indexOf( o.item ) < 0 ) {
+          loot.push( o.item );
+          vm.quests.lists.item.push( { id: o.item, text: o.item } );
+        }
+        if ( o.origin && origin.indexOf( o.origin ) < 0 ) {
+          origin.push( o.origin );
+          vm.quests.lists.origin.push( { id: o.origin, text: o.origin } );
+        }
+        if ( o.bag && bag.indexOf( o.bag ) < 0 ) {
+          bag.push( o.bag );
+          vm.quests.lists.bag.push( { id: o.bag, text: o.bag } );
+        }
+        if ( o.chest && chest.indexOf( o.chest ) < 0 ) {
+          chest.push( o.chest );
+          vm.quests.lists.chest.push( { id: o.chest, text: o.chest } );
+        }
+        let children = $.map( o.tiers, function( tier, tname ) {
+          return { id: name + ' ' + tname, text: name + ' ' + tname };
+        } );
+        return { 
+          id: name,
+          text: name,
+          iconType: 'artifact',
+          icon: o.item.icon(),
+          children: children,
+          sort: o.power
+        };
+      } );
+      Vue.set( vm.lists, 'quest', n );
+    },
+    updateOrigins: function() {
+      let vm = this;
+      let 
+        type = []
+      ;
+      vm.origins.lists.type.splice(0);
+      let n = $.map( vm.data.origins, function( o, name ) {
+        if ( type.indexOf( o.type ) < 0 ) {
+          type.push( o.type );
+          vm.origins.lists.type.push( { 
+            id: o.type,
+            text: o.type
+          } );
+        }
+        return {
+          id: name,
+          text: name
+        };
+      } );
+      Vue.set( vm.lists, 'origin', n );
+    },
+    updateSkills: function() {
+      let vm = this;
+      let n = $.map( vm.data.skills, function( o, name ) {
+        return { 
+          id: name,
+          text: name,
+          iconType: 'skill',
+          icon: name.replace( /\s+|\bI+$|-/g, '' ).icon()
+        };
+      } );
+      n.push( { id: 'blanks', text: 'Blanks', custom: true } );         
+      n.push( { id: 'nonblanks', text: 'Non-blanks', custom: true } );         
+      Vue.set( vm.lists, 'skill', n )
+    },
+    updateHeroes: function() {
+      let vm = this;
+      let 
+        type = [],
+        tier = [],
+        sex = []
+      ;
+      vm.heroes.lists.type.splice(0);
+      vm.heroes.lists.tier.splice(0);
+      vm.heroes.lists.sex.splice(0);
+      $.map( vm.data.heroes, function( o, name ) {
+        if ( type.indexOf( o.type ) < 0 ) {
+          type.push( o.type );
+          vm.heroes.lists.type.push( { id: o.type, text: o.type } );
+        }
+        if ( tier.indexOf( o.tier ) < 0 ) {
+          tier.push( o.tier );
+          vm.heroes.lists.tier.push( { id: o.tier, text: o.tier } );
+        }
+        if ( sex.indexOf( o.sex ) < 0 ) {
+          sex.push( o.sex );
+          vm.heroes.lists.sex.push( { id: o.sex, text: o.sex } );
+        }
+      } );
+    },
+    updateItems: function() {
+      let vm = this;
+      let
+        type = [],
+        origin = []
+      ;
+      vm.items.lists.type.splice(0);
+      vm.items.lists.origin.splice(0);
+      vm.items.lists.origin.push( { id: 'nonblanks', text: 'Non-blanks', custom: true } );
+      vm.items.lists.origin.push( { id: 'blanks', text: 'Blanks', custom: true } );
+      $.map( vm.data.items, function( o, name ) {
+        if ( o.type && type.indexOf( o.type ) < 0 ) {
+          type.push( o.type );
+          vm.items.lists.type.push( { 
+            id: o.type,
+            text: o.type,
+            iconType: 'type',
+            icon: o.type.icon(),
+          } );
+        }
+        if ( o.origin && origin.indexOf( o.origin ) < 0 ) {
+          origin.push( o.origin );
+          vm.items.lists.origin.push( { id: o.origin, text: o.origin } );
+        }
+        if ( o.skill ) {
+          if ( !o.skill.init ) {
+            $.extend( true, o.skill, vm.getSkill( o.skill.name ), { init: true } );
+          }
+        }
+      } );
+    },
+    addTeam: function() {
+      this.data.teams.push( {
+        name: 'Team ' + ( this.data.teams.length + 1 ),
+        roster: {
+          slot1: this.getEmptyRoster(),
+          slot2: this.getEmptyRoster(),
+          slot3: this.getEmptyRoster(),
+          slot4: this.getEmptyRoster(),
+          slot5: this.getEmptyRoster(),
+          slot6: this.getEmptyRoster()
+        }
+      } );
+      this.commitCustom();
+    },
+    removeTeam: function( object ) {
+      this.data.teams.splice( this.data.teams.indexOf( object ), 1 );
+      this.commitCustom();
     },
     getSkill: function( name ) {
       var ss = this.data.skills[name];
@@ -657,7 +398,7 @@ Vue.mixin( {
           list: []
         };
         i.list = $.map( slot.types, function( a, type ) {
-          var items = $
+          let children = $
             .map( vm.data.items, function( item ) {
               if ( item.type == type ) {
                 return {
@@ -674,9 +415,9 @@ Vue.mixin( {
           return {
             id: type,
             text: type,
-            iconType: 'item',
+            iconType: 'type',
             icon: [ type.icon(), vm.iconAffinity( a ) ].join( ' ' ),
-            children: items
+            children: children
           };
         } );
         if ( slot.item ) {
@@ -901,11 +642,10 @@ Vue.mixin( {
       $( this.$el ).LoadingOverlay( 'hide', true );
     },
     onOperation: function( operation ) {
-      var vm = this;
-      if ( vm.overlayTick ) {
-        clearTimeout( vm.overlayTick );
+      if ( this.overlayTick ) {
+        clearTimeout( this.overlayTick );
       }
-      vm.overlayTick = setTimeout( operation ? vm.showBusy : vm.hideBusy, 50 );
+      this.overlayTick = setTimeout( operation ? this.showBusy : this.hideBusy, 50 );
     }
   }
 });
@@ -1343,38 +1083,17 @@ Vue.component( 'origin', {
       editCj: false
     };
   },
-  methods: {
-    commit: function() {
-      var custom = {};
-      $.map( this.data.origins, function( o, name ) {
-        custom[name] = {
-          b: o.b
-        };
-        if ( o.lv ) {
-          custom[name].lv = o.lv;
-        }
-        if ( o.cj ) {
-          custom[name].cj = {
-            lv: o.cj.lv
-          };
-        }
-      } );
-      saveStore( 'origins', custom );
-    }
-  },
   watch: {
     'object.b': { 
       handler: function( b, bOld ) {
-        if ( this.object.b != bOld ) {
-          this.commit();
-        }
+        this.$root.commitCustom();
       }
     },
     'object.lv': { 
       handler: function( lv, lvOld ) {
         this.object.lv = Math.min( Math.max( 1, lv ), this.object.cap || lv );
         if ( this.object.lv != lvOld ) {
-          this.commit();
+          this.$root.commitCustom();
         }
       }
     },
@@ -1382,7 +1101,7 @@ Vue.component( 'origin', {
       handler: function( lv, lvOld ) {
         this.object.cj.lv = Math.min( Math.max( 0, lv ), this.object.cj.cap || lv );
         if ( this.object.cj.lv != lvOld ) {
-          this.commit();
+          this.$root.commitCustom();
         }
       }
     }
@@ -1392,28 +1111,10 @@ Vue.component( 'origin', {
 Vue.component( 'item', {
   template: '#templates-item',
   props: [ 'object' ],
-  methods: {
-    commit: function() {
-      var custom = {};
-      $.map( this.data.items, function( o, name ) {
-        if ( !o.skill ) {
-          return;
-        }
-        custom[name] = {
-          skill: {
-            m: o.skill.m
-          }
-        };
-      } );
-      saveStore( 'items', custom );
-    }
-  },
   watch: {
     'object.skill.m': {
       handler: function( m, mOld ) {
-        if ( this.object.m != mOld ) {
-          this.commit();
-        }
+        this.$root.commitCustom();
       }
     }
   }
@@ -1445,25 +1146,6 @@ Vue.component( 'hero', {
       return this.getHero( this.object );
     }
   },
-  methods: {
-    commit: function() {
-      var custom = {};
-      $.map( this.data.heroes, function( o, name ) {
-        slots = {};
-        $.map( o.slots, function( s, n ) {
-          slots[n] = {
-            item: s.item,
-            q: s.q
-          };
-        } );
-        custom[name] = {
-          lv: o.lv,
-          slots: slots
-        };
-      } );
-      saveStore( 'heroes', custom );
-    }
-  },
   watch: {
     'edits.slotsAll': {
       handler: function( b ) {
@@ -1480,7 +1162,7 @@ Vue.component( 'hero', {
     },
     'object.slots': {
       handler: function( slot ) {
-        this.commit();
+        this.$root.commitCustom();
       },
       deep: true
     },
@@ -1488,7 +1170,7 @@ Vue.component( 'hero', {
       handler: function( lv, lvOld ) {
         this.object.lv = Math.min( Math.max( 1, lv ), this.object.cap );
         if ( this.object.lv != lvOld ) {
-          this.commit();
+          this.$root.commitCustom();
         }
       }
     }
@@ -1914,7 +1596,7 @@ Vue.component( 'team', {
   watch: {
     'object.roster': {
       handler: function() {
-        saveStore( 'teams', this.data.teams );
+        this.$root.commitCustom();
       },
       deep: true
     },

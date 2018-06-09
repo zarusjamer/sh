@@ -7,6 +7,14 @@ body {
   padding: 10px;
 }
 
+
+div.header {
+  margin-bottom: 5px;
+  font-variant: small-caps;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 h2 {
   margin-top: 5px;
   margin-bottom: 10px;
@@ -136,34 +144,33 @@ table.shopheroes input.lv {
   text-align: center;
 }
 
-table.shopheroes .inactive {
-  text-decoration: line-through;
-}
-
-table.shopheroes .hidden {
-  visibility: hidden;
-}
 table.shopheroes span.clickable {
   vertical-align: middle;
   display: inline-block;
   cursor: pointer;
 }
-
 table.shopheroes span.clickable:hover {
   background-color: #00d1b2;
 }
-table.shopheroes .float-~ {
+table.shopheroes .left {
+  text-align: left !important;
+}
+
+.inactive {
+  text-decoration: line-through;
+}
+.hidden {
+  visibility: hidden;
+}
+.float-~ {
   display: inline-block; !important
   vertical-align: middle;
 }
-table.shopheroes .float-left {
+.float-left {
   float: left !important;
 }
-table.shopheroes .float-right {
+.float-right {
   float: right !important;
-}
-table.shopheroes .left {
-  text-align: left !important;
 }
 .vertical {
   -webkit-transform: rotate(90deg);	
