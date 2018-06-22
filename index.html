@@ -17,9 +17,7 @@
     <link type="text/css" rel="stylesheet" href="css/icons.css"/>
     <link type="text/css" rel="stylesheet" href="css/tooltip.css"/>
     <link type="text/css" rel="stylesheet" href="css/sh.css"/>
-    <!--
     <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-107341279-1"></script>
-    -->
     <script type="text/javascript" defer src="lib/firebase/google-firebase-5.0.4-app.min.js"></script>
     <script type="text/javascript" defer src="lib/firebase/google-firebase-5.0.4-auth.min.js"></script>
     <script type="text/javascript" defer src="lib/firebase/google-firebase-5.0.4-firestore.min.js"></script>
@@ -35,14 +33,6 @@
   <body>
     <div id="app">
       <template>
-        <!--
-        <div class="loading-wrp" v-show="loading">
-          <div class="loading x32">
-            <div class="img"/>
-            <h2 class="title">Loading data. Please wait...</h2>
-          </div>
-        </div>
-        -->
         <div class="header">
           <div class="header-title">
             <div style="display: inline-block;">
@@ -66,47 +56,44 @@
           <tab name="Help">
             <div>
               <p>The main idea of this site is to provide functionality for building team setups.</p>
-              <p>I developed this site to use it in offline mode, it doesn't use server as backend, so you can't share links on setups, nor you can share your setups between different medias.</p>
-              <p>Well, lies, you actually can share setups, that's why there's Data tab, but using it is tricky.</p>
+              <p>I developed this site to use it in offline mode, it doesn't use server as backend, so you can't share links on setups.</p>
+              <p>But you can share your setups between different medias if you dare to register on a noname site.</p>
 
               <h2>Credits</h2>
               <p>I want to thank all those people created and maintaining <a href="http://bit.ly/shopheroes" target="_blank">Shop Heroes Spreadsheet</a> for this is an incredible source of ingame data!</p>
               <p>And I give my due respects to creators of Team Builder Redux for inspiring me to make this site.</p>
               
               <h2>Disclaimer</h2>
-              <p>Due to this page is pure HTML and Javascript browsers cache files with initial content, hence sometimes no changes applied upon loading page. If you see something is broken or missing - just force refresh browser with CTRL+F5.</p>
+              <p>Due to this page is pure HTML and Javascript browsers cache files with initial content. If you see something is broken or missing - just force refresh browser with CTRL+F5. If the problem persists - email me.</p>
               <p>This site is best used with <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Google Chrome</a> and <a href="https://www.mozilla.org/ru/firefox/new/" target="_blank">Mozilla Firefox</a>.
               <p>This site can not be used with any version of <a href="page::void" target="_blank">Internet Explorer</a> nor <a href="page::void" target="_blank">Microsoft Edge</a>. Not until they make their code compatible with ES standards and jQuery.</p>
               
-              <h2>Basics</h2>
-              <p>Adjust your heroes, items and city upgrades at appropriate tabs:
-              <ul>
-              <li>at <a href="#heroes">Heroes</a> tab you can adjust heroes levels;</li>
-              <li>at <a href="#items">Items</a> tab you can adjust which items skills you have mastered. Mark them with checkbox;</li>
-              <li>at <a href="#origins">Origins</a> tab mark owned buildings and packs and adjust buildings level and crown jewels upgrades level.</li>
-              </ul>
-              All those tables can be filtered many ways, so you can faster navigate to specific item/hero you need.
-              </p>
+              <h2><a href="#origins">Origins</a></h2>
+              <p>Mark buildings boosts enabled/disabled.</p>
+              <p>Adjust buildings levels (no functionality implemented).</p>
+              <p>Adjust crown jewels upgrades levels according to your city for correct heroes power calculations.</p>
+
+              <h2><a href="#items">Items</a></h2>
+              <p>Blueprints with skills have checkboxes you can mark as mastered, so the skill will be applied to eqipped items.</p>
+              <p>You can filter all BPs with skills with filter options "Contains non-blanks".</p>
+              <p>Warning, you'll have to checkmark over hundred blueprints... I did it many times while developing this site.</p>
+
+              <h2><a href="#heroes">Heroes</a></h2>
+              <p>Adjust heroes levels and default gear you can apply to them after adding heroes to the team roster.</p>
+              <p>Expand hero for the exact info on skills, items and items skills applied to hero, as well as detailed info on items powers, break chances etc.</p>
+              <p>Collapsed profile shows summarized skills applied to a hero.</p>
 
               <h2><a href="#teams">Teams</a></h2>
-              <p>Now you can proceed to <a href="#teams">Teams</a> tab and start your party assembling</p>
-              <p>First add new team by clicking <span class="ui-icon ui-icon-plus"/>.</p>
-              <p>Now you can start edit it by clicking <span class="ui-icon ui-icon-pencil"/> on the left of team name. Set the team name and add heroes to it's roster. Checkbox near hero power emulates bulding boost bonus.</p>
+              <p>Looks mostly same as Heroes tab, has the same functionality, but with few changes.</p>
+              <p>When you add a hero to the roster it comes with no gear, then there's a button to copy default equipment.</p>
+              <p>You can choose quest and details with be added on how team and heroes will handle it.</p>
+              <p>Collapsed view shows summarized info on skills applied to whole team (i.e. Revival/Healer) while expanded view will show summarized info of individual hero.</p>
               
-              <h2><a href="#data">Data</a></h2>
-              <p>You can export and import custom data (ie changes info).</p>
-              <p>Select an option and do what you want:
-              <ul>
-              <li>click <b>Clean</b> button to clear all changes made to base info but beware as this is unrecoverable operation;</li>
-              <li>click <b>Get</b> button to get all changed data to a text area below - you can save it to a file for future use;</li>
-              <li>place previously custom changes to text area and click <b>Set</b> button to load new custom data.</li>
-              </ul>
-              </p>
-              
+              <h2>Afterwords</h2>
+              <p>This site uses Google.Firestore for authentication and data storage.</p>
+              <p>You can help improving site's functionality! Send me email with your feedback to <a href="mailto:zarusjamer@gmail.com?subject=Shop Heroes Team Builder">zarusjamer@gmail.com</a>.</p>
+              <p>You can also contribute code and designs at <a href="https://github.com/zarusjamer/sh">Git Hub</a> project page.</p>
               <h2>Have fun in the game!</h2>
-              <p>You can help developing site!</p>
-              <p>Send me email with your feedback to <a href="mailto:zarusjamer@gmail.com?subject=Shop Heroes Team Builder">zarusjamer@gmail.com</a>.</p>
-              <p>You can also contribute code and designs at <a href="https://github.com/zarusjamer/shopheroes">Git Hub</a> project page.</p>
             </div>
           </tab>
           <tab name="Teams">
@@ -647,24 +634,6 @@
                   </tr>
                 </tfoot>
               </table>
-            </div>
-          </tab>
-          <tab name="Data">
-            <div>
-              <div>
-                <select id="tabs-data-type">
-                  <option value="origins">Origins</option>
-                  <option value="items">Items</option>
-                  <option value="heroes">Heroes</option>
-                  <option value="teams">Teams</option>
-                </select>
-                <input id="tabs-data-clean" type="button" value="Clean"/>
-                <input id="tabs-data-get" type="button" value="Get"/>
-                <input id="tabs-data-set" type="button" value="Set"/>
-              </div>
-              <div>
-                <textarea id="tabs-data-json"></textarea>
-              </div>
             </div>
           </tab>
         </tabs>
