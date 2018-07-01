@@ -4177,6 +4177,18 @@
       "rarity": "Common",
       "origin": ""
     },
+    "Royal Uniform": {
+      "type": "Clothes",
+      "name": "Royal Uniform",
+      "lv": 23,
+      "xp": 36800,
+      "power": 900,
+      "price": 72500,
+      "rarity": "Exclusive",
+      "origin": "Groom's Package 2018",
+      "skill": { "name": "Support I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Red Tunic", "q": "Good", "c": 3 } ]
+    },
     "Imperial Mantle": {
       "type": "Clothes",
       "name": "Imperial Mantle",
@@ -7090,6 +7102,18 @@
       "origin": "Advanced Shopfare",
       "pre": [ { "item": "Heavy Mace", "q": "Good", "c": 2 } ]
     },
+    "Royal Scepter": {
+      "type": "Maces",
+      "name": "Royal Scepter",
+      "lv": 27,
+      "xp": 83000,
+      "power": 1180,
+      "price": 202500,
+      "rarity": "Exclusive",
+      "origin": "Bridal Package 2018",
+      "skill": { "name": "Leader I", "q": "Epic", "m": false },
+      "pre": [ { "item": "Bishop Staff", "q": "Great", "c": 2 } ]
+    },
     "Fury Club": {
       "type": "Maces",
       "name": "Fury Club",
@@ -7694,6 +7718,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Elderflower", "q": "Common", "c": 1 } ]
+    },
+    "Chalice": {
+      "type": "Potions",
+      "name": "Chalice",
+      "lv": 12,
+      "xp": 0,
+      "power": 410,
+      "price": 7400,
+      "rarity": "Exclusive",
+      "origin": "Bridal Package 2018",
+      "skill": { "name": "Healer I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Shiny Gem", "q": "", "c": 2 } ]
     },
     "Strength Potion": {
       "type": "Potions",
@@ -9016,6 +9052,18 @@
       "origin": "",
       "pre": [ { "item": "Undead Ring", "q": "Great", "c": 2 } ]
     },
+    "Wedding Ring": {
+      "type": "Rings",
+      "name": "Wedding Ring",
+      "lv": 42,
+      "xp": 3680200,
+      "power": 2100,
+      "price": 6750000,
+      "rarity": "Exclusive",
+      "origin": "Groom's Package 2018",
+      "skill": { "name": "Revive II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Power Ring", "q": "Great", "c": 2 }, { "item": "Frosfire Crystal", "q": "", "c": 2 } ]
+    },
     "Ouroboros": {
       "type": "Rings",
       "name": "Ouroboros",
@@ -9038,6 +9086,18 @@
       "origin": "Dwarvish Chest",
       "skill": { "name": "Riposte", "q": "Legendary", "m": false },
       "pre": [ { "item": "Royal Ring", "q": "Flawless", "c": 1 } ]
+    },
+    "Wedding Band": {
+      "type": "Rings",
+      "name": "Wedding Band",
+      "lv": 46,
+      "xp": 4455200,
+      "power": 2400,
+      "price": 10258000,
+      "rarity": "Exclusive",
+      "origin": "Bridal Package 2018",
+      "skill": { "name": "Protector II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Iron Band", "q": "Flawless", "c": 2 }, { "item": "Adamantium", "q": "", "c": 2 } ]
     },
     "Heart Ring": {
       "type": "Rings",

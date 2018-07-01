@@ -3136,6 +3136,24 @@ span.icon.item.maplestaff {
 span.icon.item.maplepotion {
   background-image: url( "../images/items/potions/maplepotion.png" );
 }
+span.icon.item.chalice {
+  background-image: url( "../images/items/potions/chalice.png" );
+}
+span.icon.item.royalscepter {
+  background-image: url( "../images/items/maces/royalscepter.png" );
+}
+span.icon.item.weddingband {
+  background-image: url( "../images/items/rings/weddingband.png" );
+}
+span.icon.item.royaltrumpet {
+  background-image: url( "../images/items/instruments/royaltrumpet.png" );
+}
+span.icon.item.royaluniform {
+  background-image: url( "../images/items/clothes/royaluniform.png" );
+}
+span.icon.item.weddingring {
+  background-image: url( "../images/items/rings/weddingring.png" );
+}
 
 span.icon.break {
   color: #FFFFFF;
