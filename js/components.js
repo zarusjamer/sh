@@ -206,7 +206,7 @@ Vue.mixin( {
         return { 
           id: name,
           text: name,
-          iconType: 'artifact',
+          iconType: 'item',
           icon: o.item.icon(),
           children: children,
           sort: o.power

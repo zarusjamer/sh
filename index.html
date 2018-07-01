@@ -619,7 +619,7 @@
                   </tr>
                   <tr class="data-info">
                     <th>
-                      <span class="icon artifact"
+                      <span class="icon item"
                         :class="icon( object.item )"
                         v-if="object.item"/>
                     </th>
@@ -1139,7 +1139,7 @@
           </td>
           <td>
             <span class="float-left">
-              <span class="icon artifact" :class="icon( quest.loot.item )"/>
+              <span class="icon item" :class="icon( quest.loot.item )"/>
             </span>
             <span>{{quest.loot.min}}&nbsp;-&nbsp;{{quest.loot.max}}</span> 
           </td>
@@ -1149,7 +1149,7 @@
               </td>
               <td>
                 <span class="float-left">
-                  <span class="icon artifact" :class="icon( quest.loot.item )"/>
+                  <span class="icon item" :class="icon( quest.loot.item )"/>
                 </span>
                 <span>{{quest.roster[sn].loot.min}}&nbsp;-&nbsp;{{quest.roster[sn].loot.max}}</span> 
               </td>
