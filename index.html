@@ -357,7 +357,9 @@
                         <input v-model="items.filters.pre.name" type="search" placeholder="Type in name" class="name"/>
                       </div>
                       <div style="width: 45% !important; display: inline-block;">
-                        <select2 v-model="items.filters.pre.q" :options="lists.quality" placeholder="Choose quality"/>
+                        <select2 placeholder="Choose quality"
+                          v-model="items.filters.pre.q"
+                          :options="$root.lists.quality"/>
                       </div>
                     </td>
                   </tr>
@@ -878,7 +880,7 @@
               <td>
                 <select2 placeholder="Choose quality"
                   v-model="object.slots[islot].q"
-                  :options="lists.quality"/>
+                  :options="$root.lists.quality"/>
               </td>
             </template>
             <template v-else-if="slot.item">
@@ -1202,8 +1204,7 @@
           <template v-if="edits.roster[sn].expanded">
             <tr class="data-info">
               <th>
-                <span class="clickable ui-icon"
-                  :class="[ edits.roster[sn].expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
+                <span class="clickable ui-icon ui-icon-zoomout"
                   @click="edits.roster[sn].expanded = !edits.roster[sn].expanded"/>
               </th>
               <template v-for="( slot, islot ) in rst.slots">
@@ -1248,7 +1249,7 @@
                     <template v-if="edits.roster[sn].slots[islot]">
                       <select2 placeholder="Choose quality"
                         v-model="object.roster[sn].slots[islot].q"
-                        :options="$parent.lists.quality"/>
+                        :options="$root.lists.quality"/>
                     </template>
                     <template v-else>
                       <span class="float-left">
@@ -1313,9 +1314,7 @@
           <template v-else>
             <tr class="data-info">
               <th class="hero-icon">
-                <span
-                  class="clickable ui-icon"
-                  :class="[ edits.roster[sn].expanded ? 'ui-icon-zoomout' : 'ui-icon-zoomin' ]"
+                <span class="clickable ui-icon ui-icon-zoomin"
                   @click="edits.roster[sn].expanded = !edits.roster[sn].expanded"/>
               </th>
               <template v-for="( slot, islot ) in rst.slots">
