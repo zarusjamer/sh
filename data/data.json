@@ -9074,7 +9074,7 @@
       "rarity": "Exclusive",
       "origin": "Groom's Package 2018",
       "skill": { "name": "Revive II", "q": "Legendary", "m": false },
-      "pre": [ { "item": "Power Ring", "q": "Great", "c": 2 }, { "item": "Frosfire Crystal", "q": "", "c": 2 } ]
+      "pre": [ { "item": "Power Ring", "q": "Great", "c": 2 }, { "item": "Frostfire Crystal", "q": "", "c": 2 } ]
     },
     "Ouroboros": {
       "type": "Rings",
