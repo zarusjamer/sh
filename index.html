@@ -133,7 +133,7 @@
                     <td colspan="2">
                       <select2
                         v-model="data.quest.name"
-                        :options="lists.quest"
+                        :options="$root.lists.quest"
                         placeholder="Choose quest"/>
                     </td>
                     <td colspan="2">
@@ -229,7 +229,9 @@
                       <input v-model="heroes.filters.name" type="search" placeholder="Type in name" class="name"/>
                     </td>
                     <td colspan="2">
-                      <select2 v-model="heroes.filters.skill" :options="lists.skill" placeholder="Choose skill"/>
+                      <select2 placeholder="Choose skill"
+                        v-model="heroes.filters.skill"
+                        :options="$root.lists.skill"/>
                     </td>
                     <td colspan="2">
                       <input v-model.number="heroes.filters.lv.min" type="number" class="lv"/>
@@ -246,7 +248,9 @@
                       <select2 v-model="heroes.filters.sex" :options="heroes.lists.sex" placeholder="Choose sex" :nosearch="true"/>
                     </td>
                     <td colspan="2">
-                      <select2 v-model="heroes.filters.origin" :options="lists.origin" placeholder="Choose origin"/>
+                      <select2 placeholder="Choose origin"
+                        v-model="heroes.filters.origin"
+                        :options="$root.lists.origin"/>
                     </td>
                   </tr>
                 </thead>
@@ -311,7 +315,9 @@
                       <input v-model="items.filters.name" type="search" placeholder="Type in name" class="name"/>
                     </td>
                     <td>
-                      <select2 v-model="items.filters.type" :options="items.lists.type" placeholder="Choose type"/>
+                      <select2 placeholder="Choose type"
+                        v-model="items.filters.type"
+                        :options="items.lists.type"/>
                     </td>
                     <td>
                       <input v-model.number="items.filters.lv.min" type="number" class="lv"/>
@@ -321,7 +327,9 @@
                     <td>
                     </td>
                     <td>
-                      <select2 v-model="items.filters.skill" :options="lists.skill" placeholder="Choose skill"/>
+                      <select2 placeholder="Choose skill"
+                        v-model="items.filters.skill"
+                        :options="$root.lists.skill"/>
                     </td>
                   </tr>
                   <tr class="data-info">
@@ -343,10 +351,14 @@
                   </tr>
                   <tr class="data-info">
                     <td colspan="2">
-                      <select2 v-model="items.filters.origin" :options="items.lists.origin" placeholder="Choose origin"/>
+                      <select2 placeholder="Choose origin"
+                        v-model="items.filters.origin"
+                        :options="items.lists.origin"/>
                     </td>
                     <td>
-                      <select2 v-model="items.filters.rarity" :options="lists.rarity" placeholder="Choose rarity"/>
+                      <select2 placeholder="Choose rarity"
+                        v-model="items.filters.rarity"
+                        :options="$root.lists.rarity"/>
                     </td>
                     <td>
                     </td>
@@ -424,10 +436,9 @@
                         placeholder="Type in name"/>
                     </td>
                     <td>
-                      <select2
+                      <select2 placeholder="Choose type"
                         v-model="origins.filters.type"
-                        :options="origins.lists.type"
-                        placeholder="Choose type"/>
+                        :options="origins.lists.type"/>
                     </td>
                     <td/>
                     <td/>
@@ -494,16 +505,24 @@
                       <input type="search" placeholder="Type in name" class="name" v-model="quests.filters.name"/>
                     </td>
                     <td colspan="2">
-                      <select2 v-model="quests.filters.item" :options="quests.lists.item" placeholder="Choose item"/>
+                      <select2 placeholder="Choose item"
+                        v-model="quests.filters.item"
+                        :options="quests.lists.item"/>
                     </td>
                     <td colspan="2">
-                      <select2 v-model="quests.filters.origin" :options="quests.lists.origin" placeholder="Choose origin"/>
+                      <select2 placeholder="Choose origin"
+                        v-model="quests.filters.origin"
+                        :options="quests.lists.origin"/>
                     </td>
                     <td colspan="2">
-                      <select2 v-model="quests.filters.bag" :options="quests.lists.bag" placeholder="Choose bag type"/>
+                      <select2 placeholder="Choose bag type"
+                        v-model="quests.filters.bag"
+                        :options="quests.lists.bag"/>
                     </td>
                     <td colspan="2">
-                      <select2 v-model="quests.filters.chest" :options="quests.lists.chest" placeholder="Choose chest type"/>
+                      <select2 placeholder="Choose chest type"
+                        v-model="quests.filters.chest"
+                        :options="quests.lists.chest"/>
                     </td>
                     <td colspan="2"/>
                     <td colspan="2"/>
@@ -1228,86 +1247,74 @@
             <tr class="data-info">
               <th class="hero-icon" rowspan="4"/>
               <template v-for="( slot, islot ) in rst.slots">
-                <template v-if="slot.item">
-                  <td colspan="2">
+                <td colspan="2">
+                  <template v-if="slot.item">
                     <power :power="slot.power" class="float-left"/>
                     <chance :chance="slot.chance" class="float-right"/>
-                  </td>
-                </template>
-                <template v-else>
-                  <td colspan="2"/>
-                </template>
+                  </template>
+                </td>
               </template>
             </tr>
             <tr class="data-info">
               <template v-for="( slot, islot ) in rst.slots">
-                <template v-if="slot.item">
-                  <td class="hero-icon">
-                    <span class="icon break" :class="{ optimal: slot.optimal }"/>
-                  </td>
-                  <td>
-                    <template v-if="edits.roster[sn].slots[islot]">
-                      <select2 placeholder="Choose quality"
-                        v-model="object.roster[sn].slots[islot].q"
-                        :options="$root.lists.quality"/>
-                    </template>
-                    <template v-else>
-                      <span class="float-left">
-                        <span class="icon quality" :class="icon( slot.q )"/>
-                      </span>
-                      <span>{{slot.q}}</span>
-                    </template>
-                  </td>
-                </template>
-                <template v-else>
-                  <td/>
-                  <td/>
-                </template>
+                <td class="hero-icon">
+                  <template v-if="slot.item">
+                    <span class="icon break"
+                      :class="{ optimal: slot.optimal }"/>
+                  </template>
+                </td>
+                <td>
+                  <template v-if="edits.roster[sn].slots[islot]">
+                    <select2 placeholder="Choose quality"
+                      v-model="object.roster[sn].slots[islot].q"
+                      :options="$root.lists.quality"/>
+                  </template>
+                  <template v-else-if="slot.item">
+                    <span class="float-left">
+                      <span class="icon quality" :class="icon( slot.q )"/>
+                    </span>
+                    <span>{{slot.q}}</span>
+                  </template>
+                </td>
               </template>
             </tr>
             <tr class="data-info">
               <template v-for="( slot, islot ) in rst.slots">
-                <template v-if="slot.item">
-                  <td class="hero-icon">
+                <td class="hero-icon">
+                  <template v-if="slot.item">
                     <span>{{slot.item.lv}}</span>
-                  </td>
-                  <td>
-                    <template v-if="edits.roster[sn].slots[islot]">
-                      <select2 placeholder="Choose item"
-                        v-model="object.roster[sn].slots[islot].item"
-                        :options="slot.list"/>
-                    </template>
-                    <template v-else>
-                      <span class="float-left">
-                        <span class="icon item" :class="icon( slot.item.name )"/>
-                      </span>
-                      <span>{{slot.item.name}}</span>
-                    </template>
-                  </td>
-                </template>
-                <template v-else>
-                  <td class="hero-icon"/>
-                  <td/>
-                </template>
+                  </template>
+                </td>
+                <td>
+                  <template v-if="edits.roster[sn].slots[islot]">
+                    <select2 placeholder="Choose item"
+                      v-model="object.roster[sn].slots[islot].item"
+                      :options="slot.list"/>
+                  </template>
+                  <template v-else-if="slot.item">
+                    <span class="float-left">
+                      <span class="icon item" :class="icon( slot.item.name )"/>
+                    </span>
+                    <span>{{slot.item.name}}</span>
+                  </template>
+                </td>
               </template>
             </tr>
             <tr class="data-info">
               <template v-for="( slot, islot ) in rst.slots">
-                <template v-if="slot.item && slot.item.skill">
-                  <td>
+                <td>
+                  <template v-if="slot.item && slot.item.skill">
                     <skillValue :skill="slot.skill"/>
-                  </td>
-                  <td>
+                  </template>
+                </td>
+                <td>
+                  <template v-if="slot.item && slot.item.skill">
                     <skill :skill="slot.skill"/>
                     <span v-if="edits.roster[sn].slots[islot]" class="float-right">
                       <input type="checkbox" v-model="slot.item.skill.m"/>
                     </span>
-                  </td>
-                </template>
-                <template v-else>
-                  <td/>
-                  <td/>
-                </template>
+                  </template>
+                </td>
               </template>
             </tr>
           </template>
