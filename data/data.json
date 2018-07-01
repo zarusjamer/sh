@@ -6647,6 +6647,18 @@
       "skill": { "name": "Cone-of-cold", "q": "Flawless", "m": false },
       "pre": [ { "item": "Harp", "q": "Good", "c": 1 } ]
     },
+    "Royal Trumpet": {
+      "type": "Instruments",
+      "name": "Royal Trumpet",
+      "lv": 17,
+      "xp": 0,
+      "power": 630,
+      "price": 24500,
+      "rarity": "Rare",
+      "origin": "Groom's Package 2018",
+      "skill": { "name": "Speed Runner I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Burning Ember", "q": "", "c": 2 } ]
+    },
     "Long Flute": {
       "type": "Instruments",
       "name": "Long Flute",
