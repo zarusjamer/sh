@@ -3617,6 +3617,18 @@
       "origin": "",
       "pre": [ { "item": "Wind Striker", "q": "Flawless", "c": 1 } ]
     },
+    "Repeater Crossbow": {
+      "type": "Bows",
+      "name": "Repeater Crossbow",
+      "lv": 42,
+      "xp": 3600000,
+      "power": 1960,
+      "price": 6120000,
+      "rarity": "Exclusive",
+      "origin": "Emperor's Package 2018",
+      "skill": { "name": "Berserker", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Self-Loader", "q": "Flawless", "c": 2 } ]
+    },
     "Elven Bow": {
       "type": "Bows",
       "name": "Elven Bow",
@@ -6129,6 +6141,18 @@
       "origin": "",
       "pre": [ { "item": "Magic Top", "q": "Flawless", "c": 1 } ]
     },
+    "Oni Mask": {
+      "type": "Hats",
+      "name": "Oni Mask",
+      "lv": 44,
+      "xp": 1623000,
+      "power": 2225,
+      "price": 4186000,
+      "rarity": "Exclusive",
+      "origin": "Horribly Cuddly Package 2018",
+      "skill": { "name": "Aura of Protection", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Soul Eater", "q": "Flawless", "c": 2 } ]
+    },
     "Jaguar Helm": {
       "type": "Hats",
       "name": "Jaguar Helm",
@@ -6356,7 +6380,7 @@
       "power": 1100,
       "price": 195000,
       "rarity": "Exclusive",
-      "origin": "Op Supply Drop Pack",
+      "origin": "Op Supply Drop Package",
       "skill": { "name": "Support I", "q": "Mythical", "m": false }
     },
     "Dragoon's Casque": {
@@ -6436,6 +6460,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Silver Helm", "q": "Good", "c": 2 } ]
+    },
+    "Lu Bu's War Helmet": {
+      "type": "Helmets",
+      "name": "Lu Bu's War Helmet",
+      "lv": 36,
+      "xp": 560000,
+      "power": 1740,
+      "price": 1110000,
+      "rarity": "Exclusive",
+      "origin": "Warfare Package 2018",
+      "skill": { "name": "Commander II", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Noble Tiara", "q": "Flawless", "c": 2 } ]
     },
     "Dragonscale Helmet": {
       "type": "Helmets",
@@ -6778,6 +6814,18 @@
       "price": 500000,
       "rarity": "Common",
       "origin": ""
+    },
+    "Gu Zheng": {
+      "type": "Instruments",
+      "name": "Gu Zheng",
+      "lv": 34,
+      "xp": 212000,
+      "power": 1380,
+      "price": 432000,
+      "rarity": "Exclusive",
+      "origin": "Emperor's Package 2018",
+      "skill": { "name": "Revive II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Harp", "q": "Flawless", "c": 3 } ]
     },
     "Draconian Sound": {
       "type": "Instruments",
@@ -8098,6 +8146,17 @@
       "origin": "",
       "pre": [ { "item": "Fungi Brew", "q": "Common", "c": 1 } ]
     },
+    "Poison Needles": {
+      "type": "Projectiles",
+      "name": "Poison Needles",
+      "lv": 10,
+      "xp": 1080,
+      "power": 300,
+      "price": 3250,
+      "rarity": "Exclusive",
+      "origin": "Warfare Package 2018",
+      "skill": { "name": "Backstab", "q": "Mythical", "m": false }
+    },
     "Metal Boomerang": {
       "type": "Projectiles",
       "name": "Metal Boomerang",
@@ -8239,6 +8298,18 @@
       "rarity": "Exclusive",
       "origin": "Valentine's Day Package 2016",
       "pre": [ { "item": "Shock Darts", "q": "Good", "c": 1 } ]
+    },
+    "Spirit Fire": {
+      "type": "Projectiles",
+      "name": "Spirit Fire",
+      "lv": 29,
+      "xp": 89089,
+      "power": 1200,
+      "price": 222500,
+      "rarity": "Exclusive",
+      "origin": "Terribly Stylish Package 2018",
+      "skill": { "name": "Fireball", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Bagua Mirror", "q": "Great", "c": 2 } ]
     },
     "Seeking Kunai": {
       "type": "Projectiles",
@@ -8614,7 +8685,7 @@
       "power": 1500,
       "price": 665000,
       "rarity": "Exclusive",
-      "origin": "Vacation Pack",
+      "origin": "Vacation Package",
       "skill": { "name": "Stoneskin", "q": "Legendary", "m": false },
       "pre": [ { "item": "Anti-Venom", "q": "Great", "c": 2 } ]
     },
@@ -9251,6 +9322,17 @@
       "origin": "",
       "pre": [ { "item": "Buckler", "q": "Good", "c": 2 } ]
     },
+    "Bagua Mirror": {
+      "type": "Shields",
+      "name": "Bagua Mirror",
+      "lv": 16,
+      "xp": 0,
+      "power": 550,
+      "price": 14000,
+      "rarity": "Exclusive",
+      "origin": "Terribly Stylish Package 2018",
+      "skill": { "name": "Treasure Hunter I", "q": "Epic", "m": false }
+    },
     "Knight Shield": {
       "type": "Shields",
       "name": "Knight Shield",
@@ -9837,6 +9919,18 @@
       "origin": "",
       "pre": [ { "item": "Winged Spear", "q": "Good", "c": 2 } ]
     },
+    "Umbrella Demon": {
+      "type": "Spears",
+      "name": "Umbrella Demon",
+      "lv": 42,
+      "xp": 3653469,
+      "power": 2020,
+      "price": 6540000,
+      "rarity": "Exclusive",
+      "origin": "Terribly Stylish Package 2018",
+      "skill": { "name": "Riposte", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Spirit Fire", "q": "Flawless", "c": 2 } ]
+    },
     "Twilight Spear": {
       "type": "Spears",
       "name": "Twilight Spear",
@@ -9847,6 +9941,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Knight's Lance", "q": "Flawless", "c": 2 } ]
+    },
+    "Fangtian Pike": {
+      "type": "Spears",
+      "name": "Fangtian Pike",
+      "lv": 44,
+      "xp": 4120000,
+      "power": 2100,
+      "price": 8320000,
+      "rarity": "Exclusive",
+      "origin": "Warfare Package 2018",
+      "skill": { "name": "Cleave", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Lion's Tail", "q": "Great", "c": 3 } ]
     },
     "Ascalon": {
       "type": "Spears",
@@ -9999,6 +10105,17 @@
       "rarity": "Common",
       "origin": ""
     },
+    "The Art of War": {
+      "type": "Spells",
+      "name": "The Art of War",
+      "lv": 15,
+      "xp": 9000,
+      "power": 500,
+      "price": 27500,
+      "rarity": "Exclusive",
+      "origin": "Emperor's Package 2018",
+      "skill": { "name": "Detect Secrets", "q": "Legendary", "m": false }
+    },
     "Freezing Scroll": {
       "type": "Spells",
       "name": "Freezing Scroll",
@@ -10020,6 +10137,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Poison Scroll", "q": "Good", "c": 1 } ]
+    },
+    "Talisman": {
+      "type": "Spells",
+      "name": "Talisman",
+      "lv": 19,
+      "xp": 13700,
+      "power": 675,
+      "price": 41200,
+      "rarity": "Exclusive",
+      "origin": "Horribly Cuddly Package 2018",
+      "skill": { "name": "Gold Digger I", "q": "Flawless", "m": false }
+      "pre": [ { "item": "Shielding Seal", "q": "Great", "c": 3 } ]
     },
     "Teleportation Scroll": {
       "type": "Spells",
@@ -10269,7 +10398,7 @@
       "power": 2800,
       "price": 36850000,
       "rarity": "Exclusive",
-      "origin": "Vacation Pack",
+      "origin": "Vacation Package",
       "skill": { "name": "Support II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Twilight Seal", "q": "Flawless", "c": 1 } ]
     },
@@ -10321,7 +10450,7 @@
       "power": 215,
       "price": 1400,
       "rarity": "Exclusive",
-      "origin": "Vacation Pack",
+      "origin": "Vacation Package",
       "skill": { "name": "Mage Armor", "q": "Epic", "m": false }
     },
     "Muted Caster": {
