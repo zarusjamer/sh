@@ -10147,7 +10147,7 @@
       "price": 41200,
       "rarity": "Exclusive",
       "origin": "Horribly Cuddly Package 2018",
-      "skill": { "name": "Gold Digger I", "q": "Flawless", "m": false }
+      "skill": { "name": "Gold Digger I", "q": "Flawless", "m": false },
       "pre": [ { "item": "Shielding Seal", "q": "Great", "c": 3 } ]
     },
     "Teleportation Scroll": {
