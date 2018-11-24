@@ -10974,6 +10974,18 @@
       "origin": "",
       "pre": [ { "item": "Zweihander", "q": "Good", "c": 3 } ]
     },
+    "Soul Eater": {
+      "type": "Swords",
+      "name": "Soul Eater",
+      "lv": 29,
+      "xp": 117200,
+      "power": 1200,
+      "price": 292500,
+      "rarity": "Exclusive",
+      "origin": "Horribly Cuddly Package 2018",
+      "skill": { "name": "Berserker", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Talisman", "q": "Great", "c": 2 } ]
+    },
     "Sawblade": {
       "type": "Swords",
       "name": "Sawblade",
