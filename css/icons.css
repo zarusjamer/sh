@@ -1060,8 +1060,14 @@ span.icon.item.divineray {
 span.icon.item.mysticspear {
   background-image: url( "../images/items/spears/mysticspear.png" );
 }
+span.icon.item.umbrellademon {
+  background-image: url( "../images/items/spears/umbrellademon.png" );
+}
 span.icon.item.twilightspear {
   background-image: url( "../images/items/spears/twilightspear.png" );
+}
+span.icon.item.fangtianpike {
+  background-image: url( "../images/items/spears/fangtianpike.png" );
 }
 span.icon.item.ascalon {
   background-image: url( "../images/items/spears/ascalon.png" );
@@ -1350,6 +1356,9 @@ span.icon.item.adamantiumcrossbow {
 }
 span.icon.item.twilightshot {
   background-image: url( "../images/items/bows/twilightshot.png" );
+}
+span.icon.item.repeatercrossbow {
+  background-image: url( "../images/items/bows/repeatercrossbow.png" );
 }
 span.icon.item.elvenbow {
   background-image: url( "../images/items/bows/elvenbow.png" );
@@ -1723,6 +1732,9 @@ span.icon.item.phoenixhelmet {
 span.icon.item.championshelm {
   background-image: url( "../images/items/helmets/championshelm.png" );
 }
+span.icon.item.lubuswarhelmet {
+  background-image: url( "../images/items/helmets/lubuswarhelmet.png" );
+}
 span.icon.item.dragonscalehelmet {
   background-image: url( "../images/items/helmets/dragonscalehelmet.png" );
 }
@@ -2056,6 +2068,9 @@ span.icon.item.chimalli {
 span.icon.item.moonlightshield {
   background-image: url( "../images/items/shields/moonlightshield.png" );
 }
+span.icon.item.baguamirror {
+  background-image: url( "../images/items/shields/baguamirror.png" );
+}
 span.icon.item.knightshield {
   background-image: url( "../images/items/shields/knightshield.png" );
 }
@@ -2220,6 +2235,9 @@ span.icon.item.jadevisage {
 }
 span.icon.item.celestialhat {
   background-image: url( "../images/items/hats/celestialhat.png" );
+}
+span.icon.item.onimask {
+  background-image: url( "../images/items/hats/onimask.png" );
 }
 span.icon.item.jaguarhelm {
   background-image: url( "../images/items/hats/jaguarhelm.png" );
@@ -2656,11 +2674,17 @@ span.icon.item.charmingscroll {
 span.icon.item.deflectionseal {
   background-image: url( "../images/items/spells/deflectionseal.png" );
 }
+span.icon.item.theartofwar {
+  background-image: url( "../images/items/spells/theartofwar.png" );
+}
 span.icon.item.freezingscroll {
   background-image: url( "../images/items/spells/freezingscroll.png" );
 }
 span.icon.item.invisibilityscroll {
   background-image: url( "../images/items/spells/invisibilityscroll.png" );
+}
+span.icon.item.talisman {
+  background-image: url( "../images/items/spells/talisman.png" );
 }
 span.icon.item.teleportationscroll {
   background-image: url( "../images/items/spells/teleportationscroll.png" );
@@ -2749,6 +2773,9 @@ span.icon.item.fireworks {
 span.icon.item.smokebomb {
   background-image: url( "../images/items/projectiles/smokebomb.png" );
 }
+span.icon.item.poisonneedles {
+  background-image: url( "../images/items/projectiles/poisonneedles.png" );
+}
 span.icon.item.metalboomerang {
   background-image: url( "../images/items/projectiles/metalboomerang.png" );
 }
@@ -2787,6 +2814,9 @@ span.icon.item.steelarang {
 }
 span.icon.item.heartseeker {
   background-image: url( "../images/items/projectiles/heartseeker.png" );
+}
+span.icon.item.spiritfire {
+  background-image: url( "../images/items/projectiles/spiritfire.png" );
 }
 span.icon.item.seekingkunai {
   background-image: url( "../images/items/projectiles/seekingkunai.png" );
@@ -3081,6 +3111,9 @@ span.icon.item.goldenstring {
 }
 span.icon.item.hellhound {
   background-image: url( "../images/items/instruments/hellhound.png" );
+}
+span.icon.item.guzheng {
+  background-image: url( "../images/items/instruments/guzheng.png" );
 }
 span.icon.item.draconiansound {
   background-image: url( "../images/items/instruments/draconiansound.png" );
