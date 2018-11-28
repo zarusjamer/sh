@@ -1545,6 +1545,15 @@
       "applies": "hero",
       "leader": false
     },
+    "Weapon Master": {
+      "base": "Equipment",
+      "priority": 11,
+      "text": "Equipment strength is increased by {0}",
+      "cap": false,
+      "sign": "%",
+      "applies": "hero",
+      "leader": false
+    },
     "Backstab": {
       "base": "Strength",
       "text": "Strength is increased by {0}",
@@ -1791,6 +1800,11 @@
       "name": "Mage Armor",
       "type": "Mage Armor",
       "value": 0.25
+    },
+    "Weapon Master": {
+      "name": "Weapon Master",
+      "type": "Weapon Master",
+      "value": 0.35
     },
     "Backstab": {
       "name": "Backstab",
@@ -2227,6 +2241,11 @@
       "type": "Package",
       "boostable": false
     },
+    "Heroic Package #3": {
+      "name": "Heroic Package #3",
+      "type": "Package",
+      "boostable": false
+    },
     "Inn": {
       "name": "Inn",
       "type": "City",
@@ -2466,6 +2485,17 @@
       "price": 67500,
       "rarity": "Common",
       "origin": ""
+    },
+    "Honor Mail": {
+      "type": "Armor",
+      "name": "Honor Mail",
+      "lv": 24,
+      "xp": 0,
+      "power": 1100,
+      "price": 450000,
+      "rarity": "Exclusive",
+      "origin": "Heroic Package #3",
+      "skill": { "name": "Revive II", "q": "Legendary", "m": false }
     },
     "Chaos Armor": {
       "type": "Armor",
@@ -3350,6 +3380,17 @@
       "price": 345,
       "rarity": "Common",
       "origin": ""
+    },
+    "Sunsetter": {
+      "type": "Bows",
+      "name": "Sunsetter",
+      "lv": 6,
+      "xp": 0,
+      "power": 240,
+      "price": 3540,
+      "rarity": "Exclusive",
+      "origin": "Heroic Package #3",
+      "skill": { "name": "Speed Runner I", "q": "Legendary", "m": false }
     },
     "Double String": {
       "type": "Bows",
@@ -8015,6 +8056,17 @@
       "skill": { "name": "Energetic II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Life Potion", "q": "Great", "c": 2 } ]
     },
+    "Family Heirloom": {
+      "type": "Potions",
+      "name": "Family Heirloom",
+      "lv": 44,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Heroic Package #3",
+      "skill": { "name": "Resourceful III", "q": "Mythical", "m": false }
+    },
     "Maple Potion": {
       "type": "Potions",
       "name": "Maple Potion",
@@ -10013,6 +10065,17 @@
       "skill": { "name": "Treasure Hunter II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Mystic Spear", "q": "Great", "c": 2 } ]
     },
+    "Rebellion": {
+      "type": "Spears",
+      "name": "Rebellion",
+      "lv": 54,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Heroic Package #3",
+      "skill": { "name": "Energetic II", "q": "Mythical", "m": false }
+    },
     "Shielding Seal": {
       "type": "Spells",
       "name": "Shielding Seal",
@@ -10127,6 +10190,17 @@
       "origin": "",
       "pre": [ { "item": "Scarlet Drop", "q": "Good", "c": 1 } ]
     },
+    "Imperial Edict": {
+      "type": "Spells",
+      "name": "Imperial Edict",
+      "lv": 17,
+      "xp": 0,
+      "power": 600,
+      "price": 56000,
+      "rarity": "Exclusive",
+      "origin": "Heroic Package #3",
+      "skill": { "name": "Leader I", "q": "Flawless", "m": false }
+    },
     "Invisibility Scroll": {
       "type": "Spells",
       "name": "Invisibility Scroll",
@@ -10217,6 +10291,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Love Splash", "q": "Great", "c": 1 } ]
+    },
+    "Tiger Seal": {
+      "type": "Spells",
+      "name": "Tiger Seal",
+      "lv": 29,
+      "xp": 0,
+      "power": 1220,
+      "price": 84000,
+      "rarity": "Exclusive",
+      "origin": "Heroic Package #3",
+      "skill": { "name": "Commander II", "q": "Epic", "m": false },
+      "pre": [ { "item": "Imperial Edict", "q": "Flawless", "c": 2 } ]
     },
     "Power Seal": {
       "type": "Spells",
@@ -12003,6 +12089,58 @@
         }
       },
       "skills": { "Amazon III": 14, "Energetic III": 24, "Lucky III": 32 }
+    },
+    "Yue": {
+      "name": "Yue",
+      "type": "Fighter",
+      "sex": "Male",
+      "origin": "Heroic Package #3",
+      "tier": 6,
+      "lv": 15,
+      "cap": 55,
+      "b": false,
+      "power": {
+        "base": 5000,
+        "m": 5.00
+      },
+      "slots": {
+        "Weapon": { 
+          "item": null,
+          "q": null,
+          "types": { "Spears": 1, "Swords": 0, "Bows": 1 }
+        },
+        "Armor": { 
+          "item": null,
+          "q": null,
+          "types": { "Armor": 0, "Vests": 0 }
+        },
+        "Head": { 
+          "item": null,
+          "q": null,
+          "types": { "Helmets": 0, "Hats": -1 }
+        },
+        "Hands": { 
+          "item": null,
+          "q": null,
+          "types": { "Gauntlets": 0, "Bracers": -1 }
+        },
+        "Feet": { 
+          "item": null,
+          "q": null,
+          "types": { "Boots": 0, "Footwear": -1 }
+        },
+        "Aux1": { 
+          "item": null,
+          "q": null,
+          "types": { "Pendants": 0 }
+        },
+        "Aux2": { 
+          "item": null,
+          "q": null,
+          "types": { "Spells": 0, "Remedies": -1 }
+        }
+      },
+      "skills": { "Resilient III": 15, "Weapon Master": 25, "Commander III": 35 }
     },
     "Garreth": {
       "name": "Garreth",
