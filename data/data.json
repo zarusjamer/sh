@@ -7675,7 +7675,8 @@
       "price": 0,
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
-      "skill": { "name": "Resourceful III", "q": "Mythical", "m": false }
+      "skill": { "name": "Resourceful III", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Jade Amulet", "q": "Legendary", "c": 2 } ]
     },
     "Champion's Medal": {
       "type": "Pendants",
