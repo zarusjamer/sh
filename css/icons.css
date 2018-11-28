@@ -1084,6 +1084,9 @@ span.icon.item.primordialtrident {
 span.icon.item.gungnir {
   background-image: url( "../images/items/spears/gungnir.png" );
 }
+span.icon.item.rebellion {
+  background-image: url( "../images/items/spears/rebellion.png" );
+}
 span.icon.item.club {
   background-image: url( "../images/items/maces/club.png" );
 }
@@ -1287,6 +1290,9 @@ span.icon.item.longbow {
 }
 span.icon.item.faerysstring {
   background-image: url( "../images/items/bows/faerysstring.png" );
+}
+span.icon.item.sunsetter {
+  background-image: url( "../images/items/bows/sunsetter.png" );
 }
 span.icon.item.doublestring {
   background-image: url( "../images/items/bows/doublestring.png" );
@@ -2680,6 +2686,9 @@ span.icon.item.theartofwar {
 span.icon.item.freezingscroll {
   background-image: url( "../images/items/spells/freezingscroll.png" );
 }
+span.icon.item.imperialedict {
+  background-image: url( "../images/items/spells/imperialedict.png" );
+}
 span.icon.item.invisibilityscroll {
   background-image: url( "../images/items/spells/invisibilityscroll.png" );
 }
@@ -2703,6 +2712,9 @@ span.icon.item.evilseal {
 }
 span.icon.item.possessionscroll {
   background-image: url( "../images/items/spells/possessionscroll.png" );
+}
+span.icon.item.tigerseal {
+  background-image: url( "../images/items/spells/tigerseal.png" );
 }
 span.icon.item.powerseal {
   background-image: url( "../images/items/spells/powerseal.png" );
@@ -3039,6 +3051,9 @@ span.icon.item.ancientamulet {
 }
 span.icon.item.draconiccharm {
   background-image: url( "../images/items/pendants/draconiccharm.png" );
+}
+span.icon.item.familyheirloom {
+  background-image: url( "../images/items/pendants/familyheirloom.png" );
 }
 span.icon.item.championsmedal {
   background-image: url( "../images/items/pendants/championsmedal.png" );

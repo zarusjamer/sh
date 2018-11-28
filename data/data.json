@@ -7666,6 +7666,17 @@
       "origin": "",
       "pre": [ { "item": "Timeless Locket", "q": "Flawless", "c": 2 } ]
     },
+    "Family Heirloom": {
+      "type": "Pendants",
+      "name": "Family Heirloom",
+      "lv": 44,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Heroic Package #3",
+      "skill": { "name": "Resourceful III", "q": "Mythical", "m": false }
+    },
     "Champion's Medal": {
       "type": "Pendants",
       "name": "Champion's Medal",
@@ -8055,17 +8066,6 @@
       "origin": "Epic Package",
       "skill": { "name": "Energetic II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Life Potion", "q": "Great", "c": 2 } ]
-    },
-    "Family Heirloom": {
-      "type": "Potions",
-      "name": "Family Heirloom",
-      "lv": 44,
-      "xp": 0,
-      "power": 0,
-      "price": 0,
-      "rarity": "Exclusive",
-      "origin": "Heroic Package #3",
-      "skill": { "name": "Resourceful III", "q": "Mythical", "m": false }
     },
     "Maple Potion": {
       "type": "Potions",
