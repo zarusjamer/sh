@@ -1525,6 +1525,9 @@ span.icon.item.arcaneguard {
 span.icon.item.runicmail {
   background-image: url( "../images/items/armor/runicmail.png" );
 }
+span.icon.item.honormail {
+  background-image: url( "../images/items/armor/honormail.png" );
+}
 span.icon.item.chaosarmor {
   background-image: url( "../images/items/armor/chaosarmor.png" );
 }
