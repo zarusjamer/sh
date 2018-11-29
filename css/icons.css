@@ -225,6 +225,9 @@ span.icon.skill.coneofcold {
 span.icon.skill.thunderbolt {
   background-image: url( "../images/skills/thunderbolt.png" );
 }
+span.icon.skill.weaponmaster {
+  background-image: url( "../images/skills/weaponmaster.png" );
+}
 span.icon.skill.fireball {
   background-image: url( "../images/skills/fireball.png" );
 }
@@ -290,6 +293,9 @@ span.icon.hero.kurul {
 }
 span.icon.hero.edward {
   background-image: url( "../images/heroes/edward.png" );
+}
+span.icon.hero.yue {
+  background-image: url( "../images/heroes/yue.png" );
 }
 span.icon.hero.alicia {
   background-image: url( "../images/heroes/alicia.png" );
