@@ -12108,7 +12108,7 @@
         "Weapon": { 
           "item": null,
           "q": null,
-          "types": { "Spears": 1, "Swords": 0, "Bows": 1 }
+          "types": { "Spears": 1, "Swords": 0, "Bows": 0 }
         },
         "Armor": { 
           "item": null,
