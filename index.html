@@ -731,7 +731,7 @@
         <td>
           <span>{{object.lv}}</span>
         </td>
-        <td rowspan="2">
+        <td class="left" rowspan="2">
           <div
             v-for="pi in object.pre"
             v-if="object.pre">
@@ -743,7 +743,7 @@
             <span>{{pi.item}}</span>
           </div>
         </td>
-        <td rowspan="2">
+        <td class="left" rowspan="2">
           <template v-if="object.skill">
             <span class="float-left icon quality"
               :class="icon( object.skill.q )" />
