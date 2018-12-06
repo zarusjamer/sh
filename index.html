@@ -291,7 +291,7 @@
                     <th class="type"/>
                     <th class="level"/>
                     <th class="power"/>
-                    <th class="skill"/>
+                    <th class="skill" colspan="2"/>
                   </tr>
                   <tr class="data-info">
                     <th colspan="2">
@@ -306,8 +306,8 @@
                     <th>
                       <span class="head">Power</span>
                     </th>
-                    <th>
-                      <span class="head">Skill</span>
+                    <th colspan="2">
+                      <span class="head">Precrafts</span>
                     </th>
                   </tr>
                   <tr class="data-info">
@@ -327,9 +327,12 @@
                     <td>
                     </td>
                     <td>
-                      <select2 placeholder="Choose skill"
-                        v-model="items.filters.skill"
-                        :options="$root.lists.skill"/>
+                      <input v-model="items.filters.pre.name" type="search" placeholder="Type in name" class="name"/>
+                    </td>
+                    <td>
+                      <select2 placeholder="Choose quality"
+                        v-model="items.filters.pre.q"
+                        :options="$root.lists.quality"/>
                     </td>
                   </tr>
                   <tr class="data-info">
@@ -339,14 +342,11 @@
                     <th>
                       <span class="head">Rarity</span>
                     </th>
-                    <th>
-                      <span class="head">XP</span>
+                    <th colspan="2">
+                      <span class="head">Skill</span>
                     </th>
-                    <th>
-                      <span class="head">Price</span>
-                    </th>
-                    <th>
-                      <span class="head">Precrafts</span>
+                    <th colspan="2">
+                      <span class="head"></span>
                     </th>
                   </tr>
                   <tr class="data-info">
@@ -360,41 +360,30 @@
                         v-model="items.filters.rarity"
                         :options="$root.lists.rarity"/>
                     </td>
-                    <td>
+                    <td colspan="2">
+                      <select2 placeholder="Choose skill"
+                        v-model="items.filters.skill"
+                        :options="$root.lists.skill"/>
                     </td>
-                    <td>
-                    </td>
-                    <td>
-                      <div style="width: 50% !important; display: inline-block;">
-                        <input v-model="items.filters.pre.name" type="search" placeholder="Type in name" class="name"/>
-                      </div>
-                      <div style="width: 45% !important; display: inline-block;">
-                        <select2 placeholder="Choose quality"
-                          v-model="items.filters.pre.q"
-                          :options="$root.lists.quality"/>
-                      </div>
+                    <td colspan="2">
                     </td>
                   </tr>
                 </thead>
                 <template v-for="( object, name ) in visible.items">
                   <tr class="split">
+                    <th colspan="2"/>
                     <th/>
-                    <th/>
-                    <th/>
-                    <th/>
-                    <th/>
-                    <th/>
+                    <th colspan="2"/>
+                    <th colspan="2"/>
                   </tr>
                   <item :object="object"/>
                 </template>
                 <tfoot>
                   <tr class="split">
+                    <th colspan="2"/>
                     <th/>
-                    <th/>
-                    <th/>
-                    <th/>
-                    <th/>
-                    <th/>
+                    <th colspan="2"/>
+                    <th colspan="2"/>
                   </tr>
                 </tfoot>
               </table>
@@ -742,12 +731,17 @@
         <td>
           <power :power="{ value: object.power }"/>
         </td>
-        <td>
-          <template v-if="object.skill">
-            <span class="float-left icon quality"
-              :class="icon( object.skill.q )" />
-            <skill :skill="object.skill" />
-          </template>
+        <td class="left" rowspan="2" colspan="2">
+          <div
+            v-for="pi in object.pre"
+            v-if="object.pre">
+            <span>{{pi.c}}&nbsp;x&nbsp;</span>
+            <span class="icon quality"
+              :class="[ icon( pi.q ) ]" />
+            <span class="icon item"
+              :class="[ icon( pi.item ) ]" />
+            <span>{{pi.item}}</span>
+          </div>
         </td>
       </tr>
       <tr class="data-info">
@@ -757,21 +751,11 @@
         <td>
           <span>{{object.rarity}}</span>
         </td>
-        <td>
-          <span>{{object.xp.intString()}}</span>
-        </td>
-        <td>
-          <span>{{object.price.intString()}}</span>
-        </td>
-        <td class="left">
-          <template
-            v-for="pi in object.pre"
-            v-if="object.pre">
-            <span class="icon quality"
-              :class="[ icon( pi.q ) ]" />
-            <span class="icon item"
-              :class="[ icon( pi.item ) ]" />
-            <span>{{pi.q}} {{pi.item}}</span>
+        <td colspan="2">
+          <template v-if="object.skill">
+            <span class="float-left icon quality"
+              :class="icon( object.skill.q )" />
+            <skill :skill="object.skill" />
           </template>
         </td>
       </tr>
