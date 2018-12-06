@@ -2501,7 +2501,7 @@
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Revive II", "q": "Legendary", "m": false },
-      "pre": [ { "item": "Golden Thread", "q": "None", "c": 2 }, { "item": "Silver Steel", "q": "None", "c": 3 } ]
+      "pre": [ { "item": "Golden Thread", "q": "", "c": 2 }, { "item": "Silver Steel", "q": "", "c": 3 } ]
     },
     "Chaos Armor": {
       "type": "Armor",
@@ -3397,7 +3397,7 @@
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Speed Runner I", "q": "Legendary", "m": false },
-      "pre": [ { "item": "Burning Ember", "q": "None", "c": 3 }, { "item": "Iron Wood", "q": "None", "c": 3 } ]
+      "pre": [ { "item": "Burning Ember", "q": "", "c": 3 }, { "item": "Iron Wood", "q": "", "c": 3 } ]
     },
     "Double String": {
       "type": "Bows",
@@ -7683,7 +7683,7 @@
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Resourceful III", "q": "Mythical", "m": false },
-      "pre": [ { "item": "Jade Amulet", "q": "Legendary", "c": 2 }, { "item": "Ancient Essence", "q": "None", "c": 3 } ]
+      "pre": [ { "item": "Jade Amulet", "q": "Legendary", "c": 2 }, { "item": "Ancient Essence", "q": "", "c": 3 } ]
     },
     "Champion's Medal": {
       "type": "Pendants",
@@ -10083,7 +10083,7 @@
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Energetic II", "q": "Mythical", "m": false },
-      "pre": [ { "item": "Aragonite", "q": "None", "c": 2 }, { "item": "Ascalon", "q": "Flawless", "c": 2 } ]
+      "pre": [ { "item": "Aragonite", "q": "", "c": 2 }, { "item": "Ascalon", "q": "Flawless", "c": 2 } ]
     },
     "Shielding Seal": {
       "type": "Spells",
@@ -10209,7 +10209,7 @@
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Leader I", "q": "Flawless", "m": false },
-      "pre": [ { "item": "Royal Bone", "q": "None", "c": 3 }, { "item": "Moon Shard", "q": "None", "c": 2 } ]
+      "pre": [ { "item": "Royal Bone", "q": "", "c": 3 }, { "item": "Moon Shard", "q": "", "c": 2 } ]
     },
     "Invisibility Scroll": {
       "type": "Spells",
@@ -10312,7 +10312,7 @@
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Commander II", "q": "Epic", "m": false },
-      "pre": [ { "item": "Imperial Edict", "q": "Flawless", "c": 2 }, { "item": "Golden Thread", "q": "None", "c": 2 } ]
+      "pre": [ { "item": "Imperial Edict", "q": "Flawless", "c": 2 }, { "item": "Golden Thread", "q": "", "c": 2 } ]
     },
     "Power Seal": {
       "type": "Spells",
