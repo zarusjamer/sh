@@ -125,7 +125,12 @@
       "52": 4225,
       "53": 4390,
       "54": 4555,
-      "55": 4725
+      "55": 4725,
+      "56": 4900,
+      "57": 5075,
+      "58": 5255,
+      "59": 5440,
+      "60": 5625
     }
   },
   "quests": {
@@ -2490,12 +2495,13 @@
       "type": "Armor",
       "name": "Honor Mail",
       "lv": 24,
-      "xp": 0,
+      "xp": 159834,
       "power": 1100,
       "price": 450000,
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
-      "skill": { "name": "Revive II", "q": "Legendary", "m": false }
+      "skill": { "name": "Revive II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Golden Thread", "q": "None", "c": 2 }, { "item": "Silver Steel", "q": "None", "c": 3 } ]
     },
     "Chaos Armor": {
       "type": "Armor",
@@ -3385,12 +3391,13 @@
       "type": "Bows",
       "name": "Sunsetter",
       "lv": 6,
-      "xp": 0,
+      "xp": 960,
       "power": 240,
       "price": 3540,
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
-      "skill": { "name": "Speed Runner I", "q": "Legendary", "m": false }
+      "skill": { "name": "Speed Runner I", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Burning Ember", "q": "None", "c": 3 }, { "item": "Iron Wood", "q": "None", "c": 3 } ]
     },
     "Double String": {
       "type": "Bows",
@@ -7676,7 +7683,7 @@
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Resourceful III", "q": "Mythical", "m": false },
-      "pre": [ { "item": "Jade Amulet", "q": "Legendary", "c": 2 } ]
+      "pre": [ { "item": "Jade Amulet", "q": "Legendary", "c": 2 }, { "item": "Ancient Essence", "q": "None", "c": 3 } ]
     },
     "Champion's Medal": {
       "type": "Pendants",
@@ -10072,10 +10079,11 @@
       "lv": 54,
       "xp": 0,
       "power": 3375,
-      "price": 0,
+      "price": 329000000,
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
-      "skill": { "name": "Energetic II", "q": "Mythical", "m": false }
+      "skill": { "name": "Energetic II", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Aragonite", "q": "None", "c": 2 }, { "item": "Ascalon", "q": "Flawless", "c": 2 } ]
     },
     "Shielding Seal": {
       "type": "Spells",
@@ -10195,12 +10203,13 @@
       "type": "Spells",
       "name": "Imperial Edict",
       "lv": 17,
-      "xp": 0,
+      "xp": 18000,
       "power": 600,
       "price": 56000,
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
-      "skill": { "name": "Leader I", "q": "Flawless", "m": false }
+      "skill": { "name": "Leader I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Royal Bone", "q": "None", "c": 3 }, { "item": "Moon Shard", "q": "None", "c": 2 } ]
     },
     "Invisibility Scroll": {
       "type": "Spells",
@@ -10297,13 +10306,13 @@
       "type": "Spells",
       "name": "Tiger Seal",
       "lv": 29,
-      "xp": 0,
+      "xp": 205490,
       "power": 1220,
       "price": 84000,
       "rarity": "Exclusive",
       "origin": "Heroic Package #3",
       "skill": { "name": "Commander II", "q": "Epic", "m": false },
-      "pre": [ { "item": "Imperial Edict", "q": "Flawless", "c": 2 } ]
+      "pre": [ { "item": "Imperial Edict", "q": "Flawless", "c": 2 }, { "item": "Golden Thread", "q": "None", "c": 2 } ]
     },
     "Power Seal": {
       "type": "Spells",
@@ -11630,7 +11639,7 @@
       "origin": "Hunter's Lodge",
       "tier": 1,
       "lv": 1,
-      "cap": 25,
+      "cap": 30,
       "b": false,
       "power": {
         "base": 100,
@@ -11682,7 +11691,7 @@
       "origin": "Training Hall",
       "tier": 1,
       "lv": 1,
-      "cap": 30,
+      "cap": 35,
       "b": false,
       "power": {
         "base": 50,
@@ -11734,7 +11743,7 @@
       "origin": "Temple",
       "tier": 1,
       "lv": 1,
-      "cap": 35,
+      "cap": 40,
       "b": false,
       "power": {
         "base": 100,
@@ -12098,7 +12107,7 @@
       "origin": "Heroic Package #3",
       "tier": 6,
       "lv": 15,
-      "cap": 55,
+      "cap": 60,
       "b": false,
       "power": {
         "base": 5000,
@@ -12150,7 +12159,7 @@
       "origin": "Thief's Hideout",
       "tier": 1,
       "lv": 1,
-      "cap": 30,
+      "cap": 35,
       "b": false,
       "power": {
         "base": 50,
@@ -12566,7 +12575,7 @@
       "origin": "Heroic Package #2",
       "tier": 6,
       "lv": 1,
-      "cap": 55,
+      "cap": 60,
       "b": false,
       "power": {
         "base": 5000,
@@ -12618,7 +12627,7 @@
       "origin": "School of Magic",
       "tier": 1,
       "lv": 1,
-      "cap": 25,
+      "cap": 30,
       "b": false,
       "power": {
         "base": 50,
@@ -12670,7 +12679,7 @@
       "origin": "Temple",
       "tier": 1,
       "lv": 1,
-      "cap": 35,
+      "cap": 40,
       "b": false,
       "power": {
         "base": 50,
@@ -13034,7 +13043,7 @@
       "origin": "Heroic Package #1",
       "tier": 6,
       "lv": 1,
-      "cap": 55,
+      "cap": 60,
       "b": false,
       "power": {
         "base": 5000,
