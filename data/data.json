@@ -2526,6 +2526,18 @@
       "origin": "",
       "pre": [ { "item": "Longmail", "q": "Good", "c": 2 } ]
     },
+    "Starfrost Platemail": {
+      "type": "Armor",
+      "name": "Starfrost Platemail",
+      "lv": 29,
+      "xp": 234860,
+      "power": 1250,
+      "price": 597500,
+      "rarity": "Exclusive",
+      "origin": "Brr-rilliant Star Package 2018",
+      "skill": { "name": "Resourceful II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Frozen Core", "q": "None", "c": 9 }, { "item": "Arcane Guard", "q": "Flawless", "c": 3 } ]
+    },
     "Valkyrie Armor": {
       "type": "Armor",
       "name": "Valkyrie Armor",
@@ -3028,6 +3040,18 @@
       "skill": { "name": "Bros-in-arms II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Retribution", "q": "Flawless", "c": 1 } ]
     },
+    "Starfrost Divider": {
+      "type": "Axes",
+      "name": "Starfrost Divider",
+      "lv": 54,
+      "xp": 0,
+      "power": 3380,
+      "price": 33000000,
+      "rarity": "Exclusive",
+      "origin": "Frostforged Fantasy Package 2018",
+      "skill": { "name": "Detect Secrets", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Frozen Core", "q": "None", "c": 35 }, { "item": "Frostfire Crystal", "q": "None", "c": 5 } ]
+    },
     "Heavy Boots": {
       "type": "Boots",
       "name": "Heavy Boots",
@@ -3356,6 +3380,18 @@
       "origin": "Primal Chest",
       "skill": { "name": "Detect Secrets", "q": "Mythical", "m": false },
       "pre": [ { "item": "Royal Greaves", "q": "Great", "c": 1 } ]
+    },
+    "Starfrost Skates": {
+      "type": "Boots",
+      "name": "Starfrost Skates",
+      "lv": 54,
+      "xp": 0,
+      "power": 3325,
+      "price": 31000000,
+      "rarity": "Exclusive",
+      "origin": "Brr-rilliant Star Package 2018",
+      "skill": { "name": "Magic Find", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Frozen Core", "q": "None", "c": 35 }, { "item": "Frostfire Crystal", "q": "None", "c": 5 } ]
     },
     "Short Bow": {
       "type": "Bows",
@@ -4665,6 +4701,18 @@
       "price": 110000,
       "rarity": "Common",
       "origin": ""
+    },
+    "Starfrost Impaler": {
+      "type": "Daggers",
+      "name": "Starfrost Impaler",
+      "lv": 33,
+      "xp": 0,
+      "power": 1730,
+      "price": 656800,
+      "rarity": "Exclusive",
+      "origin": "Frostforged Fantasy Package 2018",
+      "skill": { "name": "Support I", "q": "Epic", "m": false },
+      "pre": [ { "item": "Frozen Core", "q": "None", "c": 9 }, { "item": "Switchblade", "q": "Flawless", "c": 3 } ]
     },
     "Dark Hand": {
       "type": "Daggers",
@@ -7507,6 +7555,18 @@
       "rarity": "Common",
       "origin": ""
     },
+    "Starfrost Pendant": {
+      "type": "Pendants",
+      "name": "Starfrost Pendant",
+      "lv": 19,
+      "xp": 0,
+      "power": 775,
+      "price": 40250,
+      "rarity": "Exclusive",
+      "origin": "Frostforged Fantasy Package 2018",
+      "skill": { "name": "Wise III", "q": "Epic", "m": false },
+      "pre": [ { "item": "Frozen Core", "q": "None", "c": 2 }, { "item": "Scarlet Drop", "q": "Epic", "c": 3 } ]
+    },
     "Jade Amulet": {
       "type": "Pendants",
       "name": "Jade Amulet",
@@ -8634,6 +8694,18 @@
       "price": 7450,
       "rarity": "Common",
       "origin": ""
+    },
+    "Starfrost Bloom": {
+      "type": "Remedies",
+      "name": "Starfrost Bloom",
+      "lv": 16,
+      "xp": 0,
+      "power": 530,
+      "price": 16500,
+      "rarity": "Exclusive",
+      "origin": "Brr-rilliant Star Package 2018",
+      "skill": { "name": "Energetic I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Frozen Core", "q": "None", "c": 2 }, { "item": "Elderflower", "q": "Flawless", "c": 3 } ]
     },
     "Anti-Venom": {
       "type": "Remedies",
