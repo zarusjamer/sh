@@ -748,6 +748,12 @@ span.icon.item.coldsteel {
 span.icon.item.masamune {
   background-image: url( "../images/items/swords/masamune.png" );
 }
+span.icon.item.souleater {
+  background-image: url( "../images/items/swords/souleater.png" );
+}
+span.icon.item.relicblade {
+  background-image: url( "../images/items/swords/relicblade.png" );
+}
 span.icon.item.sawblade {
   background-image: url( "../images/items/swords/sawblade.png" );
 }
@@ -852,6 +858,9 @@ span.icon.item.shadowripper {
 }
 span.icon.item.wingblade {
   background-image: url( "../images/items/daggers/wingblade.png" );
+}
+span.icon.item.starfrostimpaler {
+  background-image: url( "../images/items/daggers/starfrostimpaler.png" );
 }
 span.icon.item.darkhand {
   background-image: url( "../images/items/daggers/darkhand.png" );
@@ -984,6 +993,9 @@ span.icon.item.umbralaxe {
 }
 span.icon.item.forsetisaxe {
   background-image: url( "../images/items/axes/forsetisaxe.png" );
+}
+span.icon.item.starfrostdivider {
+  background-image: url( "../images/items/axes/starfrostdivider.png" );
 }
 span.icon.item.woodenspear {
   background-image: url( "../images/items/spears/woodenspear.png" );
@@ -1540,6 +1552,9 @@ span.icon.item.chaosarmor {
 span.icon.item.shiningarmor {
   background-image: url( "../images/items/armor/shiningarmor.png" );
 }
+span.icon.item.starfrostplatemail {
+  background-image: url( "../images/items/armor/starfrostplatemail.png" );
+}
 span.icon.item.valkyriearmor {
   background-image: url( "../images/items/armor/valkyriearmor.png" );
 }
@@ -1959,6 +1974,9 @@ span.icon.item.titansfeet {
 }
 span.icon.item.wildlingboots {
   background-image: url( "../images/items/boots/wildlingboots.png" );
+}
+span.icon.item.starfrostskates {
+  background-image: url( "../images/items/boots/starfrostskates.png" );
 }
 span.icon.item.tunic {
   background-image: url( "../images/items/clothes/tunic.png" );
@@ -2497,6 +2515,9 @@ span.icon.item.barktea {
 span.icon.item.fairysprinkle {
   background-image: url( "../images/items/remedies/fairysprinkle.png" );
 }
+span.icon.item.starfrostbloom {
+  background-image: url( "../images/items/remedies/starfrostbloom.png" );
+}
 span.icon.item.antivenom {
   background-image: url( "../images/items/remedies/antivenom.png" );
 }
@@ -3012,6 +3033,9 @@ span.icon.item.azurebeads {
 }
 span.icon.item.timelesslocket {
   background-image: url( "../images/items/pendants/timelesslocket.png" );
+}
+span.icon.item.starfrostpendant {
+  background-image: url( "../images/items/pendants/starfrostpendant.png" );
 }
 span.icon.item.jadeamulet {
   background-image: url( "../images/items/pendants/jadeamulet.png" );

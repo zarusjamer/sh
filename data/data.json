@@ -11154,6 +11154,17 @@
       "skill": { "name": "Berserker", "q": "Legendary", "m": false },
       "pre": [ { "item": "Talisman", "q": "Great", "c": 2 } ]
     },
+    "Relic Blade": {
+      "type": "Swords",
+      "name": "???",
+      "lv": 30,
+      "xp": 100,
+      "power": 1150,
+      "price": 100,
+      "rarity": "Rare",
+      "origin": "Golden Chest",
+      "pre": [ { "item": "Rapier", "q": "Common", "c": 5 }, { "item": "Broadsword", "q": "Common", "c": 5 } ]
+    },
     "Sawblade": {
       "type": "Swords",
       "name": "Sawblade",
