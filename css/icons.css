@@ -751,7 +751,7 @@ span.icon.item.masamune {
 span.icon.item.souleater {
   background-image: url( "../images/items/swords/souleater.png" );
 }
-span.icon.item.??? {
+span.icon.item.relicblade {
   background-image: url( "../images/items/swords/relicblade.png" );
 }
 span.icon.item.sawblade {
@@ -3234,6 +3234,27 @@ span.icon.item.royaluniform {
 }
 span.icon.item.weddingring {
   background-image: url( "../images/items/rings/weddingring.png" );
+}
+span.icon.item.scarabshield {
+  background-image: url( "../images/items/shields/scarabshield.png" );
+}
+span.icon.item.snakeheaddress {
+  background-image: url( "../images/items/hats/snakeheaddress.png" );
+}
+span.icon.item.pharaohflail {
+  background-image: url( "../images/items/maces/pharaohflail.png" );
+}
+span.icon.item.pharaohcrook {
+  background-image: url( "../images/items/staves/pharaohcrook.png" );
+}
+span.icon.item.ankhamulet {
+  background-image: url( "../images/items/pendants/ankhamulet.png" );
+}
+span.icon.item.viperheaddress {
+  background-image: url( "../images/items/helmets/viperheaddress.png" );
+}
+span.icon.item.relicarquebus {
+  background-image: url( "../images/items/guns/relicarquebus.png" );
 }
 
 span.icon.break {

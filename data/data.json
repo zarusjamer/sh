@@ -5746,6 +5746,17 @@
       "rarity": "Common",
       "origin": ""
     },
+    "Relic Arquebus": {
+      "type": "Guns",
+      "name": "Relic Arquebus",
+      "lv": 30,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Rare",
+      "origin": "Golden Chest",
+      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+    },
     "Heart Shooter": {
       "type": "Guns",
       "name": "Heart Shooter",
@@ -6191,6 +6202,18 @@
       "origin": "Magic Chest",
       "skill": { "name": "Thunderbolt", "q": "Legendary", "m": false },
       "pre": [ { "item": "Golden Crown", "q": "Flawless", "c": 1 } ]
+    },
+    "Snake Headdress": {
+      "type": "Hats",
+      "name": "Snake Headdress",
+      "lv": 37,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Pharoah's Package 2019",
+      "skill": { "name": "Fastidious II", "q": "Epic", "m": false },
+      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
     },
     "Jorou's Crown": {
       "type": "Hats",
@@ -6673,6 +6696,18 @@
       "origin": "Primal Chest",
       "skill": { "name": "Stoneskin", "q": "Mythical", "m": false },
       "pre": [ { "item": "Phoenix Helmet", "q": "Flawless", "c": 1 } ]
+    },
+    "Viper Headdress": {
+      "type": "Pendants",
+      "name": "Viper Headdress",
+      "lv": 54,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Cryptic Package 2019",
+      "skill": { "name": "Support III", "q": "Mythical", "m": false },
+      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
     },
     "Jagged Crown": {
       "type": "Helmets",
@@ -7429,6 +7464,18 @@
       "skill": { "name": "Amazon II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Destroyer", "q": "Flawless", "c": 2 } ]
     },
+    "Pharaoh Flail": {
+      "type": "Maces",
+      "name": "Pharaoh Flail",
+      "lv": 55,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Pharoah's Package 2019",
+      "skill": { "name": "Magic Finds", "q": "Mythical", "m": false },
+      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+    },
     "Shiny Pendant": {
       "type": "Pendants",
       "name": "Shiny Pendant",
@@ -7655,6 +7702,18 @@
       "rarity": "Exclusive",
       "origin": "Love Package",
       "pre": [ { "item": "Obelisk Charm", "q": "Great", "c": 1 } ]
+    },
+    "Ankh Amulet": {
+      "type": "Pendants",
+      "name": "Ankh Amulet",
+      "lv": 33,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Cryptic Package 2019",
+      "skill": { "name": "Revive II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
     },
     "Cat's Eye": {
       "type": "Pendants",
@@ -9488,6 +9547,18 @@
       "skill": { "name": "Fireball", "q": "Flawless", "m": false },
       "pre": [ { "item": "Heater Shield", "q": "Common", "c": 2 } ]
     },
+    "Scarab Shield": {
+      "type": "Shields",
+      "name": "Scarab Shield",
+      "lv": 19,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Pharoah's Package 2019",
+      "skill": { "name": "Aura of Protection", "q": "Epic", "m": false },
+      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+    },
     "Venomous Buckler": {
       "type": "Shields",
       "name": "Venomous Buckler",
@@ -10707,6 +10778,18 @@
       "origin": "",
       "pre": [ { "item": "Healing Rod", "q": "Good", "c": 1 } ]
     },
+    "Pharaoh Crook": {
+      "type": "Staves",
+      "name": "Pharaoh Crook",
+      "lv": 16,
+      "xp": 0,
+      "power": 0,
+      "price": 0,
+      "rarity": "Exclusive",
+      "origin": "Cryptic Package 2019",
+      "skill": { "name": "Leader I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+    },
     "Luna Rod": {
       "type": "Staves",
       "name": "Luna Rod",
@@ -11156,13 +11239,14 @@
     },
     "Relic Blade": {
       "type": "Swords",
-      "name": "???",
+      "name": "Relic Blade",
       "lv": 30,
       "xp": 100,
       "power": 1150,
       "price": 100,
       "rarity": "Rare",
       "origin": "Golden Chest",
+      "skill": { "name": "Energetic III", "q": "Epic", "m": false },
       "pre": [ { "item": "Rapier", "q": "Common", "c": 5 }, { "item": "Broadsword", "q": "Common", "c": 5 } ]
     },
     "Sawblade": {
