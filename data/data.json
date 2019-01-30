@@ -7473,7 +7473,7 @@
       "price": 0,
       "rarity": "Exclusive",
       "origin": "Pharoah's Package 2019",
-      "skill": { "name": "Magic Finds", "q": "Mythical", "m": false },
+      "skill": { "name": "Magic Find", "q": "Mythical", "m": false },
       "pre": [ { "item": "None", "q": "None", "c": 1 } ]
     },
     "Shiny Pendant": {
