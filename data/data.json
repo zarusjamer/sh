@@ -6208,7 +6208,7 @@
       "name": "Snake Headdress",
       "lv": 37,
       "xp": 0,
-      "power": 0,
+      "power": 1800,
       "price": 0,
       "rarity": "Exclusive",
       "origin": "Pharoah's Package 2019",
@@ -6702,12 +6702,12 @@
       "name": "Viper Headdress",
       "lv": 54,
       "xp": 0,
-      "power": 0,
-      "price": 0,
+      "power": 3320,
+      "price": 31100000,
       "rarity": "Exclusive",
       "origin": "Cryptic Package 2019",
       "skill": { "name": "Support III", "q": "Mythical", "m": false },
-      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+      "pre": [ { "item": "Royal Bone", "q": "None", "c": 36 }, { "item": "Ancient Essence", "q": "None", "c": 7 } ]
     },
     "Jagged Crown": {
       "type": "Helmets",
@@ -7470,11 +7470,11 @@
       "lv": 55,
       "xp": 0,
       "power": 0,
-      "price": 0,
+      "price": 35000000,
       "rarity": "Exclusive",
       "origin": "Pharoah's Package 2019",
       "skill": { "name": "Magic Find", "q": "Mythical", "m": false },
-      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+      "pre": [ { "item": "Royal Bone", "q": "None", "c": 36 }, { "item": "Ancient Essence", "q": "None", "c": 7 } ]
     },
     "Shiny Pendant": {
       "type": "Pendants",
@@ -7708,12 +7708,12 @@
       "name": "Ankh Amulet",
       "lv": 33,
       "xp": 0,
-      "power": 0,
-      "price": 0,
+      "power": 1435,
+      "price": 646000,
       "rarity": "Exclusive",
       "origin": "Cryptic Package 2019",
       "skill": { "name": "Revive II", "q": "Legendary", "m": false },
-      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+      "pre": [ { "item": "Royal Bone", "q": "None", "c": 10 }, { "item": "Obelisk Charm", "q": "Flawless", "c": 3 } ]
     },
     "Cat's Eye": {
       "type": "Pendants",
@@ -9553,11 +9553,11 @@
       "lv": 19,
       "xp": 0,
       "power": 0,
-      "price": 0,
+      "price": 26000,
       "rarity": "Exclusive",
       "origin": "Pharoah's Package 2019",
       "skill": { "name": "Aura of Protection", "q": "Epic", "m": false },
-      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+      "pre": [ { "item": "Royal Bone", "q": "None", "c": 3 }, { "item": "Heater Shield", "q": "Epic", "c": 4 } ]
     },
     "Venomous Buckler": {
       "type": "Shields",
@@ -10783,12 +10783,12 @@
       "name": "Pharaoh Crook",
       "lv": 16,
       "xp": 0,
-      "power": 0,
-      "price": 0,
+      "power": 650,
+      "price": 34200,
       "rarity": "Exclusive",
       "origin": "Cryptic Package 2019",
       "skill": { "name": "Leader I", "q": "Flawless", "m": false },
-      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+      "pre": [ { "item": "Royal Bone", "q": "None", "c": 3 }, { "item": "Muted Caster", "q": "Flawless", "c": 4 } ]
     },
     "Luna Rod": {
       "type": "Staves",
@@ -11241,9 +11241,9 @@
       "type": "Swords",
       "name": "Relic Blade",
       "lv": 30,
-      "xp": 100,
+      "xp": 300000,
       "power": 1150,
-      "price": 100,
+      "price": 500000,
       "rarity": "Rare",
       "origin": "Golden Chest",
       "skill": { "name": "Energetic III", "q": "Epic", "m": false },
