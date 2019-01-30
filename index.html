@@ -735,12 +735,12 @@
           <div
             v-for="pi in object.pre"
             v-if="object.pre">
-            <span>{{pi.c}}&nbsp;x&nbsp;</span>
             <span class="icon quality"
               :class="[ icon( pi.q ) ]" />
             <span class="icon item"
               :class="[ icon( pi.item ) ]" />
             <span>{{pi.item}}</span>
+            <span>x&nbsp;{{pi.c}}</span>
           </div>
         </td>
         <td class="left" rowspan="2">
