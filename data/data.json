@@ -6209,11 +6209,11 @@
       "lv": 37,
       "xp": 0,
       "power": 1800,
-      "price": 0,
+      "price": 1564800,
       "rarity": "Exclusive",
       "origin": "Pharoah's Package 2019",
       "skill": { "name": "Fastidious II", "q": "Epic", "m": false },
-      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+      "pre": [ { "item": "Royal Bone", "q": "None", "c": 7 }, { "item": "Silver Crown", "q": "Flawless", "c": 3 } ]
     },
     "Jorou's Crown": {
       "type": "Hats",
@@ -6698,7 +6698,7 @@
       "pre": [ { "item": "Phoenix Helmet", "q": "Flawless", "c": 1 } ]
     },
     "Viper Headdress": {
-      "type": "Pendants",
+      "type": "Helmets",
       "name": "Viper Headdress",
       "lv": 54,
       "xp": 0,
@@ -9552,7 +9552,7 @@
       "name": "Scarab Shield",
       "lv": 19,
       "xp": 0,
-      "power": 0,
+      "power": 685,
       "price": 26000,
       "rarity": "Exclusive",
       "origin": "Pharoah's Package 2019",
