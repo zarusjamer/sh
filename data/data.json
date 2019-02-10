@@ -5755,6 +5755,7 @@
       "price": 500000,
       "rarity": "Exclusive",
       "origin": "Relic Event #2",
+      "skill": { "name": "Treasure Hunter III", "q": "Legendary", "m": false },
       "pre": [ { "item": "Iron Wood", "q": "None", "c": 5 }, { "item": "Spiked Carapace", "q": "None", "c": 5 } ]
     },
     "Heart Shooter": {
