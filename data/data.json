@@ -5750,12 +5750,12 @@
       "type": "Guns",
       "name": "Relic Arquebus",
       "lv": 30,
-      "xp": 0,
-      "power": 0,
-      "price": 0,
-      "rarity": "Rare",
-      "origin": "Golden Chest",
-      "pre": [ { "item": "None", "q": "None", "c": 1 } ]
+      "xp": 300000,
+      "power": 1250,
+      "price": 500000,
+      "rarity": "Exclusive",
+      "origin": "Relic Event #2",
+      "pre": [ { "item": "Iron Wood", "q": "None", "c": 5 }, { "item": "Spiked Carapace", "q": "None", "c": 5 } ]
     },
     "Heart Shooter": {
       "type": "Guns",
