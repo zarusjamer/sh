@@ -759,8 +759,9 @@ Vue.component( 'select2', {
         }
       }
       if ( data.data ) {
-        let found = data.data.find( function( i, v ) {
-          return params.term.test( v );
+        let found = $.each( data.data, function( i, v ) {
+          if ( params.term.test( v ) ) {
+            return true;
         } );
         if ( found.length > 0 ) {
           return data;
