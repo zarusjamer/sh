@@ -760,8 +760,7 @@ Vue.component( 'select2', {
       }
       if ( data.data ) {
         let found = $.each( data.data, function( i, v ) {
-          if ( params.term.test( v ) ) {
-            return true;
+          return params.term.test( v );
         } );
         if ( found.length > 0 ) {
           return data;
