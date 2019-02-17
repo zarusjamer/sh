@@ -766,9 +766,13 @@ Vue.component( 'select2', {
           return data;
         }
       }
+      /*
       if ( typeof data == 'string' ) {
-        return params.term.test( data );
+        if ( params.term.test( data ) ) {
+          return data;
+        }
       }
+      */
       return false;
     };
     return {

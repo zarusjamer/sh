@@ -265,7 +265,7 @@ $( function() {
             test = [];
           if ( vm.items.filters.name ) {
             test.push( function( o ) {
-              return o.name.toUpperCase().includes( vm.items.filters.name.toUpperCase() );
+              return new RegExp( '\\b' + vm.items.filters.name.replace( ' ', '\\b' ), 'i' ).test( o.name );
             } );
           }
           if ( vm.items.filters.type ) {
