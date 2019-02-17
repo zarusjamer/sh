@@ -738,7 +738,7 @@ Vue.component( 'select2', {
         return data;
       }
       if ( typeof params.term == 'string' ) {
-        params.terms = new RegExp( '\b' + params.term.replace( ' ', '\b' ) );
+        params.term = new RegExp( '\b' + params.term.replace( ' ', '\b' ), 'i' );
       }
       if ( data.children && data.children.length > 0 ) {
         var match = $.extend( true, {}, data );
@@ -753,12 +753,12 @@ Vue.component( 'select2', {
           return match;
         }
       }
-      if ( params.terms.test( data.text ) ) {
+      if ( params.term.test( data.text ) ) {
         return data;
       }
       if ( data.data ) {
         let found = data.data.find( function( i, v ) {
-          return params.terms.test( v );
+          return params.term.test( v );
         } );
         if ( found.length > 0 ) {
           return data;
