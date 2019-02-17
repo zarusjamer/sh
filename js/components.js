@@ -738,7 +738,7 @@ Vue.component( 'select2', {
         return data;
       }
       if ( typeof params.term == 'string' ) {
-        params.term = new RegExp( '\\b' + params.term.replace( ' ', '\\b' ), 'i' );
+        params.term = new RegExp( '\b' + params.term.replace( ' ', '\b' ), 'i' );
       }
       if ( data.children && data.children.length > 0 ) {
         var match = $.extend( true, {}, data );
@@ -753,10 +753,8 @@ Vue.component( 'select2', {
           return match;
         }
       }
-      if ( data.text ) {
-        if ( params.term.test( data.text ) ) {
-          return data;
-        }
+      if ( params.term.test( data.text ) ) {
+        return data;
       }
       if ( data.data ) {
         let found = data.data.find( function( i, v ) {
@@ -765,9 +763,6 @@ Vue.component( 'select2', {
         if ( found.length > 0 ) {
           return data;
         }
-      }
-      if ( typeof data == 'string' ) {
-        return params.term.test( data );
       }
       return false;
     };
