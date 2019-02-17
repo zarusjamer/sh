@@ -532,11 +532,11 @@
                     <th colspan="2"/>
                   </tr>
                   <tr class="data-info">
-                    <th rowspan="2">
+                    <th class="light" rowspan="2">
                       <span class="icon medium quest"
                         :class="[ icon( object.name ) ]"/>
                     </th>
-                    <th>
+                    <th class="light">
                       <div>
                         <span class="head">{{object.name}}</span>
                       </div>
@@ -545,16 +545,16 @@
                       <timer :time="object.time"/>
                     </td>
                     <template v-for="tier in object.tiers">
-                    <th colspan="2">
-                      <span class="head">{{tier.name}}</span>
-                    </th>
+                      <th class="light" colspan="2">
+                        <span class="head">{{tier.name}}</span>
+                      </th>
                     </template>
                   </tr>
                   <tr class="data-info">
                     <td>
                       <span>{{object.origin}}</span>
                     </td>
-                    <th>
+                    <th class="light">
                       <span class="head">Total / Group</span>
                     </th>
                     <template v-for="tier in object.tiers">
@@ -565,7 +565,7 @@
                     </template>
                   </tr>
                   <tr class="data-info">
-                    <th>
+                    <th class="light">
                       <span class="icon item chest"
                         :class="icon( object.chest )"
                         v-if="object.chest"/>
@@ -573,7 +573,7 @@
                     <td>
                       <span v-if="object.chest">{{object.chest}}</span>
                     </td>
-                    <th>
+                    <th class="light">
                       <div>
                         <span class="head">Base / Hero</span>
                       </div>
@@ -588,7 +588,7 @@
                     </template>
                   </tr>
                   <tr class="data-info">
-                    <th>
+                    <th class="light">
                       <span class="icon item bag"
                         :class="icon( object.bag )"
                         v-if="object.bag"/>
@@ -596,7 +596,7 @@
                     <td>
                       <span v-if="object.bag">{{object.bag}}</span>
                     </td>
-                    <th>
+                    <th class="light">
                       <div>
                         <span class="head">Boss / Hero</span>
                       </div>
@@ -611,7 +611,7 @@
                     </template>
                   </tr>
                   <tr class="data-info">
-                    <th>
+                    <th class="light">
                       <span class="icon item"
                         :class="icon( object.item )"
                         v-if="object.item"/>
@@ -619,7 +619,7 @@
                     <td>
                       <span v-if="object.item">{{object.item}}</span>
                     </td>
-                    <th>
+                    <th class="light">
                       <div>
                         <span class="head">Count</span>
                       </div>
