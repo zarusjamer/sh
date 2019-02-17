@@ -58,17 +58,37 @@ table.shopheroes td {
   padding: 1px 2px;
   text-align: center;
 }
-table.shopheroes th {
-  background-color: #E9E9E9;
-}
-table.shopheroes td {
-  background-color: #F6F6F6;
-}
 table.shopheroes tr.split {
   line-height: 3px;
   height: 3px;
   max-height: 3px;
   min-height: 3px;
+}
+table.shopheroes th.heavy {
+  background-color: #A9A9A9;
+  color: #FFFFFF;
+}
+table.shopheroes th.light {
+  background-color: #E9E9E9;
+}
+table.shopheroes td {
+  background-color: #F6F6F6;
+}
+table.shopheroes tr.split th {
+  background-color: #000000;
+}
+table.shopheroes tr.outline.top th {
+  border-top-color: #000000;
+}
+table.shopheroes tr.outline.bottom th {
+  border-bottom-color: #000000;
+}
+/*
+table.shopheroes th {
+  background-color: #E9E9E9;
+}
+table.shopheroes td {
+  background-color: #F6F6F6;
 }
 table.shopheroes tr.split th {
   background-color: #A9A9A9;
@@ -79,6 +99,7 @@ table.shopheroes tr.outline.top th {
 table.shopheroes tr.outline.bottom th {
   border-bottom-color: #A9A9A9;
 }
+*/
 table.shopheroes tr.data-info {
   vertical-align: middle;
 }
