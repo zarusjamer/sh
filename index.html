@@ -158,7 +158,8 @@
                     <td colspan="2"/>
                   </tr>
                 </thead>
-                <template v-for="object in data.teams">
+                <template
+                  v-for="( object, name ) in visible.teams">
                   <tr class="split">
                     <th/>
                     <th colspan="2"/>
