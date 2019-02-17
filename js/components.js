@@ -731,11 +731,14 @@ Vue.component( 'select2', {
   props: [ 'value', 'options', 'loading', 'placeholder', 'minsearch', 'allowclear' ],
   data: function() {
     var matcher = function( params, data ) {
+      if ( data.custom ) {
+        return data;
+      }
       if ( !params.term ) {
         return data;
       }
-      if ( data.custom ) {
-        return data;
+      if ( typeof params.term == 'string' ) {
+        params.terms = new RegExp( '\b' + params.term.replace( ' ', '\b' ) );
       }
       if ( data.children && data.children.length > 0 ) {
         var match = $.extend( true, {}, data );
@@ -750,24 +753,18 @@ Vue.component( 'select2', {
           return match;
         }
       }
-      var terms = params.term.toUpperCase().split( ' ' );
-      var texts = [];
-      if ( data.text ) {
-        texts.push( data.text.toUpperCase() );
+      if ( params.terms.test( data.text ) ) {
+        return data;
       }
       if ( data.data ) {
-        $.each( data.data, function( i, v ) {
-          if ( v ) {
-            texts.push( v.toString().toUpperCase() );
-          }
+        let found = data.data.filter( functiion( i, v ) {
+          return params.terms.test( v );
         } );
-      }
-      for ( var i = terms.length - 1; i >= 0; i-- ) {
-        if ( !texts.some( function( s ) { return s.indexOf( terms[i] ) > -1; } ) ) {
-          return false;
+        if found.length > 0 {
+          return data;
         }
-      };
-      return data;
+      }
+      return false;
     };
     return {
       busy: this.loading,
