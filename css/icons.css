@@ -471,6 +471,9 @@ span.icon.item.hellfireruby {
 span.icon.item.aragonite {
   background-image: url( "../images/items/artifacts/aragonite.png" );
 }
+span.icon.item.empyreandew {
+  background-image: url( "../images/items/artifacts/empyreandew.png" );
+}
 span.icon.type.swords.affinity1 {
   background-image: url( "../images/types/affinity1/swords.png" );
 }
@@ -3255,6 +3258,27 @@ span.icon.item.viperheaddress {
 }
 span.icon.item.relicarquebus {
   background-image: url( "../images/items/guns/relicarquebus.png" );
+}
+span.icon.item.celticslate {
+  background-image: url( "../images/items/spells/celticslate.png" );
+}
+span.icon.item.celticbracer {
+  background-image: url( "../images/items/bracers/celticbracer.png" );
+}
+span.icon.item.celticcoat {
+  background-image: url( "../images/items/clothes/celticcoat.png" );
+}
+span.icon.item.horseshoering {
+  background-image: url( "../images/items/ring/horseshoering.png" );
+}
+span.icon.item.luckyclover {
+  background-image: url( "../images/items/remedies/luckyclover.png" );
+}
+span.icon.item.celticshield {
+  background-image: url( "../images/items/shields/celticshield.png" );
+}
+span.icon.item.risingtempest {
+  background-image: url( "../images/items/spears/risingtempest.png" );
 }
 
 span.icon.break {

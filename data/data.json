@@ -4031,6 +4031,18 @@
       "origin": "",
       "pre": [ { "item": "Sorcerer's Bracers", "q": "Flawless", "c": 1 } ]
     },
+    "Celtic Bracer": {
+      "type": "Bracers",
+      "name": "Celtic Bracer",
+      "lv": 38,
+      "xp": 1160000,
+      "power": 1480,
+      "price": 1800000,
+      "rarity": "Exclusive",
+      "origin": "Clover's Advantage Package 2019",
+      "skill": { "name": "Scavenger II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Yggdrasil Leaf", "q": "", "c": 10 }, { "item": "Mage Bracers", "q": "Flawless", "c": 3 } ]
+    },
     "Nightstalker Gloves": {
       "type": "Bracers",
       "name": "Nightstalker Gloves",
@@ -4488,6 +4500,18 @@
       "origin": "Primal Chest",
       "skill": { "name": "Arch Wizard III", "q": "Mythical", "m": false },
       "pre": [ { "item": "Twilight Robe", "q": "Great", "c": 2 } ]
+    },
+    "Celtic Coat": {
+      "type": "Clothes",
+      "name": "Celtic Coat",
+      "lv": 55,
+      "xp": 8550000,
+      "power": 3000,
+      "price": 42000000,
+      "rarity": "Exclusive",
+      "origin": "Clover's Advantage Package 2019",
+      "skill": { "name": "Revive III", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Yggdrasil Leaf", "q": "", "c": 36 }, { "item": "Shard of Gaia", "q": "", "c": 8 } ]
     },
     "Knife": {
       "type": "Daggers",
@@ -5755,7 +5779,7 @@
       "price": 500000,
       "rarity": "Exclusive",
       "origin": "Relic Event #2",
-      "skill": { "name": "Treasure Hunter III", "q": "Legendary", "m": false },
+      "skill": { "name": "Treasure Hunter III", "q": "Epic", "m": false },
       "pre": [ { "item": "Iron Wood", "q": "None", "c": 5 }, { "item": "Spiked Carapace", "q": "None", "c": 5 } ]
     },
     "Heart Shooter": {
@@ -8916,6 +8940,18 @@
       "skill": { "name": "Healer I", "q": "Legendary", "m": false },
       "pre": [ { "item": "Rejuvenating Tea", "q": "Flawless", "c": 2 } ]
     },
+    "Lucky Clover": {
+      "type": "Remedies",
+      "name": "Lucky Clover",
+      "lv": 38,
+      "xp": 2400000,
+      "power": 1600,
+      "price": 1000000,
+      "rarity": "Exclusive",
+      "origin": "Luck of the Irish Package 2019",
+      "skill": { "name": "Lucky III", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Yggdrasil Leaf", "q": "", "c": 10 }, { "item": "Elven Cure", "q": "Flawless", "c": 3 } ]
+    },
     "Mystic Flower": {
       "type": "Remedies",
       "name": "Mystic Flower",
@@ -9157,6 +9193,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Light Visage", "q": "Common", "c": 1 } ]
+    },
+    "Horseshoe Ring": {
+      "type": "Rings",
+      "name": "Horseshoe Ring",
+      "lv": 20,
+      "xp": 5000,
+      "power": 485,
+      "price": 25000,
+      "rarity": "Exclusive",
+      "origin": "Luck of the Irish Package 2019",
+      "skill": { "name": "Leader I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Yggdrasil Leaf", "q": "", "c": 3 }, { "item": "Luck Band", "q": "Epic", "c": 2 } ]
     },
     "Undead Ring": {
       "type": "Rings",
@@ -9820,6 +9868,18 @@
       "skill": { "name": "Gold Digger II", "q": "Legendary", "m": false },
       "pre": [ { "item": "Hawk Shield", "q": "Flawless", "c": 2 } ]
     },
+    "Celtic Shield": {
+      "type": "Shield",
+      "name": "Celtic Shield",
+      "lv": 55,
+      "xp": 13681000,
+      "power": 3000,
+      "price": 42000000,
+      "rarity": "Exclusive",
+      "origin": "Luck of the Irish Package 2019",
+      "skill": { "name": "Magic Find", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Yggdrasil Leaf", "q": "", "c": 36 }, { "item": "Shard of Gaia", "q": "", "c": 8 } ]
+    },
     "Wooden Spear": {
       "type": "Spears",
       "name": "Wooden Spear",
@@ -10229,6 +10289,19 @@
       "skill": { "name": "Energetic II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Aragonite", "q": "", "c": 2 }, { "item": "Ascalon", "q": "Flawless", "c": 2 } ]
     },
+    "Rising Tempest": {
+      "type": "Spears",
+      "name": "Rising Tempest",
+      "lv": 60,
+      "xp": 0,
+      "power": 4000,
+      "price": 50000000,
+      "rarity": "Exclusive",
+      "origin": "Trade Wars",
+      "skill": { "name": "Speed Runner II", "q": "Common", "m": false },
+      "skill2": { "name": "Treasure Hunter III", "q": "Epic", "m": false },
+      "pre": [ { "item": "Empyrean Dew", "q": "", "c": 100 } ]
+    },
     "Shielding Seal": {
       "type": "Spells",
       "name": "Shielding Seal",
@@ -10377,6 +10450,18 @@
       "origin": "Horribly Cuddly Package 2018",
       "skill": { "name": "Gold Digger I", "q": "Flawless", "m": false },
       "pre": [ { "item": "Shielding Seal", "q": "Great", "c": 3 } ]
+    },
+    "Celtic Slate": {
+      "type": "Spells",
+      "name": "Celtic Slate",
+      "lv": 20,
+      "xp": 9600,
+      "power": 480,
+      "price": 36000,
+      "rarity": "Exclusive",
+      "origin": "Clover's Advantage Package 2019",
+      "skill": { "name": "Speed Runner I", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Yggdrasil Leaf", "q": "", "c": 3 }, { "item": "Poison Scroll", "q": "Epic", "c": 2 } ]
     },
     "Teleportation Scroll": {
       "type": "Spells",
@@ -12758,7 +12843,7 @@
         "Armor": { 
           "item": null,
           "q": null,
-          "types": { "Vests": 0 }
+          "types": { "Vests": 0, "Clothes": 0 }
         },
         "Head": { 
           "item": null,
