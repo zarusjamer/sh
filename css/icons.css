@@ -474,6 +474,9 @@ span.icon.item.aragonite {
 span.icon.item.empyreandew {
   background-image: url( "../images/items/artifacts/empyreandew.png" );
 }
+span.icon.item.infernalhorn {
+  background-image: url( "../images/items/artifacts/infernalhorn.png" );
+}
 span.icon.type.swords.affinity1 {
   background-image: url( "../images/types/affinity1/swords.png" );
 }

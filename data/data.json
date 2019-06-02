@@ -4431,6 +4431,18 @@
       "rarity": "Common",
       "origin": ""
     },
+    "Sakura Kimono": {
+      "type": "Clothes",
+      "name": "Sakura Kimono",
+      "lv": 42,
+      "xp": 3892100,
+      "power": 2080,
+      "price": 8640000,
+      "rarity": "Exclusive",
+      "origin": "Spring Tranquility Package 2019",
+      "skill": { "name": "Scavenger II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Sun Tear", "q": "None", "c": 12 }, { "item": "Apprentice Robes", "q": "Epic", "c": 3 } ]
+    },
     "King's Mantle": {
       "type": "Clothes",
       "name": "King's Mantle",
@@ -4866,6 +4878,18 @@
       "skill": { "name": "Scavenger III", "q": "Mythical", "m": false },
       "pre": [ { "item": "Traitorous Blade", "q": "Great", "c": 2 } ]
     },
+    "Kaiken": {
+      "type": "Daggers",
+      "name": "Kaiken",
+      "lv": 52,
+      "xp": 0,
+      "power": 3300,
+      "price": 27400000,
+      "rarity": "Exclusive",
+      "origin": "Blossom Viewing Package 2019",
+      "skill": { "name": "Magic Find", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Obsidian Coral", "q": "None", "c": 12 }, { "item": "Shard of Gaia", "q": "None", "c": 8 } ]
+    },
     "Mistilteinn": {
       "type": "Daggers",
       "name": "Mistilteinn",
@@ -5092,6 +5116,18 @@
       "rarity": "Exclusive",
       "origin": "Fall Package",
       "pre": [ { "item": "Plumed Loafers", "q": "Great", "c": 2 } ]
+    },
+    "Sakura Boots": {
+      "type": "Footwear",
+      "name": "Sakura Boots",
+      "lv": 34,
+      "xp": 290513,
+      "power": 1520,
+      "price": 590000,
+      "rarity": "Exclusive",
+      "origin": "Blossom Viewing Package 2019",
+      "skill": { "name": "Treasure Hunter II", "q": "Legendary", "m": false },
+      "pre": [ { "item": "Wyvern Wing", "q": "None", "c": 16 }, { "item": "Light Boots", "q": "Epic", "c": 3 } ]
     },
     "Wind Walkers": {
       "type": "Footwear",
@@ -7123,6 +7159,18 @@
       "skill": { "name": "Amazon II", "q": "Mythical", "m": false },
       "pre": [ { "item": "Ygg Flute", "q": "Flawless", "c": 3 } ]
     },
+    "Shamisen": {
+      "type": "Instruments",
+      "name": "Shamisen",
+      "lv": 54,
+      "xp": 14680000,
+      "power": 2800,
+      "price": 33800000,
+      "rarity": "Exclusive",
+      "origin": "Spring Tranquility Package 2019",
+      "skill": { "name": "Support III", "q": "Mythical", "m": false },
+      "pre": [ { "item": "Obsidian Coral", "q": "None", "c": 12 }, { "item": "Shard of Gaia", "q": "None", "c": 8 } ]
+    },
     "Summoning Flute": {
       "type": "Instruments",
       "name": "Summoning Flute",
@@ -7340,6 +7388,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Battle Mace", "q": "Good", "c": 2 } ]
+    },
+    "Relic Mace": {
+      "type": "Guns",
+      "name": "Relic Mace",
+      "lv": 30,
+      "xp": 300000,
+      "power": 1025,
+      "price": 500000,
+      "rarity": "Exclusive",
+      "origin": "Relic Event #3",
+      "skill": { "name": "Support I", "q": "Epic", "m": false },
+      "pre": [ { "item": "Rainbow Dust", "q": "None", "c": 5 }, { "item": "Maul", "q": "Common", "c": 5 } ]
     },
     "Earthquake": {
       "type": "Maces",
@@ -8790,6 +8850,18 @@
       "origin": "Brr-rilliant Star Package 2018",
       "skill": { "name": "Energetic I", "q": "Flawless", "m": false },
       "pre": [ { "item": "Frozen Core", "q": "None", "c": 2 }, { "item": "Elderflower", "q": "Flawless", "c": 3 } ]
+    },
+    "Sakura Mochi": {
+      "type": "Remedies",
+      "name": "Sakura Mochi",
+      "lv": 17,
+      "xp": 7240,
+      "power": 580,
+      "price": 18000,
+      "rarity": "Exclusive",
+      "origin": "Blossom Viewing Package 2019",
+      "skill": { "name": "Wise III", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Elven Dew", "q": "None", "c": 20 }, { "item": "Healing Herb", "q": "Legendary", "c": 3 } ]
     },
     "Anti-Venom": {
       "type": "Remedies",
@@ -11310,6 +11382,18 @@
       "rarity": "Common",
       "origin": "",
       "pre": [ { "item": "Zweihander", "q": "Good", "c": 3 } ]
+    },
+    "Shinai": {
+      "type": "Swords",
+      "name": "Shinai",
+      "lv": 26,
+      "xp": 93100,
+      "power": 1040,
+      "price": 238400,
+      "rarity": "Exclusive",
+      "origin": "Spring Tranquility Package 2019",
+      "skill": { "name": "Protector II", "q": "Flawless", "m": false },
+      "pre": [ { "item": "Iron Wood", "q": "None", "c": 20 }, { "item": "Walking Stick", "q": "Legendary", "c": 3 } ]
     },
     "Soul Eater": {
       "type": "Swords",
