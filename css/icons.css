@@ -754,6 +754,9 @@ span.icon.item.coldsteel {
 span.icon.item.masamune {
   background-image: url( "../images/items/swords/masamune.png" );
 }
+span.icon.item.shinai {
+  background-image: url( "../images/items/swords/shinai.png" );
+}
 span.icon.item.souleater {
   background-image: url( "../images/items/swords/souleater.png" );
 }
@@ -900,6 +903,9 @@ span.icon.item.aphoticshiv {
 }
 span.icon.item.primaldagger {
   background-image: url( "../images/items/daggers/primaldagger.png" );
+}
+span.icon.item.kaiken {
+  background-image: url( "../images/items/daggers/kaiken.png" );
 }
 span.icon.item.mistilteinn {
   background-image: url( "../images/items/daggers/mistilteinn.png" );
@@ -1164,6 +1170,9 @@ span.icon.item.giantshammer {
 }
 span.icon.item.furyclub {
   background-image: url( "../images/items/maces/furyclub.png" );
+}
+span.icon.item.relichammer {
+  background-image: url( "../images/items/maces/relichammer.png" );
 }
 span.icon.item.earthquake {
   background-image: url( "../images/items/maces/earthquake.png" );
@@ -2059,6 +2068,9 @@ span.icon.item.archwizardrobe {
 span.icon.item.twilightrobe {
   background-image: url( "../images/items/clothes/twilightrobe.png" );
 }
+span.icon.item.sakurakimono {
+  background-image: url( "../images/items/clothes/sakurakimono.png" );
+}
 span.icon.item.kingsmantle {
   background-image: url( "../images/items/clothes/kingsmantle.png" );
 }
@@ -2452,6 +2464,9 @@ span.icon.item.floatingslippers {
 span.icon.item.harvestshoes {
   background-image: url( "../images/items/footwear/harvestshoes.png" );
 }
+span.icon.item.sakuraboots {
+  background-image: url( "../images/items/footwear/sakuraboots.png" );
+}
 span.icon.item.windwalkers {
   background-image: url( "../images/items/footwear/windwalkers.png" );
 }
@@ -2523,6 +2538,9 @@ span.icon.item.fairysprinkle {
 }
 span.icon.item.starfrostbloom {
   background-image: url( "../images/items/remedies/starfrostbloom.png" );
+}
+span.icon.item.sakuramochi {
+  background-image: url( "../images/items/remedies/sakuramochi.png" );
 }
 span.icon.item.antivenom {
   background-image: url( "../images/items/remedies/antivenom.png" );
@@ -3201,6 +3219,9 @@ span.icon.item.wisdomocarina {
 }
 span.icon.item.gaiasflute {
   background-image: url( "../images/items/instruments/gaiasflute.png" );
+}
+span.icon.item.shamisen {
+  background-image: url( "../images/items/instruments/shamisen.png" );
 }
 span.icon.item.summoningflute {
   background-image: url( "../images/items/instruments/summoningflute.png" );

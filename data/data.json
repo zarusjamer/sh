@@ -7389,9 +7389,9 @@
       "origin": "",
       "pre": [ { "item": "Battle Mace", "q": "Good", "c": 2 } ]
     },
-    "Relic Mace": {
-      "type": "Guns",
-      "name": "Relic Mace",
+    "Relic Hammer": {
+      "type": "Maces",
+      "name": "Relic Hammer",
       "lv": 30,
       "xp": 300000,
       "power": 1025,
